@@ -1,4 +1,6 @@
-# locale repository:
+# kissjgemi.github.io
+
+locale repository:
 
 ...
 
