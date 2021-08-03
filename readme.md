@@ -1,4 +1,4 @@
-# kissjgemi.github.io
+# b6sics.github.io
 
 locale repository:
 
