@@ -1,0 +1,49 @@
+
+script.sample, style {
+  position: relative;
+  display: block;
+  white-space: pre;
+  padding: 0.25em 1em 3em 1em;
+  font-family: monospace;
+  min-height: 10em;
+  color: var(--code-color);
+  background: var(--code-bg-color);
+  overflow: scroll;
+}
+
+style {
+  padding: 0.25em 1em;
+}
+
+script.sample::before {
+  content: "Source code (JavaScript):";
+  background: var(--code-js-head-bg);
+  display: block;
+  padding: 2px 5px;
+}
+
+style::before {
+  content: "Source code (CSS):";
+  background:var(--code-css-head-bg);
+  display: block;
+  padding: 2px 5px;
+}
+
+footer.myFoot {
+	position: relative;
+}
+
+footer.myFoot .reloadbutton {
+  position: absolute;
+  padding: 2px 55px;
+  bottom: 1em;
+  left: 1em;
+  z-index: 99;
+}
+
+footer.myFoot hr, header.myHead hr {
+  margin: 0.5em;
+  height: 0.25em;
+  color: var(--code-color);
+  border: 0.25em solid var(--code-bg-color);
+}
