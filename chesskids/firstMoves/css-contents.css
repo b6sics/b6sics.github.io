@@ -25,7 +25,9 @@ article {
 }
 
 article a {
-	display: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 article p {
