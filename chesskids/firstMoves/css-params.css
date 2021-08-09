@@ -1,0 +1,15 @@
+:root {
+  --link-color: red;
+  --link-visited-color: green;
+  --link-hover-color: blue;
+  --link-active-color: navy;
+  --link-bg-color: transparent;
+  --link-visited-bg-color: transparent;
+  --link-hover-bg-color: yellow;
+  --link-active-bg-color: orange;
+  
+  --code-color: white;
+  --code-bg-color: black;
+  --code-js-head-bg: blue;
+  --code-css-head-bg: orange;
+}
