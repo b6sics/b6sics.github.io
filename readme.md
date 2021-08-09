@@ -19,3 +19,6 @@ git remote add origin https://github.com/b6sics/b6sics.github.io.git
 git push -u origin main
 
 ...
+
+windows desktop
+
