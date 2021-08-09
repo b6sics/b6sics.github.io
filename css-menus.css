@@ -1,0 +1,26 @@
+
+.topmenu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 10%;
+	padding: 0.25em;
+	max-width: 8em;
+	min-width: 5em;
+	text-align: right;
+	background: white;
+}
+
+.topmenu a {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 0.75em;
+	line-height: 1em;
+	border: 3px ridge navy;
+	background-color: snow;
+}
+
+.topmenu a:hover {
+	text-decoration: none;
+}
