@@ -1,0 +1,40 @@
+
+ /* unvisited link */
+a:link {
+  color: var(--link-color);
+  background-color: var(--link-bg-color);
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: var(--link-visited-color);
+  background-color: var(--link-visited-bg-color);
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: var(--link-hover-color);
+  background-color: var(--link-hover-bg-color);
+  text-decoration: underline overline;
+}
+
+/* selected link */
+a:active {
+  color: var(--link-active-color);
+  background-color: var(--link-active-bg-color);
+  text-decoration: underline overline;
+}
+
+/* bold link */
+
+a b {
+  font-size: 105%;
+}
+
+/* nbsp */
+
+a::before, a::after {
+	content: "\00a0";
+}
