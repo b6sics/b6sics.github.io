@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, 
+                                   initial-scale=1, 
+                                   shrink-to-fit=no" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>summary</title>
+    <base target="_blank">
+
+    <link rel="stylesheet" href="css-a-style.css" ?t=123456 />
+    <link rel="stylesheet" href="https://cdnjs.Cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" />
+</head>
+
+<body>
+
+    <header id="myHead" class="myHead">
+
+        <h1 id="start" name="start">
+            Cisco&nbsp;!#&?&nbsp;be a&nbsp;network&nbsp;ninja
+        </h1>
+
+        <style contenteditable="true">
+            body {
+                background-color: snow;
+            }
+
+            details {
+                margin: 1rem auto;
+                width: 35em;
+                max-width: calc(100% - 2rem);
+                position: relative;
+                border: 1px solid #78909C;
+                border-radius: 6px;
+                background-color: #ECEFF1;
+                color: #263238;
+                transition: background-color 0.15s;
+            }
+
+            details> :last-child {
+                margin-bottom: 1rem;
+            }
+
+            details::before {
+                width: 100%;
+                height: 100%;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: inherit;
+                opacity: 0.15;
+                box-shadow: 0 0.25em 0.5em #263238;
+                pointer-events: none;
+                transition: opacity 0.2s;
+                z-index: -1;
+            }
+
+            details[open] {
+                background-color: #FFF;
+            }
+
+            details[open]::before {
+                opacity: 0.6;
+            }
+
+            summary {
+                padding: 1rem;
+                display: block;
+                position: relative;
+                font-size: 1.33em;
+                font-weight: bold;
+                cursor: pointer;
+                background-color: #ECEFF1;
+            }
+
+            summary::after {
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 1rem;
+                content: "\25B7";
+                font-size: 1em;
+                color: orange;
+                text-align: right;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            summary::after {
+                transform: rotate(0deg);
+            }
+
+            [open] summary::after {
+                transform: rotate(90deg);
+            }
+
+            p {
+                margin: 1em;
+                line-height: 1;
+            }
+        </style>
+
+        <hr />
+    </header>
+
+    <div id="topmenu" class="topmenu">
+        <a class="megalink" href="#start" target="_self">
+            To the top
+        </a>
+    </div>
+
+    <div class="container">
+
+        <details>
+            <summary>Summary</summary>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab possimus, 
+            consectetur provident officiis voluptatem voluptatibus earum quos a officia 
+            tenetur molestias corrupti, illum in sit accusantium quia voluptate, 
+            sapiente consequuntur.</p>
+        </details>
+
+    </div>
+
+    <br />&nbsp;&nbsp;&nbsp;&nbsp;
+    <a class="megalink" href="https://freefrontend.com/html-details-summary-css/">
+        <b>Details/Summary</b>
+    </a>
+    <br />&nbsp;&nbsp;&nbsp;&nbsp;
+    <br />
+
+    <footer id='myFoot' class='myFoot'>
+        <hr />
+        <button class="reloadbutton" onclick=reloadMyScript()> reload </button>
+    </footer>
+
+    <script>
+        var myFooter = document.getElementById("myFoot");
+        var myScript = document.createElement("script");
+        myScript.className = "sample";
+        myScript.innerHTML = "// editable javascript block. If ready press reload! ";
+        myScript.contentEditable = "true";
+        myFooter.appendChild(myScript);
+
+        function reloadMyScript() {
+            myScript.remove();
+            myFooter.appendChild(myScript);
+        }
+    </script>
+
+</body>
+
+</html>
