@@ -1,10 +1,13 @@
 
 h1, h2, h3, h4, h5, h6 {
+	margin: 0.5em 1% 0.1em 1%;
+	padding: 0.25em 2% 0;
 	font-family:  Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3 {
-	padding: 0.25em 1.5% 0;
+h1, h2 {
+	margin: 0.25em 1% 0.1em 1%;
+	padding: 0.25em 1.5% 0 1.5%;
 	max-width: 75%;
 }
 
@@ -18,10 +21,18 @@ header.myHead, footer.myFoot {
 
 article {
 	margin: 1vmin auto;
-	padding: 0.5vmin;
+	padding: 0.5vmin 1vmin 1.5vmin;
 	width: 94%;
-	background-color: white;
+	background-color: linen;
 	border: 1px solid black;
+}
+
+article article {
+	background-color: white;
+}
+
+article article article {
+	background-color: palegoldenrod;
 }
 
 article a {
@@ -32,18 +43,27 @@ article p {
 	margin: 0.5em 0 0 0;
 	text-align: justify;
 	text-indent: 2em;
+	font-weight: 600;
 }
 
-article p::first-letter {
-	font-size: 107%;
-	font-weight: 900;
+article p::first-letter{
+	font-size: 123%;
 	text-transform: uppercase;
-	color: navy;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 article img {
 	display: block;
 	margin: 0.5em auto;
+}
+
+article figure {
+	width: 80%;
+	display: table;
+	margin: 1.5em auto;
+	padding: 1em;
+	background-color: palegoldenrod;
+	border: 1px solid black
 }
 
 ul, ol {
@@ -59,3 +79,83 @@ iframe {
 	display: block;
 	margin: 0 auto;
 }
+
+details {
+	margin: 0 auto;
+	width: 80%;
+	max-width: calc(100% - 2rem);
+	position: relative;
+	border: 1px solid #78909C;
+	border-radius: 6px;
+	background-color: palegoldenrod;
+	color: #263238;
+	transition: background-color 0.15s;
+}
+
+details:first-of-type {
+	margin-top: 1rem;
+}
+
+details:last-of-type {
+	margin-bottom: 1rem;
+}
+
+details::before {
+	width: 100%;
+	height: 100%;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	opacity: 0.15;
+	box-shadow: 0 0.25em 0.5em #263238;
+	pointer-events: none;
+	transition: opacity 0.2s;
+	z-index: -1;
+}
+
+details[open] {
+	background-color: lemonchiffon;
+}
+
+details[open]::before {
+	opacity: 0.6;
+}
+
+summary {
+	padding: 1rem 2.5rem 1rem 1rem;
+	display: block;
+	position: relative;
+	font-size: 1.33em;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: palegoldenrod;
+}
+
+summary::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 1rem;
+	content: "\25B7";
+	color: orange;
+	text-align: right;
+	transition: transform 0.2s ease-in-out;
+	z-index: 10;
+}
+
+summary::after {
+	transform: rotate(90deg);
+}
+
+[open] summary::after {
+	transform: rotate(270deg);
+}
+
+details p {
+	margin: 0.5em 1em;
+	text-align: justify;
+	text-indent: 2em;
+}
+
