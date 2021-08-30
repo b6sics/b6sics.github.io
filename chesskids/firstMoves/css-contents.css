@@ -43,11 +43,6 @@ article p::first-letter {
 	color: navy;
 }
 
-article img {
-	display: block;
-	margin: 0.5em auto;
-}
-
 ul, ol {
 	display: table;
 	margin: 0.5em 10% 0;
