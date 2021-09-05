@@ -47,7 +47,7 @@ article p {
 }
 
 article p::first-letter{
-	font-size: 123%;
+	font-size: 112.5%;
 	text-transform: uppercase;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -149,7 +149,7 @@ summary::after {
 	transform: rotate(90deg);
 }
 
-[open] summary::after {
+details[open] summary::after {
 	transform: rotate(270deg);
 }
 
@@ -159,3 +159,19 @@ details p {
 	text-indent: 2em;
 }
 
+details label {
+	display: inline-block;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	width: 98%;
+	font-size: 1rem;
+	line-height: 2rem !important;
+	border: 1px solid black;
+	border-radius: 1rem 0 0 1rem;
+	cursor: pointer;
+}
+
+label input {
+	margin: 0.5rem !important;
+	outline: none;
+}
