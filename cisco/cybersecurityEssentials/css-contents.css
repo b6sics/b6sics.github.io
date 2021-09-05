@@ -27,7 +27,8 @@ article {
 	border: 1px solid black;
 }
 
-article article {
+article article,
+article article article article {
 	background-color: white;
 }
 
