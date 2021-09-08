@@ -37,10 +37,13 @@
             To the top
         </a>
         <a class="megalink" href="#chapter1" target="_self">
-            Chapter 2.5.1
+            Chapter 2.1.1
         </a>
         <a class="megalink" href="#chapter2" target="_self">
-            Chapter 2.5.2
+            Chapter 2.1.2
+        </a>
+        <a class="megalink" href="#chapter3" target="_self">
+            Chapter 2.1.3
         </a>
     </div>
 
@@ -202,20 +205,46 @@
                 <details>
                     <summary>
                         <p>
-                            Spyware
+                            Rootkit
                         </p>
                     </summary>
                     <figure>
                         <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
                     </figure>
                     <p>
-                        Designed to track and spy on you, spyware monitors your online activity and can log
-                        every key you press on your keyboard, as well as capture almost any of your data,
-                        including sensitive personal information such as your online banking details. Spyware
-                        does this by modifying the security settings on your devices.
+                        This malware is designed to modify the operating system to create a backdoor, which attackers
+                        can then use to access your computer remotely. Most rootkits take advantage of software
+                        vulnerabilities to gain access to resources that normally shouldn’t be accessible (privilege
+                        escalation) and modify system files.
                     </p>
                     <p>
-                        It often bundles itself with legitimate software or Trojan horses.
+                        Rootkits can also modify system forensics and monitoring tools, making them very hard to detect.
+                        In most cases, a computer infected by a rootkit has to be wiped and any required software
+                        reinstalled.
+                    </p>
+                </details>
+                <details>
+                    <summary>
+                        <p>
+                            Virus
+                        </p>
+                    </summary>
+                    <figure>
+                        <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+                    </figure>
+                    <p>
+                        A virus is a type of computer program that, when executed, replicates and attaches itself to
+                        other executable files, such as a document, by inserting its own code. Most viruses require
+                        end-user interaction to initiate activation and can be written to act on a specific date or
+                        time.
+                    </p>
+                    <p>
+                        Viruses can be relatively harmless, such as those that display a funny image. Or they can be
+                        destructive, such as those that modify or delete data.
+                    </p>
+                    <p>
+                        Viruses can also be programmed to mutate in order to avoid detection. Most viruses are spread by
+                        USB drives, optical disks, network shares or email.
                     </p>
                 </details>
                 <details>
@@ -228,13 +257,13 @@
                         <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
                     </figure>
                     <p>
-                        Designed to track and spy on you, spyware monitors your online activity and can log
-                        every key you press on your keyboard, as well as capture almost any of your data,
-                        including sensitive personal information such as your online banking details. Spyware
-                        does this by modifying the security settings on your devices.
+                        This malware carries out malicious operations by masking its true intent. It might appear
+                        legitimate but is, in fact, very dangerous. Trojans exploit your user privileges and are most
+                        often found in image files, audio files or games.
                     </p>
                     <p>
-                        It often bundles itself with legitimate software or Trojan horses.
+                        Unlike viruses, Trojans do not self-replicate but act as a decoy to sneak malicious software
+                        past unsuspecting users.
                     </p>
                 </details>
                 <details>
@@ -247,19 +276,231 @@
                         <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
                     </figure>
                     <p>
-                        Designed to track and spy on you, spyware monitors your online activity and can log
-                        every key you press on your keyboard, as well as capture almost any of your data,
-                        including sensitive personal information such as your online banking details. Spyware
-                        does this by modifying the security settings on your devices.
+                        This is a type of malware that replicates itself in order to spread from one computer to
+                        another. Unlike a virus, which requires a host program to run, worms can run by themselves.
+                        Other than the initial infection of the host, they do not require user participation and can
+                        spread very quickly over the network.
                     </p>
                     <p>
-                        It often bundles itself with legitimate software or Trojan horses.
+                        Worms share similar patterns: They exploit system vulnerabilities, they have a way to propagate
+                        themselves, and they all contain malicious code (payload) to cause damage to computer systems or
+                        networks.
+                    </p>
+                    <p>
+                        Worms are responsible for some of the most devastating attacks on the Internet. In 2001, the
+                        Code Red worm had infected over 300,000 servers in just 19 hours.
                     </p>
                 </details>
+            </article>
 
+            <article>
+                <h3 id="chapter2" name="chapter2">
+                    2.1.2 Symptoms of Malware
+                </h3>
+
+                <p>
+                    So now you know about the different kinds of malware. But what do you think their symptoms might be?
+                </p>
+
+                <figure>
+                    <img src="intro2cybersec.img/symptomsOfMalware.png" alt="" title="" width="auto" height="auto" />
+                    <figcaption>
+                        <p>
+                            Regardless of the type of malware a system has been infected with, there are some common
+                            symptoms to look out for. These include:
+                        </p>
+                        <ul>
+                            <li>
+                                an increase in central processing unit (CPU) usage, which slows down your device
+                            </li>
+                            <li>
+                                your computer freezing or crashing often
+                            </li>
+                            <li>
+                                a decrease in your web browsing speed
+                            </li>
+                            <li>
+                                unexplainable problems with your network connections
+                            </li>
+                            <li>
+                                modified or deleted files
+                            </li>
+                            <li>
+                                the presence of unknown files, programs or desktop icons
+                            </li>
+                            <li>
+                                unknown processes running
+                            </li>
+                            <li>
+                                programs turning off or reconfiguring themselves
+                            </li>
+                            <li>
+                                emails being sent without your knowledge or consent.
+                            </li>
+                        </ul>
+                    </figcaption>
+                </figure>
             </article>
 
             <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+
+            <p>
+                This is exactly what could be happening at @Apollo!
+            </p>
+            <p>
+                Based on what you now know, do you think you could spot the different types of malware from their
+                descriptions?
+            </p>
+
+            <article>
+                <h3 id="chapter3" name="chapter3">
+                    2.1.3 What Do You Think?
+                </h3>
+
+                <p>
+                    Match each of the descriptions to the correct malware type by selecting an answer from each
+                    dropdown.
+                </p>
+
+                <details open>
+                    <summary>
+                        <p>
+                            Malware designed to track your online activity and capture your data
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q1a" name="malware-capture-your-data" value="*spyware" />
+                        Spyware
+                    </label>
+                    <label>
+                        <input type="radio" id="q1b" name="malware-capture-your-data" value="adware" />
+                        Adware
+                    </label>
+                    <label>
+                        <input type="radio" id="q1c" name="malware-capture-your-data" value="ransomware" />
+                        Ransomware
+                    </label>
+                    <label>
+                        <input type="radio" id="q1d" name="malware-capture-your-data" value="virus" />
+                        Virus
+                    </label>
+                    <label>
+                        <input type="radio" id="q1e" name="malware-capture-your-data" value="worms" />
+                        Worms
+                    </label>
+                </details>
+                <details open>
+                    <summary>
+                        <p>
+                            Software that automatically delivers advertisements
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q2b" name="malware-delivers-advertisements" value="*adware" />
+                        Adware
+                    </label>
+                    <label>
+                        <input type="radio" id="q2c" name="malware-delivers-advertisements" value="ransomware" />
+                        Ransomware
+                    </label>
+                    <label>
+                        <input type="radio" id="q2d" name="malware-delivers-advertisements" value="virus" />
+                        Virus
+                    </label>
+                    <label>
+                        <input type="radio" id="q2e" name="malware-delivers-advertisements" value="worms" />
+                        Worms
+                    </label>
+                    <label>
+                        <input type="radio" id="q2a" name="malware-delivers-advertisements" value="spyware" />
+                        Spyware
+                    </label>
+                </details>
+                <details open>
+                    <summary>
+                        <p>
+                            Malware that holds a computer system captive until a payment is made to the attacker
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q3b" name="malware-payment" value="adware" />
+                        Adware
+                    </label>
+                    <label>
+                        <input type="radio" id="q3c" name="malware-payment" value="*ransomware" />
+                        Ransomware
+                    </label>
+                    <label>
+                        <input type="radio" id="q3d" name="malware-payment" value="virus" />
+                        Virus
+                    </label>
+                    <label>
+                        <input type="radio" id="q3a" name="malware-payment" value="spyware" />
+                        Spyware
+                    </label>
+                    <label>
+                        <input type="radio" id="q3e" name="malware-payment" value="worms" />
+                        Worms
+                    </label>
+                </details>
+                <details open>
+                    <summary>
+                        <p>
+                            Malicious code that attaches to legitimate programs and usually spreads by USB drives,
+                            optical media, network shares or email
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q4b" name="malware-attaches2programs" value="adware" />
+                        Adware
+                    </label>
+                    <label>
+                        <input type="radio" id="q4c" name="malware-attaches2programs" value="ransomware" />
+                        Ransomware
+                    </label>
+                    <label>
+                        <input type="radio" id="q4d" name="malware-attaches2programs" value="*virus" />
+                        Virus
+                    </label>
+                    <label>
+                        <input type="radio" id="q4a" name="malware-attaches2programs" value="*spyware" />
+                        Spyware
+                    </label>
+                    <label>
+                        <input type="radio" id="q4e" name="malware-attaches2programs" value="worms" />
+                        Worms
+                    </label>
+                </details>
+                <details open>
+                    <summary>
+                        <p>
+                            Malicious code that replicates itself independently by exploiting vulnerabilities in
+                            networks
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q5b" name="malware-replicates-itself" value="adware" />
+                        Adware
+                    </label>
+                    <label>
+                        <input type="radio" id="q5c" name="malware-replicates-itself" value="ransomware" />
+                        Ransomware
+                    </label>
+                    <label>
+                        <input type="radio" id="q5d" name="malware-replicates-itself" value="virus" />
+                        Virus
+                    </label>
+                    <label>
+                        <input type="radio" id="q5e" name="malware-replicates-itself" value="*worms" />
+                        Worms
+                    </label>
+                    <label>
+                        <input type="radio" id="q5a" name="malware-replicates-itself" value="*spyware" />
+                        Spyware
+                    </label>
+                </details>
+
+            </article>
 
         </article>
     </div>
