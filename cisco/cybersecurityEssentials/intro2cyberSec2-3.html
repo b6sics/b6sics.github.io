@@ -51,24 +51,6 @@
         <a class="megalink" href="#chapter5" target="_self">
             Chapter 2.3.5
         </a>
-        <a class="megalink" href="#chapter6" target="_self">
-            Chapter 2.3.6
-        </a>
-        <a class="megalink" href="#chapter7" target="_self">
-            Chapter 2.3.7
-        </a>
-        <a class="megalink" href="#chapter8" target="_self">
-            Chapter 2.3.8
-        </a>
-        <a class="megalink" href="#chapter9" target="_self">
-            Chapter 2.3.9
-        </a>
-        <a class="megalink" href="#chapter10" target="_self">
-            Chapter 2.3.10
-        </a>
-        <a class="megalink" href="#chapter11" target="_self">
-            Chapter 2.3.11
-        </a>
     </div>
 
     <div class="container">
@@ -122,9 +104,108 @@
 
             </h2>
 
+            <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+
+            <p>
+                Before we get into the details, let’s start by outlining some key terms that you need to know.
+            </p>
+            <p>
+                Security vulnerabilities are any kind of software or hardware defect. A program written to take
+                advantage of a known vulnerability is referred to as an exploit. A cybercriminal can use an exploit
+                against a vulnerability to carry out an attack, the goal of which is to gain access to a system, the
+                data it hosts or a specific resource.
+            </p>
+
             <article>
                 <h3 id="chapter1" name="chapter1">
-                    2.3.1
+                    2.3.1 Hardware Vulnerabilities
+                </h3>
+
+                <p>
+                    Hardware vulnerabilities are most often the result of hardware design flaws. For example, the type
+                    of memory called RAM basically consists of lots of capacitors (a component which can hold an
+                    electrical charge) installed very close to one another. However, it was soon discovered that, due to
+                    their close proximity, changes applied to one of these capacitors could influence neighbor
+                    capacitors. Based on this design flaw, an exploit called Rowhammer was created. By repeatedly
+                    accessing (hammering) a row of memory, the Rowhammer exploit triggers electrical interferences that
+                    eventually corrupt the data stored inside the RAM.
+                </p>
+                <p>
+                    <b>
+                        Meltdown and Spectre
+                    </b>
+                </p>
+                <p>
+                    Google security researchers discovered Meltdown and Spectre, two hardware vulnerabilities that
+                    affect almost all central processing units (CPUs) released since 1995 within desktops, laptops,
+                    servers, smartphones, smart devices and cloud services.
+                </p>
+                <figure>
+                    <img src="intro2cybersec.img/meltdown.png" alt="" title="" width="auto" height="auto" />
+                </figure>
+                <p>
+                    Attackers exploiting these vulnerabilities can read all memory from a given system (Meltdown), as
+                    well as data handled by other applications (Spectre). The Meltdown and Spectre vulnerability
+                    exploitations are referred to as side-channel attacks (information is gained from the implementation
+                    of a computer system). They have the ability to compromise large amounts of memory data because the
+                    attacks can be run multiple times on a system with very little possibility of a crash or other
+                    error.
+                </p>
+                <figure>
+                    <img src="intro2cybersec.img/spectre.png" alt="" title="" width="auto" height="auto" />
+                </figure>
+                <p>
+                    Hardware vulnerabilities are specific to device models and are not generally exploited through
+                    random compromising attempts. While hardware exploits are more common in highly targeted attacks,
+                    traditional malware protection and good physical security are sufficient protection for the everyday
+                    user.
+                </p>
+            </article>
+
+            <article>
+                <h3 id="chapter2" name="chapter2">
+                    2.3.2 Software Vulnerabilities
+                </h3>
+
+                <p>
+                    Software vulnerabilities are usually introduced by errors in the operating system or application
+                    code.
+                </p>
+                <figure>
+                    <img src="intro2cybersec.img/vulnerabilities.png" alt="" title="" width="auto" height="auto" />
+                    <figcaption>
+                        <p>
+                            The SYNful Knock vulnerability allowed attackers to gain control of enterprise-grade
+                            routers, such
+                            as the legacy Cisco ISR routers, from which they could monitor all network communication and
+                            infect
+                            other network devices.
+                        </p>
+                        <p>
+                            This vulnerability was introduced into the system when an altered IOS version was installed
+                            on the
+                            routers. To avoid this, you should always verify the integrity of the downloaded IOS image
+                            and limit
+                            the physical access of such equipment to authorized personnel only.
+                        </p>
+                    </figcaption>
+                </figure>
+            </article>
+
+            <article>
+                <h3 id="chapter3" name="chapter3">
+                    2.3.3 Categorizing Software Vulnerabilities
+                </h3>
+
+                <p>
+                    Most software security vulnerabilities fall into several main categories.
+                </p>
+
+            </article>
+
+            <article>
+                <h3 id="chapter4" name="chapter4">
+                    2.3.4 Software Vulnerabilities
                 </h3>
 
                 <p>
@@ -134,8 +215,8 @@
             </article>
 
             <article>
-                <h3 id="chapter2" name="chapter2">
-                    2.3.2
+                <h3 id="chapter5" name="chapter5">
+                    2.3.5 What Do You Think?
                 </h3>
 
                 <p>
