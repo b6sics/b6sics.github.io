@@ -201,17 +201,125 @@
                     Most software security vulnerabilities fall into several main categories.
                 </p>
 
+                <figure>
+                    <p>
+                        <b>
+                            Buffer owerflow
+                        </b>
+                    </p>
+                    <img src="intro2cybersec.img/bufferOverflow.png" alt="">
+                    <figcaption>
+                        <p>
+                            Buffers are memory areas allocated to an application. A vulnerability occurs when data is
+                            written beyond the limits of a buffer. By changing data beyond the boundaries of a buffer,
+                            the application can access memory allocated to other processes. This can lead to a system
+                            crash or data compromise, or provide escalation of privileges.
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p>
+                        <b>
+                            Non-validated input
+                        </b>
+                    </p>
+                    <img src="intro2cybersec.img/non-validatedInput.png" alt="">
+                    <figcaption>
+                        <p>
+                            Programs often require data input, but this incoming data could have malicious content,
+                            designed to force the program to behave in an unintended way.
+                        </p>
+                        <p>
+                            For example, consider a program that receives an image for processing. A malicious user
+                            could craft an image file with invalid image dimensions. The maliciously crafted dimensions
+                            could force the program to allocate buffers of incorrect and unexpected sizes.
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p>
+                        <b>
+                            Race conditions
+                        </b>
+                    </p>
+                    <img src="intro2cybersec.img/raceConditions.png" alt="">
+                    <figcaption>
+                        <p>
+                            This vulnerability describes a situation where the output of an event depends on ordered or
+                            timed outputs. A race condition becomes a source of vulnerability when the required ordered
+                            or timed events do not occur in the correct order or at the proper time.
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p>
+                        <b>
+                            Weakness in security practices
+                        </b>
+                    </p>
+                    <img src="intro2cybersec.img/weakSecurity.png" alt="">
+                    <figcaption>
+                        <p>
+                            Systems and sensitive data can be protected through techniques such as authentication,
+                            authorization and encryption. Developers should stick to using security techniques and
+                            libraries that have already been created, tested and verified and should not attempt to
+                            create their own security algorithms. These will only likely introduce new vulnerabilities.
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p>
+                        <b>
+                            Access control problems
+                        </b>
+                    </p>
+                    <img src="intro2cybersec.img/accessControlProblems.png" alt="">
+                    <figcaption>
+                        <p>
+                            Access control is the process of controlling who does what and ranges from managing physical
+                            access to equipment to dictating who has access to a resource, such as a file, and what they
+                            can do with it, such as read or change the file. Many security vulnerabilities are created
+                            by the improper use of access controls.
+                        </p>
+                        <p>
+                            Nearly all access controls and security practices can be overcome if an attacker has
+                            physical access to target equipment. For example, no matter the permission settings on a
+                            file, a hacker can bypass the operating system and read the data directly off the disk.
+                            Therefore, to protect the machine and the data it contains, physical access must be
+                            restricted, and encryption techniques must be used to protect data from being stolen or
+                            corrupted.
+                        </p>
+                    </figcaption>
+                </figure>
             </article>
 
             <article>
                 <h3 id="chapter4" name="chapter4">
-                    2.3.4 Software Vulnerabilities
+                    2.3.4 Software updates
                 </h3>
 
                 <p>
-
+                    The goal of software updates is to stay current and avoid exploitation of vulnerabilities.
+                    Microsoft, Apple and other operating system producers release patches and updates almost every day
+                    and applications such as web browsers, mobile apps and web servers are often updated by the
+                    companies or organizations responsible for them.
                 </p>
 
+                <img src="intro2cybersec.img/softwareUpdates.gif" alt="">
+
+                <p>
+                    Despite the fact that organizations put a lot of effort into finding and patching software
+                    vulnerabilities, new vulnerabilities are discovered regularly. That’s why some organizations use
+                    third party security researchers who specialize in finding vulnerabilities in software, or actually
+                    invest in their own penetration testing teams dedicated to search, find and patch software
+                    vulnerabilities before they can get exploited.
+                </p>
+                <p>
+                    Google’s Project Zero is a great example of this practice. After discovering a number of
+                    vulnerabilities in various software used by end users, Google formed a permanent team dedicated to
+                    finding software vulnerabilities. You can find out more about Google’s security research
+                    <a href="https://bugs.chromium.org/p/project-zero/issues/list?can=1&redir=1">here</a>.
+                </p>
             </article>
 
             <article>
