@@ -328,9 +328,95 @@
                 </h3>
 
                 <p>
-
+                    This has made you think about some of the vulnerabilities that may exist at @Apollo. After some
+                    investigation you’ve noted some potential issues.
+                </p>
+                <p>
+                    Can you identify what category each of these vulnerabilities falls into? You have a chance to earn
+                    some defender points here and further safeguard @Apollo, so take your time.
                 </p>
 
+                <details open>
+                    <summary>
+                        <p>
+                            On starting at @Apollo, your network password was emailed to you in plain text and you were
+                            not prompted to change it
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q2-3-1a" name="email-plain-text" value="Access control problem" />
+                        Access control problem
+                    </label>
+                    <label>
+                        <input type="radio" id="q2-3-1b" name="email-plain-text"
+                            value="*Weakness in security practice" />
+                        Weakness in security practice
+                    </label>
+                    <label>
+                        <input type="radio" id="q2-3-1c" name="email-plain-text" value="Non-validated input" />
+                        Non-validated input
+                    </label>
+                </details>
+                <details open>
+                    <summary>
+                        <p>
+                            Past employees still have access to @Apollo’s customer database
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q2-3-2a" name="still-access" value="Access control problem" />
+                        Access control problem
+                    </label>
+                    <label>
+                        <input type="radio" id="q2-3-2b" name="still-access" value="*Weakness in security practice" />
+                        Weakness in security practice
+                    </label>
+                    <label>
+                        <input type="radio" id="q2-3-2c" name="still-access" value="Non-validated input" />
+                        Non-validated input
+                    </label>
+                </details>
+                <details open>
+                    <summary>
+                        <p>
+                            New users can log into their @Apollo account, even if they have signed up with an
+                            incorrectly formatted email address
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q2-3-3a" name="email-incorrectly-formatted"
+                            value="Access control problem" />
+                        Access control problem
+                    </label>
+                    <label>
+                        <input type="radio" id="q2-3-3b" name="email-incorrectly-formatted"
+                            value="*Weakness in security practice" />
+                        Weakness in security practice
+                    </label>
+                    <label>
+                        <input type="radio" id="q2-3-3c" name="email-incorrectly-formatted"
+                            value="Non-validated input" />
+                        Non-validated input
+                    </label>
+                </details>
+
+                <p>
+                    You have taken a step closer to safeguarding @Apollo from attack. Remember:
+                </p>
+                <ul>
+                    <li>
+                        Emailing sensitive information such as passwords in plain text is extremely risky and is a
+                        weakness in security practice. This information should at the very least be encrypted.
+                    </li>
+                    <li>
+                        Past employees should not have access to customer information when leaving a company. This is a
+                        serious access control problem.
+                    </li>
+                    <li>
+                        New users need to be validated before anything else can be done with their data. Using an
+                        incorrectly formatted email address to log on is a non-validated input error.
+                    </li>
+                </ul>
             </article>
         </article>
     </div>
