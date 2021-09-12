@@ -105,7 +105,8 @@ details:last-of-type {
 	margin-bottom: 1rem;
 }
 
-details.transcript {
+details.transcript,
+details.explanation {
 	margin: 2rem auto;
 }
 
