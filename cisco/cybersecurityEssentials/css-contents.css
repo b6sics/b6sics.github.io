@@ -93,8 +93,8 @@ details {
 	transition: background-color 0.15s;
 }
 
-details.transcript {
-	margin: 2rem auto;
+details label img {
+	width: 40%;
 }
 
 details:first-of-type {
@@ -103,6 +103,10 @@ details:first-of-type {
 
 details:last-of-type {
 	margin-bottom: 1rem;
+}
+
+details.transcript {
+	margin: 2rem auto;
 }
 
 details::before {
