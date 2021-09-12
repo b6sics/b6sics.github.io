@@ -93,6 +93,10 @@ details {
 	transition: background-color 0.15s;
 }
 
+details.transcript {
+	margin: 2rem auto;
+}
+
 details:first-of-type {
 	margin-top: 1rem;
 }
