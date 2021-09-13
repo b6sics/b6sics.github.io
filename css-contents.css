@@ -27,7 +27,8 @@ article {
 	border: 1px solid black;
 }
 
-article article {
+article article,
+article article article article {
 	background-color: white;
 }
 
@@ -47,7 +48,7 @@ article p {
 }
 
 article p::first-letter{
-	font-size: 123%;
+	font-size: 112.5%;
 	text-transform: uppercase;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -92,12 +93,21 @@ details {
 	transition: background-color 0.15s;
 }
 
+label img {
+	width: 40%;
+}
+
 details:first-of-type {
 	margin-top: 1rem;
 }
 
 details:last-of-type {
 	margin-bottom: 1rem;
+}
+
+details.transcript,
+details.explanation {
+	margin: 2rem auto;
 }
 
 details::before {
@@ -149,7 +159,7 @@ summary::after {
 	transform: rotate(90deg);
 }
 
-[open] summary::after {
+details[open] summary::after {
 	transform: rotate(270deg);
 }
 
@@ -159,3 +169,19 @@ details p {
 	text-indent: 2em;
 }
 
+details label {
+	display: inline-block;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	width: 98%;
+	font-size: 1rem;
+	line-height: 2rem !important;
+	border: 1px solid black;
+	border-radius: 1rem 0 0 1rem;
+	cursor: pointer;
+}
+
+label input {
+	margin: 0.5rem !important;
+	outline: none;
+}
