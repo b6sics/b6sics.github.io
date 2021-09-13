@@ -93,7 +93,7 @@ details {
 	transition: background-color 0.15s;
 }
 
-details label img {
+label img {
 	width: 40%;
 }
 
