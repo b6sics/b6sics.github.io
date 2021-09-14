@@ -659,8 +659,21 @@
                 <article>
                     <p>
                         The port scan reported an ‘open’ state response. This means that the service running on the
-                        network <u>______________</u> by other network devices. Therefore, if the service contains a
-                        vulnerability, it <u>______________</u> by an attacker.
+                        network
+                        <select name="network1" id="network1">
+                            <option value="select">select option</option>
+                            <option value="*can be accessed">can be accessed</option>
+                            <option value="cannot be accessed">cannot be accessed</option>
+                            <option value="is blocked">is blocked</option>
+                        </select>
+                        by other network devices. Therefore, if the service contains a
+                        vulnerability, it
+                        <select name="network2" id="network2">
+                            <option value="select">select option</option>
+                            <option value="*can be exploited">can be exploited</option>
+                            <option value="cannot be exploited">cannot be exploited</option>
+                        </select>
+                        by an attacker.
                     </p>
                 </article>
             </article>
