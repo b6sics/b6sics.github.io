@@ -127,21 +127,21 @@
                         </h3>
 
                         <p>
-                            What is the primary goal of a DoS attack?
+                            What action will an IDS take upon detection of malicious traffic?
                         </p>
 
                         <ol type="1">
                             <li>
-                                to scan the data on the target server
+                                block or deny all traffic
                             </li>
                             <li>
-                                to obtain all addresses in the address book within the server
+                                drop only packets identified as malicious
                             </li>
                             <li>
-                                to facilitate access to external networks
+                                create a network alert and log the detection
                             </li>
                             <li>
-                                to prevent the target server from being able to handle additional requests
+                                reroute malicious traffic to a honeypot
                             </li>
                         </ol>
 
@@ -150,13 +150,12 @@
                                 Explanations
                             </summary>
                             <p>
-                                A denial of service (DoS) attack attempts to overwhelm a system or process by sending
-                                large amounts of data or requests to the target. The goal is to keep the system so
-                                overwhelmed handling false requests that it is unable to respond to legitimate ones.
+                                An IDS, or intrusion detection system, is a device that can scan packets and compare
+                                them to a set of rules or attack signatures. If the packets match attack signatures,
+                                then the IDS can create an alert and log the detection.
                             </p>
                             <p>
-                                <b>Answer: to prevent the target server from being able to handle additional
-                                    requests</b>
+                                <b>Answer: create a network alert and log the detection</b>
                             </p>
                         </details>
                     </article>
