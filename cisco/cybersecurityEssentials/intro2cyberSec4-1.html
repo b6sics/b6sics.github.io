@@ -706,9 +706,48 @@
                 </h3>
 
                 <p>
-
+                    Intrusion detection systems (IDSs) and intrusion prevention systems (IPSs) are security measures
+                    deployed on a network to detect and prevent malicious activities.
                 </p>
 
+                <figure>
+                    <p>
+                        <b>IDS</b>
+                    </p>
+                    <img src="intro2cybersec.img/intusionDetection.png" alt="" title="" width="auto" height="auto" />
+                    <figcaption>
+                        <p>
+                            An IDS can either be a dedicated network device or one of several tools in a server,
+                            firewall or even a host computer operating system, such as Windows or Linux, that scans data
+                            against a database of rules or attack signatures, looking for malicious traffic.
+                        </p>
+                        <p>
+                            If a match is detected, the IDS will log the detection and create an alert for a network
+                            administrator. It will not take action and therefore it will not prevent attacks from
+                            happening. The job of the IDS is to detect, log and report.
+                        </p>
+                        <p>
+                            The scanning performed by the IDS slows down the network (known as latency). To prevent
+                            network delay, an IDS is usually placed offline, separate from regular network traffic. Data
+                            is copied or mirrored by a switch and then forwarded to the IDS for offline detection. </p>
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p>
+                        <b>IPS</b>
+                    </p>
+                    <img src="intro2cybersec.img/intusionPrevention.png" alt="" title="" width="auto" height="auto" />
+                    <figcaption>
+                        <p>
+                            An IPS can block or deny traffic based on a positive rule or signature match. One of the
+                            most well-known IPS/IDS systems is Snort. The commercial version of Snort is Cisco’s
+                            Sourcefire. Sourcefire can perform real-time traffic and port analysis, logging, content
+                            searching and matching, as well as detect probes, attacks and execute port scans. It also
+                            integrates with other third-party tools for reporting, performance and log analysis.
+                        </p>
+                    </figcaption>
+                </figure>
             </article>
 
             <article>
