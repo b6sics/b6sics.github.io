@@ -236,19 +236,19 @@
                         </p>
                     </summary>
                     <label>
-                        <input type="radio" id="q4-1-1a" name="provides-routing" value="Firewall" />
+                        <input type="radio" id="q4-1-5a" name="small-local-area-network" value="Firewall" />
                         Firewall
                     </label>
                     <label>
-                        <input type="radio" id="q4-1-1b" name="provides-routing" value="*Router" />
+                        <input type="radio" id="q4-1-5b" name="small-local-area-network" value="*Router" />
                         Router
                     </label>
                     <label>
-                        <input type="radio" id="q4-1-1c" name="provides-routing" value="Antimalware" />
+                        <input type="radio" id="q4-1-5c" name="small-local-area-network" value="Antimalware" />
                         Antimalware
                     </label>
                     <label>
-                        <input type="radio" id="q4-1-1d" name="provides-routing" value="VPN" />
+                        <input type="radio" id="q4-1-5d" name="small-local-area-network" value="VPN" />
                         VPN
                     </label>
                 </details>
@@ -385,72 +385,76 @@
                     <summary>
                         Network layer firewall
                     </summary>
-                    <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+                    <img src="intro2cybersec.img/networkLayerFirewall.png" alt="" title="" width="auto" height="auto" />
                     <p>
-
+                        This filters communications based on source and destination IP addresses.
                     </p>
                 </details>
                 <details>
                     <summary>
                         Transport layer firewall
                     </summary>
-                    <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+                    <img src="intro2cybersec.img/transportLayerFirewall.png" alt="" title="" width="auto"
+                        height="auto" />
                     <p>
-
+                        Filters communications based on source and destination data ports, as well as connection states.
                     </p>
                 </details>
                 <details>
                     <summary>
                         Application layer firewall
                     </summary>
-                    <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+                    <img src="intro2cybersec.img/applicationLayerFirewall.png" alt="" title="" width="auto"
+                        height="auto" />
                     <p>
-
+                        Filters communications based on an application, program or service.
                     </p>
                 </details>
                 <details>
                     <summary>
                         Context aware layer firewall
                     </summary>
-                    <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+                    <img src="intro2cybersec.img/contextAwareLayerFirewall.png" alt="" title="" width="auto"
+                        height="auto" />
                     <p>
-
+                        Filters communications based on the user, device, role, application type and threat profile.
                     </p>
                 </details>
                 <details>
                     <summary>
                         Proxy server
                     </summary>
-                    <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+                    <img src="intro2cybersec.img/proxyServer.png" alt="" title="" width="auto" height="auto" />
                     <p>
-
+                        Filters web content requests like URLs, domain names and media types.
                     </p>
                 </details>
                 <details>
                     <summary>
                         Reverse proxy server
                     </summary>
-                    <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
+                    <img src="intro2cybersec.img/ReverseProxyServer.png" alt="" title="" width="auto" height="auto" />
                     <p>
-
+                        Placed in front of web servers, reverse proxy servers protect, hide, offload and distribute
+                        access to web servers.
                     </p>
                 </details>
                 <details>
                     <summary>
-
-                    </summary>
-                    <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
-                    <p>
                         Network Address Translation (NAT) firewall
+                    </summary>
+                    <img src="intro2cybersec.img/natFirewall.png" alt="" title="" width="auto" height="auto" />
+                    <p>
+                        This firewall hides or masquerades the private addresses of network hosts.
                     </p>
                 </details>
                 <details>
                     <summary>
-
-                    </summary>
-                    <img src="intro2cybersec.img/guru.png" alt="" title="" width="auto" height="auto" />
-                    <p>
                         Host-based firewall
+                    </summary>
+                    <img src="intro2cybersec.img/hostBasedFirewall.png" alt="" title="" width="auto" height="auto" />
+                    <p>
+                        Filters ports and system service calls on a single computer operating system
                     </p>
                 </details>
             </article>
@@ -461,9 +465,97 @@
                 </h3>
 
                 <p>
-
+                    The CTO forgot to mention that @Apollo has a few firewalls in place. Based on the following
+                    statements, can you identify what category of firewall these are? Answer correctly to earn valuable
+                    defender points that will help safeguard @Apollo from attack.
                 </p>
 
+                <p>
+                    <b>Select an option from each!</b>
+                </p>
+
+                <details open>
+                    <summary>
+                        <p>
+                            A small, internal local area network with computers requires access to the Internet using a
+                            single Internet connection
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q4-1-5a" name="small-local-area-network" value="Proxy server" />
+                        Proxy server
+                    </label>
+                    <label>
+                        <input type="radio" id="q4-1-5b" name="small-local-area-network" value="Host-based Firewall" />
+                        Host-based Firewall
+                    </label>
+                    <label>
+                        <input type="radio" id="q4-1-5c" name="small-local-area-network" value="*NAT Firewall" />
+                        NAT Firewall
+                    </label>
+                </details>
+                <details open>
+                    <summary>
+                        <p>
+                            By default, Windows tries to block access to applications running on Windows PCs from other
+                            computers in the network
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q4-1-6a" name="windows-blocks-access" value="*Proxy server" />
+                        Proxy server
+                    </label>
+                    <label>
+                        <input type="radio" id="q4-1-6b" name="windows-blocks-access" value="Host-based Firewall" />
+                        Host-based Firewall
+                    </label>
+                    <label>
+                        <input type="radio" id="q4-1-6c" name="windows-blocks-access" value="NAT Firewall" />
+                        NAT Firewall
+                    </label>
+                </details>
+                <details open>
+                    <summary>
+                        <p>
+                            Employees using computers on the network are not permitted access to specific URLs, such as
+                            gambling sites
+                        </p>
+                    </summary>
+                    <label>
+                        <input type="radio" id="q4-1-7a" name="specific-urls" value="*Proxy server" />
+                        Proxy server
+                    </label>
+                    <label>
+                        <input type="radio" id="q4-1-7b" name="specific-urls" value="Host-based Firewall" />
+                        Host-based Firewall
+                    </label>
+                    <label>
+                        <input type="radio" id="q4-1-7c" name="specific-urls" value="NAT Firewall" />
+                        NAT Firewall
+                    </label>
+                </details>
+
+                <details class="explanation">
+                    <summary>
+                        explanations
+                    </summary>
+                    <p>
+                        <b>Remember:</b>
+                    </p>
+                    <ul>
+                        <li>
+                            A NAT firewall filters communications based on source and destination IP addresses.
+                        </li>
+                        <li>
+                            A proxy server filters web content requests like URLs, domain names and media types.
+                        </li>
+                        <li>
+                            A host-based firewall filters ports and system service calls on a single computer operating
+                            system.
+                        </li>
+                    </ul>
+                    <br />
+                </details>
             </article>
 
             <article>
@@ -474,7 +566,6 @@
                 <p>
 
                 </p>
-
             </article>
 
             <article>
