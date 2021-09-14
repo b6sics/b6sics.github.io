@@ -564,8 +564,82 @@
                 </h3>
 
                 <p>
-
+                    In networking, each application running on a device is assigned an identifier called a port number.
+                    This port number is used on both ends of the transmission so that the right data is passed to the
+                    correct application. Port scanning is a process of probing a computer, server or other network host
+                    for open ports. It can be used maliciously as a reconnaissance tool to identify the operating system
+                    and services running on a computer or host, or it can be used harmlessly by a network administrator
+                    to verify network security policies on the network.
                 </p>
+
+                <p>
+                    <b>how to carry out a port scan on a computer on your local home network.</b>
+                </p>
+
+                <figure>
+                    <p>
+                        <b>The NMap project</b>
+                    </p>
+                    <img src="intro2cybersec.img/nMapProject.png" alt="" title="" width="auto" height="auto" />
+                    <figcaption>
+                        <p>
+                            Download and launch a port scanning tool like Zenmap. Enter the IP address of your computer,
+                            choose a default scanning profile and press ‘scan.’
+                        </p>
+                        <p>
+                            The scan will report any services that are running, such as web or email services, and their
+                            port numbers.
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p>
+                        <b>The scan report</b>
+                    </p>
+                    <img src="intro2cybersec.img/scanReport.png" alt="" title="" width="auto" height="auto" />
+                    <figcaption>
+                        <p>
+                            The scan will also report one of the following responses:
+                        </p>
+                        <ol type="1">
+                            <li>
+                                ‘Open’ or ‘Accepted’ means that the port or service running on the computer can be
+                                accessed by other network devices.
+                            </li>
+                            <li>
+                                ‘Closed,’ ‘Denied’ or ‘Not Listening’ means that the port or service is not running on
+                                the computer and therefore cannot be exploited.
+                            </li>
+                            <li>
+                                ‘Filtered,’ ‘Dropped’ or ‘Blocked’ means that access to the port or service is blocked
+                                by a firewall and therefore it cannot be exploited.
+                            </li>
+                        </ol>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <p>
+                        <b>Execute a port scan</b>
+                    </p>
+                    <img src="intro2cybersec.img/portScan.png" alt="" title="" width="auto" height="auto" />
+                    <figcaption>
+                        <p>
+                            To execute a port scan from outside of your network, you will need to run it against your
+                            firewall or router’s public IP address.
+                        </p>
+                        <p>
+                            Enter the query ‘what is my IP address?’ into a search engine such as Google to find out
+                            this information.
+                        </p>
+                        <p>
+                            Go to the
+                            <a href="https://hackertarget.com/nmap-online-port-scanner/">Nmap Online Port Scanner</a>,
+                            enter your public IP address in the input box and press ‘Quick Nmap Scan.’ If the response
+                            is open for ports 21, 22, 25, 80, 443 or 3389 then most likely, port forwarding has been
+                            enabled on your router or firewall and you are running servers on your private network.
+                        </p>
+                    </figcaption>
+                </figure>
             </article>
 
             <article>
