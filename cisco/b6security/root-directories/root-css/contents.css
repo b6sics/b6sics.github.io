@@ -27,6 +27,7 @@ article {
 
 article a {
 	display: initial;
+	margin: 0.5vmin;
 }
 
 article p {
