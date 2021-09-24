@@ -61,8 +61,7 @@ article>article>article {
 }
 
 article p::first-letter {
-	font-size: 107%;
-	font-weight: 900;
+	font-size: 110%;
 	text-transform: uppercase;
 	color: navy;
 }
