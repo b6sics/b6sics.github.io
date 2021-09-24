@@ -27,15 +27,14 @@ article {
 }
 
 article header {
-	margin: 1vmin;
+	margin: 0.25rem;
 	white-space: nowrap;
 }
 
 article a {
 	display: inline-block;
-	margin: 1vmin;
+	margin: 0.125rem;
 	padding: 0.125rem;
-	line-height: 1.25rem;
 	text-decoration: unset;
 	background-color: unset;
 	white-space: nowrap;
