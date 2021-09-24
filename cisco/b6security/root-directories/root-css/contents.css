@@ -40,7 +40,7 @@ article>article {
 }
 
 article>article>article {
-	background-color: var(--banner-color);
+	background-color: var(--label-bgcolor);
 }
 
 article p::first-letter {
