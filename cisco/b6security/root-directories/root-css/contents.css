@@ -21,6 +21,7 @@ h1, h2, h3 {
 article {
 	margin: 1vmin;
 	padding: 1vmin;
+	width: calc(100% - 2vmin);
 	background-color: var(--label-bgcolor);
 	border: 1px solid black;
 }
