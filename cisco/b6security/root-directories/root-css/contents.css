@@ -21,7 +21,7 @@ h1, h2, h3 {
 article {
 	margin: 1em;
 	padding: 0.5em;
-	background-color: white;
+	background-color: var(--label-bgcolor);
 	border: 1px solid black;
 }
 
@@ -33,6 +33,14 @@ article p {
 	margin: 0.5em 0 0 0;
 	text-align: justify;
 	text-indent: 2em;
+}
+
+article>article {
+	background-color: var(--banner-color);
+}
+
+article>article>article {
+	background-color: var(--banner-color);
 }
 
 article p::first-letter {
