@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, h2, h3 {
-	padding: 0.25em 1.5% 0;
+	padding: 0.25rem 1.5% 0;
 	max-width: 75%;
 }
 
@@ -49,7 +49,7 @@ article a:hover {
 article p {
 	margin: 0.5em 0 0 0;
 	text-align: justify;
-	text-indent: 2em;
+	text-indent: 2rem;
 }
 
 article>article {
@@ -63,17 +63,17 @@ article>article>article {
 article p::first-letter {
 	font-size: 110%;
 	text-transform: uppercase;
-	color: navy;
+	color: var(--body-bgcolor);
 }
 
 article img {
 	display: block;
-	margin: 0.5em auto;
+	margin: 0.5rem auto;
 }
 
 ul, ol {
 	display: table;
-	margin: 0.5em 10% 0;
+	margin: 0.5rem 10% 0;
 }
 
 img {
