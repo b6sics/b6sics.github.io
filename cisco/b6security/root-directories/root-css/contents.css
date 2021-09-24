@@ -75,6 +75,10 @@ article table {
 	width: 75%;
 }
 
+article table td {
+	width: 10rem;
+}
+
 ul, ol {
 	display: table;
 	margin: 0.5rem 10% 0;
