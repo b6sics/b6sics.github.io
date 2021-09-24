@@ -70,10 +70,6 @@ article img {
 	margin: 0.5rem auto;
 }
 
-header a {
-	float: right;
-}
-
 ul, ol {
 	display: table;
 	margin: 0.5rem 10% 0;
