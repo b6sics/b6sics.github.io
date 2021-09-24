@@ -70,6 +70,11 @@ article img {
 	margin: 0.5rem auto;
 }
 
+article table {
+	margin: 0 auto;
+	width: 75%;
+}
+
 ul, ol {
 	display: table;
 	margin: 0.5rem 10% 0;
