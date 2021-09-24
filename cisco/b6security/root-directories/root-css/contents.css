@@ -31,10 +31,17 @@ article header {
 }
 
 article a {
-	padding: 1vmin;
-	text-decoration: none;
-	background-color: var(--banner-color);
+	margin: 1vmin;
+	padding: 0.125rem;
+	line-height: 1.25rem;
+	text-decoration: unset;
+	background-color: unset;
 	white-space: nowrap;
+}
+
+article a:hover {
+	text-decoration: overline underline;
+	background-color: var(--label-bgcolor);
 }
 
 article p {
