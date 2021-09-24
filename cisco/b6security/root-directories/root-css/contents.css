@@ -26,12 +26,14 @@ article {
 }
 
 article header {
+	margin: 1vmin;
 	white-space: nowrap;
 }
 
 article a {
-	margin: 1vmin;
+	padding: 1vmin;
 	text-decoration: none;
+	background-color: var(--banner-color);
 	white-space: nowrap;
 }
 
