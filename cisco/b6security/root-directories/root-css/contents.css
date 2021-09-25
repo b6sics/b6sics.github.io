@@ -69,6 +69,7 @@ article img {
 	display: block;
 	margin: 0.5rem auto;
 	max-width: 40vmin;
+	height: auto;
 }
 
 article table {
