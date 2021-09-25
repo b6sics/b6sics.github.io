@@ -68,6 +68,7 @@ article p::first-letter {
 article img {
 	display: block;
 	margin: 0.5rem auto;
+	max-width: 40vmin;
 }
 
 article table {
@@ -84,17 +85,23 @@ ul, ol {
 	margin: 0.5rem 10% 0;
 }
 
-img {
-	max-width: 80%;
-}
-
 article figure {
 	width: 80%;
-	display: table;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
 	margin: 1.5em auto;
 	padding: 1em;
 	background-color: palegoldenrod;
 	border: 1px solid black
+}
+
+article figure figcaption {
+	padding: 2vmin 4vmin 2vmin 0;
+	max-width: 40vmin;
 }
 
 details {
