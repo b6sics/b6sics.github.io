@@ -88,6 +88,116 @@ img {
 	max-width: 80%;
 }
 
+article figure {
+	width: 80%;
+	display: table;
+	margin: 1.5em auto;
+	padding: 1em;
+	background-color: palegoldenrod;
+	border: 1px solid black
+}
+
+details {
+	margin: 0 auto;
+	width: 80%;
+	max-width: calc(100% - 2rem);
+	position: relative;
+	border: 1px solid #78909C;
+	border-radius: 6px;
+	background-color: palegoldenrod;
+	color: #263238;
+	transition: background-color 0.15s;
+}
+
+label img {
+	width: 40%;
+}
+
+details:first-of-type {
+	margin-top: 1rem;
+}
+
+details:last-of-type {
+	margin-bottom: 1rem;
+}
+
+details.transcript, details.explanation {
+	margin: 2rem auto;
+}
+
+details::before {
+	width: 100%;
+	height: 100%;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	opacity: 0.15;
+	box-shadow: 0 0.25em 0.5em #263238;
+	pointer-events: none;
+	transition: opacity 0.2s;
+	z-index: -1;
+}
+
+details[open] {
+	background-color: lemonchiffon;
+}
+
+details[open]::before {
+	opacity: 0.6;
+}
+
+summary {
+	padding: 1rem 2.5rem 1rem 1rem;
+	display: block;
+	position: relative;
+	font-size: 1.33em;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: palegoldenrod;
+}
+
+summary::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 1rem;
+	content: "\25B7";
+	color: orange;
+	text-align: right;
+	transform: rotate(90deg);
+	transition: transform 0.2s ease-in-out;
+	z-index: 10;
+}
+
+details[open] summary::after {
+	transform: rotate(270deg);
+}
+
+details p {
+	margin: 0.5em 1em;
+	text-align: justify;
+	text-indent: 2em;
+}
+
+details label {
+	display: inline-block;
+	margin: 0.5rem;
+	padding: 0.5rem;
+	width: 98%;
+	font-size: 1rem;
+	line-height: 2rem !important;
+	border: 1px solid black;
+	border-radius: 1rem 0 0 1rem;
+	cursor: pointer;
+}
+
+label input {
+	margin: 0.5rem !important;
+	outline: none;
+}
+
 /* SLOGAIN */
 
 p.slogain {
