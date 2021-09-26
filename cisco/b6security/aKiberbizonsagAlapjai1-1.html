@@ -109,23 +109,28 @@
                             </p>
                         </summary>
                         <label id="checklist01">
-                            <input type="checkbox" id="q1-1-1a" name="a-good-user-name-a" value="joli.kis" />
+                            <input type="checkbox" id="q1-1-1a" name="a-good-user-name-a" value="joli.kis"
+                                onchange="checklist_control(this)" />
                             joli.kis
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-1-1b" name="a-good-user-name-b" value="jkis1990" />
+                            <input type="checkbox" id="q1-1-1b" name="a-good-user-name-b" value="jkis1990"
+                                onchange="checklist_control(this)" />
                             jkis1990
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-1-1c" name="a-good-user-name-c" value="jkis.IT" />
+                            <input type="checkbox" id="q1-1-1c" name="a-good-user-name-c" value="jkis.IT"
+                                onchange="checklist_control(this)" />
                             jkis.IT
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-1-1d" name="a-good-user-name-d" value="*jkis12" />
+                            <input type="checkbox" id="q1-1-1d" name="a-good-user-name-d" value="*jkis12"
+                                onchange="checklist_control(this)" />
                             jkis12
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-1-1e" name="a-good-user-name-e" value="*jkis" />
+                            <input type="checkbox" id="q1-1-1e" name="a-good-user-name-e" value="*jkis"
+                                onchange="checklist_control(this)" />
                             jkis
                         </label>
                     </details>
@@ -140,16 +145,12 @@
 
                         var checklist01_control = false;
 
-                        function checklist_control(){
+                        function checklist_control(e) {
                             alert('check');
                             if (checklist01_control) return;
-                        }
 
-                        checkbox1a.addEventListener("change", checklist_control());
-                        checkbox1b.addEventListener("change", checklist_control());
-                        checkbox1c.addEventListener("change", checklist_control());
-                        checkbox1d.addEventListener("change", checklist_control());
-                        checkbox1e.addEventListener("change", checklist_control());
+                            return;
+                        }
                     </script>
                     <details class="explanation">
                         <summary>
