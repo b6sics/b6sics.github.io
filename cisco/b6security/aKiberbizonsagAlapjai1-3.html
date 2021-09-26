@@ -12,11 +12,18 @@
     <base target="_blank">
 
     <link rel="stylesheet" href="root-directories/root-css/style.css?t=123" />
+
+    <script>
+        function previously() {
+            window.history.back();
+        }
+    </script>
 </head>
 
-<body>
+<body onload="clear_checklists()">
+    <article class="container">
 
-    <article>
+        <button style="float: right;" onclick="previously()">Previously</button>
         <h3>
             1. rész : Bevezetés
         </h3>
@@ -64,9 +71,10 @@
                 oldalon regisztráció után érhető el.
             </p>
         </footer>
+        <button style="float: right;" onclick="previously()">Previously</button>
     </article>
 
-</article>
+    </article>
 
 </body>
 
