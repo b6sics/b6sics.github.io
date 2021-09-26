@@ -14,8 +14,7 @@
     <link rel="stylesheet" href="root-directories/root-css/style.css?t=123" />
 </head>
 
-<body>
-
+<body onload="clear_checklists()">
     <article class="container">
 
         <h1>
@@ -134,38 +133,7 @@
                             jkis
                         </label>
                     </details>
-                    <script>
-                        var true_answer = 2;
 
-                        var checkbox1a = document.getElementById("q1-1-1a");
-                        var checkbox1b = document.getElementById("q1-1-1b");
-                        var checkbox1c = document.getElementById("q1-1-1c");
-                        var checkbox1d = document.getElementById("q1-1-1d");
-                        var checkbox1e = document.getElementById("q1-1-1e");
-
-                        var checklist01 = document.getElementById("checklist01");
-
-                        var checklist01_control = 0;
-
-                        function checklist_control(e) {
-                            if (e.checked && e.value[0] == "*") {
-                                checklist01_control++;
-                            } else if (e.checked && e.value[0] !== "*") {
-                                checklist01_control--;
-                            } else if (!e.checked && e.value[0] == "*") {
-                                checklist01_control--;
-                            } else if (!e.checked && e.value[0] !== "*") {
-                                checklist01_control++;
-                            }
-                            alert(checklist01_control);
-                            if (checklist01_control == true_answer) {
-                                checklist01.style.backgroundColor = "green";
-                            } else {
-                                checklist01.style.backgroundColor = "red";
-                            }
-                            return;
-                        }
-                    </script>
                     <details class="explanation">
                         <summary>
                             Magyarázat
@@ -603,5 +571,48 @@
     </article>
 
 </body>
+
+<script>
+    var checkbox1a = document.getElementById("q1-1-1a");
+    var checkbox1b = document.getElementById("q1-1-1b");
+    var checkbox1c = document.getElementById("q1-1-1c");
+    var checkbox1d = document.getElementById("q1-1-1d");
+    var checkbox1e = document.getElementById("q1-1-1e");
+
+    var checklist01 = document.getElementById("checklist01");
+    var true_answer01 = 2;
+
+    function clear_checklists() {
+        checkbox1a.checked = false;
+        checkbox1b.checked = false;
+        checkbox1c.checked = false;
+        checkbox1d.checked = false;
+        checkbox1e.checked = false;
+
+        var checklist01_control = 0;
+    }
+</script>
+
+<script>
+    function checklist_control(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist01_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist01_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist01_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist01_control++;
+        }
+        alert(checklist01_control);
+        if (checklist01_control == true_answer01) {
+            checklist01.style.backgroundColor = "green";
+        } else {
+            checklist01.style.backgroundColor = "red";
+        }
+        return;
+    }
+</script>
+
 
 </html>
