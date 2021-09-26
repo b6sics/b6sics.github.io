@@ -279,37 +279,37 @@
                     <details id="checklist01" open>
                         <summary>
                             <p>
-                                Ez az első munkanapod, és itt az ideje, hogy felhasználónevet válassz. Az
-                                alábbi lehetőségek közül melyiket választaná?
+                                Nézd meg az e-mailt. Az alábbiak közül melyik jelzi,
+                                hogy valóban adathalász e-mailről van szó?
                             </p>
                             <p>
-                                Válassz kettőt! (Helyes kiválasztás esetén a háttér zöld színre vált)
+                                Válassz négyet! (Helyes kiválasztás esetén a háttér zöld színre vált)
                             </p>
                         </summary>
                         <label>
-                            <input type="checkbox" id="q1-2-1a" name="a-good-user-name-a" value="joli.kis"
+                            <input type="checkbox" id="q1-2-1a" name="a-phish-y-email-a" value="*Email address"
                                 onchange="checklist_control(this)" />
-                            joli.kis
+                            Email cím
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-2-1b" name="a-good-user-name-b" value="jkis1990"
+                            <input type="checkbox" id="q1-2-1b" name="a-phish-y-email-b" value="Customer name"
                                 onchange="checklist_control(this)" />
-                            jkis1990
+                            Felhasználó név
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-2-1c" name="a-good-user-name-c" value="jkis.IT"
+                            <input type="checkbox" id="q1-2-1c" name="a-phish-y-email-c" value="*Link URL"
                                 onchange="checklist_control(this)" />
-                            jkis.IT
+                            Link URL
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-2-1d" name="a-good-user-name-d" value="*jkis12"
-                                onchange="checklist_control(this)" />
-                            jkis12
+                            <input type="checkbox" id="q1-2-1d" name="a-phish-y-email-d"
+                                value="*The language, spelling and grammar" onchange="checklist_control(this)" />
+                            A nyelvezet, elírás és helyesírás
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-2-1e" name="a-good-user-name-e" value="*jkis"
+                            <input type="checkbox" id="q1-2-1e" name="a-phish-y-email-e" value="*Graphics"
                                 onchange="checklist_control(this)" />
-                            jkis
+                            A grafika
                         </label>
                     </details>
 
@@ -318,43 +318,29 @@
                             Magyarázat
                         </summary>
                         <p>
-                            A felhasználónév kiválasztásakor fontos, hogy ne fedjen fel személyes adatokat.
-                            Találó legyen, de ne legyen vulgáris. Nem szabad azt a képszetet keltenie másokban,
-                            hogy Ön könnyű célpontja vagy a számítógépes bűncselekményeknek vagy más nem
-                            kívánt cselekménynek.
+                            Az adathalász e-maileket nehéz észrevenni. 
+                            Például gyakran név szerint szólítanak meg, 
+                            hogy jogosnak tűnjenek, 
+                            de a hackerek könnyen megtalálják ezeket az információkat az interneten. 
+                            Ezért fontos, hogy figyelj és gondolkodj, mielőtt kattintasz. 
                         </p>
                         <p>
                             <b>
-                                Néhány hasznos tipp a felhasználónév létrehozásához:
+                                A közelebbi vizsgálat feltárja
                             </b>
                         </p>
                         <ul>
                             <li>
-                                Ne használd a teljes neved vagy a címed vagy telefonszámod részeit.
+                                hogy a feladó e -mail domainje helytelenül van írva
                             </li>
                             <li>
-                                Ne használd az e-mail felhasználóneved.
+                                hogy a link URL-je nem a @Apollo webhelyére mutat
                             </li>
                             <li>
-                                Ne használd ugyanazt a felhasználónév és jelszó kombinációt, különösen
-                                pénzügyi számlákon.
+                                hogy rossz a nyelvezet, a helyesírás és a nyelvtan
                             </li>
                             <li>
-                                Ne válassz szuper-ritka felhasználónevet, és ne használd ugyanazt mindenhol.
-                                Az megkönnyíti a nyomon követést.
-                            </li>
-                            <li>
-                                Ne válassz olyan felhasználónevet, amely összefügg jelszóval. Például
-                                szám-/betűsorozatot vagy egy kétrészes kifejezés első részét, mint a kipp-kopp
-                                vagy a csillagfény.
-                            </li>
-                            <li>
-                                Ne válassz a munkakörödhöz kapcsolódó nevet. Például a részleg nevét,
-                                amelyben dolgozol, mint az IT.
-                            </li>
-                            <li>
-                                Válassz egy felhasználónevet, amely megfelel a fiók típusának,
-                                azaz üzleti, közösségi vagy személyes jellegű.
+                                hogy gyenge minőségű, pixeles a grafika
                             </li>
                         </ul>
                         <br />
@@ -398,5 +384,48 @@
         <button style="float: right;" onclick="previously()">Previously</button>
     </article>
 </body>
+
+<script>
+    var checkbox1a = document.getElementById("q1-2-1a");
+    var checkbox1b = document.getElementById("q1-2-1b");
+    var checkbox1c = document.getElementById("q1-2-1c");
+    var checkbox1d = document.getElementById("q1-2-1d");
+    var checkbox1e = document.getElementById("q1-2-1e");
+
+    var checklist01 = document.getElementById("checklist01");
+    var true_answer01 = 4;
+
+    var checklist_control = 0;
+
+    function clear_checklists() {
+        checkbox1a.checked = false;
+        checkbox1b.checked = false;
+        checkbox1c.checked = false;
+        checkbox1d.checked = false;
+        checkbox1e.checked = false;
+
+        checklist01_control = 0;
+    }
+</script>
+
+<script>
+    function checklist_control(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist01_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist01_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist01_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist01_control++;
+        }
+        if (checklist01_control == true_answer01) {
+            checklist01.style.backgroundColor = "lightgreen";
+        } else {
+            checklist01.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+</script>
 
 </html>
