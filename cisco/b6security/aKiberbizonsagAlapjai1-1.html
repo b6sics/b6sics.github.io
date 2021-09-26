@@ -135,6 +135,8 @@
                         </label>
                     </details>
                     <script>
+                        var true_answer = 2;
+
                         var checkbox1a = document.getElementById("q1-1-1a");
                         var checkbox1b = document.getElementById("q1-1-1b");
                         var checkbox1c = document.getElementById("q1-1-1c");
@@ -143,12 +145,19 @@
 
                         var checklist01 = document.getElementById("checklist01");
 
-                        var checklist01_control = false;
+                        var checklist01_control = 0;
 
                         function checklist_control(e) {
-                            alert(e.checked);
-                            if (checklist01_control) return;
-
+                            if (e.checked && e.value[0] == "*") {
+                                checklist01_control++;
+                            } else {
+                                checklist01_control--;
+                            }
+                            if (checklist01_control == true_answer) {
+                                checklist01.style.backgroundColor = "green";
+                            } else {
+                                checklist01.style.backgroundColor = "red";
+                            }
                             return;
                         }
                     </script>
