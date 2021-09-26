@@ -108,7 +108,7 @@
                                 Válassz kettőt!
                             </p>
                         </summary>
-                        <label>
+                        <label id="checklist01">
                             <input type="checkbox" id="q1-1-1a" name="a-good-user-name-a" value="joli.kis" />
                             joli.kis
                         </label>
@@ -130,7 +130,23 @@
                         </label>
                     </details>
                     <script>
+                        var checkbox1a = document.getElementById("q1-1-1a");
+                        var checkbox1b = document.getElementById("q1-1-1b");
+                        var checkbox1c = document.getElementById("q1-1-1c");
+                        var checkbox1d = document.getElementById("q1-1-1d");
+                        var checkbox1e = document.getElementById("q1-1-1e");
+
+                        var checklist01 = document.getElementById("checklist01");
+
+                        var checklist01_control = false;
+
+                        function checklist_control(){
+                            if (checklist01_control) return;
+                            alert('check');
+                        }
+
                         
+                        checklist.addEventListener("change", checklist_control());
                     </script>
                     <details class="explanation">
                         <summary>
