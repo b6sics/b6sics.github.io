@@ -12,10 +12,18 @@
     <base target="_blank">
 
     <link rel="stylesheet" href="root-directories/root-css/style.css?t=123" />
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </head>
 
 <body onload="clear_checklists()">
     <article class="container">
+
+        <button style="float: right;" onclick="goBack()">Go Back</button>
 
         <h1>
             B6 Security
@@ -636,6 +644,7 @@
         </footer>
     </article>
 
+    <button style="float: right;" onclick="goBack()">Go Back</button>
 </body>
 
 <script>
