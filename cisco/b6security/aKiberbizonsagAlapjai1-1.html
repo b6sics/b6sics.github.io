@@ -141,12 +141,12 @@
                         var checklist01_control = false;
 
                         function checklist_control(){
-                            if (checklist01_control) return;
                             alert('check');
+                            if (checklist01_control) return;
                         }
 
                         
-                        checklist.addEventListener("change", checklist_control());
+                        checklist01.addEventListener("change", checklist_control());
                     </script>
                     <details class="explanation">
                         <summary>
