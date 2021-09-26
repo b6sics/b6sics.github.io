@@ -12,11 +12,19 @@
     <base target="_blank">
 
     <link rel="stylesheet" href="root-directories/root-css/style.css?t=123" />
+
+    <script>
+        function previously() {
+            window.history.back();
+        }
+    </script>
 </head>
 
-<body>
-
+<body onload="clear_checklists()">
     <article class="container">
+
+        <button style="float: right;" onclick="previously()">Previously</button>
+
 
         <h1>
             B6 Security
@@ -80,17 +88,17 @@
                     </header>
                 </article>
             </article>
-            <footer>
-                <p>
-                    *** A tanfolyam eredeti anyaga a
-                    <a href="https://skillsforall.com/" style="display: initial;">
-                        <b>Skills for all with Cisco</b>
-                    </a>
-                    oldalon regisztráció után érhető el.
-                </p>
-            </footer>
         </article>
-
+        <footer>
+            <p>
+                *** A tanfolyam eredeti anyaga a
+                <a href="https://skillsforall.com/" style="display: initial;">
+                    <b>Skills for all with Cisco</b>
+                </a>
+                oldalon regisztráció után érhető el.
+            </p>
+        </footer>
+        <button style="float: right;" onclick="previously()">Previously</button>
     </article>
 
 </body>
