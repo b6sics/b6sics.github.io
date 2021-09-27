@@ -111,19 +111,19 @@
                             </p>
                         </summary>
                         <label>
-                            <input type="checkbox" id="q1-3-1a" name="a-costumer-datas-breach-a" value="*Email address"
-                                onchange="checklist_control(this)" />
-                            Több mint hárommillió szállodai vendég neve, email címe és telefonszáma
-                        </label>
-                        <label>
-                            <input type="checkbox" id="q1-3-1b" name="a-costumer-datas-breach-b" value="Customer name"
+                            <input type="checkbox" id="q1-3-1a" name="a-costumer-datas-breach-b" value="Customer name"
                                 onchange="checklist_control(this)" />
                             A szálloda összes alkalmazottjának felhasználóneve és jelszava
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-3-1c" name="a-costumer-datas-breach-c"
+                            <input type="checkbox" id="q1-3-1b" name="a-costumer-datas-breach-c"
                                 value="Card payment datas" onchange="checklist_control(this)" />
                             Több mint hárommillió vendég kártyás fizetési adatai
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-3-1c" name="a-costumer-datas-breach-a" value="*Email address"
+                                onchange="checklist_control(this)" />
+                            Több mint hárommillió szállodai vendég neve, email címe és telefonszáma
                         </label>
                         <label>
                             <input type="checkbox" id="q1-3-1d" name="a-costumer-datas-breach-d"
@@ -179,7 +179,7 @@
     var checkbox1d = document.getElementById("q1-3-1d");
 
     var checklist01 = document.getElementById("checklist01");
-    var true_answer01 = 4;
+    var true_answer01 = 1;
 
     var checklist_control = 0;
 
