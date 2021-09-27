@@ -111,17 +111,17 @@
                             </p>
                         </summary>
                         <label>
-                            <input type="checkbox" id="q1-3-1a" name="a-costumer-datas-breach-b" value="Customer name"
+                            <input type="checkbox" id="q1-3-1a" name="a-costumer-datas-breach-a" value="Customer name"
                                 onchange="checklist_control(this)" />
                             A szálloda összes alkalmazottjának felhasználóneve és jelszava
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-3-1b" name="a-costumer-datas-breach-c"
+                            <input type="checkbox" id="q1-3-1b" name="a-costumer-datas-breach-b"
                                 value="Card payment datas" onchange="checklist_control(this)" />
                             Több mint hárommillió vendég kártyás fizetési adatai
                         </label>
                         <label>
-                            <input type="checkbox" id="q1-3-1c" name="a-costumer-datas-breach-a" value="*Email address"
+                            <input type="checkbox" id="q1-3-1c" name="a-costumer-datas-breach-c" value="*Email address"
                                 onchange="checklist_control(this)" />
                             Több mint hárommillió szállodai vendég neve, email címe és telefonszáma
                         </label>
@@ -190,12 +190,42 @@
                             1.3.4 Mit lehet kihasználni?
                         </h3>
                     </header>
-                    <p>
-                        Mit használhattak ki a hackerek ebben az esetben, hogy hozzáférjenek az értékes személyes adatokhoz?
-                    </p>
-                    <p>
-                        Válaszd ki a megfelelő választ!
-                    </p>
+                    <details id="checklist02" open>
+                        <summary>
+                            <p>
+                                Mit használhattak ki a hackerek ebben az esetben,
+                                hogy hozzáférjenek az értékes személyes adatokhoz?
+                            </p>
+                            <p>
+                                Válaszd ki a megfelelő választ!
+                            </p>
+                        </summary>
+                        <label>
+                            <input type="checkbox" id="q1-3-2a" name="a-students-database-a"
+                                value="Bypassing the platform’s access control methods"
+                                onchange="checklist_control2(this)" />
+                            A platform hozzáférés-szabályozási módszereinek megkerülése
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-3-2b" name="a-students-database-b"
+                                value="Taking advantage of student information" onchange="checklist_control2(this)" />
+                            Annak kihasználása, hogy a hallgatói információkat
+                            nem megfelelően validálták a platformon
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-3-2c" name="a-students-database-c"
+                                value="*Weaknesses in the platform’s security practices"
+                                onchange="checklist_control2(this)" />
+                            A platform biztonsági gyakorlatának gyengeségei
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-3-2d" name="a-students-database-d"
+                                value="volume of student data exceeds the storage capacity"
+                                onchange="checklist_control2(this)" />
+                            Információk kinyerése, ha a tanulói adatok mennyisége meghaladja
+                            a platform memóriapufferének tárolókapacitását
+                        </label>
+                    </details>
                 </article>
 
                 <article>
@@ -270,6 +300,16 @@
 
     var checklist01_control = 0;
 
+    var checkbox2a = document.getElementById("q1-3-2a");
+    var checkbox2b = document.getElementById("q1-3-2b");
+    var checkbox2c = document.getElementById("q1-3-2c");
+    var checkbox2d = document.getElementById("q1-3-2d");
+
+    var checklist02 = document.getElementById("checklist02");
+    var true_answer02 = 1;
+
+    var checklist02_control = 0;
+
     function clear_checklists() {
         checkbox1a.checked = false;
         checkbox1b.checked = false;
@@ -277,7 +317,15 @@
         checkbox1d.checked = false;
 
         checklist01_control = 0;
+
+        checkbox2a.checked = false;
+        checkbox2b.checked = false;
+        checkbox2c.checked = false;
+        checkbox2d.checked = false;
+
+        checklist02_control = 0;
     }
+
 </script>
 
 <script>
@@ -295,6 +343,23 @@
             checklist01.style.backgroundColor = "lightgreen";
         } else {
             checklist01.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control2(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist02_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist02_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist02_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist02_control++;
+        }
+        if (checklist02_control == true_answer02) {
+            checklist02.style.backgroundColor = "lightgreen";
+        } else {
+            checklist02.style.backgroundColor = "lemonchiffon";
         }
         return;
     }
