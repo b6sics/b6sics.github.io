@@ -174,40 +174,464 @@
                 <article>
                     <header>
                         <h3 id="chapter2" name="chapter2">
-                            1.4.2
+                            1.4.2 Milyen színű a kalapom?
                         </h3>
                     </header>
+                    <p>
+                        Most, hogy ismeri a különböző típusú támadókat
+                        és tevékenységük motivációit,
+                        fel tudja ismerni, hogy a támadó
+                        milyen színű kalapot visel a következő esetekben?
+                        Ez egy trükkös feladat.
+                    </p>
+
+                    <details id="checklist01" open>
+                        <summary>
+                            <p>
+                                Miután egy laptop segítségével
+                                távolról feltörték az ATM-rendszereket,
+                                a támadó az ATM-gyártókkal együttműködve
+                                kijavította az azonosított biztonsági hibákat.
+                            </p>
+                        </summary>
+                        <label>
+                            <input type="checkbox" id="q1-4-1a" name="which-hat-1a" value="white hat"
+                                onchange="checklist_control1(this)" />
+                            Fehér kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-1b" name="which-hat-1b" value="*gray hat"
+                                onchange="checklist_control1(this)" />
+                            Szürke kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-1c" name="which-hat-1c" value="black hat"
+                                onchange="checklist_control1(this)" />
+                            Fekete kalap
+                        </label>
+                    </details>
+                    <details id="checklist02" open>
+                        <summary>
+                            <p>
+                                Ez a támadó 10 millió dollárt utalt
+                                át bankszámlájára az ügyfélszámlákról
+                                az adatbázisból begyűjtött PIN-kódok segítségével.
+                            </p>
+                        </summary>
+                        <label>
+                            <input type="checkbox" id="q1-4-2a" name="which-hat-2a" value="white hat"
+                                onchange="checklist_control2(this)" />
+                            Fehér kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-2b" name="which-hat-2b" value="gray hat"
+                                onchange="checklist_control2(this)" />
+                            Szürke kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-2c" name="which-hat-2c" value="*black hat"
+                                onchange="checklist_control2(this)" />
+                            Fekete kalap
+                        </label>
+                    </details>
+                    <details id="checklist03" open>
+                        <summary>
+                            <p>
+                                Ennek a támadónak az a feladata,
+                                hogy azonosítsa a vállalat
+                                számítógépes rendszerének gyengeségeit.
+                            </p>
+                        </summary>
+                        <label>
+                            <input type="checkbox" id="q1-4-3a" name="which-hat-3a" value="*white hat"
+                                onchange="checklist_control3(this)" />
+                            Fehér kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-3b" name="which-hat-3b" value="gray hat"
+                                onchange="checklist_control3(this)" />
+                            Szürke kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-3c" name="which-hat-3c" value="black hat"
+                                onchange="checklist_control3(this)" />
+                            Fekete kalap
+                        </label>
+                    </details>
+                    <details id="checklist04" open>
+                        <summary>
+                            <p>
+                                Ez a támadó rosszindulatú szoftvereket használva
+                                megtámadta a vállalat rendszerét,
+                                és ellopta a hitelkártya adatait,
+                                amelyeket aztán a legmagasabb ajánlatot tevőnek adtak el.
+                            </p>
+                        </summary>
+                        <label>
+                            <input type="checkbox" id="q1-4-4a" name="which-hat-4a" value="white hat"
+                                onchange="checklist_control4(this)" />
+                            Fehér kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-4b" name="which-hat-4b" value="gray hat"
+                                onchange="checklist_control4(this)" />
+                            Szürke kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-4c" name="which-hat-4c" value="*black hat"
+                                onchange="checklist_control4(this)" />
+                            Fekete kalap
+                        </label>
+                    </details>
+                    <details id="checklist05" open>
+                        <summary>
+                            <p>
+                                Kutatás közben ez a támadó
+                                egy biztonsági rést talált
+                                a szervezet hálózatán,
+                                amelyhez jogosult hozzáférni.
+                            </p>
+                        </summary>
+                        <label>
+                            <input type="checkbox" id="q1-4-5a" name="which-hat-5a" value="*white hat"
+                                onchange="checklist_control5(this)" />
+                            Fehér kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-5b" name="which-hat-5b" value="gray hat"
+                                onchange="checklist_control5(this)" />
+                            Szürke kalap
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-5c" name="which-hat-5c" value="black hat"
+                                onchange="checklist_control5(this)" />
+                            Fekete kalap
+                        </label>
+                    </details>
+
+                    <p>
+                        A fehér kalapos támadók célja 
+                        a biztonsági gyengeségek feltárása 
+                        annak javítása érdekében, 
+                        míg a fekete kalapos támadók illegálisan
+                        személyes, pénzügyi vagy politikai haszon érdekében 
+                        kihasználják a sebezhetőségeket. 
+                        A szürke kalapos támadók valahol a kettő között vannak. 
+                        Bár lehet, hogy nincsenek rosszindulatú szándékaik, 
+                        de szeretnének valamit kapni a felfedezésükért.
+                    </p>
                 </article>
 
                 <article>
                     <header>
                         <h3 id="chapter3" name="chapter3">
-                            1.4.3
+                            1.4.3 Belső és külső fenyegetések
                         </h3>
                     </header>
+
+                    <p>
+                        A kibertámadások a szervezeten
+                        belülről és kívülről is származhatnak.
+                    </p>
+
+                    <figure>
+                        <img src="../cybersecurityEssentials/intro2cybersec.img/internalThreats.png" alt="" title="" />
+                        <figcaption>
+                            <p>
+                                <b>Internal threats - belső fenyegetések</b>
+                            </p>
+
+                            <p>
+                                Az alkalmazottak, szerződéses alkalmazottak
+                                vagy megbízható partnerek
+                                véletlenül vagy szándékosan teszik:
+                            </p>
+                            <ul>
+                                <li>
+                                    rosszul kezelnek a bizalmas adatokat
+                                </li>
+                                <li>
+                                    megkönnyítik a külső támadásokat
+                                    fertőzött USB-adathordozó csatlakoztatásával
+                                    a szervezet számítógépes rendszeréhez
+                                </li>
+                                <li>
+                                    kártékony programokat töltenek le
+                                    a szervezet hálózatába a rosszindulatú
+                                    e-mailekre vagy webhelyekre kattintva
+                                </li>
+                                <li>
+                                    behatolnak a belső szerverek vagy
+                                    hálózati infrastruktúra-eszközök működésébe.
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../cybersecurityEssentials/intro2cybersec.img/externalThreats.png" alt="" title="" />
+                        <figcaption>
+                            <p>
+                                <b>External threats - külső fenyegetések</b>
+                            </p>
+                            <p>
+                                A szervezeten kívüli amatőrök
+                                vagy képzett támadók teszik:
+                            </p>
+                            <ul>
+                                <li>
+                                    kihasználják a hálózat sebezhetőségét
+                                </li>
+                                <li>
+                                    jogosulatlan hozzáférést szereznek
+                                    a számítástechnikai eszközökhöz
+                                </li>
+                                <li>
+                                    a social engineering (közösségi manipuláció)
+                                    segítségével jogosulatlan hozzáférést
+                                    nyernek a szervezeti adatokhoz
+                                </li>
+                            </ul>
+                        </figcaption>
+                    </figure>
                 </article>
 
                 <article>
                     <header>
                         <h3 id="chapter2" name="chapter4">
-                            1.4.4
+                            1.4.4 Mit gondolsz?
                         </h3>
                     </header>
+
+                    <p>
+                        Emlékszel arra az adathalász e -mailre,
+                        amely korábban érkezett egyik ügyféltől?
+                    </p>
+                    <p>
+                        Az e-mailen végzett vizsgálat során kiderült,
+                        hogy egy korábbi alkalmazott felhasználói fiókjait
+                        és hozzáférési jogosultságait nem távolították el
+                        teljesen az informatikai rendszerekből, miután
+                        a kilépett a vállalattól.
+                        Valójában ez a volt alkalmazott,
+                        aki most egy versenytársnál dolgozik,
+                        három napja jelentkezett be
+                        a @Apollo ügyfél-adatbázisába.
+                    </p>
+
+                    <details id="checklist06" open>
+                        <summary>
+                            <p>
+                                Belső vagy külső biztonsági incidens történt itt?
+                            </p>
+                        </summary>
+                        <label>
+                            <input type="checkbox" id="q1-4-6a" name="a-data-breach-a" value="*internal"
+                                onchange="checklist_control6(this)" />
+                            Belső fenyegetés
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q1-4-6b" name="a-data-breach-b" value="external"
+                                onchange="checklist_control6(this)" />
+                            Külső fenyegetés
+                        </label>
+                    </details>
                 </article>
+
             </article>
         </article>
-        <footer>
-            <p>
-                *** A tanfolyam eredeti anyaga a
-                <a href="https://skillsforall.com/" style="display: initial;">
-                    <b>Skills for all with Cisco</b>
-                </a>
-                oldalon regisztráció után érhető el.
-            </p>
-        </footer>
-        <button style="float: right;" onclick="previously()">Previously</button>
+    </article>
+    <footer>
+        <p>
+            *** A tanfolyam eredeti anyaga a
+            <a href="https://skillsforall.com/" style="display: initial;">
+                <b>Skills for all with Cisco</b>
+            </a>
+            oldalon regisztráció után érhető el.
+        </p>
+    </footer>
+    <button style="float: right;" onclick="previously()">Previously</button>
     </article>
 
 </body>
+
+
+<script>
+    var checkbox1a = document.getElementById("q1-4-1a");
+    var checkbox1b = document.getElementById("q1-4-1b");
+    var checkbox1c = document.getElementById("q1-4-1c");
+    var checklist01 = document.getElementById("checklist01");
+    var true_answer01 = 1;
+    var checklist01_control = 0;
+
+    var checkbox2a = document.getElementById("q1-4-2a");
+    var checkbox2b = document.getElementById("q1-4-2b");
+    var checkbox2c = document.getElementById("q1-4-2c");
+    var checklist02 = document.getElementById("checklist02");
+    var true_answer02 = 1;
+    var checklist02_control = 0;
+
+    var checkbox3a = document.getElementById("q1-4-3a");
+    var checkbox3b = document.getElementById("q1-4-3b");
+    var checkbox3c = document.getElementById("q1-4-3c");
+    var checklist03 = document.getElementById("checklist03");
+    var true_answer03 = 1;
+    var checklist03_control = 0;
+
+    var checkbox4a = document.getElementById("q1-4-4a");
+    var checkbox4b = document.getElementById("q1-4-4b");
+    var checkbox4c = document.getElementById("q1-4-4c");
+    var checklist04 = document.getElementById("checklist04");
+    var true_answer04 = 1;
+    var checklist04_control = 0;
+
+    var checkbox5a = document.getElementById("q1-4-5a");
+    var checkbox5b = document.getElementById("q1-4-5b");
+    var checkbox5c = document.getElementById("q1-4-5c");
+    var checklist05 = document.getElementById("checklist05");
+    var true_answer05 = 1;
+    var checklist05_control = 0;
+
+    var checkbox6a = document.getElementById("q1-4-6a");
+    var checkbox6b = document.getElementById("q1-4-6b");
+    var checklist06 = document.getElementById("checklist06");
+    var true_answer06 = 1;
+    var checklist06_control = 0;
+
+    function clear_checklists() {
+        checkbox1a.checked = false;
+        checkbox1b.checked = false;
+        checkbox1c.checked = false;
+        checklist01_control = 0;
+
+        checkbox2a.checked = false;
+        checkbox2b.checked = false;
+        checkbox2c.checked = false;
+        checklist02_control = 0;
+
+        checkbox3a.checked = false;
+        checkbox3b.checked = false;
+        checkbox3c.checked = false;
+        checklist03_control = 0;
+
+        checkbox4a.checked = false;
+        checkbox4b.checked = false;
+        checkbox4c.checked = false;
+        checklist04_control = 0;
+
+        checkbox5a.checked = false;
+        checkbox5b.checked = false;
+        checkbox5c.checked = false;
+        checklist05_control = 0;
+
+        checkbox6a.checked = false;
+        checkbox6b.checked = false;
+        checklist06_control = 0;
+    }
+</script>
+
+<script>
+    function checklist_control1(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist01_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist01_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist01_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist01_control++;
+        }
+        if (checklist01_control == true_answer01) {
+            checklist01.style.backgroundColor = "lightgreen";
+        } else {
+            checklist01.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control2(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist02_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist02_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist02_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist02_control++;
+        }
+        if (checklist02_control == true_answer02) {
+            checklist02.style.backgroundColor = "lightgreen";
+        } else {
+            checklist02.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control3(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist03_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist03_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist03_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist03_control++;
+        }
+        if (checklist03_control == true_answer03) {
+            checklist03.style.backgroundColor = "lightgreen";
+        } else {
+            checklist03.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control4(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist04_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist04_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist04_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist04_control++;
+        }
+        if (checklist04_control == true_answer04) {
+            checklist04.style.backgroundColor = "lightgreen";
+        } else {
+            checklist04.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control5(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist05_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist05_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist05_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist05_control++;
+        }
+        if (checklist05_control == true_answer05) {
+            checklist05.style.backgroundColor = "lightgreen";
+        } else {
+            checklist05.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control6(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist06_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist06_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist06_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist06_control++;
+        }
+        if (checklist06_control == true_answer06) {
+            checklist06.style.backgroundColor = "lightgreen";
+        } else {
+            checklist06.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+</script>
 
 </html>
