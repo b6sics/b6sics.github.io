@@ -451,7 +451,7 @@
                     </ul>
 
                     <p>
-                        <b>Példák:</b>
+                        <b>Példák angol nyelven:</b>
                     </p>
 
                     <details>
@@ -522,10 +522,60 @@
                     </details>
                     <details>
                         <summary>
-                            1.3.7.2
+                            1.3.7.2 Slickwraps and the Case of the "White Hat" Hacker
                         </summary>
+                        <h4>
+                            The Story
+                        </h4>
                         <p>
-
+                            Slickwraps, a company that lets users design
+                            custom skins for their electronics, was embroiled
+                            in a data breach story The Verge called "comically bad."
+                            The breach started when someone claimed
+                            to be a "white hat" hacker who tried
+                            to alert the company about its "abysmal cybersecurity".
+                        </p>
+                        <p>
+                            Unfortunately, Slickwraps ignored them,
+                            so the hacker published a now-deleted Medium post about
+                            the experience. A second hacker read this post
+                            and exploited Slickwraps' vulnerability, hacking
+                            the company. In a particularly egregious touch,
+                            the hacker then emailed all the customers to
+                            notify them that their data had been compromised.
+                        </p>
+                        <h4>
+                            How the Breach Happened
+                        </h4>
+                        <p>
+                            The company's phone customization tool was
+                            vulnerable to remote code execution. Users needed to
+                            be able to upload their custom photos,
+                            but Slickwraps let them upload any file to the highest
+                            directory on the server. So this hacker uploaded
+                            a file that allowed them to achieve remote code
+                            execution and execute shell commands.
+                            (In the Medium post, the hacker called this "skin to
+                            obtaining a skeleton key").
+                        </p>
+                        <h4>
+                            What Data Was Exposed
+                        </h4>
+                        <p>
+                            Per the original hacker, the vulnerability gave them
+                            nearly free rein over Slickwraps' systems,
+                            including access to customer photos,
+                            billing and shipping addresses, admin account details, and
+                            the resumes of all employees.
+                        </p>
+                        <h4>
+                            The Lesson for Businesses
+                        </h4>
+                        <p>
+                            <b>Get an independent security audit.</b>
+                        </p>
+                        <p>
+                            If someone points out a vulnerability, listen to them.
                         </p>
                     </details>
                     <details>
