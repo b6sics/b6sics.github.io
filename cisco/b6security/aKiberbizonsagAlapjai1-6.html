@@ -83,7 +83,7 @@
                         </div>
                     </details>
 
-                    <p style="text-align: center;">
+                    <p style="text-align: center; text-indent: initial;">
                         <span id="test_message">&nbsp;</span><br />
                         <button style="width: 10rem; height: 2rem;" onclick="test_control()"> Teszt beküldése </button>
                     </p>
@@ -113,6 +113,7 @@
 </body>
 
 <script>
+    var test_message = document.getElementById("test_message");
     var checkbox1a = document.getElementById("q1-6-1a");
     var checkbox1b = document.getElementById("q1-6-1b");
     var checklist01 = document.getElementById("checklist01");
@@ -182,10 +183,19 @@
                 checkbox6b.checked = false;
                 checklist06_control = 0;
         */
+       set_message("&nbsp;");
     }
 </script>
 
 <script>
+    function set_message(message) {
+        test_message.innerHTML = message;
+    }
+
+    function test_control() {
+        return true;
+    }
+
     function checklist_control() {
         var checklist_control_sum = chchecklist01_control;
         if (checklist_control_sum == 0) {
@@ -196,9 +206,6 @@
     }
 
     function checklist_control1(e) {
-        if(!checklist_control()) {
-            return;
-        }
         if (e.checked && e.value[0] == "*") {
             checklist01_control++;
         } else if (e.checked && e.value[0] !== "*") {
@@ -207,6 +214,9 @@
             checklist01_control--;
         } else if (!e.checked && e.value[0] !== "*") {
             checklist01_control++;
+        }
+        if (!checklist_control()) {
+            return;
         }
         if (checklist01_control == true_answer01) {
             checklist01.style.backgroundColor = "lightgreen";
