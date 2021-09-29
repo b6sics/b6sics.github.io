@@ -52,22 +52,44 @@
             <article>
                 <header>
                     <h3>
-                        1.6
+                        1.6 Felmérés
                     </h3>
                 </header>
 
                 <article>
                     <header>
                         <h3 id="chapter1" name="chapter1">
-                            1.6.1
+                            1.6.1 Első rész kvíz
                         </h3>
                     </header>
+                    <h3>
+                        Kérdés
+                    </h3>
+                    <details id="checklist01" open="">
+                        <summary>
+                            Mire példa egy közösségi oldalra regisztrált felhasználó profilja?
+                        </summary>
+                        <div>
+                            <label>
+                                <input type="checkbox" id="q1-6-1a" name="social-network-profile-a" value="*online"
+                                    onchange="checklist_control1(this)" />
+                                online személyiség
+                            </label>
+                            <label>
+                                <input type="checkbox" id="q1-6-1b" name="social-network-profile-b" value="offline"
+                                    onchange="checklist_control1(this)" />
+                                offline személyiség
+                            </label>
+                        </div>
+                    </details>
+
+
                 </article>
 
                 <article>
                     <header>
                         <h3 id="chapter2" name="chapter2">
-                            1.6.2
+                            1.6.2 Kvíz megoldások és magyarázatok
                         </h3>
                     </header>
                 </article>
@@ -86,5 +108,185 @@
     </article>
 
 </body>
+
+<script>
+    var checkbox1a = document.getElementById("q1-6-1a");
+    var checkbox1b = document.getElementById("q1-6-1b");
+    var checklist01 = document.getElementById("checklist01");
+    var true_answer01 = 1;
+    var checklist01_control = 0;
+    /*
+        var checkbox2a = document.getElementById("q1-6-2a");
+        var checkbox2b = document.getElementById("q1-6-2b");
+        var checkbox2c = document.getElementById("q1-6-2c");
+        var checklist02 = document.getElementById("checklist02");
+        var true_answer02 = 1;
+        var checklist02_control = 0;
+    
+        var checkbox3a = document.getElementById("q1-6-3a");
+        var checkbox3b = document.getElementById("q1-6-3b");
+        var checkbox3c = document.getElementById("q1-6-3c");
+        var checklist03 = document.getElementById("checklist03");
+        var true_answer03 = 1;
+        var checklist03_control = 0;
+    
+        var checkbox4a = document.getElementById("q1-6-4a");
+        var checkbox4b = document.getElementById("q1-6-4b");
+        var checkbox4c = document.getElementById("q1-6-4c");
+        var checklist04 = document.getElementById("checklist04");
+        var true_answer04 = 1;
+        var checklist04_control = 0;
+    
+        var checkbox5a = document.getElementById("q1-6-5a");
+        var checkbox5b = document.getElementById("q1-6-5b");
+        var checkbox5c = document.getElementById("q1-6-5c");
+        var checklist05 = document.getElementById("checklist05");
+        var true_answer05 = 1;
+        var checklist05_control = 0;
+    
+        var checkbox6a = document.getElementById("q1-6-6a");
+        var checkbox6b = document.getElementById("q1-6-6b");
+        var checklist06 = document.getElementById("checklist06");
+        var true_answer06 = 1;
+        var checklist06_control = 0;
+    */
+    function clear_checklists() {
+        checkbox1a.checked = false;
+        checkbox1b.checked = false;
+        checklist01_control = 0;
+        /*
+                checkbox2a.checked = false;
+                checkbox2b.checked = false;
+                checkbox2c.checked = false;
+                checklist02_control = 0;
+        
+                checkbox3a.checked = false;
+                checkbox3b.checked = false;
+                checkbox3c.checked = false;
+                checklist03_control = 0;
+        
+                checkbox4a.checked = false;
+                checkbox4b.checked = false;
+                checkbox4c.checked = false;
+                checklist04_control = 0;
+        
+                checkbox5a.checked = false;
+                checkbox5b.checked = false;
+                checkbox5c.checked = false;
+                checklist05_control = 0;
+        
+                checkbox6a.checked = false;
+                checkbox6b.checked = false;
+                checklist06_control = 0;
+        */
+    }
+</script>
+
+<script>
+    function checklist_control1(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist01_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist01_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist01_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist01_control++;
+        }
+        if (checklist01_control == true_answer01) {
+            checklist01.style.backgroundColor = "lightgreen";
+        } else {
+            checklist01.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    /*
+    function checklist_control2(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist02_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist02_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist02_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist02_control++;
+        }
+        if (checklist02_control == true_answer02) {
+            checklist02.style.backgroundColor = "lightgreen";
+        } else {
+            checklist02.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control3(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist03_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist03_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist03_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist03_control++;
+        }
+        if (checklist03_control == true_answer03) {
+            checklist03.style.backgroundColor = "lightgreen";
+        } else {
+            checklist03.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control4(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist04_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist04_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist04_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist04_control++;
+        }
+        if (checklist04_control == true_answer04) {
+            checklist04.style.backgroundColor = "lightgreen";
+        } else {
+            checklist04.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control5(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist05_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist05_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist05_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist05_control++;
+        }
+        if (checklist05_control == true_answer05) {
+            checklist05.style.backgroundColor = "lightgreen";
+        } else {
+            checklist05.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+    function checklist_control6(e) {
+        if (e.checked && e.value[0] == "*") {
+            checklist06_control++;
+        } else if (e.checked && e.value[0] !== "*") {
+            checklist06_control--;
+        } else if (!e.checked && e.value[0] == "*") {
+            checklist06_control--;
+        } else if (!e.checked && e.value[0] !== "*") {
+            checklist06_control++;
+        }
+        if (checklist06_control == true_answer06) {
+            checklist06.style.backgroundColor = "lightgreen";
+        } else {
+            checklist06.style.backgroundColor = "lemonchiffon";
+        }
+        return;
+    }
+*/
+</script>
 
 </html>
