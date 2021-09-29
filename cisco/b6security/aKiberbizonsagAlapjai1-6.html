@@ -62,22 +62,18 @@
                             1.6.1 Első rész kvíz
                         </h3>
                     </header>
-                    <h3>
-                        Kérdés
-                    </h3>
-                    <details id="checklist01" open="">
+
+                    <details id="checklist01">
                         <summary>
-                            Mire példa egy közösségi oldal regisztrált felhasználói profilja?
+                            1.6.1.1 Mire példa egy közösségi oldal regisztrált felhasználójának a profilja?
                         </summary>
                         <div>
                             <label>
-                                <input type="checkbox" id="q1-6-1a" name="social-network-profile-a" value="*online"
-                                    onchange="checklist_control1(this)" />
+                                <input type="checkbox" id="q1-6-1a" name="social-network-profile-a" value="*online" />
                                 online személyiség
                             </label>
                             <label>
-                                <input type="checkbox" id="q1-6-1b" name="social-network-profile-b" value="offline"
-                                    onchange="checklist_control1(this)" />
+                                <input type="checkbox" id="q1-6-1b" name="social-network-profile-b" value="offline" />
                                 offline személyiség
                             </label>
                         </div>
@@ -85,7 +81,8 @@
 
                     <p style="text-align: center; text-indent: initial;">
                         <span id="test_message">&nbsp;</span><br />
-                        <button style="width: 10rem; height: 2rem;" onclick="test_control()"> Teszt beküldése </button>
+                        <button style="width: 10rem; height: 2rem;" onclick="checklist_control()"> Teszt beküldése
+                        </button>
                     </p>
                 </article>
 
@@ -183,26 +180,51 @@
                 checkbox6b.checked = false;
                 checklist06_control = 0;
         */
-       set_message("&nbsp;");
+        set_message("&nbsp;");
     }
 </script>
 
 <script>
     function set_message(message) {
         test_message.innerHTML = message;
+        return true;
     }
 
-    function test_control() {
+    function not_complete() {
+        set_message("Nem töltötted ki a tesztet teljesen!");
         return true;
     }
 
     function checklist_control() {
-        var checklist_control_sum = chchecklist01_control;
-        if (checklist_control_sum == 0) {
-            return false;
+        set_message("&nbsp;");
+        if (checkbox1a.checked || checkbox1b.checked) {
+            checklist01_control = 0;
+            if (checkbox1a.checked) {
+                if (checkbox1a.value[0] == "*") {
+                    checklist01_control++;
+                } else {
+                    checklist01_control--;
+                }
+            }
+            if (checkbox1b.checked) {
+                if (checkbox1b.value[0] == "*") {
+                    checklist01_control++;
+                } else {
+                    checklist01_control--;
+                }
+            }
+            if (checklist01_control == true_answer01) {
+                checklist01.style.backgroundColor = "lightgreen";
+                checklist01.firstElementChild.style.color = "green";
+            } else {
+                checklist01.style.backgroundColor = "lemonchiffon";
+                checklist01.firstElementChild.style.color = "initial";
+            }
         } else {
-            return true;
+            not_complete();
+            return false;
         }
+        return true;
     }
 
     function checklist_control1(e) {
@@ -214,9 +236,6 @@
             checklist01_control--;
         } else if (!e.checked && e.value[0] !== "*") {
             checklist01_control++;
-        }
-        if (!checklist_control()) {
-            return;
         }
         if (checklist01_control == true_answer01) {
             checklist01.style.backgroundColor = "lightgreen";
