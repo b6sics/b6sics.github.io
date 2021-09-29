@@ -166,6 +166,20 @@ summary {
 	background-color: palegoldenrod;
 }
 
+article.summary {
+	margin: 0 auto;
+	padding: 1rem 2.5rem 1rem 1rem;
+	width: 80%;
+	max-width: calc(100% - 2rem);
+	position: relative;
+	border: 1px solid #78909C;
+	border-radius: 6px;
+	background-color: palegoldenrod;
+	color: #263238;
+	font-size: 1.33em;
+	font-weight: bold;
+}
+
 summary::after {
 	position: absolute;
 	top: 0;
