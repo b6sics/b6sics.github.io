@@ -67,7 +67,7 @@
                     </h3>
                     <details id="checklist01" open="">
                         <summary>
-                            Mire példa egy közösségi oldalra regisztrált felhasználó profilja?
+                            Mire példa egy közösségi oldal regisztrált felhasználói profilja?
                         </summary>
                         <div>
                             <label>
@@ -83,7 +83,10 @@
                         </div>
                     </details>
 
-
+                    <p style="text-align: center;">
+                        <span id="test_message">&nbsp;</span><br />
+                        <button style="width: 10rem; height: 2rem;" onclick="test_control()"> Teszt beküldése </button>
+                    </p>
                 </article>
 
                 <article>
@@ -183,7 +186,19 @@
 </script>
 
 <script>
+    function checklist_control() {
+        var checklist_control_sum = chchecklist01_control;
+        if (checklist_control_sum == 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     function checklist_control1(e) {
+        if(!checklist_control()) {
+            return;
+        }
         if (e.checked && e.value[0] == "*") {
             checklist01_control++;
         } else if (e.checked && e.value[0] !== "*") {
