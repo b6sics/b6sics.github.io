@@ -69,11 +69,13 @@
                         </summary>
                         <div>
                             <label>
-                                <input type="checkbox" id="q1-6-1a" name="social-network-profile-a" value="*online" />
+                                <input type="radio" id="q1-6-1a" name="social-network-profile" value="*online"
+                                    onchange="clear_backgrounds(this)" />
                                 online személyiség
                             </label>
                             <label>
-                                <input type="checkbox" id="q1-6-1b" name="social-network-profile-b" value="offline" />
+                                <input type="radio" id="q1-6-1b" name="social-network-profile" value="offline"
+                                    onchange="clear_backgrounds(this)" />
                                 offline személyiség
                             </label>
                         </div>
@@ -86,20 +88,25 @@
                         harm.<br />
                         What level of cyber protection does each of the following factors require?
                     </article>
-                    <b>a.) Your online identity</b>
-
-                    <label>
-                        <input type="radio" id="q2a1" name="personal-profile" value="*personal">
-                        Personal
-                    </label>
-                    <label>
-                        <input type="radio" id="q2a2" name="personal-profile" value="organization">
-                        Organizational
-                    </label>
-                    <label>
-                        <input type="radio" id="q2a3" name="personal-profile" value="government">
-                        Government
-                    </label>
+                    <details id="checklist02a">
+                        <summary>
+                            a.) Your online identity
+                        </summary>
+                        <label>
+                            <input type="radio" id="q1-6-2a1" name="personal-profile" value="*personal"
+                                onchange="clear_backgrounds(this)" />
+                            Personal
+                        </label>
+                        <label>
+                            <input type="radio" id="q1-6-2a2" name="personal-profile" value="organization"
+                                onchange="clear_backgrounds(this)" />
+                            Organizational
+                        </label>
+                        <label>
+                            <input type="radio" id="q1-6-2a3" name="personal-profile" value="government"
+                                onchange="clear_backgrounds(this)" />
+                            Government
+                        </label>
                     </details>
 
                     <p style="text-align: center; text-indent: initial;">
@@ -139,70 +146,22 @@
     var checklist01 = document.getElementById("checklist01");
     var true_answer01 = 1;
     var checklist01_control = 0;
-    /*
-        var checkbox2a = document.getElementById("q1-6-2a");
-        var checkbox2b = document.getElementById("q1-6-2b");
-        var checkbox2c = document.getElementById("q1-6-2c");
-        var checklist02 = document.getElementById("checklist02");
-        var true_answer02 = 1;
-        var checklist02_control = 0;
-    
-        var checkbox3a = document.getElementById("q1-6-3a");
-        var checkbox3b = document.getElementById("q1-6-3b");
-        var checkbox3c = document.getElementById("q1-6-3c");
-        var checklist03 = document.getElementById("checklist03");
-        var true_answer03 = 1;
-        var checklist03_control = 0;
-    
-        var checkbox4a = document.getElementById("q1-6-4a");
-        var checkbox4b = document.getElementById("q1-6-4b");
-        var checkbox4c = document.getElementById("q1-6-4c");
-        var checklist04 = document.getElementById("checklist04");
-        var true_answer04 = 1;
-        var checklist04_control = 0;
-    
-        var checkbox5a = document.getElementById("q1-6-5a");
-        var checkbox5b = document.getElementById("q1-6-5b");
-        var checkbox5c = document.getElementById("q1-6-5c");
-        var checklist05 = document.getElementById("checklist05");
-        var true_answer05 = 1;
-        var checklist05_control = 0;
-    
-        var checkbox6a = document.getElementById("q1-6-6a");
-        var checkbox6b = document.getElementById("q1-6-6b");
-        var checklist06 = document.getElementById("checklist06");
-        var true_answer06 = 1;
-        var checklist06_control = 0;
-    */
+
+    var checkbox2a1 = document.getElementById("q1-6-2a1");
+    var checkbox2a2 = document.getElementById("q1-6-2a2");
+    var checkbox2a3 = document.getElementById("q1-6-2a3");
+    var checklist02a = document.getElementById("checklist02a");
+    var true_answer02a = 1;
+    var checklist02a_control = 0;
+
     function clear_checklists() {
         checkbox1a.checked = false;
         checkbox1b.checked = false;
-        checklist01_control = 0;
-        /*
-                checkbox2a.checked = false;
-                checkbox2b.checked = false;
-                checkbox2c.checked = false;
-                checklist02_control = 0;
-        
-                checkbox3a.checked = false;
-                checkbox3b.checked = false;
-                checkbox3c.checked = false;
-                checklist03_control = 0;
-        
-                checkbox4a.checked = false;
-                checkbox4b.checked = false;
-                checkbox4c.checked = false;
-                checklist04_control = 0;
-        
-                checkbox5a.checked = false;
-                checkbox5b.checked = false;
-                checkbox5c.checked = false;
-                checklist05_control = 0;
-        
-                checkbox6a.checked = false;
-                checkbox6b.checked = false;
-                checklist06_control = 0;
-        */
+
+        checkbox2a1.checked = false;
+        checkbox2a2.checked = false;
+        checkbox2a3.checked = false;
+
         set_message("&nbsp;");
     }
 </script>
@@ -220,140 +179,77 @@
 
     function checklist_control() {
         set_message("&nbsp;");
-        if (checkbox1a.checked || checkbox1b.checked) {
-            checklist01_control = 0;
-            if (checkbox1a.checked) {
-                if (checkbox1a.value[0] == "*") {
-                    checklist01_control++;
-                } else {
-                    checklist01_control--;
-                }
-            }
-            if (checkbox1b.checked) {
-                if (checkbox1b.value[0] == "*") {
-                    checklist01_control++;
-                } else {
-                    checklist01_control--;
-                }
-            }
-            if (checklist01_control == true_answer01) {
-                checklist01.style.backgroundColor = "lightgreen";
-                checklist01.firstElementChild.style.color = "green";
-            } else {
-                checklist01.style.backgroundColor = "lemonchiffon";
-                checklist01.firstElementChild.style.color = "initial";
-            }
-        } else {
+
+        if (!(checkbox1a.checked || checkbox1b.checked) ||
+            !(checkbox2a1.checked || checkbox2a2.checked || checkbox2a3.checked)) {
             not_complete();
             return false;
         }
-        return true;
-    }
-
-    function checklist_control1(e) {
-        if (e.checked && e.value[0] == "*") {
-            checklist01_control++;
-        } else if (e.checked && e.value[0] !== "*") {
-            checklist01_control--;
-        } else if (!e.checked && e.value[0] == "*") {
-            checklist01_control--;
-        } else if (!e.checked && e.value[0] !== "*") {
-            checklist01_control++;
+        checklist01_control = 0;
+        if (checkbox1a.checked) {
+            if (checkbox1a.value[0] == "*") {
+                checklist01_control++;
+            } else {
+                checklist01_control--;
+            }
+        }
+        if (checkbox1b.checked) {
+            if (checkbox1b.value[0] == "*") {
+                checklist01_control++;
+            } else {
+                checklist01_control--;
+            }
         }
         if (checklist01_control == true_answer01) {
             checklist01.style.backgroundColor = "lightgreen";
+            checklist01.firstElementChild.style.backgroundColor = "lightgreen";
         } else {
             checklist01.style.backgroundColor = "lemonchiffon";
+            checklist01.firstElementChild.style.backgroundColor = "palegoldenrod";
         }
-        return;
-    }
-    /*
-    function checklist_control2(e) {
-        if (e.checked && e.value[0] == "*") {
-            checklist02_control++;
-        } else if (e.checked && e.value[0] !== "*") {
-            checklist02_control--;
-        } else if (!e.checked && e.value[0] == "*") {
-            checklist02_control--;
-        } else if (!e.checked && e.value[0] !== "*") {
-            checklist02_control++;
+
+        checklist02a_control = 0;
+        if (checkbox2a1.checked) {
+            if (checkbox2a1.value[0] == "*") {
+                checklist02a_control++;
+            } else {
+                checklist02a_control--;
+            }
         }
-        if (checklist02_control == true_answer02) {
-            checklist02.style.backgroundColor = "lightgreen";
+        if (checkbox2a2.checked) {
+            if (checkbox2a2.value[0] == "*") {
+                checklist02a_control++;
+            } else {
+                checklist02a_control--;
+            }
+        }
+        if (checkbox2a3.checked) {
+            if (checkbox2a3.value[0] == "*") {
+                checklist02a_control++;
+            } else {
+                checklist02a_control--;
+            }
+        }
+        if (checklist02a_control == true_answer02a) {
+            checklist02a.style.backgroundColor = "lightgreen";
+            checklist02a.firstElementChild.style.backgroundColor = "lightgreen";
         } else {
-            checklist02.style.backgroundColor = "lemonchiffon";
+            checklist02a.style.backgroundColor = "lemonchiffon";
+            checklist02a.firstElementChild.style.backgroundColor = "palegoldenrod";
         }
+
+        return true;
+    }
+
+    function clear_backgrounds(e) {
+        checklist01.style.backgroundColor = "lemonchiffon";
+        checklist01.firstElementChild.style.backgroundColor = "palegoldenrod";
+
+        checklist02a.style.backgroundColor = "lemonchiffon";
+        checklist02a.firstElementChild.style.backgroundColor = "palegoldenrod";
+
         return;
     }
-    function checklist_control3(e) {
-        if (e.checked && e.value[0] == "*") {
-            checklist03_control++;
-        } else if (e.checked && e.value[0] !== "*") {
-            checklist03_control--;
-        } else if (!e.checked && e.value[0] == "*") {
-            checklist03_control--;
-        } else if (!e.checked && e.value[0] !== "*") {
-            checklist03_control++;
-        }
-        if (checklist03_control == true_answer03) {
-            checklist03.style.backgroundColor = "lightgreen";
-        } else {
-            checklist03.style.backgroundColor = "lemonchiffon";
-        }
-        return;
-    }
-    function checklist_control4(e) {
-        if (e.checked && e.value[0] == "*") {
-            checklist04_control++;
-        } else if (e.checked && e.value[0] !== "*") {
-            checklist04_control--;
-        } else if (!e.checked && e.value[0] == "*") {
-            checklist04_control--;
-        } else if (!e.checked && e.value[0] !== "*") {
-            checklist04_control++;
-        }
-        if (checklist04_control == true_answer04) {
-            checklist04.style.backgroundColor = "lightgreen";
-        } else {
-            checklist04.style.backgroundColor = "lemonchiffon";
-        }
-        return;
-    }
-    function checklist_control5(e) {
-        if (e.checked && e.value[0] == "*") {
-            checklist05_control++;
-        } else if (e.checked && e.value[0] !== "*") {
-            checklist05_control--;
-        } else if (!e.checked && e.value[0] == "*") {
-            checklist05_control--;
-        } else if (!e.checked && e.value[0] !== "*") {
-            checklist05_control++;
-        }
-        if (checklist05_control == true_answer05) {
-            checklist05.style.backgroundColor = "lightgreen";
-        } else {
-            checklist05.style.backgroundColor = "lemonchiffon";
-        }
-        return;
-    }
-    function checklist_control6(e) {
-        if (e.checked && e.value[0] == "*") {
-            checklist06_control++;
-        } else if (e.checked && e.value[0] !== "*") {
-            checklist06_control--;
-        } else if (!e.checked && e.value[0] == "*") {
-            checklist06_control--;
-        } else if (!e.checked && e.value[0] !== "*") {
-            checklist06_control++;
-        }
-        if (checklist06_control == true_answer06) {
-            checklist06.style.backgroundColor = "lightgreen";
-        } else {
-            checklist06.style.backgroundColor = "lemonchiffon";
-        }
-        return;
-    }
-*/
 </script>
 
 </html>
