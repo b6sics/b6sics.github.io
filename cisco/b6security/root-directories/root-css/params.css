@@ -36,7 +36,7 @@
   /* footer metrix */
   --footer-bottom: 1vmin;
   --footer-left: 10vmin;
-  --footer-right: var(var(--footer-left));
+  --footer-right: var(--footer-left);
   --footer-width: calc( 100% - 2 * var(--footer-left));
   /* menu metrix */
   --menu-icon-size: 10vmin;
