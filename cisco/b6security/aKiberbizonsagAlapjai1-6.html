@@ -90,7 +90,7 @@
                     </article>
                     <details id="checklist02a">
                         <summary>
-                            a.) Your online identity
+                            &nbsp; a.) Your online identity
                         </summary>
                         <label>
                             <input type="radio" id="q1-6-2a1" name="personal-profile" value="*personal"
@@ -110,7 +110,7 @@
                     </details>
                     <details id="checklist02b">
                         <summary>
-                            b.) A customer database
+                            &nbsp; b.) A customer database
                         </summary>
                         <label>
                             <input type="radio" id="q1-6-2b1" name="organization-profile" value="personal"
@@ -130,7 +130,7 @@
                     </details>
                     <details id="checklist02c">
                         <summary>
-                            c.) Economic stabilty
+                            &nbsp; c.) Economic stabilty
                         </summary>
                         <label>
                             <input type="radio" id="q1-6-2c1" name="government-profile" value="personal"
@@ -151,31 +151,31 @@
 
                     <details id="checklist03">
                         <summary>
-                            1.6.1.2 Which of the following pieces of information would be classified as personal data?
+                            1.6.1.3 Which of the following pieces of information would be classified as personal data?
                             <br>
                             Select three correct answers
                         </summary>
                         <label>
-                            <input type="checkbox" id="q3a" name="personal-data-profile-ssn"
+                            <input type="checkbox" id="q1-6-3a" name="personal-data-profile-ssn"
                                 value="*Social security number">
                             Social security number
                         </label>
                         <label>
-                            <input type="checkbox" id="q3b" name="personal-data-profile-dln"
+                            <input type="checkbox" id="q1-6-3b" name="personal-data-profile-dln"
                                 value="*Driver license number">
                             Driver license number
                         </label>
                         <label>
-                            <input type="checkbox" id="q3c" name="personal-data-profile-birth"
+                            <input type="checkbox" id="q1-6-3c" name="personal-data-profile-birth"
                                 value="*Date and place of birth">
                             Date and place of birth
                         </label>
                         <label>
-                            <input type="checkbox" id="q3d" name="personal-data-profile-job" value="Job title">
+                            <input type="checkbox" id="q1-6-3d" name="personal-data-profile-job" value="Job title">
                             Job title
                         </label>
                         <label>
-                            <input type="checkbox" id="q3e" name="personal-data-profile-ip" value="IP address">
+                            <input type="checkbox" id="q1-6-3e" name="personal-data-profile-ip" value="IP address">
                             IP address
                         </label>
                     </details>
@@ -265,6 +265,12 @@
         checkbox2c2.checked = false;
         checkbox2c3.checked = false;
 
+        checkbox3a.checked = false;
+        checkbox3b.checked = false;
+        checkbox3c.checked = false;
+        checkbox3d.checked = false;
+        checkbox3e.checked = false;
+
         set_message("&nbsp;");
     }
 </script>
@@ -283,10 +289,11 @@
     function checklist_control() {
         set_message("&nbsp;");
 
-        if (!(checkbox1a.checked || checkbox1b.checked) ||
-            !(checkbox2a1.checked || checkbox2a2.checked || checkbox2a3.checked) ||
+        if (!(checkbox3a.checked || checkbox3b.checked || checkbox3c.checked || checkbox3d.checked || checkbox3e.checked) ||
+            !(checkbox2c1.checked || checkbox2c2.checked || checkbox2c3.checked) ||
             !(checkbox2b1.checked || checkbox2b2.checked || checkbox2b3.checked) ||
-            !(checkbox2c1.checked || checkbox2c2.checked || checkbox2c3.checked)) {
+            !(checkbox2a1.checked || checkbox2a2.checked || checkbox2a3.checked) ||
+            !(checkbox1a.checked || checkbox1b.checked)) {
             not_complete();
             return false;
         }
