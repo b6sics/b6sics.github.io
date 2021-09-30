@@ -110,7 +110,7 @@
                     </details>
                     <details id="checklist02b">
                         <summary>
-                            <b>b.) A customer database</b>
+                            b.) A customer database
                         </summary>
                         <label>
                             <input type="radio" id="q1-6-2b1" name="organization-profile" value="personal"
@@ -130,7 +130,7 @@
                     </details>
                     <details id="checklist02c">
                         <summary>
-                            <b>b.) Economic stabilty</b>
+                            c.) Economic stabilty
                         </summary>
                         <label>
                             <input type="radio" id="q1-6-2c1" name="government-profile" value="personal"
@@ -146,6 +146,37 @@
                             <input type="radio" id="q1-6-2c3" name="government-profile" value="*government"
                                 onchange="clear_backgrounds(this)" />
                             Government
+                        </label>
+                    </details>
+
+                    <details id="checklist03">
+                        <summary>
+                            1.6.1.2 Which of the following pieces of information would be classified as personal data?
+                            <br>
+                            Select three correct answers
+                        </summary>
+                        <label>
+                            <input type="checkbox" id="q3a" name="personal-data-profile-ssn"
+                                value="*Social security number">
+                            Social security number
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q3b" name="personal-data-profile-dln"
+                                value="*Driver license number">
+                            Driver license number
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q3c" name="personal-data-profile-birth"
+                                value="*Date and place of birth">
+                            Date and place of birth
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q3d" name="personal-data-profile-job" value="Job title">
+                            Job title
+                        </label>
+                        <label>
+                            <input type="checkbox" id="q3e" name="personal-data-profile-ip" value="IP address">
+                            IP address
                         </label>
                     </details>
 
@@ -207,6 +238,16 @@
     var checklist02c = document.getElementById("checklist02c");
     var true_answer02c = 1;
     var checklist02c_control = 0;
+
+    var test_message = document.getElementById("test_message");
+    var checkbox3a = document.getElementById("q1-6-3a");
+    var checkbox3b = document.getElementById("q1-6-3b");
+    var checkbox3c = document.getElementById("q1-6-3c");
+    var checkbox3d = document.getElementById("q1-6-3d");
+    var checkbox3e = document.getElementById("q1-6-3e");
+    var checklist03 = document.getElementById("checklist03");
+    var true_answer03 = 3;
+    var checklist03_control = 0;
 
     function clear_checklists() {
         checkbox1a.checked = false;
