@@ -108,6 +108,46 @@
                             Government
                         </label>
                     </details>
+                    <details id="checklist02b">
+                        <summary>
+                            <b>b.) A customer database</b>
+                        </summary>
+                        <label>
+                            <input type="radio" id="q1-6-2b1" name="organization-profile" value="personal"
+                                onchange="clear_backgrounds(this)" />
+                            Personal
+                        </label>
+                        <label>
+                            <input type="radio" id="q1-6-2b2" name="organization-profile" value="*organization"
+                                onchange="clear_backgrounds(this)" />
+                            Organizational
+                        </label>
+                        <label>
+                            <input type="radio" id="q1-6-2b3" name="organization-profile" value="government"
+                                onchange="clear_backgrounds(this)" />
+                            Government
+                        </label>
+                    </details>
+                    <details id="checklist02c">
+                        <summary>
+                            <b>b.) Economic stabilty</b>
+                        </summary>
+                        <label>
+                            <input type="radio" id="q1-6-2c1" name="government-profile" value="personal"
+                                onchange="clear_backgrounds(this)" />
+                            Personal
+                        </label>
+                        <label>
+                            <input type="radio" id="q1-6-2c2" name="government-profile" value="organization"
+                                onchange="clear_backgrounds(this)" />
+                            Organizational
+                        </label>
+                        <label>
+                            <input type="radio" id="q1-6-2c3" name="government-profile" value="*government"
+                                onchange="clear_backgrounds(this)" />
+                            Government
+                        </label>
+                    </details>
 
                     <p style="text-align: center; text-indent: initial;">
                         <span id="test_message">&nbsp;</span><br />
@@ -154,6 +194,20 @@
     var true_answer02a = 1;
     var checklist02a_control = 0;
 
+    var checkbox2b1 = document.getElementById("q1-6-2b1");
+    var checkbox2b2 = document.getElementById("q1-6-2b2");
+    var checkbox2b3 = document.getElementById("q1-6-2b3");
+    var checklist02b = document.getElementById("checklist02b");
+    var true_answer02b = 1;
+    var checklist02b_control = 0;
+
+    var checkbox2c1 = document.getElementById("q1-6-2c1");
+    var checkbox2c2 = document.getElementById("q1-6-2c2");
+    var checkbox2c3 = document.getElementById("q1-6-2c3");
+    var checklist02c = document.getElementById("checklist02c");
+    var true_answer02c = 1;
+    var checklist02c_control = 0;
+
     function clear_checklists() {
         checkbox1a.checked = false;
         checkbox1b.checked = false;
@@ -161,6 +215,14 @@
         checkbox2a1.checked = false;
         checkbox2a2.checked = false;
         checkbox2a3.checked = false;
+
+        checkbox2b1.checked = false;
+        checkbox2b2.checked = false;
+        checkbox2b3.checked = false;
+
+        checkbox2c1.checked = false;
+        checkbox2c2.checked = false;
+        checkbox2c3.checked = false;
 
         set_message("&nbsp;");
     }
@@ -181,7 +243,9 @@
         set_message("&nbsp;");
 
         if (!(checkbox1a.checked || checkbox1b.checked) ||
-            !(checkbox2a1.checked || checkbox2a2.checked || checkbox2a3.checked)) {
+            !(checkbox2a1.checked || checkbox2a2.checked || checkbox2a3.checked) ||
+            !(checkbox2b1.checked || checkbox2b2.checked || checkbox2b3.checked) ||
+            !(checkbox2c1.checked || checkbox2c2.checked || checkbox2c3.checked)) {
             not_complete();
             return false;
         }
@@ -238,6 +302,66 @@
             checklist02a.firstElementChild.style.backgroundColor = "palegoldenrod";
         }
 
+        checklist02b_control = 0;
+        if (checkbox2b1.checked) {
+            if (checkbox2b1.value[0] == "*") {
+                checklist02b_control++;
+            } else {
+                checklist02b_control--;
+            }
+        }
+        if (checkbox2b2.checked) {
+            if (checkbox2b2.value[0] == "*") {
+                checklist02b_control++;
+            } else {
+                checklist02b_control--;
+            }
+        }
+        if (checkbox2b3.checked) {
+            if (checkbox2b3.value[0] == "*") {
+                checklist02b_control++;
+            } else {
+                checklist02b_control--;
+            }
+        }
+        if (checklist02b_control == true_answer02b) {
+            checklist02b.style.backgroundColor = "lightgreen";
+            checklist02b.firstElementChild.style.backgroundColor = "lightgreen";
+        } else {
+            checklist02b.style.backgroundColor = "lemonchiffon";
+            checklist02b.firstElementChild.style.backgroundColor = "palegoldenrod";
+        }
+
+        checklist02c_control = 0;
+        if (checkbox2c1.checked) {
+            if (checkbox2c1.value[0] == "*") {
+                checklist02c_control++;
+            } else {
+                checklist02c_control--;
+            }
+        }
+        if (checkbox2c2.checked) {
+            if (checkbox2c2.value[0] == "*") {
+                checklist02c_control++;
+            } else {
+                checklist02c_control--;
+            }
+        }
+        if (checkbox2c3.checked) {
+            if (checkbox2c3.value[0] == "*") {
+                checklist02c_control++;
+            } else {
+                checklist02c_control--;
+            }
+        }
+        if (checklist02c_control == true_answer02c) {
+            checklist02c.style.backgroundColor = "lightgreen";
+            checklist02c.firstElementChild.style.backgroundColor = "lightgreen";
+        } else {
+            checklist02c.style.backgroundColor = "lemonchiffon";
+            checklist02c.firstElementChild.style.backgroundColor = "palegoldenrod";
+        }
+
         return true;
     }
 
@@ -247,6 +371,12 @@
 
         checklist02a.style.backgroundColor = "lemonchiffon";
         checklist02a.firstElementChild.style.backgroundColor = "palegoldenrod";
+
+        checklist02b.style.backgroundColor = "lemonchiffon";
+        checklist02b.firstElementChild.style.backgroundColor = "palegoldenrod";
+
+        checklist02c.style.backgroundColor = "lemonchiffon";
+        checklist02c.firstElementChild.style.backgroundColor = "palegoldenrod";
 
         return;
     }
