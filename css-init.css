@@ -1,17 +1,17 @@
-
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
+
 /* 
 normalize.css v11.0.0
 
@@ -30,9 +30,12 @@ It precisely targets only the styles that need normalizing.
  */
 
 html {
-  line-height: 1.15; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -55,11 +58,7 @@ h1 {
  * Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
  */
 
-dl dl,
-dl ol,
-dl ul,
-ol dl,
-ul dl {
+dl dl, dl ol, dl ul, ol dl, ul dl {
   margin: 0;
 }
 
@@ -67,10 +66,7 @@ ul dl {
  * Remove the margin on nested lists in Edge 18- and IE.
  */
 
-ol ol,
-ol ul,
-ul ol,
-ul ul {
+ol ol, ol ul, ul ol, ul ul {
   margin: 0;
 }
 
@@ -81,10 +77,14 @@ ul ul {
  */
 
 hr {
-  box-sizing: content-box; /* 1 */
-  color: inherit; /* 2 */
-  height: 0; /* 1 */
-  overflow: visible; /* 3 */
+  box-sizing: content-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 3 */
 }
 
 /**
@@ -101,8 +101,10 @@ main {
  */
 
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -129,8 +131,7 @@ abbr[title] {
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
 
-b,
-strong {
+b, strong {
   font-weight: bolder;
 }
 
@@ -139,11 +140,11 @@ strong {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 
-code,
-kbd,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
+code, kbd, samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -161,8 +162,7 @@ small {
  * Add the correct display in IE 9-.
  */
 
-audio,
-video {
+audio, video {
   display: inline-block;
 }
 
@@ -200,8 +200,10 @@ svg:not(:root) {
  */
 
 table {
-  border-color: inherit; /* 1 */
-  text-indent: 0; /* 2 */
+  border-color: inherit;
+  /* 1 */
+  text-indent: 0;
+  /* 2 */
 }
 
 /* Forms
@@ -211,9 +213,7 @@ table {
  * Remove the margin on controls in Safari.
  */
 
-button,
-input,
-select {
+button, input, select {
   margin: 0;
 }
 
@@ -223,18 +223,17 @@ select {
  */
 
 button {
-  overflow: visible; /* 1 */
-  text-transform: none; /* 2 */
+  overflow: visible;
+  /* 1 */
+  text-transform: none;
+  /* 2 */
 }
 
 /**
  * Correct the inability to style buttons in iOS and Safari.
  */
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+button, [type="button"], [type="reset"], [type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -260,11 +259,16 @@ input {
  */
 
 legend {
-  box-sizing: border-box; /* 1 */
-  color: inherit; /* 2 */
-  display: table; /* 1 */
-  max-width: 100%; /* 1 */
-  white-space: normal; /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -273,8 +277,10 @@ legend {
  */
 
 progress {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
 }
 
 /**
@@ -291,8 +297,10 @@ select {
  */
 
 textarea {
-  margin: 0; /* 1 */
-  overflow: auto; /* 2 */
+  margin: 0;
+  /* 1 */
+  overflow: auto;
+  /* 2 */
 }
 
 /**
@@ -300,10 +308,11 @@ textarea {
  * 2. Remove the padding in IE 10-.
  */
 
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box; /* 1 */
-  padding: 0; /* 2 */
+[type="checkbox"], [type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -312,16 +321,17 @@ textarea {
  */
 
 [type="search"] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /**
  * Correct the cursor style of increment and decrement buttons in Safari.
  */
 
-::-webkit-inner-spin-button,
-::-webkit-outer-spin-button {
+::-webkit-inner-spin-button, ::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -348,8 +358,10 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /**
