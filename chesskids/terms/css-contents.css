@@ -1,0 +1,58 @@
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:  Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+	padding: 0.25em 1.5% 0;
+	max-width: 75%;
+}
+
+header.myHead, footer.myFoot {
+	width: 100%;
+}
+
+.container {
+	width: 100%;
+}
+
+article {
+	margin: 1vmin auto;
+	padding: 0.5vmin;
+	width: 94%;
+	background-color: white;
+	border: 1px solid black;
+}
+
+article a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article p {
+	margin: 0.5em 0 0 0;
+	text-align: justify;
+	text-indent: 2em;
+}
+
+article p::first-letter {
+	font-size: 107%;
+	font-weight: 900;
+	text-transform: uppercase;
+	color: navy;
+}
+
+ul, ol {
+	display: table;
+	margin: 0.5em 10% 0;
+}
+
+iframe {
+	display: block;
+	margin: 0 auto;
+	height: 480px;
+	width: 480px;
+	max-width: 80vmin;
+	max-height: 80vmin;
+}
