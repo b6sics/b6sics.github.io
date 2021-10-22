@@ -102,6 +102,7 @@ article figure {
 
 article figure figcaption {
 	padding: 2vmin;
+	width: 40%;
 	max-width: 40vmin;
 }
 
