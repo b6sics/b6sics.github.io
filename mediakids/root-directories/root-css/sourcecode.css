@@ -3,16 +3,16 @@ script.sample, style {
   position: relative;
   display: block;
   white-space: pre;
-  padding: 0.25em 1em 3em 1em;
+  padding: 0.25vmin 1vmin 3vmin 1vmin;
   font-family: monospace;
-  min-height: 10em;
+  min-height: 10vmin;
   color: var(--code-color);
   background: var(--code-bg-color);
   overflow: scroll;
 }
 
 style {
-  padding: 0.25em 1em;
+  padding: 0.25vmin 1vmin;
 }
 
 script.sample::before {
@@ -36,14 +36,14 @@ footer.myFoot {
 footer.myFoot .reloadbutton {
   position: absolute;
   padding: 2px 55px;
-  bottom: 1em;
-  left: 1em;
+  bottom: 1vmin;
+  left: 1vmin;
   z-index: 99;
 }
 
 footer.myFoot hr, header.myHead hr {
-  margin: 0.5em;
-  height: 0.25em;
+  margin: 0.5vmin;
+  height: 0.25vmin;
   color: var(--code-color);
   border: 0.25em solid var(--code-bg-color);
 }
