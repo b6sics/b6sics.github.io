@@ -28,7 +28,6 @@ article {
 
 article header, article footer {
 	margin: 0.25vmin;
-	white-space: nowrap;
 }
 
 article a {
@@ -37,7 +36,6 @@ article a {
 	padding: 0.125vmin;
 	text-decoration: unset;
 	background-color: unset;
-	white-space: nowrap;
 }
 
 article a:hover {
