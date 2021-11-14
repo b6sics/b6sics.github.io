@@ -3,7 +3,7 @@
 	top: 0;
 	right: 0;
 	width: 10%;
-	padding: 0.25em;
+	padding: 0.25vmin;
 	max-width: 8em;
 	min-width: 5em;
 	text-align: right;
@@ -170,7 +170,7 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	padding: 0.5rem;
+	padding: 0.5vmin;
 	text-align: right;
 	font-size: calc(var(--menu-icon-size) / 4);
 	font-weight: normal;
