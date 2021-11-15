@@ -104,6 +104,11 @@ article figure figcaption {
 	max-width: 40vmin;
 }
 
+article figure figcaption a {
+	width: 100%;
+	text-align: center;
+}
+
 details {
 	margin: 0 auto;
 	width: 80%;
