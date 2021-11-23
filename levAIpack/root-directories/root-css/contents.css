@@ -1,0 +1,248 @@
+body {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	min-height: 100vh;
+	background-color: var(--body-bgcolor);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+	padding: 0.25vmin 1.5% 0;
+	max-width: 75%;
+}
+
+article {
+	margin: 1vmin;
+	padding: 1vmin;
+	width: calc(100% - 2vmin);
+	background-color: var(--label-bgcolor);
+	border: 1px solid black;
+}
+
+article header, article footer {
+	margin: 0.25vmin;
+}
+
+article a {
+	display: inline-block;
+	margin: 0.125vmin;
+	padding: 0.125vmin;
+	text-decoration: unset;
+	background-color: unset;
+}
+
+article a:hover {
+	text-decoration: overline underline;
+	background-color: var(--label-bgcolor);
+}
+
+article p {
+	margin: 0.5em 0 0 0;
+	text-align: justify;
+	text-indent: 2vmin;
+}
+
+article>article {
+	background-color: var(--banner-color);
+}
+
+article>article>article {
+	background-color: var(--label-bgcolor);
+}
+
+article p::first-letter {
+	font-size: 110%;
+	text-transform: uppercase;
+	color: var(--body-bgcolor);
+}
+
+article img {
+	display: block;
+	margin: 0.5vmin auto;
+	max-width: 40vmin;
+	height: auto;
+}
+
+article table {
+	margin: 0 auto;
+	width: 75%;
+}
+
+article table td {
+	width: 10vmax;
+}
+
+ul, ol {
+	display: table;
+	margin: 0.5vmin 10%;
+}
+
+article figure {
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	margin: 1.5vmin auto;
+	padding: 1vw;
+	background-color: palegoldenrod;
+	border: 1px solid black
+}
+
+article figure figcaption {
+	padding: 2vmin;
+	width: 40%;
+	max-width: 40vmin;
+}
+
+article figure figcaption a {
+	width: 100%;
+	text-align: center;
+}
+
+details {
+	margin: 0 auto;
+	width: 80%;
+	max-width: calc(100% - 2vmin);
+	position: relative;
+	border: 1px solid #78909C;
+	border-radius: 6px;
+	background-color: palegoldenrod;
+	color: #263238;
+	transition: background-color 0.15s;
+}
+
+iframe {
+	width: 76vw;
+	height: 57vw;
+}
+
+label img {
+	width: 40%;
+}
+
+details:first-of-type {
+	margin-top: 1vmin;
+}
+
+details:last-of-type {
+	margin-bottom: 1vmin;
+}
+
+details.transcript, details.explanation {
+	margin: 2vmin auto;
+}
+
+details::before {
+	width: 100%;
+	height: 100%;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: inherit;
+	opacity: 0.15;
+	box-shadow: 0 0.25vmin 0.5vmin #263238;
+	pointer-events: none;
+	transition: opacity 0.2s;
+	z-index: -1;
+}
+
+details[open] {
+	background-color: lemonchiffon;
+}
+
+details[open]::before {
+	opacity: 0.6;
+}
+
+summary {
+	padding: 1vmin 2.5vmin 1vmin 1vmin;
+	display: block;
+	position: relative;
+	font-size: 1.33em;
+	font-weight: bold;
+	cursor: pointer;
+	background-color: palegoldenrod;
+}
+
+article.summary {
+	margin: 0 auto;
+	padding: 1vmin 2.5vmin 1vmin 1vmin;
+	width: 80%;
+	max-width: calc(100% - 2vmin);
+	position: relative;
+	border: 1px solid #78909C;
+	border-radius: 6px;
+	background-color: palegoldenrod;
+	color: #263238;
+	font-size: 1.33em;
+	font-weight: bold;
+}
+
+summary::after {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 1vmin;
+	content: "\25B7";
+	color: orange;
+	text-align: right;
+	transform: rotate(90deg);
+	transition: transform 0.2s ease-in-out;
+	z-index: 10;
+}
+
+details[open] summary::after {
+	transform: rotate(270deg);
+}
+
+details p {
+	margin: 0.5em 1em;
+	text-align: justify;
+	text-indent: 2vmin;
+}
+
+details label {
+	display: inline-block;
+	margin: 0.5vmin;
+	padding: 0.5vmin;
+	width: 98%;
+	font-size: 1rem;
+	line-height: 2rem !important;
+	background-color: lemonchiffon;
+	border: 1px solid black;
+	border-radius: 1vmin 0 0 1rem;
+	cursor: pointer;
+}
+
+label input {
+	margin: 0.5vmin !important;
+	outline: none;
+}
+
+/* SLOGAIN */
+
+p.slogain {
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding-top: calc(1.2 * var(--menu-icon-size));
+	width: 100%;
+	height: 100vmin;
+	font-variant: small-caps;
+	font-size: 2.5vmax;
+	font-family: Helvetica, Arial, Sans-Serif;
+	color: var(--label-bgcolor);
+	text-align: center;
+	text-shadow: 2px 2px 4px #000000;
+}
