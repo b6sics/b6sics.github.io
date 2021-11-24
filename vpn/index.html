@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, 
+                                   initial-scale=1, 
+                                   shrink-to-fit=no" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>VPN|VNC</title>
+	<base target="_self">
+
+	<link rel="stylesheet" href="root-directories/root-css/style.css?t=123" />
+</head>
+
+<body>
+	<div id="topmenu" class="topmenu">
+		<a class="megalink" href="#start" target="_self">
+			To the top
+		</a>
+	</div>
+
+	<article id="start" class="container">
+
+		<header>
+			<h1>
+				Open VPN on Ubuntu
+			</h1>
+
+			<h2>
+				VPN
+			</h2>
+		</header>
+
+		<p>
+			OpenVPN is a Virtual Private Networking (VPN) solution provided in the Ubuntu Repositories.
+			It is flexible, reliable and secure.
+			It belongs to the family of SSL/TLS VPN stacks (different from IPSec VPNs).
+			This chapter will cover installing and configuring OpenVPN to create a VPN.
+		</p>
+
+		<article id="chapter-intro">
+			<header>
+				<h3>
+					OpenVPN
+				</h3>
+			</header>
+
+			<figure>
+				<img src="images/openVPN.png" alt="papir" title="papir" width="auto" height="auto">
+			</figure>
+			<p>
+				If you want more than just pre-shared keys OpenVPN makes it easy
+				to set up a Public Key Infrastructure (PKI) to use SSL/TLS certificates
+				for authentication and key exchange between the VPN server and clients.
+				OpenVPN can be used in a routed or bridged VPN mode
+				and can be configured to use either UDP or TCP.
+				The port number can be configured as well,
+				but port 1194 is the official one;
+				this single port is used for all communication.
+				VPN client implementations are available for almost anything
+				including all Linux distributions, OS X, Windows and OpenWRT based WLAN routers.
+			</p>
+
+			<article>
+				<header>
+					<h3>
+						Server Installation
+					</h3>
+				</header>
+
+				<p>
+					To install openvpn in a terminal enter:
+				</p>
+				<p>
+					<code>
+						sudo apt install openvpn easy-rsa
+					</code>
+				</p>
+			</article>
+		</article>
+
+		<footer>
+			<p>
+				AD MMXXI-
+			</p>
+		</footer>
+	</article>
+
+	<script>
+
+	</script>
+</body>
+
+</html>
