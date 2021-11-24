@@ -365,10 +365,8 @@
 					</code>
 				</p>
 
-				<div style="overflow: auto; border: 1px solid black;">
-					<ul type="none">
-						<li>
-							<code><pre>
+				<div style="padding: 0.5vmin; overflow: auto; border: 1px solid black;">
+					<code><pre>
 openvpn@myserver.service - OpenVPN connection to myserver
 Loaded: loaded (/lib/systemd/system/openvpn@.service; disabled; vendor preset: enabled)
 Active: active (running) since Thu 2021-10-20 11:15:15 UTC; 10s ago
@@ -393,8 +391,26 @@ Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: IFCONFIG POOL: base=10.8.0.
 Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: IFCONFIG POOL LIST
 Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: Initialization Sequence Completed
 						</pre></code>
-						</li>
-					</ul>
+				</div>
+
+				<p>
+					Now check if OpenVPN created a tun0 interface:
+				</p>
+				<p>
+					<code>
+						$ sudo ip addr show dev tun0
+					</code>
+				</p>
+
+				<div style="padding: 0.5vmin; overflow: auto; border: 1px solid black;">
+					<code><pre>
+5: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 100
+	link/none 
+	inet 10.8.0.1 peer 10.8.0.2/32 scope global tun0
+		valid_lft forever preferred_lft forever
+	inet6 fe80::b5ac:7829:f31e:32c5/64 scope link stable-privacy 
+		valid_lft forever preferred_lft forever
+						</pre></code>
 				</div>
 
 			</article>
