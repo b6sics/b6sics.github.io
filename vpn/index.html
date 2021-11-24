@@ -414,6 +414,205 @@ Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: Initialization Sequence Com
 				</div>
 
 			</article>
+
+
+			<article>
+				<header>
+					<h3>
+						Client Installation
+					</h3>
+				</header>
+
+				<p>
+					There are various different OpenVPN client implementations with and without GUIs.
+					For now we use commandline/service based OpenVPN client for Ubuntu
+					which is part of the very same package as the server.
+					So you have to install the openvpn package again on the client machine:
+				</p>
+				<p>
+					<code>
+						$ sudo apt install openvpn
+					</code>
+				</p>
+			</article>
+			<article>
+				<header>
+					<h3>
+						Simple Client Configuration
+					</h3>
+				</header>
+
+				<p>
+					This time copy the client.conf sample config file to
+					<code>/etc/openvpn/</code>:
+				</p>
+				<p>
+					Copy the following client keys and certificate files you created in the section above
+					to e.g. <code>/etc/openvpn/</code>
+					and edit <code>/etc/openvpn/client.conf</code>
+					to make sure the following lines are pointing to those files.
+				</p>
+				<ul type="none">
+					<li>
+						<code>
+							ca ca.crt
+						</code>
+					</li>
+					<li>
+						<code>
+							cert myclient1.crt
+						</code>
+					</li>
+					<li>
+						<code>
+							key myclient1.key
+						</code>
+					</li>
+					<li>
+						<code>
+							tls-auth ta.key 1
+						</code>
+					</li>
+				</ul>
+				<p>
+					And you have to specify the OpenVPN server name or address.
+					Make sure the keyword client is in the config.
+					That’s what enables client mode.
+				</p>
+				<ul type="none">
+					<li>
+						<code>
+							client
+						</code>
+					</li>
+					<li>
+						<code>
+							remote vpnserver.example.com 1194
+						</code>
+					</li>
+				</ul>
+				<p>
+					Now start the OpenVPN client with the same templatized mechanism:
+				</p>
+				<p>
+					<code>
+						$ sudo systemctl start openvpn@client
+					</code>
+				</p>
+				<p>
+					You can check status as you did on the server:
+				</p>
+				<p>
+					<code>
+						$ sudo systemctl status openvpn@client
+					</code>
+				</p>
+				<div style="padding: 0.5vmin; overflow: auto; border: 1px solid black;">
+					<code><pre>
+openvpn@client.service - OpenVPN connection to client
+Loaded: loaded (/lib/systemd/system/openvpn@.service; disabled; vendor preset: enabled)
+Active: active (running) since Thu 2021-10-20 12:22:15 UTC; 6s ago
+	Docs: man:openvpn(8)
+		https://community.openvpn.net/openvpn/wiki/Openvpn24ManPage
+		https://community.openvpn.net/openvpn/wiki/HOWTO
+Main PID: 3616 (openvpn)
+Status: "Initialization Sequence Completed"
+	Tasks: 1 (limit: 533)
+Memory: 1.3M
+CGroup: /system.slice/system-openvpn.slice/openvpn@client.service
+		└─3616 /usr/sbin/openvpn --daemon ovpn-client --status /run/openvpn/client.status 10 --cd /etc/openvpn --script-security 2 --config /etc/openvpn/client.conf --writepid /run/openvp
+
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: Outgoing Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: Incoming Data Channel: Cipher 'AES-256-GCM' initialized with 256 bit key
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: ROUTE_GATEWAY 192.168.122.1/255.255.255.0 IFACE=ens3 HWADDR=52:54:00:3c:5a:88
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: TUN/TAP device tun0 opened
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: TUN/TAP TX queue length set to 100
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: /sbin/ip link set dev tun0 up mtu 1500
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: /sbin/ip addr add dev tun0 local 10.8.0.6 peer 10.8.0.5
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: /sbin/ip route add 10.8.0.1/32 via 10.8.0.5
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: WARNING: this configuration may cache passwords in memory -- use the auth-nocache option to prevent this
+Oct 20 12:22:16 eoan-vpn-client ovpn-client[3616]: Initialization Sequence Completed
+					</pre></code>
+				</div>
+
+				<p>
+					And you can check on the client if it created a tun0 interface:
+				</p>
+				<p>
+					<code>
+						$ sudo ip addr show dev tun0
+					</code>
+				</p>
+
+				<div style="padding: 0.5vmin; overflow: auto; border: 1px solid black;">
+					<code><pre>
+4: tun0: <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UNKNOWN group default qlen 100
+	link/none 
+	inet 10.8.0.6 peer 10.8.0.5/32 scope global tun0
+		valid_lft forever preferred_lft forever
+	inet6 fe80::5a94:ae12:8901:5a75/64 scope link stable-privacy 
+		valid_lft forever preferred_lft forever
+					</pre></code>
+				</div>
+
+				<p>
+					Check if you can ping the OpenVPN server:
+				</p>
+				<p>
+					<code>
+						$ ping 10.8.0.1
+					</code>
+				</p>
+				<div style="padding: 0.5vmin; overflow: auto; border: 1px solid black;">
+					<p>
+						<code>
+							PING 10.8.0.1 (10.8.0.1) 56(84) bytes of data.
+						</code>
+					</p>
+					<p>
+						<code>
+							64 bytes from 10.8.0.1: icmp_req=1 ttl=64 time=0.920 ms
+						</code>
+					</p>
+				</div>
+
+				<p>
+					Check if you can ping the OpenVPN server:
+				</p>
+				<p>
+					<code>
+						$ ip route
+					</code>
+				</p>
+				<div style="padding: 0.5vmin; overflow: auto; border: 1px solid black;">
+					<p>
+						<code>
+							default via 192.168.122.1 dev ens3 proto dhcp src 192.168.122.114 metric 100
+						</code>
+					</p>
+					<p>
+						<code>
+							10.8.0.1 via 10.8.0.5 dev tun0
+						</code>
+					</p>
+					<p>
+						<code>
+							10.8.0.5 dev tun0 proto kernel scope link src 10.8.0.6 
+						</code>
+					</p>
+					<p>
+						<code>
+							192.168.122.0/24 dev ens3 proto kernel scope link src 192.168.122.114
+						</code>
+					</p>
+					<p>
+						<code>
+							192.168.122.1 dev ens3 proto dhcp scope link src 192.168.122.114 metric 100
+						</code>
+					</p>
+				</div>
+			</article>
+
 		</article>
 
 		<footer>
