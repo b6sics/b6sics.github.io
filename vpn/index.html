@@ -75,9 +75,130 @@
 				</p>
 				<p>
 					<code>
-						sudo apt install openvpn easy-rsa
+						$ sudo apt install openvpn easy-rsa
 					</code>
 				</p>
+			</article>
+			<article>
+				<header>
+					<h3>
+						Public Key Infrastructure Setup
+					</h3>
+				</header>
+
+				<p>
+					The first step in building an OpenVPN configuration
+					is to establish a PKI (public key infrastructure).
+					The PKI consists of:
+				</p>
+				<ul>
+					<li>
+						a separate certificate (also known as a public key)
+						and private key for the server and each client.
+					</li>
+					<li>
+						a master Certificate Authority (CA) certificate and key,
+						used to sign the server and client certificates.
+					</li>
+				</ul>
+				<p>
+					OpenVPN supports bidirectional authentication based on certificates,
+					meaning that the client must authenticate the server certificate
+					and the server must authenticate the client certificate
+					before mutual trust is established.
+				</p>
+				<p>
+					Both server and client will authenticate the other by first
+					verifying that the presented certificate was signed
+					by the master certificate authority (CA),
+					and then by testing information in the now-authenticated certificate header,
+					such as the certificate common name or certificate type (client or server).
+				</p>
+
+				<article>
+					<header>
+						<h3>
+							Certificate Authority Setup
+						</h3>
+					</header>
+
+					<p>
+						To setup your own Certificate Authority (CA) and generate certificates
+						and keys for an OpenVPN server and multiple clients
+						first copy the easy-rsa directory to /etc/openvpn.
+						This will ensure that any changes to the scripts
+						will not be lost when the package is updated.
+						From a terminal, run:
+					</p>
+					<p>
+						<code>
+							$ sudo make-cadir /etc/openvpn/easy-rsa
+						</code>
+					</p>
+
+					<p>
+						As root user (run: $ <code>sudo -i</code>) change
+						to the newly created directory /etc/openvpn/easy-rsa and run:
+					</p>
+					<p>
+						<code>
+							# ./easyrsa init-pki
+						</code>
+					</p>
+					<p>
+						<code>
+							# ./easyrsa build-ca
+						</code>
+					</p>
+				</article>
+
+				<article>
+					<header>
+						<h3>
+							Server Keys and Certificates
+						</h3>
+					</header>
+
+					<p>
+						Next, we will generate a key pair for the server:
+					</p>
+					<p>
+						<code>
+							# ./easyrsa gen-req myservername nopass
+						</code>
+					</p>
+
+					<p>
+						Diffie Hellman parameters must be generated for the OpenVPN server.
+						The following will place them in pki/dh.pem:
+					</p>
+					<p>
+						<code>
+							# ./easyrsa gen-dh
+						</code>
+					</p>
+
+					<p>
+						And finally a certificate for the server:
+					</p>
+					<p>
+						<code>
+							# ./easyrsa gen-req myservername nopass
+						</code>
+					</p>
+					<p>
+						<code>
+							# ./easyrsa sign-req server myservername
+						</code>
+					</p>
+					<p>
+						All certificates and keys have been generated in subdirectories.
+						Common practice is to copy them to /etc/openvpn/:
+					</p>
+					<figure>
+						<img src="images/openVPN.png" alt="papir" title="papir" width="auto" height="auto">
+					</figure>
+				</article>
 			</article>
 		</article>
 
