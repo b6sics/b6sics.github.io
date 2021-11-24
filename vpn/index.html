@@ -305,8 +305,8 @@
 					</code>
 				</p>
 				<p>
-					Edit <code>/etc/sysctl.conf</code> and 
-					uncomment (= remove the # from start of the line) 
+					Edit <code>/etc/sysctl.conf</code> and
+					uncomment (= remove the # from start of the line)
 					the following line to enable IP forwarding:
 				</p>
 				<p>
@@ -322,6 +322,81 @@
 						# sysctl -p /etc/sysctl.conf
 					</code>
 				</p>
+				<p>
+					Exit from <code>root</code> privileges:
+				</p>
+				<p>
+					<code>
+						# exit
+					</code>
+				</p>
+				<p>
+					<code>
+						$
+					</code>
+				</p>
+
+				<p>
+					That is the minimum you have to configure to get a working OpenVPN server.
+					You can use all the default settings in the sample <code>server.conf</code> file.
+					Now start the server (command: openvpn@CONFIGFILENAME).
+				</p>
+				<p>
+					<code>
+						$ sudo systemctl start openvpn@myserver
+					</code>
+				</p>
+				<p>
+					You will find logging and error messages in the journal.
+					For example, if you started a templatized service <code>openvpn@server</code>
+					you can filter for this particular message source with:
+				</p>
+				<p>
+					<code>
+						$ sudo journalctl -u openvpn@myserver -xe
+					</code>
+				</p>
+				<p>
+					The same templatized approach works for all of <code>systemctl</code>:
+				</p>
+				<p>
+					<code>
+						$ sudo systemctl status openvpn@myserver
+					</code>
+				</p>
+
+				<div style="overflow: auto; border: 1px solid black;">
+					<ul type="none">
+						<li>
+							<code><pre>
+openvpn@myserver.service - OpenVPN connection to myserver
+Loaded: loaded (/lib/systemd/system/openvpn@.service; disabled; vendor preset: enabled)
+Active: active (running) since Thu 2021-10-20 11:15:15 UTC; 10s ago
+	Docs: man:openvpn(8)
+		https://community.openvpn.net/openvpn/wiki/Openvpn24ManPage
+		https://community.openvpn.net/openvpn/wiki/HOWTO
+Main PID: 4138 (openvpn)
+Status: "Initialization Sequence Completed"
+	Tasks: 1 (limit: 533)
+Memory: 1.0M
+CGroup: /system.slice/system-openvpn.slice/openvpn@myserver.service
+		└─4138 /usr/sbin/openvpn --daemon ovpn-myserver --status /run/openvpn/myserver.status 10 --cd /etc/openvpn --script-security 2 --config /etc/openvpn/myserver.conf --writepid /run/
+
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: /sbin/ip addr add dev tun0 local 10.8.0.1 peer 10.8.0.2
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: /sbin/ip route add 10.8.0.0/24 via 10.8.0.2
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: Could not determine IPv4/IPv6 protocol. Using AF_INET
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: Socket Buffers: R=[212992->212992] S=[212992->212992]
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: UDPv4 link local (bound): [AF_INET][undef]:1194
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: UDPv4 link remote: [AF_UNSPEC]
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: MULTI: multi_init called, r=256 v=256
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: IFCONFIG POOL: base=10.8.0.4 size=62, ipv6=0
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: IFCONFIG POOL LIST
+Oct 20 11:15:16 eoan-vpn-server ovpn-myserver[4138]: Initialization Sequence Completed
+						</pre></code>
+						</li>
+					</ul>
+				</div>
+
 			</article>
 		</article>
 
