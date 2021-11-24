@@ -200,6 +200,128 @@
 							style="width: 640px; max-width: 100%; height: auto;" />
 					</figure>
 				</article>
+
+				<article>
+					<header>
+						<h3>
+							Client Certificates
+						</h3>
+					</header>
+
+					<p>
+						The VPN client will also need a certificate to authenticate itself to the server.
+						Usually you create a different certificate for each client.
+					</p>
+					<p>
+						This can either be done on the server (as the keys and certificates above)
+						and then securely distributed to the client.
+						Or vice versa: the client can generate
+						and submit a request that is sent and signed by the server.
+					</p>
+					<p>
+						To create the certificate, enter the following
+						in a terminal while being user root:
+					</p>
+					<p>
+						<code>
+							# ./easyrsa gen-req myclient1 nopass
+						</code>
+					</p>
+					<p>
+						<code>
+							# ./easyrsa sign-req client myclient1
+						</code>
+					</p>
+					<p>
+						afterwards copy the following files to the client using a secure method:
+					</p>
+					<ul>
+						<li>
+							<code>pki/ca.crt</code>
+						</li>
+						<li>
+							<code>pki/issued/myclient1.crt</code>
+						</li>
+					</ul>
+					<p>
+						As the client certificates and keys are only required on the client machine,
+						you can remove them from the server.
+					</p>
+				</article>
+			</article>
+			<article>
+				<header>
+					<h3>
+						Simple Server Configuration
+					</h3>
+				</header>
+
+				<p>
+					Along with your OpenVPN installation you got these sample config files
+					(and many more if you check):
+				</p>
+				<p>
+					<code>
+						# ls -l /usr/share/doc/openvpn/examples/sample-config-files/
+					</code>
+				</p>
+				<p>
+					Start with copying and unpacking <code>server.conf.gz</code>
+					to <code>/etc/openvpn/server.conf</code>.
+				</p>
+				<p>
+					Edit <code>/etc/openvpn/myserver.conf</code> to make sure the following lines
+					are pointing to the certificates and keys you created in the section above.
+				</p>
+				<ul type="none">
+					<li>
+						<code>
+							ca ca.crt
+						</code>
+					</li>
+					<li>
+						<code>
+							cert myservername.crt
+						</code>
+					</li>
+					<li>
+						<code>
+							key myservername.key
+						</code>
+					</li>
+					<li>
+						<code>
+							dh dh.pem
+						</code>
+					</li>
+				</ul>
+				<p>
+					Complete this set with a ta key
+					in <code>etc/openvpn</code> for tls-auth like:
+				</p>
+				<p>
+					<code>
+						# openvpn --genkey --secret ta.key
+					</code>
+				</p>
+				<p>
+					Edit <code>/etc/sysctl.conf</code> and 
+					uncomment (= remove the # from start of the line) 
+					the following line to enable IP forwarding:
+				</p>
+				<p>
+					<code>
+						#net.ipv4.ip_forward=1
+					</code>
+				</p>
+				<p>
+					Then reload <code>sysctl</code>.
+				</p>
+				<p>
+					<code>
+						# sysctl -p /etc/sysctl.conf
+					</code>
+				</p>
 			</article>
 		</article>
 
