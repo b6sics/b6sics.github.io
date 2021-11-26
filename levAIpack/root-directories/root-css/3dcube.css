@@ -1,25 +1,24 @@
 .scene {
-	border: 1px solid #CCC;
-	margin: 40px 0;
+	border: var(--scene-border);
+	margin: calc(var(--cube-size) / 4 - 1px);
+	padding: calc(var(--cube-size) / 4 - 1px);
 	position: relative;
 }
 
-.scene-hero {
-	height: 200px;
-	margin: 80px 0;
-	perspective: 500px;
-	border: none;
+.scene-main {
+	height: var(--cube-size);
+	perspective: calc(var(--cube-size) * 2.5 - 1px);
 }
 
 .cube {
-	width: 200px;
-	height: 200px;
+	width: var(--cube-size);
+	height: var(--cube-size);
 	position: relative;
 	transform-style: preserve-3d;
 	transform: translateZ(-100px);
 }
 
-.cube-hero {
+.cube-main {
 	margin: 0 auto;
 }
 
@@ -39,60 +38,60 @@
 
 .cube_face {
 	position: absolute;
-	width: 200px;
-	height: 200px;
-	border: 2px solid black;
-	line-height: 200px;
-	font-size: 40px;
+	width: var(--cube-size);
+	height: var(--cube-size);
+	border: var(--cube-edge);
+	line-height: var(--cube-size);
+	font-size: calc(var(--cube-size) / 5);
 	font-weight: bold;
-	color: white;
+	color: var(--cube-font-color);
 	text-align: center;
 }
 
 .cube_face-front {
-	background: hsla(0, 100%, 50%, 0.7);
+	background: var(--cube-color1);
 }
 
 .cube_face-right {
-	background: hsla(60, 100%, 50%, 0.7);
+	background: var(--cube-color2);
 }
 
 .cube_face-back {
-	background: hsla(120, 100%, 50%, 0.7);
+	background: var(--cube-color3);
 }
 
 .cube_face-left {
-	background: hsla(180, 100%, 50%, 0.7);
+	background: var(--cube-color4);
 }
 
 .cube_face-top {
-	background: hsla(240, 100%, 50%, 0.7);
+	background: var(--cube-color5);
 }
 
 .cube_face-bottom {
-	background: hsla(300, 100%, 50%, 0.7);
+	background: var(--cube-color6);
 }
 
 .cube_face-front {
-	transform: rotateY(0deg) translateZ(100px);
+	transform: rotateY(0deg) translateZ(calc(var(--cube-size) / 2));
 }
 
 .cube_face-right {
-	transform: rotateY(90deg) translateZ(100px);
+	transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
 }
 
 .cube_face-back {
-	transform: rotateY(180deg) translateZ(100px);
+	transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
 }
 
 .cube_face-left {
-	transform: rotateY(-90deg) translateZ(100px);
+	transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
 }
 
 .cube_face-top {
-	transform: rotateX(90deg) translateZ(100px);
+	transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
 }
 
 .cube_face-bottom {
-	transform: rotateX(-90deg) translateZ(100px);
+	transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
 }
