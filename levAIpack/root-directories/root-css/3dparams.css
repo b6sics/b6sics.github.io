@@ -12,7 +12,7 @@
 
   --cube-transform: 16s infinite ease-in-out;
 
-  --scene-border: 1vmin inset lightgray;
+  --scene-border: 1vmin solid lightgray;
   --scene-background: hsla(220, 100%, 50%, 0.1);
 
   /* footer metrix */
