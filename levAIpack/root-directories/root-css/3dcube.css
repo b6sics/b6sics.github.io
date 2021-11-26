@@ -61,6 +61,24 @@ body {
 	text-align: center;
 }
 
+.cube_face.is-pulsating {
+	animation: pulsate var(--cube-transform);
+}
+
+@keyframes pulsate {
+	from {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.45;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
 .cube_face-front {
 	background: var(--cube-color1);
 }
@@ -167,7 +185,6 @@ body {
 
 .cube_face-back {
 	transform: translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1)) rotateX(0deg) rotateY(180deg);
-	;
 }
 
 .cube_face-back.moving {
@@ -187,20 +204,5 @@ body {
 
 	100% {
 		transform: translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1)) rotateX(0deg) rotateY(180deg);
-	}
-}
-
-
-@keyframes pulsate {
-	from {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 0.25;
-	}
-
-	to {
-		opacity: 1;
 	}
 }
