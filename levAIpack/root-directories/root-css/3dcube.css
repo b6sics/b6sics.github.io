@@ -89,16 +89,19 @@ body {
 @keyframes pulsate {
 	from {
 		opacity: 1;
+		border: var(--cube-edge);
 		filter: none;
 	}
 
 	50% {
-		opacity: 0.75;
+		opacity: 0.5;
+		border: var(--cube-edge2);
 		filter: blur(0.25vmin);
 	}
 
 	to {
 		opacity: 1;
+		border: var(--cube-edge);
 		filter: none;
 	}
 }
