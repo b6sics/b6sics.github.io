@@ -1,6 +1,7 @@
 .scene {
 	box-sizing: content-box;
 	border: var(--scene-border);
+	background: var(--scene-background);
 	margin: calc(var(--cube-size) / 3 - 1px);
 	padding: calc(var(--cube-size) / 3 - 1px);
 	position: relative;
