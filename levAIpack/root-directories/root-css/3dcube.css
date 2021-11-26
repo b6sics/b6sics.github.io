@@ -30,15 +30,15 @@
 
 @keyframes spinCube {
 	0% {
-		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(405deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(420deg);
 	}
 
 	50% {
-		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(280deg) rotateY(45deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(280deg) rotateY(60deg);
 	}
 
 	100% {
-		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(45deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(60deg);
 	}
 }
 
@@ -91,7 +91,7 @@
 }
 
 .cube_face-left {
-	transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+	transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / -2));
 }
 
 .cube_face-top {
@@ -107,21 +107,6 @@
 	animation: moveFront var(--cube-transform);
 }
 
-.cube_face-left.moving {
-	transform-origin: left 0;
-	animation: moveFront var(--cube-transform);
-}
-
-.cube_face-right.moving {
-	transform-origin: left 0;
-	animation: moveFront var(--cube-transform);
-}
-
-.cube_face-back.moving {
-	transform-origin: left 0;
-	animation: moveFront var(--cube-transform);
-}
-
 @keyframes moveFront {
 	0% {
 		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(0deg);
@@ -133,6 +118,25 @@
 
 	100% {
 		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(0deg);
+	}
+}
+
+.cube_face-left.moving {
+	transform-origin: left 0;
+	animation: moveLeft var(--cube-transform);
+}
+
+@keyframes moveLeft {
+	0% {
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(0deg) rotateY(-90deg);
+	}
+
+	50% {
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(0deg) rotateY(-270deg);
+	}
+
+	100% {
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(0deg) rotateY(-90deg);
 	}
 }
 
