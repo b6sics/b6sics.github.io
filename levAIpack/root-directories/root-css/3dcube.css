@@ -60,10 +60,6 @@ body {
 	text-align: center;
 }
 
-.cube_face.is-pulsating {
-	animation: pulsate var(--pulse-transform);
-}
-
 @keyframes pulsate {
 	from {
 		opacity: 1;
@@ -71,7 +67,7 @@ body {
 	}
 
 	50% {
-		opacity: 0.45;
+		opacity: 0.7;
 		color: black;
 	}
 
@@ -99,10 +95,12 @@ body {
 
 .cube_face-top {
 	background: var(--cube-color5);
+	animation: pulsate var(--pulse-transform);
 }
 
 .cube_face-bottom {
 	background: var(--cube-color6);
+	animation: pulsate var(--pulse-transform);
 }
 
 .cube_face-top {
@@ -119,7 +117,7 @@ body {
 
 .cube_face-front.moving {
 	transform-origin: left 0;
-	animation: moveFront var(--cube-transform);
+	animation: moveFront var(--cube-transform), pulsate var(--pulse-transform);
 }
 
 @keyframes moveFront {
@@ -142,7 +140,7 @@ body {
 
 .cube_face-left.moving {
 	transform-origin: left 0;
-	animation: moveLeft var(--cube-transform);
+	animation: moveLeft var(--cube-transform), pulsate var(--pulse-transform);
 }
 
 @keyframes moveLeft {
@@ -165,7 +163,7 @@ body {
 
 .cube_face-right.moving {
 	transform-origin: left 0;
-	animation: moveRight var(--cube-transform);
+	animation: moveRight var(--cube-transform), pulsate var(--pulse-transform);
 }
 
 @keyframes moveRight {
@@ -188,7 +186,7 @@ body {
 
 .cube_face-back.moving {
 	transform-origin: left 0;
-	animation: moveBack var(--cube-transform);
+	animation: moveBack var(--cube-transform), pulsate var(--pulse-transform);
 }
 
 @keyframes moveBack {
