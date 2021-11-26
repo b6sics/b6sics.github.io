@@ -10,7 +10,7 @@
   --cube-color5: hsla(240, 100%, 50%, 0.7);
   --cube-color6: hsla(300, 100%, 50%, 0.7);
   --cube-edge: 4px outset gray;
-  --cube-edge2: 6px inset gray;
+  --cube-edge2: 6px outset gray;
   --cube-font-color: snow;
 
   --animation-duration: 12s;
