@@ -117,7 +117,7 @@ body {
 
 .cube_face-front.moving {
 	transform-origin: left 0;
-	animation: moveFront var(--cube-transform), pulsate var(--pulse-transform);
+	animation: moveFront var(--cube-transform);
 }
 
 @keyframes moveFront {
@@ -140,7 +140,7 @@ body {
 
 .cube_face-left.moving {
 	transform-origin: left 0;
-	animation: moveLeft var(--cube-transform), pulsate var(--pulse-transform);
+	animation: moveLeft var(--cube-transform);
 }
 
 @keyframes moveLeft {
@@ -163,7 +163,7 @@ body {
 
 .cube_face-right.moving {
 	transform-origin: left 0;
-	animation: moveRight var(--cube-transform), pulsate var(--pulse-transform);
+	animation: moveRight var(--cube-transform);
 }
 
 @keyframes moveRight {
@@ -186,7 +186,7 @@ body {
 
 .cube_face-back.moving {
 	transform-origin: left 0;
-	animation: moveBack var(--cube-transform), pulsate var(--pulse-transform);
+	animation: moveBack var(--cube-transform);
 }
 
 @keyframes moveBack {
