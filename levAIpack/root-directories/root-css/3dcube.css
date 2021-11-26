@@ -118,3 +118,117 @@
 		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(360deg);
 	}
 }
+
+
+.playground {
+	perspective: 800px;
+}
+
+.cube2 {
+	transform-style: preserve-3d;
+	position: relative;
+	margin: 0 auto;
+	width: 150px;
+	height: 150px;
+	/* Uncomment to make it spin */
+	animation: spin 16s infinite linear;
+	margin: 20px auto;
+	top: 100px;
+	transform-origin: 100% 50%;
+}
+
+@keyframes spin{
+	from { 
+	  transform: rotateX(-45deg) rotateY(0deg); 
+	}
+	to { 
+	  transform: rotateX(-45deg) rotateY(360deg);
+	}
+  }
+  
+  @keyframes pulsate{
+	from{
+	  opacity: 1;
+	}
+	50%{
+	  opacity: 0.25;
+	}
+	to{
+	  opacity: 1;
+	}
+  }
+  
+  .face{
+	width: 300px;
+	height: 300px;
+	border: 6px outset #ccc;
+	text-align: center;
+	font-size: 60pt;
+	position: absolute;
+	animation: pulsate 8s infinite linear;  
+	background-color: #2653ad;
+	transition: transform 1s ease-out, opacity 1s linear;
+	box-sizing: border-box;
+	transform-origin: 50% 300px;
+  }
+  
+  .cube:hover .left{
+	transform: rotateY(90deg) translateZ(150px) rotateX(-90deg);
+  }
+  
+  .left{
+	transform: rotateY(90deg) translateZ(150px) rotateX(0deg);
+	background: url("http://www.djibnet.com/photo/2851026377-landscape-green-view-halla.jpg");
+	background-size: 150%;
+  }
+  
+  .cube:hover .right{
+	transform: rotateY(-90deg) translateZ(150px) rotateX(-90deg);
+  }
+  
+  .right{
+	 transform: rotateY(-90deg) translateZ(150px);
+	background: url("https://i.telegraph.co.uk/multimedia/archive/01842/landscape-rainbow_1842437i.jpg");
+	background-size: 150%;
+  }
+  
+  .cube:hover .front{
+	transform: translateZ(150px) rotateX(-90deg);
+  }
+  
+  .front{
+	transform: translateZ(150px);
+	 background: url("http://walls.themespsp.fr/wp-content/uploads/2011/02/Landscape%20-%20Italy_16.jpg");
+	background-size: 180%;
+  }
+  
+  .cube:hover .rear{
+	transform: translateZ(-150px) rotateX(90deg);
+  }
+  
+  .rear{
+	transform: translateZ(-150px);
+	background: url("http://enchantingkerala.org/digital-photography-school/photos/landscape-photography-graduated-neutral-density-nd-filter.jpg");
+	background-size: 150%;
+  }
+  
+  .cube:hover .top{
+	opacity: 0;
+  }
+  
+  .top{
+	 transform: rotateX(90deg) translateZ(150px);
+	background: url("http://www.repro-tableaux.com/kunst/ludwig_munthe/winter_landscape.jpg");
+	background-size: 150%;
+	transform-origin: 50% 50%;
+  }
+  
+  
+  
+  .bottom{
+	transform: rotateX(90deg) translateZ(-150px);
+	background: url("http://www.kaplaninternational.com/fr/images/27-ireland-landscape_tcm10-14949.jpg");
+	background-size: 150%;
+	transform-origin: 50% 50%;
+  }
+  
