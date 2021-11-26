@@ -100,3 +100,21 @@
 .cube_face-bottom {
 	transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
 }
+
+.cube_face-front.moving {
+	animation: moveFront var(--cube-transform);
+}
+
+@keyframes moveFront {
+	0% {
+		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(0deg);
+	}
+
+	50% {
+		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(0deg);
+	}
+
+	100% {
+		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(360deg);
+	}
+}
