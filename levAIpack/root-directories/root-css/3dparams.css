@@ -12,12 +12,14 @@
   --cube-edge: 4px outset gray;
   --cube-font-color: snow;
 
-  --cube-transform: 12s 1 ease-in-out;
+  --animation-duration: 12s;
+
+  --cube-transform: var(--animation-duration) 1 ease-in-out;
 
   --scene-border: 1vmin solid lightgray;
   --scene-background: hsla(270, 50%, 90%, 0.85);
 
-  --pulse-transform: 3s infinite ease-in-out;
+  --pulse-transform: calc(var(--animation-duration / 4)) infinite ease-in-out var(--animation-duration);
 
   /* footer metrix */
   --footer-bottom: 1vmin;
