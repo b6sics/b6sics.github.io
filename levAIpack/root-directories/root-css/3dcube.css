@@ -179,34 +179,6 @@
 }
 
 
-.playground {
-	height: calc(var(--cube-size) * 2);
-	perspective: calc(var(--cube-size) * 2);
-}
-
-.cube2 {
-	transform-style: preserve-3d;
-	position: relative;
-	margin: 0 auto;
-	width: var(--cube-size);
-	height: var(--cube-size);
-	/* Uncomment to make it spin  */
-	animation: spin 16s infinite linear;
-	margin: var(--cube-size) auto;
-	top: calc(var(--cube-size) / 2);
-	transform-origin: 50% 50%;
-}
-
-@keyframes spin {
-	from {
-		transform: rotateX(-45deg) rotateY(0deg);
-	}
-
-	to {
-		transform: rotateX(-45deg) rotateY(360deg);
-	}
-}
-
 @keyframes pulsate {
 	from {
 		opacity: 1;
@@ -219,54 +191,4 @@
 	to {
 		opacity: 1;
 	}
-}
-
-.face {
-	width: var(--cube-size);
-	height: var(--cube-size);
-	border: 6px outset #ccc;
-	text-align: center;
-	font-size: 60pt;
-	position: absolute;
-	animation: pulsate 8s infinite linear;
-	background-color: #2653ad;
-	transition: transform 1s ease-out, opacity 1s linear;
-	transform-origin: 50% 100%;
-}
-
-.cube2:hover .left {
-	transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)) rotateX(-90deg);
-}
-
-.left {
-	transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)) rotateX(0deg);
-}
-
-.cube2:hover .right {
-	transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2)) rotateX(-90deg);
-}
-
-.right {
-	transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
-}
-
-.cube2:hover .front {
-	transform: translateZ(calc(var(--cube-size) / 2)) rotateX(-90deg);
-}
-
-.front {
-	transform: translateZ(calc(var(--cube-size) / 2));
-}
-
-.cube2:hover .back {
-	transform: translateZ(calc(var(--cube-size) / -2)) rotateX(90deg);
-}
-
-.back {
-	transform: translateZ(calc(var(--cube-size) / -2));
-}
-
-.bottom {
-	transform: rotateX(90deg) translateZ(calc(var(--cube-size) / -2));
-	transform-origin: 50% 50%;
 }
