@@ -1,3 +1,7 @@
+body {
+	background-color: var(--body-color);
+}
+
 .scene {
 	box-sizing: content-box;
 	border: var(--scene-border);
@@ -158,7 +162,8 @@
 }
 
 .cube_face-back {
-	transform: rotateY(180deg) translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1));;
+	transform: rotateY(180deg) translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1));
+	;
 }
 
 .cube_face-back.moving {
