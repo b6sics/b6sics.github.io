@@ -121,6 +121,7 @@
 
 
 .playground {
+	height: 800px;
 	perspective: 800px;
 }
 
@@ -130,8 +131,8 @@
 	margin: 0 auto;
 	width: 150px;
 	height: 150px;
-	/* Uncomment to make it spin 
-	animation: spin 16s infinite linear; */
+	/* Uncomment to make it spin  */
+	animation: spin 16s infinite linear;
 	margin: 20px auto;
 	top: 100px;
 	transform-origin: 100% 50%;
@@ -175,7 +176,7 @@
 	transform-origin: 50% 300px;
 }
 
-.cube:hover .left {
+.cube2:hover .left {
 	transform: rotateY(90deg) translateZ(150px) rotateX(-90deg);
 }
 
@@ -185,7 +186,7 @@
 	background-size: 150%;
 }
 
-.cube:hover .right {
+.cube2:hover .right {
 	transform: rotateY(-90deg) translateZ(150px) rotateX(-90deg);
 }
 
@@ -195,7 +196,7 @@
 	background-size: 150%;
 }
 
-.cube:hover .front {
+.cube2:hover .front {
 	transform: translateZ(150px) rotateX(-90deg);
 }
 
@@ -205,7 +206,7 @@
 	background-size: 180%;
 }
 
-.cube:hover .back {
+.cube2:hover .back {
 	transform: translateZ(-150px) rotateX(90deg);
 }
 
