@@ -16,7 +16,6 @@ body {
 }
 
 .cube {
-	box-sizing: content-box;
 	width: var(--cube-size);
 	height: var(--cube-size);
 	position: relative;
