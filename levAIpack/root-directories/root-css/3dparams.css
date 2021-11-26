@@ -10,7 +10,7 @@
   --cube-color5: hsla(240, 100%, 50%, 0.7);
   --cube-color6: hsla(300, 100%, 50%, 0.7);
   --cube-edge: 4px outset gray;
-  --cube-edge2: 8px inset gray;
+  --cube-edge2: 6px inset gray;
   --cube-font-color: snow;
 
   --animation-duration: 12s;
@@ -20,7 +20,7 @@
   --scene-border: 1vmin solid lightgray;
   --scene-background: hsla(270, 50%, 90%, 0.85);
 
-  --pulse-transform: calc(var(--animation-duration) / 4) infinite ease-in-out var(--animation-duration);
+  --pulse-transform: calc(var(--animation-duration) / 5) infinite ease-in-out var(--animation-duration);
 
   /* footer metrix */
   --footer-bottom: 1vmin;
