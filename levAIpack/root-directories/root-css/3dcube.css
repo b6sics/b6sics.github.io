@@ -8,7 +8,7 @@
 
 .scene-main {
 	height: var(--cube-size);
-	perspective: calc(var(--cube-size) * 2.5 - 1px);
+	perspective: calc(var(--cube-size) * 5 - 1px);
 }
 
 .cube {
@@ -17,6 +17,7 @@
 	position: relative;
 	transform-style: preserve-3d;
 	transform: translateZ(calc(var(--cube-size) / -2));
+	transform-origin: 50% 50%;
 }
 
 .cube-main {
@@ -29,15 +30,15 @@
 
 @keyframes spinCube {
 	0% {
-		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(0deg) rotateY(0deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(405deg);
 	}
 
 	50% {
-		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(360deg) rotateY(360deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(280deg) rotateY(45deg);
 	}
 
 	100% {
-		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(360deg) rotateY(360deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(45deg);
 	}
 }
 
@@ -102,6 +103,22 @@
 }
 
 .cube_face-front.moving {
+	transform-origin: left 0;
+	animation: moveFront var(--cube-transform);
+}
+
+.cube_face-left.moving {
+	transform-origin: left 0;
+	animation: moveFront var(--cube-transform);
+}
+
+.cube_face-right.moving {
+	transform-origin: left 0;
+	animation: moveFront var(--cube-transform);
+}
+
+.cube_face-back.moving {
+	transform-origin: left 0;
 	animation: moveFront var(--cube-transform);
 }
 
@@ -111,11 +128,11 @@
 	}
 
 	50% {
-		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(0deg);
+		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(-180deg);
 	}
 
 	100% {
-		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(360deg);
+		transform: translateZ(calc(var(--cube-size) / 2)) rotateX(0deg) rotateY(0deg);
 	}
 }
 
