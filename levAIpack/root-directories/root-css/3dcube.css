@@ -61,7 +61,7 @@ body {
 }
 
 .cube_face.is-pulsating {
-	animation: pulsate var(--cube-transform);
+	animation: pulsate var(--pulse-transform);
 }
 
 @keyframes pulsate {

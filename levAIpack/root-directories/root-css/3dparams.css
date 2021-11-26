@@ -17,6 +17,8 @@
   --scene-border: 1vmin solid lightgray;
   --scene-background: hsla(270, 50%, 90%, 0.85);
 
+  --pulse-transform: 3s infinite ease-in-out;
+
   /* footer metrix */
   --footer-bottom: 1vmin;
   --footer-left: 10vmin;
