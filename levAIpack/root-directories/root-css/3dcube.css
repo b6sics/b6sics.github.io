@@ -60,13 +60,17 @@ body {
 	text-align: center;
 }
 
+.pulsating {
+	animation: pulsate var(--pulse-transform);
+}
+
 @keyframes pulsate {
 	from {
 		opacity: 1;
 	}
 
 	50% {
-		opacity: 0.7;
+		opacity: 0.5;
 	}
 
 	to {
