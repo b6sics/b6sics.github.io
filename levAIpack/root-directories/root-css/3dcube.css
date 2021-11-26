@@ -60,25 +60,6 @@ body {
 	text-align: center;
 }
 
-.pulsating {
-	opacity: 1;
-	animation: pulsate var(--pulse-transform);
-}
-
-@keyframes pulsate {
-	from {
-		opacity: 1;
-	}
-
-	50% {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
-}
-
 .cube_face-front {
 	background: var(--cube-color1);
 }
@@ -103,6 +84,20 @@ body {
 .cube_face-bottom {
 	background: var(--cube-color6);
 	animation: pulsate var(--pulse-transform);
+}
+
+@keyframes pulsate {
+	from {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 .cube_face-top {
