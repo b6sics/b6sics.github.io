@@ -32,7 +32,6 @@ body {
 
 .cube.is-spinning {
 	animation: spinCube var(--cube-transform);
-	animation-iteration-count: 1;
 }
 
 @keyframes spinCube {
@@ -118,7 +117,6 @@ body {
 .cube_face-front.moving {
 	transform-origin: left 0;
 	animation: moveFront var(--cube-transform);
-	animation-iteration-count: 1;
 }
 
 @keyframes moveFront {
@@ -142,7 +140,6 @@ body {
 .cube_face-left.moving {
 	transform-origin: left 0;
 	animation: moveLeft var(--cube-transform);
-	animation-iteration-count: 1;
 }
 
 @keyframes moveLeft {
@@ -166,7 +163,6 @@ body {
 .cube_face-right.moving {
 	transform-origin: left 0;
 	animation: moveRight var(--cube-transform);
-	animation-iteration-count: 1;
 }
 
 @keyframes moveRight {
@@ -190,7 +186,6 @@ body {
 .cube_face-back.moving {
 	transform-origin: left 0;
 	animation: moveBack var(--cube-transform);
-	animation-iteration-count: 1;
 }
 
 @keyframes moveBack {
