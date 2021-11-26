@@ -1,5 +1,5 @@
 :root {
-  --cube-size: 50vmin;
+  --cube-size: 33vmin;
 
   --cube-color1: hsla(0, 100%, 50%, 0.7);
   --cube-color2: hsla(60, 100%, 50%, 0.7);
@@ -10,11 +10,10 @@
   --cube-edge: 2px solid navy;
   --cube-font-color: snow;
 
-  --cube-transform: 8s infinite ease-in-out;
+  --cube-transform: 16s infinite ease-in-out;
 
   --scene-border: 1vmin solid lightgray;
-  /* transition */
-  --basic-transition: 00.25s;
+
   /* footer metrix */
   --footer-bottom: 1vmin;
   --footer-left: 10vmin;
