@@ -21,7 +21,7 @@ body {
 	height: var(--cube-size);
 	position: relative;
 	transform-style: preserve-3d;
-	transform: translateZ(calc(var(--cube-size) / -2));
+	transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(420deg);
 	transform-origin: 50% 50%;
 }
 
@@ -32,6 +32,7 @@ body {
 
 .cube.is-spinning {
 	animation: spinCube var(--cube-transform);
+	animation-iteration-count: 1;
 }
 
 @keyframes spinCube {
@@ -99,6 +100,7 @@ body {
 .cube_face-front.moving {
 	transform-origin: left 0;
 	animation: moveFront var(--cube-transform);
+	animation-iteration-count: 1;
 }
 
 @keyframes moveFront {
@@ -116,12 +118,13 @@ body {
 }
 
 .cube_face-left {
-	transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / -2));
+	transform: translateZ(calc(var(--cube-size) / -2)) rotateX(0deg) rotateY(-90deg);
 }
 
 .cube_face-left.moving {
 	transform-origin: left 0;
 	animation: moveLeft var(--cube-transform);
+	animation-iteration-count: 1;
 }
 
 @keyframes moveLeft {
@@ -139,12 +142,13 @@ body {
 }
 
 .cube_face-right {
-	transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)) translateX(calc(var(--cube-size) * 1));
+	transform: translateZ(calc(var(--cube-size) / 2)) translateX(calc(var(--cube-size) * 1)) rotateX(0deg) rotateY(90deg);
 }
 
 .cube_face-right.moving {
 	transform-origin: left 0;
 	animation: moveRight var(--cube-transform);
+	animation-iteration-count: 1;
 }
 
 @keyframes moveRight {
@@ -162,13 +166,14 @@ body {
 }
 
 .cube_face-back {
-	transform: rotateY(180deg) translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1));
+	transform: translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1)) rotateX(0deg) rotateY(180deg);
 	;
 }
 
 .cube_face-back.moving {
 	transform-origin: left 0;
 	animation: moveBack var(--cube-transform);
+	animation-iteration-count: 1;
 }
 
 @keyframes moveBack {
