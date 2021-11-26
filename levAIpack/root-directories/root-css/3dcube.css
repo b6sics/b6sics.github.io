@@ -3,7 +3,6 @@ body {
 }
 
 .scene {
-	box-sizing: content-box;
 	border: var(--scene-border);
 	background: var(--scene-background);
 	margin: calc(var(--cube-size) / 3 - 1px);
@@ -17,6 +16,7 @@ body {
 }
 
 .cube {
+	box-sizing: content-box;
 	width: var(--cube-size);
 	height: var(--cube-size);
 	position: relative;
