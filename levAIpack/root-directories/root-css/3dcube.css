@@ -94,9 +94,9 @@ body {
 	}
 
 	50% {
-		opacity: 0.5;
+		opacity: 0.6;
 		border: var(--cube-edge2);
-		filter: blur(0.25vmin);
+		filter: blur(0.125vmin);
 	}
 
 	to {
