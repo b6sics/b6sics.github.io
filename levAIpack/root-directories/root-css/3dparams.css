@@ -7,12 +7,12 @@
   --cube-color4: hsla(180, 100%, 50%, 0.7);
   --cube-color5: hsla(240, 100%, 50%, 0.7);
   --cube-color6: hsla(300, 100%, 50%, 0.7);
-  --cube-edge: 2px solid navy;
+  --cube-edge: 4px outset gray;
   --cube-font-color: snow;
 
   --cube-transform: 16s infinite ease-in-out;
 
-  --scene-border: 1vmin solid lightgray;
+  --scene-border: 1vmin inset lightgray;
   --scene-background: hsla(220, 100%, 50%, 0.1);
 
   /* footer metrix */
