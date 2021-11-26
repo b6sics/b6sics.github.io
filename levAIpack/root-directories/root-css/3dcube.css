@@ -61,6 +61,7 @@ body {
 }
 
 .pulsating {
+	opacity: 1;
 	animation: pulsate var(--pulse-transform);
 }
 
@@ -70,7 +71,7 @@ body {
 	}
 
 	50% {
-		opacity: 0.5;
+		opacity: 0;
 	}
 
 	to {
