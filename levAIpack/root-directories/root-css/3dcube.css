@@ -54,7 +54,7 @@ body {
 	height: var(--cube-size);
 	border: var(--cube-edge);
 	line-height: var(--cube-size);
-	font-size: calc(var(--cube-size) / 5);
+	font-size: calc(var(--cube-size) / 3);
 	font-weight: bold;
 	color: var(--cube-font-color);
 	text-align: center;
@@ -89,14 +89,17 @@ body {
 @keyframes pulsate {
 	from {
 		opacity: 1;
+		filter: none;
 	}
 
 	50% {
-		opacity: 0.25;
+		opacity: 0.75;
+		filter: blur(0.25vmin);
 	}
 
 	to {
 		opacity: 1;
+		filter: none;
 	}
 }
 
