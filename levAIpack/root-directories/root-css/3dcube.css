@@ -90,18 +90,21 @@ body {
 		opacity: 1;
 		border: var(--cube-edge);
 		filter: none;
+		backface-visibility: hidden;
 	}
 
 	50% {
 		opacity: 0.7;
 		border: var(--cube-edge2);
 		filter: blur(0.15vmin);
+		backface-visibility: hidden;
 	}
 
 	to {
 		opacity: 1;
 		border: var(--cube-edge);
 		filter: none;
+		backface-visibility: hidden;
 	}
 }
 
