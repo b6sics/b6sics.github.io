@@ -5,13 +5,13 @@ body {
 .scene {
 	border: var(--scene-border);
 	background: var(--scene-background);
-	margin: calc(var(--cube-size) / 3 - 1px);
-	padding: calc(var(--cube-size) / 3 - 1px);
+	margin: calc(var(--cube-size) / 2 - 1px) auto 0;
 	position: relative;
 }
 
 .scene-main {
-	height: var(--cube-size);
+	width: 90%;
+	height: calc(var(--cube-size) / 2);
 	perspective: calc(var(--cube-size) * 5 - 1px);
 }
 
