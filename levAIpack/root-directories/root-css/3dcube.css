@@ -1,4 +1,5 @@
 .scene {
+	box-sizing: content-box;
 	border: var(--scene-border);
 	margin: calc(var(--cube-size) / 4 - 1px);
 	padding: calc(var(--cube-size) / 4 - 1px);
@@ -15,7 +16,7 @@
 	height: var(--cube-size);
 	position: relative;
 	transform-style: preserve-3d;
-	transform: translateZ(calc(var(--cube-size) / -2)) translateY(calc(var(--cube-size) / -4));
+	transform: translateZ(calc(var(--cube-size) / -2));
 }
 
 .cube-main {
@@ -23,20 +24,20 @@
 }
 
 .cube.is-spinning {
-	animation: spinCube 8s infinite ease-in-out;
+	animation: spinCube var(--cube-transform);
 }
 
 @keyframes spinCube {
 	0% {
-		transform: translateZ(calc(var(--cube-size) / -2)) translateY(calc(var(--cube-size) / -4)) rotateX(0deg) rotateY(0deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(0deg) rotateY(0deg);
 	}
 
 	50% {
-		transform: translateZ(calc(var(--cube-size) / -2)) translateY(calc(var(--cube-size) / -4)) rotateX(360deg) rotateY(360deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(360deg) rotateY(360deg);
 	}
 
 	100% {
-		transform: translateZ(calc(var(--cube-size) / -2)) translateY(calc(var(--cube-size) / -4)) rotateX(360deg) rotateY(360deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) rotateX(360deg) rotateY(360deg);
 	}
 }
 
