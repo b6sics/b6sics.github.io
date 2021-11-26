@@ -1,8 +1,8 @@
 .scene {
 	box-sizing: content-box;
 	border: var(--scene-border);
-	margin: calc(var(--cube-size) / 4 - 1px);
-	padding: calc(var(--cube-size) / 4 - 1px);
+	margin: calc(var(--cube-size) / 3 - 1px);
+	padding: calc(var(--cube-size) / 3 - 1px);
 	position: relative;
 }
 
@@ -21,7 +21,8 @@
 }
 
 .cube-main {
-	margin: 0 auto;
+	margin-top: 0;
+	margin-left: 0;
 }
 
 .cube.is-spinning {
