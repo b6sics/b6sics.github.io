@@ -15,7 +15,7 @@
 	height: var(--cube-size);
 	position: relative;
 	transform-style: preserve-3d;
-	transform: translateZ(-100px);
+	transform: translateZ(calc(var(--cube-size) / -2)) translateY(calc(var(--cube-size) / -4));
 }
 
 .cube-main {
@@ -28,11 +28,15 @@
 
 @keyframes spinCube {
 	0% {
-		transform: translateZ(-100px) rotateX(0deg) rotateY(0deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) translateY(calc(var(--cube-size) / -4)) rotateX(0deg) rotateY(0deg);
+	}
+
+	50% {
+		transform: translateZ(calc(var(--cube-size) / -2)) translateY(calc(var(--cube-size) / -4)) rotateX(360deg) rotateY(360deg);
 	}
 
 	100% {
-		transform: translateZ(-100px) rotateX(360deg) rotateY(360deg);
+		transform: translateZ(calc(var(--cube-size) / -2)) translateY(calc(var(--cube-size) / -4)) rotateX(360deg) rotateY(360deg);
 	}
 }
 
