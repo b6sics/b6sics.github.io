@@ -12,7 +12,7 @@
   --cube-edge: 4px outset gray;
   --cube-font-color: snow;
 
-  --cube-transform: 16s infinite ease-in-out;
+  --cube-transform: 12s 1 ease-in-out;
 
   --scene-border: 1vmin solid lightgray;
   --scene-background: hsla(270, 50%, 90%, 0.85);
