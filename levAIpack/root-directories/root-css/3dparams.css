@@ -22,6 +22,9 @@
   --scene-border: var(--scene-border-size) solid lightgray;
   --scene-background: hsla(270, 50%, 90%, 0.85);
 
+  --info-background: lightgray;
+  --info-text-color: navy;
+
   --shadow-blur: 0.25vmin;
   --shadow-color1: whitesmoke;
   --shadow-color2: darkslateblue;
