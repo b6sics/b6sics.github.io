@@ -1,5 +1,6 @@
 body {
 	background-color: var(--body-color);
+	color: var(--text-color);
 }
 
 a {
@@ -231,7 +232,7 @@ a {
 footer {
 	position: fixed;
 	display: flex;
-	justify-content: start;
+	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	bottom: var(--footer-bottom);
@@ -242,16 +243,14 @@ footer {
 
 .half {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
+	flex-flow: column;
 	flex-wrap: wrap;
 	align-items: center;
-	width: calc(var(--footer-width) / 2);
-	min-width: 600px;
+	width: var(--footer-width);
 }
 
 .quarter {
-	width: calc(var(--footer-width) / 4);
-	min-width: 350px;
-	text-align: left;
+	text-align: center;
 }
