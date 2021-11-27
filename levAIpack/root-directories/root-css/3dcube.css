@@ -9,15 +9,15 @@ a {
 }
 
 .scene {
-	border: var(--scene-border);
-	background: var(--scene-background);
-	margin: calc(var(--cube-size) / 2 - 1px) var(--footer-right) 0 var(--footer-left);
 	position: relative;
+	border: var(--scene-border);
+	margin: calc(var(--cube-size) / 2 - 1px) var(--footer-right) 0 var(--footer-left);
+	width: var(--footer-width);
+	height: calc(var(--cube-size) / 2);
+	background: var(--scene-background);
 }
 
 .scene-main {
-	width: var(--footer-width);
-	height: calc(var(--cube-size) / 2);
 	perspective: calc(var(--cube-size) * 6 - 1px);
 }
 
@@ -230,7 +230,7 @@ a {
 }
 
 section#main {
-	position: fixed;
+	position: absolute;
 	bottom: calc(var(--footer-bottom) * 2 + 6em);
 	width: 55%;
 	right: var(--footer-right);
