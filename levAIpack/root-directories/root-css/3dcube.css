@@ -229,13 +229,18 @@ a {
 	}
 }
 
-section.main {
+section#main {
 	position: fixed;
+	bottom: calc(var(--footer-bottom) * 2 + 6em);
+	width: var(--footer-width);
+	right: var(--footer-right);
+	left: var(--footer-left);
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 	flex-flow: column;
+	background-color: cornsilk;
 }
 
 footer {
@@ -246,6 +251,7 @@ footer {
 	flex-wrap: wrap;
 	bottom: var(--footer-bottom);
 	width: var(--footer-width);
+	height: 6em;
 	left: var(--footer-left);
 	right: var(--footer-right);
 }
