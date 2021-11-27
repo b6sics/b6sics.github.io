@@ -17,7 +17,8 @@
 
   --cube-transform: var(--animation-duration) 1 ease-in-out;
 
-  --scene-border: 1vmin solid lightgray;
+  --scene-border-size: 1vmin;
+  --scene-border: var(--scene-border-size) solid lightgray;
   --scene-background: hsla(270, 50%, 90%, 0.85);
 
   --pulse-transform: calc(var(--animation-duration) / 5) infinite ease-in-out var(--animation-duration);

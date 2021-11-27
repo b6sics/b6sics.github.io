@@ -10,16 +10,17 @@ body {
 }
 
 .scene-main {
-	width: 90%;
+	width: 96%;
 	height: calc(var(--cube-size) / 2);
-	text-align: right;
-	perspective: calc(var(--cube-size) * 5 - 1px);
+	perspective: calc(var(--cube-size) * 6 - 1px);
 }
 
-.scene-main p {
+.scene-main p::after {
 	content: "Arcus Maximus";
-	font-size: calc(var(--cube-size) / 3);
-	line-height: calc(var(--cube-size) / 2);
+	float: right;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: calc(var(--cube-size) / 6);
+	line-height: calc(var(--cube-size) / 2 - var(--scene-border-size) * 2);
 }
 
 .cube {
