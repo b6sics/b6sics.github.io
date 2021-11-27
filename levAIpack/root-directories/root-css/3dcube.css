@@ -11,7 +11,7 @@ a {
 .scene {
 	border: var(--scene-border);
 	background: var(--scene-background);
-	margin: calc(var(--cube-size) / 2 - 1px) var(--footer-right) 0 auto;
+	margin: calc(var(--cube-size) / 2 - 1px) var(--footer-right) 0 var(--footer-left);
 	position: relative;
 }
 
