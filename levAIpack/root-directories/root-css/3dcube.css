@@ -12,7 +12,14 @@ body {
 .scene-main {
 	width: 90%;
 	height: calc(var(--cube-size) / 2);
+	text-align: right;
 	perspective: calc(var(--cube-size) * 5 - 1px);
+}
+
+.scene-main p {
+	content: "Arcus Maximus";
+	font-size: calc(var(--cube-size) / 3);
+	line-height: calc(var(--cube-size) / 2);
 }
 
 .cube {
