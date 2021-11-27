@@ -229,6 +229,15 @@ a {
 	}
 }
 
+section.main {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-flow: column;
+}
+
 footer {
 	position: fixed;
 	display: flex;
