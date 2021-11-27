@@ -1,6 +1,5 @@
 body {
 	background-color: var(--body-color);
-	min-height: 100vh;
 }
 
 .scene {
@@ -19,7 +18,7 @@ body {
 .scene-main p::after {
 	content: "Arcus Maximus";
 	float: right;
-	margin-right: var(--scene-border-size);
+	margin-right: calc(var(--scene-border-size) * 2);
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-style: oblique;
 	color: var(--scene-text-color);
@@ -32,7 +31,8 @@ body {
 .cube {
 	width: var(--cube-size);
 	height: var(--cube-size);
-	position: relative;
+	position: absolute;
+	left: calc(var(--cube-size) / 4);
 	transform-style: preserve-3d;
 	transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(420deg);
 	transform-origin: 50% 50%;
@@ -223,8 +223,8 @@ body {
 	}
 }
 
-footer{
-	position: absolute;
+footer {
+	position: fixed;
 	bottom: var(--footer-bottom);
 	width: var(--footer-width);
 	left: var(--footer-left);
