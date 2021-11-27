@@ -1,5 +1,6 @@
 :root {
   --body-color: hsla(240, 100%, 30%, 0.9);
+  --text-color: whitesmoke;
 
   --cube-size: 33vmin;
 
