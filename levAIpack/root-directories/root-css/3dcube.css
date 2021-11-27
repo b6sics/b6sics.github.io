@@ -314,6 +314,10 @@ footer {
 	text-align: center;
 }
 
+#main-contact {
+	z-index: 10;
+}
+
 #main-contact:focus {
 	content: "";
 	width: var(--footer-width);
