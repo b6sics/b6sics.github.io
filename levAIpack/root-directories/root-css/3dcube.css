@@ -2,6 +2,11 @@ body {
 	background-color: var(--body-color);
 }
 
+a {
+	text-decoration: none;
+	color: var(--text-color);
+}
+
 .scene {
 	border: var(--scene-border);
 	background: var(--scene-background);
@@ -225,8 +230,28 @@ body {
 
 footer {
 	position: fixed;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	flex-wrap: wrap;
 	bottom: var(--footer-bottom);
 	width: var(--footer-width);
 	left: var(--footer-left);
 	right: var(--footer-right);
+}
+
+.half {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+	flex-wrap: wrap;
+	align-items: center;
+	width: calc(var(--footer-width) / 2);
+	min-width: 600px;
+}
+
+.quarter {
+	width: calc(var(--footer-width) / 4);
+	min-width: 350px;
+	text-align: left;
 }
