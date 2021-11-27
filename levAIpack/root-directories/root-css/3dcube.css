@@ -21,10 +21,11 @@ body {
 	margin-right: var(--scene-border-size);
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-style: oblique;
-	color: gold;
+	color: var(--scene-text-color);
 	font-size: calc(var(--cube-size) / 6);
 	line-height: calc(var(--cube-size) / 2 - var(--scene-border-size) * 2);
-	text-shadow: var(--shadow) var(--shadow) var(--shadow) darkslateblue, 0 0 var(--shadow) whitesmoke;
+	text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2),
+		0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
 
 .cube {
