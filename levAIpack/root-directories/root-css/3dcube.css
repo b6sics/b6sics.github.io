@@ -247,8 +247,8 @@ section#main a {
 
 button {
 	width: 100%;
-	height: calc(var(--cube-size) / 6);
-	margin: calc(var(--cube-size) / 20 + 1px) 0;
+	height: calc(var(--cube-size) / 5);
+	margin: calc(var(--cube-size) / 50 + 1px) 0;
 	font-size: calc(var(--cube-size) / 12);
 	color: var(--scene-text-color);
 	text-shadow: calc(var(--shadow-blur) / 2) calc(var(--shadow-blur) / 2) calc(var(--shadow-blur) / 2) var(--shadow-color2);
@@ -257,8 +257,8 @@ button {
 
 button:hover {
 	cursor: pointer;
-	height: calc(var(--cube-size) / 6 + 2px);
-	margin: calc(var(--cube-size) / 20) 0;
+	height: calc(var(--cube-size) / 5 + 2px);
+	margin: calc(var(--cube-size) / 50) 0;
 	text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2),
 		0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
@@ -296,8 +296,8 @@ footer {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: calc(var(--cube-size) / 6 * 5 + (var(--cube-size) / 20 + 1px) * 9);
-	margin: calc(var(--cube-size) / 20 + 1px) 0;
+	height: calc(var(--cube-size) / 5 * 5 + (var(--cube-size) / 50 + 1px) * 10);
+	margin: calc(var(--cube-size) / 50 + 1px) 0;
 	background-color: var(--info-background);
 	color: var(--info-text-color);
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -360,13 +360,13 @@ footer {
 	}
 
 	button {
-		height: 4.5vh;
-		margin: calc(1.5vh + 1px) 0;
-		font-size: 2vh;
+		height: 6vh;
+		margin: calc(0.5vh + 1px) 0;
+		font-size: 3vh;
 	}
 
 	button:hover {
-		height: calc(4.5vh + 2px);
-		margin: 1.5vh 0;
+		height: calc(6vh + 2px);
+		margin: 0.5vh 0;
 	}
 }
