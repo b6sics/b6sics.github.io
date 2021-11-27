@@ -1,5 +1,6 @@
 body {
 	background-color: var(--body-color);
+	min-height: 100vh;
 }
 
 .scene {
@@ -220,4 +221,12 @@ body {
 	100% {
 		transform: translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1)) rotateX(0deg) rotateY(180deg);
 	}
+}
+
+footer{
+	position: absolute;
+	bottom: var(--footer-bottom);
+	width: var(--footer-width);
+	left: var(--footer-left);
+	right: var(--footer-right);
 }
