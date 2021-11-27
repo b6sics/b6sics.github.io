@@ -233,7 +233,7 @@ section#main {
 	position: fixed;
 	bottom: calc(var(--footer-bottom) * 2 + 6em);
 	width: 50%;
-	right: 2%;
+	right: 4%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -246,6 +246,10 @@ section#main {
 		width: 80%;
 		right: 10%;
 	}
+}
+
+#main a {
+	width: 100%;
 }
 
 button {
@@ -261,7 +265,7 @@ button {
 button:hover {
 	cursor: pointer;
 	height: calc(var(--cube-size) / 6 + 2px);
-	margin: calc(var(--cube-size) / 20);
+	margin: calc(var(--cube-size) / 20) 0;
 	text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2),
 		0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
