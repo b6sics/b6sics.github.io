@@ -315,12 +315,16 @@ footer {
 }
 
 #main-contact {
+	position: absolute;
+	display: none;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: calc(var(--cube-size) / 6 * 5 + (var(--cube-size) / 20 + 1px) * 10);
+	margin: calc(var(--cube-size) / 20 + 1px) 0;
 	z-index: 10;
 }
 
-#main-contact:focus {
-	content: "";
-	width: var(--footer-width);
-	height: 50vh;
-
+#contact-button:focus~#main-contact {
+	display: initial;
 }
