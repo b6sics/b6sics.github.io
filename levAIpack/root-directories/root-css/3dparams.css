@@ -32,7 +32,7 @@
 
   /* footer metrix */
   --footer-bottom: 1vmin;
-  --footer-left: 10vmin;
+  --footer-left: 1vmin;
   --footer-right: var(--footer-left);
   --footer-width: calc(100% - 2 * var(--footer-left));
 }
