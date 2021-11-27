@@ -16,7 +16,7 @@ a {
 }
 
 .scene-main {
-	width: 96%;
+	width: var(--footer-width);
 	height: calc(var(--cube-size) / 2);
 	perspective: calc(var(--cube-size) * 6 - 1px);
 }
