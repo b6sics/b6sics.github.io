@@ -21,6 +21,12 @@
   --scene-border: var(--scene-border-size) solid lightgray;
   --scene-background: hsla(270, 50%, 90%, 0.85);
 
+  --shadow-blur: 0.25vmin;
+  --shadow-color1: whitesmoke;
+  --shadow-color2: darkslateblue;
+
+  --scene-text-color: goldenrod;
+
   --pulse-transform: calc(var(--animation-duration) / 5) infinite ease-in-out var(--animation-duration);
 
   /* footer metrix */
