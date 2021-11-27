@@ -313,3 +313,10 @@ footer {
 .quarter {
 	text-align: center;
 }
+
+#main-contact:focus {
+	content: "";
+	width: var(--footer-width);
+	height: 50vh;
+
+}
