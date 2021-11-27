@@ -250,12 +250,11 @@ section#main {
 button {
 	width: 100%;
 	height: calc(var(--cube-size) / 6);
-	margin: calc(var(--cube-size) / 20 + 1px);
+	margin: calc(var(--cube-size) / 20 + 1px) 0;
 	font-size: calc(var(--cube-size) / 12);
 	color: var(--scene-text-color);
-	text-shadow: 0 0 calc(var(--shadow-blur) / 2) var(--shadow-color2);
+	text-shadow: calc(var(--shadow-blur) / 2) calc(var(--shadow-blur) / 2) calc(var(--shadow-blur) / 2) var(--shadow-color2);
 	background: var(--scene-background);
-	opacity: 0.9;
 }
 
 button:hover {
@@ -264,7 +263,19 @@ button:hover {
 	margin: calc(var(--cube-size) / 20);
 	text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2),
 		0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
-	opacity: 1;
+}
+
+@media (max-width: 600px) {
+	button {
+		height: 5.5vh;
+		margin: calc(1.5vh + 1px) 0;
+		font-size: 2.5vh;
+	}
+
+	button:hover {
+		height: calc(5.5vh + 2px);
+		margin: 1.5vh 0;
+	}
 }
 
 footer {
