@@ -328,5 +328,15 @@ footer {
 }
 
 #contact-button:focus~#main-contact {
-	display: initial;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 2em;
+	color: tomato;
 }
