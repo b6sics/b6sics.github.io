@@ -11,7 +11,7 @@ a {
 .scene {
 	border: var(--scene-border);
 	background: var(--scene-background);
-	margin: calc(var(--cube-size) / 2 - 1px) auto 0;
+	margin: calc(var(--cube-size) / 2 - 1px) var(--footer-right) 0 auto;
 	position: relative;
 }
 
@@ -232,8 +232,8 @@ a {
 section#main {
 	position: fixed;
 	bottom: calc(var(--footer-bottom) * 2 + 6em);
-	width: 50%;
-	right: 4%;
+	width: 55%;
+	right: var(--footer-right);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -241,14 +241,7 @@ section#main {
 	flex-flow: column;
 }
 
-@media (max-width: 600px) {
-	section#main {
-		width: 80%;
-		right: 10%;
-	}
-}
-
-#main a {
+section#main a {
 	width: 100%;
 }
 
@@ -270,7 +263,18 @@ button:hover {
 		0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
 
+@media (max-width: 1200px) {
+	section#main {
+		width: 50%;
+	}
+}
+
 @media (max-width: 600px) {
+	section#main {
+		width: 80%;
+		right: 10%;
+	}
+
 	button {
 		height: 4.5vh;
 		margin: calc(1.5vh + 1px) 0;
