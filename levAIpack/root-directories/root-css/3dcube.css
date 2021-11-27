@@ -69,6 +69,7 @@ body {
 	font-size: calc(var(--cube-size) / 3);
 	font-weight: bold;
 	color: var(--cube-font-color);
+	text-shadow: 0 0 calc(var(--shadow-blur) * 10) var(--shadow-color2);
 	text-align: center;
 }
 
