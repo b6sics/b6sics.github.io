@@ -312,7 +312,6 @@ footer {
 	z-index: 10;
 }
 
-#contact-button:active~#main-contact,
 #contact-button:focus~#main-contact {
 	display: flex;
 	justify-content: space-evenly;
