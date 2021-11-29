@@ -112,6 +112,7 @@ a {
 		border: var(--cube-edge);
 		filter: none;
 		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
 	}
 
 	50% {
@@ -119,6 +120,7 @@ a {
 		border: var(--cube-edge2);
 		filter: blur(0.15vmin);
 		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
 	}
 
 	to {
@@ -126,6 +128,7 @@ a {
 		border: var(--cube-edge);
 		filter: none;
 		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
 	}
 }
 
@@ -143,7 +146,7 @@ a {
 
 .cube_face-front.moving {
 	transform-origin: left 0;
-	-webkit-transform-origin: left 0;
+	transform-origin: left 0;
 	animation: moveFront var(--cube-transform), pulsate var(--pulse-transform);
 }
 
@@ -167,7 +170,7 @@ a {
 
 .cube_face-left.moving {
 	transform-origin: left 0;
-	-webkit-transform-origin: left 0;
+	transform-origin: left 0;
 	animation: moveLeft var(--cube-transform), pulsate var(--pulse-transform);
 }
 
@@ -191,7 +194,7 @@ a {
 
 .cube_face-right.moving {
 	transform-origin: left 0;
-	-webkit-transform-origin: left 0;
+	transform-origin: left 0;
 	animation: moveRight var(--cube-transform), pulsate var(--pulse-transform);
 }
 
@@ -215,7 +218,7 @@ a {
 
 .cube_face-back.moving {
 	transform-origin: left 0;
-	-webkit-transform-origin: left 0;
+	transform-origin: left 0;
 	animation: moveBack var(--cube-transform), pulsate var(--pulse-transform);
 }
 
