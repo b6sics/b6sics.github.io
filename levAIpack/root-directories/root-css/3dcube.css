@@ -252,7 +252,7 @@ section#main a {
 	width: 100%;
 }
 
-button {
+.pseudobutton {
 	width: 100%;
 	height: calc(var(--cube-size) / 5);
 	margin: calc(var(--cube-size) / 50 + 1px) 0;
@@ -262,7 +262,7 @@ button {
 	background: var(--scene-background);
 }
 
-button:hover {
+.pseudobutton:hover {
 	cursor: pointer;
 	height: calc(var(--cube-size) / 5 + 2px);
 	margin: calc(var(--cube-size) / 50) 0;
