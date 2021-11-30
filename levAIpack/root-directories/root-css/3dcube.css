@@ -248,11 +248,10 @@ section#main {
 	flex-flow: column;
 }
 
-section#main a {
-	width: 100%;
-}
-
 .pseudobutton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	width: 100%;
 	height: calc(var(--cube-size) / 5);
 	margin: calc(var(--cube-size) / 50 + 1px) 0;
@@ -312,7 +311,7 @@ footer {
 	z-index: 10;
 }
 
-#contact-button:focus~#main-contact {
+#contact-button:focus #main-contact {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -353,7 +352,7 @@ footer {
 		width: 45%;
 	}
 
-	#contact-button:focus~#main-contact {
+	#contact-button:focus #main-contact {
 		justify-content: center;
 		flex-flow: column;
 		text-align: center;
