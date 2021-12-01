@@ -321,22 +321,26 @@ footer {
 }
 
 #main-contact img {
-	margin: calc(var(--cube-size) / 10 + 1px);
-	height: calc(var(--cube-size) / 6 * 4);
+	margin: calc(var(--cube-size) / 20 + 1px) 0;
+	height: calc(var(--cube-size) / 1);
 	width: auto;
 	min-width: 20px;
-	background-color: white;
+	border: 2px inset navy;
 }
 
 #main-contact h6 {
 	font-family: Arial, Helvetica, sans-serif;
-	line-height: 1em;
+	line-height: 1.1em;
+}
+
+#main-contact h6:last-child {
+	margin-bottom: calc(var(--cube-size) / 20 + 1px);
 }
 
 #main-contact h6 span {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1.5em;
-	line-height: 1em;
+	line-height: 1.1em;
 }
 
 #close {
@@ -344,7 +348,7 @@ footer {
 	top: 0;
 	right: 0;
 	font-size: 1.5em;
-	line-height: 0.8em;
+	line-height: 1em;
 	color: var(--info-text-color);
 }
 
@@ -357,6 +361,10 @@ footer {
 		justify-content: center;
 		flex-flow: column;
 		text-align: center;
+	}
+
+	#main-contact img {
+		height: calc(var(--cube-size) * 0.8);
 	}
 }
 
@@ -375,5 +383,15 @@ footer {
 	button:hover {
 		height: calc(6vh + 2px);
 		margin: 0.5vh 0;
+	}
+
+	#main-contact img {
+		height: calc(var(--cube-size) * 1);
+	}
+
+	#contact-button:focus~#main-contact {
+		justify-content: space-evenly;
+		align-items: center;
+		flex-flow: row;
 	}
 }
