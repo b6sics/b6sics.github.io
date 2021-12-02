@@ -1,4 +1,5 @@
 body {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	background-color: var(--body-color);
 	color: var(--text-color);
 }
@@ -25,9 +26,8 @@ a {
 	content: "Arcus Maximus";
 	float: right;
 	margin-right: calc(var(--scene-border-size) * 2);
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	font-style: oblique;
-	font-size: calc(var(--cube-size) / 6);
+	font-size: calc(var(--cube-size) / 10);
 	line-height: calc(var(--cube-size) / 2 - var(--scene-border-size) * 2);
 	color: var(--scene-text-color);
 	text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2),
@@ -306,8 +306,7 @@ footer {
 	margin: calc(var(--cube-size) / 50 + 1px) 0;
 	background-color: var(--info-background);
 	color: var(--info-text-color);
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-	font-size: calc(var(--cube-size) / 12);
+	font-size: calc(var(--cube-size) / 10);
 	z-index: 10;
 }
 
