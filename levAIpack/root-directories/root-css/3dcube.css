@@ -265,6 +265,7 @@ section#main {
 	cursor: pointer;
 	height: calc(var(--cube-size) / 5 + 2px);
 	margin: calc(var(--cube-size) / 50) 0;
+	color: var(--scene-text-color);
 	text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2),
 		0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
@@ -329,6 +330,7 @@ footer {
 
 #main-contact h6 {
 	font-family: Arial, Helvetica, sans-serif;
+	color: var(--info-text-color);
 	line-height: 1.1em;
 }
 
@@ -338,6 +340,7 @@ footer {
 
 #main-contact h6 span {
 	font-family: Arial, Helvetica, sans-serif;
+	color: var(--info-text-color);
 	font-size: 1.5em;
 	line-height: 1.1em;
 }
