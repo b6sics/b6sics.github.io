@@ -26,7 +26,8 @@ a {
 	content: "Arcus Maximus";
 	float: right;
 	margin-right: calc(var(--scene-border-size) * 2);
-	font-style: oblique;
+	font-style: italic;
+	font-weight: lighter;
 	font-size: calc(var(--cube-size) / 10);
 	line-height: calc(var(--cube-size) / 2 - var(--scene-border-size) * 2);
 	color: var(--scene-text-color);
@@ -255,7 +256,7 @@ section#main {
 	width: 100%;
 	height: calc(var(--cube-size) / 5);
 	margin: calc(var(--cube-size) / 50 + 1px) 0;
-	font-size: calc(var(--cube-size) / 12);
+	font-size: calc(var(--cube-size) / 10);
 	color: var(--scene-text-color);
 	text-shadow: calc(var(--shadow-blur) / 2) calc(var(--shadow-blur) / 2) calc(var(--shadow-blur) / 2) var(--shadow-color2);
 	background: var(--scene-background);
@@ -356,7 +357,7 @@ footer {
 
 @media (max-width: 1200px) {
 	section#main {
-		width: 45%;
+		width: 50%;
 	}
 
 	#contact-button:focus~#main-contact {
@@ -370,7 +371,7 @@ footer {
 	}
 }
 
-@media (max-width: 720px) {
+@media (max-width: 600px) {
 	section#main {
 		width: 80%;
 		right: 10%;
