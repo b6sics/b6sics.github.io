@@ -27,6 +27,12 @@ h6 {
     text-align: right;
 }
 
+.chapters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 h1,
 h2,
 h3 {
