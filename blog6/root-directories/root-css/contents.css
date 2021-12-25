@@ -19,8 +19,11 @@ h6 {
     color: var(--header-color);
 }
 
+.title {
+    text-align: center;
+}
+
 .author {
-    left: 1em;
     text-align: right;
 }
 
