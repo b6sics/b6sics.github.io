@@ -9,6 +9,15 @@ body {
     background-color: var(--body-bgcolor);
 }
 
+footer,
+section,
+header,
+article,
+figure {
+    margin: 2vh auto;
+    padding: 1vmin;
+}
+
 h1,
 h2,
 h3,
@@ -41,8 +50,6 @@ h3 {
 }
 
 article {
-    margin: 2vh auto;
-    padding: 1vmin;
     width: calc(100% - 2vmin);
     background-color: var(--label-bgcolor);
     border: 1px solid transparent;
@@ -117,8 +124,6 @@ figure {
     justify-content: center;
     align-items: center;
     align-content: center;
-    margin: 2vh auto;
-    padding: 1vmin;
     width: calc(100% - 2vmin);
     background-color: palegoldenrod;
     border: 1px solid transparent
@@ -145,11 +150,6 @@ details {
     background-color: palegoldenrod;
     color: #263238;
     transition: background-color 0.15s;
-}
-
-iframe {
-    width: 76vw;
-    height: 57vw;
 }
 
 label img {
