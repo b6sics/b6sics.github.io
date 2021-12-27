@@ -55,14 +55,17 @@ article footer {
 
 article a {
     display: inline-block;
-    margin: 0.125vmin;
-    padding: 0.125vmin;
+    margin: 0.25vmin;
+    padding: 0.25vmin;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
     text-decoration: unset;
     background-color: unset;
 }
 
 article a:hover {
-    text-decoration: overline underline;
+    border-top: 1px solid var(--header-color);
+    border-bottom: 1px solid var(--header-color);
     background-color: var(--label-bgcolor);
 }
 
