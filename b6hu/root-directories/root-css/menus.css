@@ -15,12 +15,7 @@
     text-align: center;
     font-size: 0.75em;
     line-height: 1em;
-    border: 3px ridge navy;
     background-color: snow;
-}
-
-.topmenu a:hover {
-    text-decoration: none;
 }
 
 #main-menubutton {
