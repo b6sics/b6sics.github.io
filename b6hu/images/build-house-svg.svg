@@ -9,20 +9,40 @@ viewBox="0 0 500 350" xml:space="preserve">
 
         </path>
         <path d="m 150 325 v-200"  stroke-dasharray="200" stroke-dashoffset="0" >
-
-
+        <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="270 150 325"
+                          to="360 150 325"
+                          dur="3s"
+                          repeatCount="1"/>
         </path>
         <path d="m 150 125 l 100 -100"  stroke-dasharray="142" stroke-dashoffset="0" >
-
-
+        <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="270 150 325"
+                          to="360 150 325"
+                          dur="3s"
+                          repeatCount="1"/>
         </path>
         <path d="m 250 25 l 100 100"  stroke-dasharray="142" stroke-dashoffset="0" >
-
-
+        <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="270 150 325"
+                          to="360 150 325"
+                          dur="3s"
+                          repeatCount="1"/>
         </path>
         <path d="m 350 125 v200"  stroke-dasharray="200" stroke-dashoffset="0" >
-
-
+        <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="90 350 325"
+                          to="0 350 325"
+                          dur="3s"
+                          repeatCount="1"/>
         </path>
         <path d="m 350 325 l -200 -200"  stroke-dasharray="283" stroke-dashoffset="0" >
 
