@@ -5,34 +5,44 @@
 viewBox="0 0 1500 350" xml:space="preserve">
     <g fill="none" stroke="black" stroke-width="5" stroke-linecap="round">
         <path d="m 850 325 h-200" stroke-dasharray="200" stroke-dashoffset="0" >
-
-
         </path>
-        <path d="m 650 325 v-200"  stroke-dasharray="200" stroke-dashoffset="0" >
-        <animateTransform attributeName="transform"
-                          attributeType="XML"
-                          type="rotate"
-                          from="270 650 325"
-                          to="360 650 325"
-                          dur="3s"
-                          repeatCount="1"/>
+        <path d="m 650 325 v-200" >
+            <animateTransform 
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                begin="0s"
+                values="270 650 325; 270 650 325; 270 650 325; 270 650 325; 360 650 325"
+                dur="4s"
+                repeatCount="1"/>
         </path>
-        <path d="m 650 125 l 100 -100"  stroke-dasharray="142" stroke-dashoffset="0" >
-        <animateTransform attributeName="transform"
-                          attributeType="XML"
-                          type="rotate"
-                          from="270 650 325"
-                          to="360 650 325"
-                          dur="3s"
-                          repeatCount="1"/>
-        </path>
+        <g>
+            <path d="m 650 125 l 100 -100" stroke="red" stroke-width="3" >
+                <animateTransform 
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    begin="0s"
+                    values="225 650 125; 225 650 125; 225 650 125; 270 650 325; 360 650 325"
+                    dur="4s"
+                    repeatCount="1"/>
+            </path>
+            <animateTransform 
+                attributeName="transform"
+                attributeType="XML"
+                type="translate"
+                begin="0s"
+                values="-200 200; -200 200; -200 200; 0 0; 0 0"
+                dur="4s"
+                repeatCount="1"/>
+        </g>
         <path d="m 750 25 l 100 100"  stroke-dasharray="142" stroke-dashoffset="0" >
         <animateTransform attributeName="transform"
                           attributeType="XML"
                           type="rotate"
                           from="270 650 325"
                           to="360 650 325"
-                          dur="3s"
+                          dur="2s"
                           repeatCount="1"/>
         </path>
         <path d="m 850 125 v200"  stroke-dasharray="200" stroke-dashoffset="0" >
@@ -41,7 +51,7 @@ viewBox="0 0 1500 350" xml:space="preserve">
                           type="rotate"
                           from="90 850 325"
                           to="0 850 325"
-                          dur="3s"
+                          dur="2s"
                           repeatCount="1"/>
         </path>
         <path d="m 850 325 l -200 -200"  stroke-dasharray="283" stroke-dashoffset="0" >
@@ -50,7 +60,7 @@ viewBox="0 0 1500 350" xml:space="preserve">
                           type="rotate"
                           from="90 850 325"
                           to="0 850 325"
-                          dur="3s"
+                          dur="2s"
                           repeatCount="1"/>
         </path>
         <path d="m 650 125 h 200"  stroke-dasharray="200" stroke-dashoffset="0" >
@@ -59,7 +69,7 @@ viewBox="0 0 1500 350" xml:space="preserve">
                           type="rotate"
                           from="90 850 325"
                           to="0 850 325"
-                          dur="3s"
+                          dur="2s"
                           repeatCount="1"/>
         </path>
         <path d="m 850 125 l -200 200"  stroke-dasharray="283" stroke-dashoffset="0" >
@@ -68,7 +78,7 @@ viewBox="0 0 1500 350" xml:space="preserve">
                           type="rotate"
                           from="270 650 325"
                           to="360 650 325"
-                          dur="3s"
+                          dur="2s"
                           repeatCount="1"/>
         </path>
     </g>
