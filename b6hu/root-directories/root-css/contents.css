@@ -98,6 +98,7 @@ article p::first-letter {
     text-transform: uppercase;
 }
 
+figure img,
 article img {
     display: block;
     margin: 0.5vmin auto;
