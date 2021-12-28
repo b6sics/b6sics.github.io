@@ -18,6 +18,17 @@ figure {
     padding: 1vmin;
 }
 
+a {
+    text-decoration: unset;
+    background-color: unset;
+}
+
+a:hover {
+    border-top: 1px solid var(--header-color);
+    border-bottom: 1px solid var(--header-color);
+    background-color: var(--label-bgcolor);
+}
+
 h1,
 h2,
 h3,
@@ -66,14 +77,6 @@ article a {
     padding: 0.25vmin;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
-    text-decoration: unset;
-    background-color: unset;
-}
-
-article a:hover {
-    border-top: 1px solid var(--header-color);
-    border-bottom: 1px solid var(--header-color);
-    background-color: var(--label-bgcolor);
 }
 
 article p {
