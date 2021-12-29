@@ -3,108 +3,162 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
 viewBox="0 0 1500 350" xml:space="preserve">
-    <g fill="none" stroke="black" stroke-width="5" stroke-linecap="round">
-        <path d="m 850 325 h-200" stroke-dasharray="200" stroke-dashoffset="0" >
-        </path>
-        <path d="m 650 325 v-200" >
-            <animateTransform 
+
+    <path id="path1" d="M1050,325 A 200 200, 0, 0 0, 850 125"
+                        fill="none" stroke="gray" stroke-width="1"  />
+    <path id="path2" d="M450,325 A 200 200, 0, 0 1, 650 125"
+                        fill="none" stroke="gray" stroke-width="1"  />
+
+    <g fill="none" stroke-width="5" stroke-linecap="round">
+        <path d="m 850 325 h -200" stroke="red" />
+        <path d="m 850 325 l -200 -200" stroke="navy" >
+            <animateTransform            
                 attributeName="transform"
                 attributeType="XML"
                 type="rotate"
                 begin="0s"
-                values="270 650 325; 270 650 325; 270 650 325; 270 650 325; 270 650 325; 360 650 325"
-                dur="3s"
-                repeatCount="1"/>
-        </path>
-        <g>
-            <path d="m 650 125 l 100 -100" >
-                <animateTransform 
-                    attributeName="transform"
-                    attributeType="XML"
-                    type="rotate"
-                    begin="0s"
-                    values="225 650 125; 225 650 125; 225 650 125; 270 650 125; 270 650 325; 360 650 325"
-                    dur="3s"
-                    repeatCount="1"/>
-            </path>
-            <animateTransform 
-                attributeName="transform"
-                attributeType="XML"
-                type="translate"
-                begin="0s"
-                values="-200 200; -200 200; -200 200; -200 200; 0 0; 0 0"
-                dur="3s"
-                repeatCount="1"/>
-        </g>
-        <g>
-            <path d="m 750 25 l 100 100" >
-                <animateTransform 
-                    attributeName="transform"
-                    attributeType="XML"
-                    type="rotate"
-                    begin="0s"
-                    values="135 750 25; 225 750 25; 225 650 125; 270 650 125; 270 650 325; 360 650 325"
-                    dur="3s"
-                    repeatCount="1"/>
-            </path>
-            <animateTransform 
-                attributeName="transform"
-                attributeType="XML"
-                type="translate"
-                begin="0s"
-                values="-441 300; -441 300; -200 200; -200 200; 0 0; 0 0"
-                dur="3s"
-                repeatCount="1"/>
-        </g>
-        <path d="m 850 125 l -200 200" >
-            <animateTransform 
-                attributeName="transform"
-                attributeType="XML"
-                type="rotate"
-                from="225 650 325"
-                to="360 650 325"
-                dur="2s"
-                repeatCount="1"/>
-        </path>
-        <path d="m 850 325 l -200 -200" >
-            <animateTransform 
-                attributeName="transform"
-                attributeType="XML"
-                type="rotate"
                 from="135 850 325"
                 to="0 850 325"
-                dur="2s"
-                repeatCount="1"/>
+                dur="0.8s"
+                repeatCount="1" />
         </path>
-        <path d="m 850 125 v200" >
-            <animateTransform 
+        <path d="m 650 325 l 200 -200" stroke="navy" >
+            <animateTransform            
                 attributeName="transform"
                 attributeType="XML"
                 type="rotate"
                 begin="0s"
-                values=" 90 850 325; 90 850 325; 90 850 325; 0 850 325"
-                dur="2.5s"
+                from="-135 650 325"
+                to="0 650 325"
+                dur="0.8s"
                 repeatCount="1" />
         </path>
-        <g>
-            <path d="m 850 125 h -200" >
-                <animateTransform 
-                    attributeName="transform"
-                    attributeType="XML"
-                    type="rotate"
-                    begin="0s"
-                    values="180 850 125; 90 850 125; 90 850 325; 0 850 325"
-                    dur="2.5s"
-                    repeatCount="1"/>
-            </path>
-            <animateTransform 
+        <path d="m 850 125 h -200" stroke="red" >
+            <animateTransform            
                 attributeName="transform"
                 attributeType="XML"
-                type="translate"
-                begin="0s"
-                values="200 200; 200 200; 0 0; 0 0"
-                dur="2.5s"
+                type="rotate"
+                begin="1s"
+                from="90 850 125"
+                to="0 850 125"
+                dur="1s"
+                repeatCount="1" />
+            <animate 
+                attributeType="CSS"
+                attributeName="visibility"
+                values="hidden;visible;visible"
+                keyTimes="0; 0.5; 1"
+                dur="2s"
                 repeatCount="1"/>
-        </g>
+        </path>
+        <path d="m 850 325 v -200" stroke="red" >
+            <animateTransform            
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                begin="0s"
+                from="90 850 325"
+                to="0 850 325"
+                dur="1s"
+                repeatCount="1" />
+        </path>
+        <path d="m 650 325 v -200" stroke="red" >
+            <animateTransform            
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                begin="0s"
+                from="-90 650 325"
+                to="0 650 325"
+                dur="2s"
+                repeatCount="1" />
+        </path>
+        <path d="m 650 325 v -483" stroke="transparent" >
+            <animateTransform            
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                begin="0s"
+                from="-90 650 325"
+                to="0 650 325"
+                dur="2s"
+                repeatCount="1" />
+            <animate 
+                attributeType="XML"
+                attributeName="stroke"
+                values="red;red;transparent"
+                keyTimes="0; 1; 1"
+                dur="2s"
+                repeatCount="1"/>
+        </path>
+        <path d="m 650 125 l 200 -200" stroke="transparent" >
+            <animateTransform            
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                begin="2s"
+                from="-45 650 125"
+                to="0 650 125"
+                dur="1s"
+                repeatCount="1" />
+            <animate 
+                attributeType="XML"
+                attributeName="stroke"
+                values="transparent;transparent;red;red"
+                keyTimes="0; 0.67; 0.67; 1"
+                dur="3s"
+                repeatCount="1"/>
+        </path>
+        <path d="m 650 125 l 100 -100" stroke="red" >
+            <animateTransform            
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                begin="2s"
+                from="-45 650 125"
+                to="0 650 125"
+                dur="1s"
+                repeatCount="1" />
+            <animate 
+                attributeType="CSS"
+                attributeName="visibility"
+                values="hidden;visible;visible"
+                keyTimes="0; 0.67; 1"
+                dur="3s"
+                repeatCount="1"/>
+        </path>
+        <path d="m 750 25 l 100 100" stroke="red" >
+            <animateTransform            
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                begin="3s"
+                from="-90 750 25"
+                to="0 750 25"
+                dur="1s"
+                repeatCount="1" />
+            <animate 
+                attributeType="CSS"
+                attributeName="visibility"
+                values="hidden;visible;visible"
+                keyTimes="0; 0.75; 1"
+                dur="4s"
+                repeatCount="1"/>
+        </path>
+        <path d="m 0 0 v 200" stroke="transparent"  >
+            <animateMotion 
+                dur="1s" 
+                repeatCount="1" 
+                rotate="auto" >
+                <mpath href="#path1" />
+            </animateMotion>
+            <animate 
+                attributeType="XML"
+                attributeName="stroke"
+                values="red;red;transparent"
+                keyTimes="0; 0.5; 1"
+                dur="2s"
+                repeatCount="1"/>
+        </path>
     </g>
 </svg>
