@@ -4,8 +4,79 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
 viewBox="0 0 1750 350" xml:space="preserve">
 
-    <g fill="none" stroke-width="5" stroke-linecap="round">
-        <path d="m 50 325 h 200" stroke="black">
-        </path>
+    <g id="my-house" fill="gray" stroke-width="5" stroke-linecap="round" >
+        <path id="line01" d="m 50 325 h 200" stroke="black" stroke-dasharray="200" stroke-dashoffset="200" />
+        <path id="line02" d="m 250 325 l -200 -200" stroke="black" stroke-dasharray="283" stroke-dashoffset="283" />
+        <path id="line03" d="m 50 125 v 200" stroke="black" stroke-dasharray="200" stroke-dashoffset="200" />
+        <path id="line04" d="m 50 325 l 200 -200" stroke="black" stroke-dasharray="283" stroke-dashoffset="283" />
+        <path id="line05" d="m 250 125 h -200" stroke="black" stroke-dasharray="200" stroke-dashoffset="200" />
+        <path id="line06" d="m 50 125 l 100 -100" stroke="black" stroke-dasharray="142" stroke-dashoffset="142" />
+        <path id="line07" d="m 150 25 l 100 100" stroke="black" stroke-dasharray="142" stroke-dashoffset="142" />
+        <path id="line08" d="m 250 125 v 200" stroke="black" stroke-dasharray="200" stroke-dashoffset="200" />
     </g>
+
+    <animate 
+        xlink:href="#line01"
+        attributeName="stroke-dashoffset"
+        from="200"
+        to="0" 
+        begin="0s"
+        dur="1s" 
+        fill="freeze" />       
+    <animate 
+        xlink:href="#line02"
+        attributeName="stroke-dashoffset"
+        from="283"
+        to="0" 
+        begin="1s"
+        dur="1s" 
+        fill="freeze" />       
+    <animate 
+        xlink:href="#line03"
+        attributeName="stroke-dashoffset"
+        from="200"
+        to="0" 
+        begin="2s"
+        dur="1s" 
+        fill="freeze" />       
+    <animate 
+        xlink:href="#line04"
+        attributeName="stroke-dashoffset"
+        from="283"
+        to="0" 
+        begin="3s"
+        dur="1s" 
+        fill="freeze" />       
+    <animate 
+        xlink:href="#line05"
+        attributeName="stroke-dashoffset"
+        from="200"
+        to="0" 
+        begin="4s"
+        dur="1s" 
+        fill="freeze" />       
+    <animate 
+        xlink:href="#line06"
+        attributeName="stroke-dashoffset"
+        from="142"
+        to="0" 
+        begin="5s"
+        dur="1s" 
+        fill="freeze" />       
+    <animate 
+        xlink:href="#line07"
+        attributeName="stroke-dashoffset"
+        from="142"
+        to="0" 
+        begin="6s"
+        dur="1s" 
+        fill="freeze" />       
+    <animate 
+        xlink:href="#line08"
+        attributeName="stroke-dashoffset"
+        from="200"
+        to="0" 
+        begin="7s"
+        dur="1s" 
+        fill="freeze" />       
 </svg>
