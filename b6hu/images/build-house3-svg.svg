@@ -2,15 +2,129 @@
 <!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
-viewBox="0 0 1500 350" xml:space="preserve">
+viewBox="0 0 1750 350" xml:space="preserve">
 
     <g fill="none" stroke-width="5" stroke-linecap="round">
-        <g>
-
-            <path d="m 250 325 v -200" stroke="red">
-            </path>
-        </g>
-        <path d="m 50 325 h 200" stroke="red">
+        <path d="m 50 325 h 200" stroke="black">
         </path>
+        <g>
+            <path d="m 250 325 v -200" 
+                stroke="red" 
+                transform="rotate(90 250 325)">               
+            </path>
+            <animateTransform            
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                additive="sum"
+                begin="6s"
+                from="0 250 325"
+                to="-90 250 325"
+                dur="1s"
+                repeatCount="1" 
+                fill="freeze" />
+            <g>
+                <path d="m 150 25 l 100 100" 
+                    stroke="yellow" 
+                    transform="translate(200 200) rotate(135 250 125)">               
+                </path>
+                <animateTransform            
+                    attributeName="transform"
+                    attributeType="XML"
+                    type="rotate"
+                    additive="sum"
+                    begin="5s"
+                    from="0 450 325"
+                    to="-45 450 325"
+                    dur="1s"
+                    repeatCount="1" 
+                    fill="freeze" />
+                <g>
+                    <path d="m 50 125 l 100 -100" 
+                        stroke="green" 
+                        transform="translate(541.4 200) rotate(45 50 125)">               
+                    </path>
+                    <animateTransform            
+                        attributeName="transform"
+                        attributeType="XML"
+                        type="rotate"
+                        additive="sum"
+                        begin="4s"
+                        from="0 591.4 325"
+                        to="-90 591.4 325"
+                        dur="1s"
+                        repeatCount="1" 
+                        fill="freeze" />
+                    <g>
+                        <path d="m 50 125 v 200" 
+                            stroke="blue" 
+                            transform="translate(682.8 0) rotate(90 50 325)">               
+                        </path>
+                        <animateTransform            
+                            attributeName="transform"
+                            attributeType="XML"
+                            type="rotate"
+                            additive="sum"
+                            begin="3s"
+                            from="0 732.8 325"
+                            to="-45 732.8 325"
+                            dur="1s"
+                            repeatCount="1" 
+                            fill="freeze" />
+                        <g>
+                            <path d="m 50 325 l 200 200" 
+                                stroke="orange" 
+                                transform="translate(882.8 0) rotate(-45 50 325)">               
+                            </path>
+                            <animateTransform            
+                                attributeName="transform"
+                                attributeType="XML"
+                                type="rotate"
+                                additive="sum"
+                                begin="2s"
+                                from="0 932.8 325"
+                                to="-135 932.8 325"
+                                dur="1s"
+                                repeatCount="1" 
+                                fill="freeze" />
+                            <g>
+                                <path d="m 50 125 h 200" 
+                                    stroke="gray" 
+                                    transform="translate(1165.6 200)">               
+                                </path>
+                                <animateTransform            
+                                    attributeName="transform"
+                                    attributeType="XML"
+                                    type="rotate"
+                                    additive="sum"
+                                    begin="1s"
+                                    from="0 1215.6 325"
+                                    to="-135 1215.6 325"
+                                    dur="1s"
+                                    repeatCount="1" 
+                                    fill="freeze" />
+                                <g>
+                                    <path d="m 50 325 l 200 -200" 
+                                        stroke="brown" 
+                                        transform="translate(1365.6 0) rotate(45 50 325)">               
+                                    </path>
+                                    <animateTransform            
+                                        attributeName="transform"
+                                        attributeType="XML"
+                                        type="rotate"
+                                        additive="sum"
+                                        begin="0s"
+                                        from="0 1415.6 325"
+                                        to="-135 1415.6 325"
+                                        dur="1s"
+                                        repeatCount="1" 
+                                        fill="freeze" />
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
     </g>
 </svg>
