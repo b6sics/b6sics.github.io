@@ -4,9 +4,18 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
 viewBox="0 0 1750 350" xml:space="preserve">
 
-    <g id="my-house" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <path id="triangle" d="M 0 0 l -100 -100 h 200 l -100 100" fill="gray" stroke="black" 
-            transform="translate(250 225)"/>
+    <g id="my-house" stroke-linecap="round" stroke-linejoin="round">
+        <path id="triangle" d="M 0 0 l -100 -100 h 200 l -100 100" transform="translate(250 225)" />
+        <use id="triangle-gray" xlink:href="#triangle"  
+            fill="gray" stroke="black" stroke-width="3" />
+        <use xlink:href="#triangle-gray"
+            transform="rotate(180 250 225)" />
+        <use id="triangle-red" xlink:href="#triangle"  
+            fill="red" stroke="black" stroke-width="3" transform="rotate(180 250 125)" />
+        <use id="triangle-yellow" xlink:href="#triangle"  
+            fill="yellow" stroke="black" stroke-width="3" transform="rotate(90 250 225)" />
+        <use xlink:href="#triangle-yellow"  
+            transform="rotate(180 250 225)" />
 
     </g>
 
