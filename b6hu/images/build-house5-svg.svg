@@ -4,18 +4,69 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
 viewBox="0 0 1750 350" xml:space="preserve">
 
-    <g id="my-house" fill="gray" stroke-width="5" stroke-linecap="round" >
-        <path id="line01" d="m 50 325 h 200" stroke="black" />
+    <g id="my-house" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path id="triangle01" d="M 0 0 l -100 -100 h 200 l -100 100" fill="gray" stroke="black" 
+            transform="translate(250 225)"/>
+        <path id="triangle02" d="M 0 0 l 100 100 h -200 l 100 -100" fill="gray" stroke="black" 
+            transform="translate(250 225)"/>
+        <path id="triangle03" d="M 0 0 l 100 100 h -200 l 100 -100" fill="red" stroke="black" 
+            transform="translate(250 25)"/>
+        <path id="triangle04" d="M 0 0 l 100 100 v -200 l -100 100" fill="orange" stroke="black" 
+            transform="translate(250 225)"/>
+        <path id="triangle05" d="M 0 0 l -100 -100 v 200 l 100 -100" fill="orange" stroke="black" 
+            transform="translate(250 225)"/>
 
     </g>
 
-    <animate 
-        xlink:href="#line01"
-        attributeName="stroke-dashoffset"
-        from="200"
-        to="0" 
+    <animateTransform 
+        xlink:href="#triangle01"
+        attributeName="transform"
+        type="scale"
+        from="0 0"
+        to="1 1" 
         begin="0s"
-        dur="1s" 
+        dur="1s"
+        additive="sum" 
+        fill="freeze" />       
+    <animateTransform 
+        xlink:href="#triangle02"
+        attributeName="transform"
+        type="scale"
+        from="0 0"
+        to="1 1" 
+        begin="0s"
+        dur="1s"
+        additive="sum" 
+        fill="freeze" />       
+    <animateTransform 
+        xlink:href="#triangle03"
+        attributeName="transform"
+        type="scale"
+        from="0 0"
+        to="1 1" 
+        begin="0s"
+        dur="1s"
+        additive="sum" 
+        fill="freeze" />       
+    <animateTransform 
+        xlink:href="#triangle04"
+        attributeName="transform"
+        type="scale"
+        from="0 0"
+        to="1 1" 
+        begin="0s"
+        dur="1s"
+        additive="sum" 
+        fill="freeze" />       
+    <animateTransform 
+        xlink:href="#triangle05"
+        attributeName="transform"
+        type="scale"
+        from="0 0"
+        to="1 1" 
+        begin="0s"
+        dur="1s"
+        additive="sum" 
         fill="freeze" />       
       
 </svg>
