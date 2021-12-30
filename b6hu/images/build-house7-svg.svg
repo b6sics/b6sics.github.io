@@ -4,11 +4,34 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
 viewBox="0 0 1750 350" xml:space="preserve" stroke-linecap="round" stroke-linejoin="round" >
 
+<defs>
+
+</defs>
+
     <path 
         id="house-path" 
         stroke="red" stroke-width="10"  
         d="m 50 325 h 200 l -200 -200 v 200 l 200 -200 h -200 l 100 -100 l 100 100 v 200" 
         stroke-dasharray="1649" stroke-dashoffset="0" />
+
+    <animate 
+        id="house-draw"
+        xlink:href="#house-path"
+        attributeName="stroke-dashoffset"
+        from="1649"
+        to="0" 
+        begin="click"
+        dur="5s" /><desc>    click mouseover mouseout mousedown mouseup    </desc>
+    
+    <animate 
+        id="house-fill" 
+        xlink:href="#house-path"
+        attributeName="fill" 
+        begin="house-draw.end+0.4s" 
+        dur="10s" 
+        values="orange;red"
+        fill="freeze" />
+
 
     <path 
         stroke="red" stroke-width="10"  
@@ -29,22 +52,5 @@ viewBox="0 0 1750 350" xml:space="preserve" stroke-linecap="round" stroke-linejo
         stroke="red" stroke-width="10"  
         d="M 1050 325 v -200 l 100 -100 l 100 100 v 200 h-200 l 200 -200 h -200 l 200 200" 
         stroke-dasharray="1649" stroke-dashoffset="0" />
-
-    <animate 
-        id="house-draw"
-        xlink:href="#house-path"
-        attributeName="stroke-dashoffset"
-        from="1649"
-        to="0" 
-        begin="click"
-        dur="5s" />       
-    
-    <animate 
-        id="house-fill" 
-        xlink:href="#house-path"
-        attributeName="fill" 
-        begin="house-draw.end+0.4s" 
-        dur="10s" 
-        values="orange;red"
-        fill="freeze" />
+        
 </svg>
