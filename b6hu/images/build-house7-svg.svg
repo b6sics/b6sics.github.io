@@ -6,15 +6,29 @@ viewBox="0 0 1750 350" xml:space="preserve" stroke-linecap="round" stroke-linejo
 
     <path 
         id="house-path" 
-        fill="transparent"
-        stroke="black" stroke-width="10"  
-        d="m 350 325 h 200 l -200 -200 v 200 l 200 -200 h -200 l 100 -100 l 100 100 v 200" 
+        stroke="red" stroke-width="10"  
+        d="m 50 325 h 200 l -200 -200 v 200 l 200 -200 h -200 l 100 -100 l 100 100 v 200" 
         stroke-dasharray="1649" stroke-dashoffset="0" />
 
-    <polygon 
-        fill="yellow"
-        stroke="orange" stroke-width="10" 
-        points="47.773,241.534 123.868,8.466 200.427,241.534 7.784,98.208 242.216,98.208 " />
+    <path 
+        stroke="red" stroke-width="10"  
+        d="M 500 325 l -200 -200 l 100 -100 l 100 100 v 200 h-200 v -200 h 200 l -200 200" 
+        stroke-dasharray="1649" stroke-dashoffset="0" />
+
+    <path 
+        stroke="red" stroke-width="10"  
+        d="M 550 325 h 200 l -200 -200 v 200 l 200 -200 h -200 l 100 -100 l 100 100 v 200" 
+        stroke-dasharray="1649" stroke-dashoffset="0" />
+
+    <path 
+        stroke="red" stroke-width="10"  
+        d="M 800 325 v -200 l 100 -100 l 100 100 v 200 l -200 -200 h 200 l -200 200 h 200" 
+        stroke-dasharray="1649" stroke-dashoffset="0" />
+
+    <path 
+        stroke="red" stroke-width="10"  
+        d="M 1050 325 v -200 l 100 -100 l 100 100 v 200 h-200 l 200 -200 h -200 l 200 200" 
+        stroke-dasharray="1649" stroke-dashoffset="0" />
 
     <animate 
         id="house-draw"
@@ -31,6 +45,6 @@ viewBox="0 0 1750 350" xml:space="preserve" stroke-linecap="round" stroke-linejo
         attributeName="fill" 
         begin="house-draw.end+0.4s" 
         dur="10s" 
-        values="#F1F1F1;#A9A9A9;black;#A9A9A9;#F1F1F1"
+        values="orange;red"
         fill="freeze" />
 </svg>
