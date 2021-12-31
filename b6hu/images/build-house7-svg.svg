@@ -11,7 +11,22 @@ viewBox="0 0 1750 350" xml:space="preserve" stroke-linecap="round" stroke-linejo
     }
 
     .draw-house:hover {
-        animation: draw-path 2.5s ease 1;
+        animation: draw-path 2.4s ease-in-out 0.2s 2  alternate both running;
+        // name duration timing delay count direction mode state
+        animation-name: draw-path;
+        animation-duration: 2.4s;
+        animation-timing-function: ease-in-out;
+            //linear ease ease-in ease-out ease-in-out 
+            //step-start step-end steps(2,start|end) 
+            //cubic-bezier(0.42,0,0.58,1)
+            //initial inherit
+        animation-delay: 0.2s;
+        animation-iteration-count: 2;
+        animation-direction: alternate;
+        animation-fill-mode: both;
+            //none forwards backwards both initial inherit;
+        animation-play-state: running;
+            //paused running initial inherit;
     }
 
     @keyframes draw-path {
@@ -38,7 +53,7 @@ viewBox="0 0 1750 350" xml:space="preserve" stroke-linecap="round" stroke-linejo
         attributeName="fill"
         from="red"
         to="black" 
-        begin="mouseout"
+        begin="mousedown"
         dur="1s"
         fill="freeze" />
 
