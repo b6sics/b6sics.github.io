@@ -1,33 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+x="0px" y="0px" 
 viewBox="0 0 1750 350" xml:space="preserve">
 
-    <g id="my-house" stroke-linecap="round" stroke-linejoin="round">
-        <path id="triangle" d="M 0 0 l -100 -100 h 200 l -100 100" transform="translate(250 225)" />
+    <g id="my-house" 
+        fill="transparent"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path id="triangle" d="M 0 0 l -100 -100 h 200 l -100 100" 
+            transform="translate(250 225)" />
+
         <use id="triangle-gray" xlink:href="#triangle"  
-            fill="gray" stroke="black" stroke-width="3" />
-        <use xlink:href="#triangle-gray"
-            transform="rotate(180 250 225)" />
+            fill="gray" stroke="black" stroke-width="3" >
+            <animate
+                id="cpy1"
+                attributeName="opacity"
+                from="0"
+                to="1"
+                begin="0s"
+                dur="2s"
+                fill="freeze" />
+        </use>
+
+        <path d="M250,225 L150,125 L350,125 L250,225"
+            stroke="black" stroke-width="3" >
+            <animate
+                id="cpy2"
+                attributeType = "XML"
+                attributeName="d"
+                from="M250,225 L150,125 L350,125 L250,225"
+                to="M250,225 L150,325 L350,325 L250,225"
+                begin="cpy1.end+0.2s"
+                dur="1s"
+                fill="freeze" />
+            <animate
+                attributeName="fill"
+                from="gray"
+                to="gray"
+                begin="cpy1.end+0.2s"
+                dur="1s"
+                fill="freeze" />
+        </path>
+
         <use id="triangle-red" xlink:href="#triangle"  
-            fill="red" stroke="black" stroke-width="3" transform="rotate(180 250 125)" />
-        <use id="triangle-yellow" xlink:href="#triangle"  
-            fill="yellow" stroke="black" stroke-width="3" transform="rotate(90 250 225)" />
-        <use xlink:href="#triangle-yellow"  
-            transform="rotate(180 250 225)" />
+            transform-origin="250 125"
+            stroke="black" stroke-width="3" >
+            <animateTransform
+                id="cpy3"
+                attributeName="transform"
+                type="scale"
+                from="1 1"
+                to="1 -1"
+                begin="cpy2.end+0.2s"
+                dur="2s"
+                fill="freeze" />
+            <animate
+                attributeName="fill"
+                from="red"
+                to="red"
+                begin="cpy2.end+1.2s"
+                dur="1s"
+                fill="freeze" />
+        </use>
 
-    </g>
+        <path d="M250,225 L150,125 L350,125 L250,225"
+            stroke="black" stroke-width="3" >
+            <animate
+                id="cpy4"
+                a4 = "XML"
+                attributeName="d"
+                from="M250,225 L150,125 L350,125 L250,225"
+                to="M250,225 L350,325 L350,125 L250,225"
+                begin="cpy3.end+0.2s"
+                dur="2s"
+                fill="freeze" />
+            <animate
+                attributeName="fill"
+                from="yellow"
+                to="yellow"
+                begin="cpy3.end+1.2s"
+                dur="1s"
+                fill="freeze" />
+        </path>
 
-    <animateTransform 
-        xlink:href="#triangle"
-        attributeName="transform"
-        type="scale"
-        from="0 0"
-        to="1 1" 
-        begin="0s"
-        dur="1s"
-        additive="sum" 
-        fill="freeze" />          
+        <path d="M250,225 L150,125 L350,125 L250,225"
+            stroke="black" stroke-width="3" >
+            <animate
+                id="cpy5"
+                a4 = "XML"
+                attributeName="d"
+                from="M250,225 L150,125 L350,125 L250,225"
+                to="M250,225 L150,125 L150,325 L250,225"
+                begin="cpy4.end+0.2s"
+                dur="2s"
+                fill="freeze" />
+            <animate
+                attributeName="fill"
+                from="yellow"
+                to="yellow"
+                begin="cpy4.end+1.2s"
+                dur="1s"
+                fill="freeze" />
+        </path>
+
+    </g>        
       
 </svg>
