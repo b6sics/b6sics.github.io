@@ -38,19 +38,16 @@ xml:space="preserve" stroke-linecap="round" stroke-linejoin="round" >
 }
 
 svg {
-  -webkit-animation: backgroundshift 3s alternate infinite;
-          animation: backgroundshift 3s alternate infinite;
+  animation: backgroundshift 3s alternate infinite;
 }
 
 pattern rect {
-  -webkit-animation: scaleshift 3s infinite cubic-bezier(0.3, 0.1, 0.8, 0.6);
-          animation: scaleshift 3s infinite cubic-bezier(0.3, 0.1, 0.8, 0.6);
+  animation: scaleshift 3s infinite cubic-bezier(0.3, 0.1, 0.8, 0.6);
 }
 
 .black {
   fill: black;
-  -webkit-animation-direction: alternate;
-          animation-direction: alternate;
+  animation-direction: alternate;
 }
 
 .white {
