@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+width="100%" height="100vh" 
+xml:space="preserve" 
+fill="transparent"
+stroke-linecap="round" stroke-linejoin="round" >
+
+<style>
+
+.cell_1_1 {
+  transform-origin: 12.5vw 25vh;
+  transform: translate(calc(12.5vw - 50px), calc(25vh - 50px));
+}
+.cell_1_2 {
+  transform-origin: 37.5vw 25vh;
+  transform: translate(calc(37.5vw - 50px), calc(25vh - 50px));
+}
+.cell_1_3 {
+  transform-origin: 62.5vw 25vh;
+  transform: translate(calc(62.5vw - 50px), calc(25vh - 50px));
+}
+
+.cell_2_1 {
+  transform-origin: 25vw 50vh;
+  transform: translate(calc(25vw - 50px), calc(50vh - 50px));
+}
+.cell_2_2 {
+  transform-origin: 50vw 50vh;
+  transform: translate(calc(50vw - 50px), calc(50vh - 50px));
+}
+.cell_2_3 {
+  transform-origin: 75vw 50vh;
+  transform: translate(calc(75vw - 50px), calc(50vh - 50px));
+}
+
+.cell_3_1 {
+  transform-origin: 37.5vw 75vh;
+  transform: translate(calc(37.5vw - 50px), calc(75vh - 50px));
+}
+.cell_3_2 {
+  transform-origin: 62.5vw 75vh;
+  transform: translate(calc(62.5vw - 50px), calc(75vh - 50px));
+}
+.cell_3_3 {
+  transform-origin: 87.5vw 75vh;
+  transform: translate(calc(87.5vw - 50px), calc(75vh - 50px));
+}
+
+</style>
+
+  <defs>
+    <pattern id="blocks" patternUnits="userSpaceOnUse" 
+        width="50vw" height="50vh" >
+      <rect width="25vw" height="25vh" fill="black" />
+      <rect width="25vw" height="25vh" fill="white" x="25vw" />
+      <rect width="25vw" height="25vh" fill="white" y="25vh" />
+      <rect width="25vw" height="25vh" fill="black" x="25vw" y="25vh" />
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#blocks)" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M0,0 L100,100" class="cell_1_1">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg1.mouseover"
+                from="M0,0 L100,100"
+                to="M100,0 L0,100"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg1.mouseout"
+                from="M100,0 L0,100"
+                to="M0,0 L100,100"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg1" width="25vw" height="25vh" x="0" y="12.5vh" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M0,100 L50,0 L100,100" class="cell_1_2">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg2.mouseover"
+                from="M0,100 L50,0 L100,100"
+                to="M0,0 L50,100 L100,0"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg2.mouseout"
+                from="M0,0 L50,100 L100,0"
+                to="M0,100 L50,0 L100,100"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg2" width="25vw" height="25vh" x="25vw" y="12.5vh" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M0,0 Q100,0 100,100" class="cell_1_3">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg3.mouseover"
+                from="M0,0 Q100,0 100,100"
+                to="M0,0 Q0,100 100,100"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg3.mouseout"
+                from="M0,0 Q0,100 100,100"
+                to="M0,0 Q100,0 100,100"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg3" width="25vw" height="25vh" x="50vw" y="12.5vh" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M0,0 L100,0 L0,50 L100,50 L0,100 L100,100" class="cell_2_1">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg4.mouseover"
+                from="M0,0 L100,0 L0,50 L100,50 L0,100 L100,100"
+                to="M15,15 L100,15 L0,50 L100,50 L15,85 L85,85"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg4.mouseout"
+                from="M15,15 L100,15 L0,50 L100,50 L15,85 L85,85"
+                to="M0,0 L100,0 L0,50 L100,50 L0,100 L100,100"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg4" width="25vw" height="25vh" x="12.5vw" y="37.5vh" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M0,50 C0,100 100,100 100,50" class="cell_2_2">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg5.mouseover"
+                from="M0,50 C0,100 100,100 100,50"
+                to="M0,50 C0,0 100,0 100,50"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg5.mouseout"
+                from="M0,50 C0,0 100,0 100,50"
+                to="M0,50 C0,100 100,100 100,50"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg5" width="25vw" height="25vh" x="37.5vw" y="37.5vh" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M0,100 S0,-10 40,50 S85,100 100,50" class="cell_2_3">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg6.mouseover"
+                from="M0,100 S0,-10 40,50 S85,100 100,50"
+                to="M0,50 S10,120 40,50 S85,100 100,50"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg6.mouseout"
+                from="M0,50 S10,120 40,50 S85,100 100,50"
+                to="M0,100 S0,-10 40,50 S85,100 100,50"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg6" width="25vw" height="25vh" x="62.5vw" y="37.5vh" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M0,50 A 50 80 0 0 1 100 100" class="cell_3_1">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg7.mouseover"
+                from="M0,50 A 50 80 0 0 1 100 100"
+                to="M0,50 A 50 80 -60 0 1 100 100"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg7.mouseout"
+                from="M0,50 A 50 80 -60 0 1 100 100"
+                to="M0,50 A 50 80 0 0 1 100 100"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg7" width="25vw" height="25vh" x="25vw" y="62.5vh" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M50,0 Q 0,50 50,100" class="cell_3_2">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg8.mouseover"
+                from="M50,0 Q 0,50 50,100"
+                to="M50,0 Q 100,50 50,100"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg8.mouseout"
+                from="M50,0 Q 100,50 50,100"
+                to="M50,0 Q 0,50 50,100"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg8" width="25vw" height="25vh" x="50vw" y="62.5vh" />
+
+    <g stroke="red" stroke-width="20">
+        <path d="M0,0 Q50,0 50,50 T100,100" class="cell_3_3">
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg9.mouseover"
+                from="M0,0 Q50,0 50,50 T100,100"
+                to="M0,0 Q100,0 50,50 T100,100"
+                dur="0.2s"
+                fill="freeze" />
+            <animate 
+                attributeType = "XML"
+                attributeName = "d"
+                begin="bg9.mouseout"
+                from="M0,0 Q100,0 50,50 T100,100"
+                to="M0,0 Q50,0 50,50 T100,100"
+                dur="0.2s"
+                fill="freeze" />
+        </path>
+    </g>
+    <rect id="bg9" width="25vw" height="25vh" x="75vw" y="62.5vh" />
+
+</svg>
