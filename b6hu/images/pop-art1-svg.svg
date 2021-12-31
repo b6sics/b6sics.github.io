@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+ width="100%" height="100vh" 
+xml:space="preserve" stroke-linecap="round" stroke-linejoin="round" >
+
+<style>
+
+@keyframes backgroundshift {
+  49.99% {
+    background: white;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: black;
+  }
+}
+
+@keyframes scaleshift {
+  0% {
+    transform: scale(0.001);
+    rx: 50;
+  }
+  35% {
+    rx: 40;
+  }
+  48% {
+    transform: scale(0.999);
+    rx: 0;
+  }
+  100% {
+    transform: scale(0.999);
+    rx: 0;
+  }
+}
+
+svg {
+  -webkit-animation: backgroundshift 3s alternate infinite;
+          animation: backgroundshift 3s alternate infinite;
+}
+
+pattern rect {
+  -webkit-animation: scaleshift 3s infinite cubic-bezier(0.3, 0.1, 0.8, 0.6);
+          animation: scaleshift 3s infinite cubic-bezier(0.3, 0.1, 0.8, 0.6);
+}
+
+.black {
+  fill: black;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.white {
+  fill: white;
+  animation-direction: alternate-reverse;
+}
+
+.topleft {
+  transform-origin: 50px 50px;
+}
+
+.bottomleft {
+  transform-origin: 50px 150px;
+}
+
+.topright {
+  transform-origin: 150px 50px;
+}
+
+.bottomright {
+  transform-origin: 150px 150px;
+}
+
+</style>
+
+  <defs>
+    <pattern id="blocks" patternUnits="userSpaceOnUse"  width="200" height="200">
+      <rect width="100" height="100" class="topleft black" />
+      <rect width="100" height="100" class="topright white" x="100"/>
+      <rect width="100" height="100" class="bottomleft white" y="100"/>
+      <rect width="100" height="100" x="100" y="100" class="bottomright black" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#blocks)" />
+
+</svg>
