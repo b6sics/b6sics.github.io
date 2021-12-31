@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+width="100%" height="100vh" 
+xml:space="preserve" 
+fill="transparent"
+stroke-linecap="round" stroke-linejoin="round" >
+
+<style>
+.shape {
+  d: path("M150,10 L 40,200 L260,200 L260,200 Z");
+  fill: #4c6edb;
+  transition: all 0.35s ease;
+}
+
+.shape:active {
+  d: path("M220,10 L40,10 L40,220 L220,220 Z");
+  fill: #6e40aa;
+}
+</style>
+
+  <defs>
+    <pattern id="blocks" patternUnits="userSpaceOnUse" 
+        width="50vw" height="50vh" >
+      <rect width="25vw" height="25vh" fill="black" />
+      <rect width="25vw" height="25vh" fill="white" x="25vw" />
+      <rect width="25vw" height="25vh" fill="white" y="25vh" />
+      <rect width="25vw" height="25vh" fill="black" x="25vw" y="25vh" />
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#blocks)" />
+
+   <path class="shape" />
+
+</svg>
