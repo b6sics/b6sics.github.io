@@ -4,15 +4,43 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
 viewBox="0 0 1750 350" xml:space="preserve" stroke-linecap="round" stroke-linejoin="round" >
 
-<defs>
+<style>
+    .draw-house {
+        stroke-dasharray: 1649;
+        stroke-dashoffset: 0;
+    }
 
-</defs>
+    .draw-house:hover {
+        animation: draw-path 2.5s ease 1;
+    }
+
+    @keyframes draw-path {
+        from{
+            stroke-dashoffset: 1649;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+</style>
 
     <path 
+        class="draw-house"
         id="house-path" 
         stroke="red" stroke-width="10"  
         d="m 50 325 h 200 l -200 -200 v 200 l 200 -200 h -200 l 100 -100 l 100 100 v 200" 
         stroke-dasharray="1649" stroke-dashoffset="0" />
+
+    <animate 
+        id="house-init"
+        xlink:href="#house-path"
+        attributeName="fill"
+        from="red"
+        to="black" 
+        begin="mouseout"
+        dur="1s"
+        fill="freeze" />
 
     <animate 
         id="house-draw"
@@ -34,23 +62,33 @@ viewBox="0 0 1750 350" xml:space="preserve" stroke-linecap="round" stroke-linejo
 
 
     <path 
+        class="draw-house"
         stroke="red" stroke-width="10"  
         d="M 500 325 l -200 -200 l 100 -100 l 100 100 v 200 h-200 v -200 h 200 l -200 200" 
         stroke-dasharray="1649" stroke-dashoffset="0" />
 
     <path 
+        class="draw-house"
         stroke="red" stroke-width="10"  
-        d="M 550 325 h 200 l -200 -200 v 200 l 200 -200 h -200 l 100 -100 l 100 100 v 200" 
+        d="M 750 325 h -200 v -200 l 100 -100 l 100 100 v 200 l -200 -200 h 200 l -200 200" 
         stroke-dasharray="1649" stroke-dashoffset="0" />
 
     <path 
+        class="draw-house"
         stroke="red" stroke-width="10"  
         d="M 800 325 v -200 l 100 -100 l 100 100 v 200 l -200 -200 h 200 l -200 200 h 200" 
         stroke-dasharray="1649" stroke-dashoffset="0" />
 
     <path 
+        class="draw-house"
         stroke="red" stroke-width="10"  
         d="M 1050 325 v -200 l 100 -100 l 100 100 v 200 h-200 l 200 -200 h -200 l 200 200" 
+        stroke-dasharray="1649" stroke-dashoffset="0" />
+        
+    <path 
+        class="draw-house"
+        stroke="red" stroke-width="10"  
+        d="M 1300 325 l 200 -200 h-200 l 200 200 h -200 v -200 l 100 -100 l 100 100 v 200" 
         stroke-dasharray="1649" stroke-dashoffset="0" />
         
 </svg>
