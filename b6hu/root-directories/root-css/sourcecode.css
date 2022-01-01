@@ -1,49 +1,50 @@
-
-script.sample, style {
-  position: relative;
-  display: block;
-  white-space: pre;
-  padding: 0.25vmin 1vmin 3vmin 1vmin;
-  font-family: monospace;
-  min-height: 10vmin;
-  color: var(--code-color);
-  background: var(--code-bg-color);
-  overflow: scroll;
+script.sample,
+style.sample {
+    position: relative;
+    display: block;
+    white-space: pre;
+    padding: 0.25vmin 1vmin 3vmin 1vmin;
+    font-family: monospace;
+    min-height: 10vmin;
+    color: var(--code-color);
+    background: var(--code-bg-color);
+    overflow: scroll;
 }
 
-style {
-  padding: 0.25vmin 1vmin;
+style.sample {
+    padding: 0.25vmin 1vmin;
 }
 
 script.sample::before {
-  content: "Source code (JavaScript):";
-  background: var(--code-js-head-bg);
-  display: block;
-  padding: 2px 5px;
+    content: "Source code (JavaScript):";
+    background: var(--code-js-head-bg);
+    display: block;
+    padding: 2px 5px;
 }
 
-style::before {
-  content: "Source code (CSS):";
-  background:var(--code-css-head-bg);
-  display: block;
-  padding: 2px 5px;
+style.sample::before {
+    content: "Source code (CSS):";
+    background: var(--code-css-head-bg);
+    display: block;
+    padding: 2px 5px;
 }
 
 footer.myFoot {
-	position: relative;
+    position: relative;
 }
 
 footer.myFoot .reloadbutton {
-  position: absolute;
-  padding: 2px 55px;
-  bottom: 1vmin;
-  left: 1vmin;
-  z-index: 99;
+    position: absolute;
+    padding: 2px 55px;
+    bottom: 1vmin;
+    left: 1vmin;
+    z-index: 99;
 }
 
-footer.myFoot hr, header.myHead hr {
-  margin: 0.5vmin;
-  height: 0.25vmin;
-  color: var(--code-color);
-  border: 0.25em solid var(--code-bg-color);
+footer.myFoot hr,
+header.myHead hr {
+    margin: 0.5vmin;
+    height: 0.25vmin;
+    color: var(--code-color);
+    border: 0.25em solid var(--code-bg-color);
 }
