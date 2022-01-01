@@ -139,7 +139,6 @@ article figure figcaption {
     max-width: 40vmin;
 }
 
-article figure a,
 article figure figcaption a {
     width: 100%;
     text-align: center;
