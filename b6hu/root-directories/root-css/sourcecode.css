@@ -1,10 +1,11 @@
 .sample {
     position: relative;
     display: block;
+    margin: 0.5vmin auto;
+    padding: 0.25vmin;
+    width: 98%;
     white-space: pre;
-    padding: 0.25vmin 1vmin 3vmin 1vmin;
     font-family: monospace;
-    min-height: 10vmin;
     color: var(--code-color);
     background: var(--code-bg-color);
     overflow: scroll;
