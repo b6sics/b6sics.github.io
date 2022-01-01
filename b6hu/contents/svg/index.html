@@ -104,9 +104,16 @@ style="background-color: rgba(0,0,0,0.25)" >
                         <title>The flying thing - mouth</title>
                         <desc>mouth</desc>
 
-                        <path
-                            class="flying-thing-mouth"
-                        />
+                        <g transform="translate(50 30) rotate(-15 40 40) scale(0.5 0.5) skewX(-30) skewY(5)">
+                            <path
+                                id="thing-mouth-half"
+                                class="flying-thing-mouth"
+                            />
+                            <use xlink:href="#thing-mouth-half" 
+                            transform-origin="40 40"
+                            transform="translate(40 0) scale(-1 1)"
+                            />
+                        </g>
                     </svg>
                     <figcaption>
                         The mouth
