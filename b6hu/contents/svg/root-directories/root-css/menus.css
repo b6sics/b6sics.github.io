@@ -1,0 +1,222 @@
+.topmenu {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    padding: 0.25vmin;
+    max-width: 8em;
+    min-width: 5em;
+    background: white;
+}
+
+.topmenu a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.75em;
+    line-height: 1em;
+    background-color: snow;
+}
+
+#main-menubutton {
+    visibility: hidden;
+    z-index: 100;
+}
+
+#main-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100vh;
+    border-radius: 0 0 var(--menu-icon-size) 0;
+    background-color: var(--label-bgcolor);
+    transition: var(--basic-transition) ease-in;
+}
+
+#main-menulabel {
+    position: absolute;
+    top: 0;
+    left: calc(100% - var(--menu-icon-size));
+    width: var(--menu-icon-size);
+    height: var(--menu-icon-size);
+    z-index: 100;
+    transition: var(--basic-transition) ease-in;
+}
+
+#main-menubutton:checked~#main-menu {
+    width: var(--menu-icon-size);
+    height: var(--menu-icon-size);
+    border-radius: 0 0 50% 0;
+    transition: var(--basic-transition) ease-in;
+}
+
+#main-menubutton:checked~#main-menu div {
+    display: none;
+}
+
+#main-menubutton:checked~#main-menulabel {
+    left: 0;
+    transition: var(--basic-transition) ease-in;
+}
+
+#main-menu-icon>div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2px;
+    width: calc(var(--menu-icon-size) - 4px);
+    height: calc(var(--menu-icon-size) - 4px);
+    text-align: center;
+    font-weight: bold;
+    line-height: calc(var(--menu-icon-size) - 1.5vmin);
+    font-size: calc(var(--menu-icon-size) / 2);
+    color: var(--code-color);
+    background: var(--code-bg-color);
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+#main-menu-icon>div:hover {
+    font-size: calc(var(--menu-icon-size) / 2 + 2px);
+    opacity: 1;
+    cursor: pointer;
+    transition: var(--basic-transition) ease-in;
+}
+
+.menu-icon #main-menu-open div {
+    background-color: var(--code-color);
+}
+
+.menu-icon #main-menu-open div:first-child {
+    margin: calc((var(--menu-icon-size) - 4px) / 5) calc((var(--menu-icon-size) - 4px) * 1.875 / 5) 0;
+    width: calc((var(--menu-icon-size) - 4px) * 1.25 / 5);
+    height: calc((var(--menu-icon-size) - 4px) * 1.25 / 5);
+    border-radius: 50%;
+}
+
+.menu-icon #main-menu-open div:last-child {
+    margin: 0 calc((var(--menu-icon-size) - 4px) * 1.125 / 5) auto;
+    width: calc((var(--menu-icon-size) - 4px) * 2.75 / 5);
+    height: calc((var(--menu-icon-size) - 4px) * 1.5 / 5);
+    border-radius: calc((var(--menu-icon-size) - 4px) * 1.375 / 5) calc((var(--menu-icon-size) - 4px) * 1.375 / 5) 0 0;
+}
+
+#main-menubutton:checked+.menulabel .menu-icon #main-menu-open {
+    display: block;
+}
+
+.menulabel .menu-icon #main-menu-open {
+    display: none;
+}
+
+#main-menubutton:checked+.menulabel .menu-icon #main-menu-close {
+    display: none;
+}
+
+
+/* MENU LINKS */
+
+.menu {
+    width: 100%;
+    text-align: center;
+}
+
+.content {
+    padding: 2vmin;
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    background-color: var(--bubble-bgcolor);
+    box-shadow: 0 0 12px var(--body-bgcolor);
+    border-radius: 1vmin;
+    opacity: 0.8;
+    transition: var(--basic-transition) ease-in;
+}
+
+.content:hover {
+    opacity: 1;
+    box-shadow: 2px 2px 16px var(--body-bgcolor);
+    transition: var(--basic-transition) ease-in;
+}
+
+.content:hover p.start-with-email {
+    box-shadow: 2px 2px 4px var(--body-bgcolor);
+    overflow: visible;
+    transition: var(--basic-transition) ease-in;
+}
+
+.menu .content p {
+    position: relative;
+    width: 100%;
+    height: calc(var(--menu-icon-size) / 1.25);
+    margin: 0.5vmin auto;
+    color: var(--body-bgcolor);
+    background-color: var(--bubble-bgcolor);
+}
+
+.menu .content .menu_button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.5vmin;
+    text-align: right;
+    font-size: calc(var(--menu-icon-size) / 4);
+    font-weight: normal;
+    line-height: calc(var(--menu-icon-size) / 4);
+    color: var(--body-bgcolor);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--basic-transition) ease-in;
+}
+
+.menu .content p .menu_button:hover {
+    text-shadow: 1px 1px 0 var(--body-bgcolor);
+    box-shadow: 1px 1px 4px var(--body-bgcolor);
+    transition: var(--basic-transition) ease-in;
+}
+
+.menu .content p b {
+    height: calc(var(--menu-icon-size) / 1.5);
+    font-size: calc(var(--menu-icon-size) / 2.5);
+    line-height: calc(var(--menu-icon-size) / 1.25);
+}
+
+.menu .content p b.f_left {
+    float: left;
+    min-width: 13%;
+}
+
+.menu .content p b.f_right {
+    float: right;
+    min-width: 8%;
+}
+
+#fregister {
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    width: 90%;
+    height: calc(var(--menu-icon-size) / 1.5);
+    font-size: calc(var(--menu-icon-size) / 2.5);
+    transform: translate(0, -50%);
+}
+
+button.login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-clip-path: polygon(0% 100%, 0% 0%, 87% 0%, 87% 10%, 14% 10%, 14% 90%, 87% 90%, 87% 0%, 100% 0%, 100% 100%);
+    clip-path: polygon(0% 100%, 0% 0%, 87% 0%, 87% 10%, 14% 10%, 14% 90%, 87% 90%, 87% 0%, 100% 0%, 100% 100%);
+}
