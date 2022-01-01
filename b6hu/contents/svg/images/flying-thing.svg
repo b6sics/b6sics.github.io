@@ -1,4 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 350 150">
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" 
+  viewBox="0 0 800 800" 
+  x="0" y="0" 
+  style="background-color: rgba(0,0,0,0.25)" >
+<title>The flying thing</title>
+<desc>box to box method - the flying thing</desc>
+
       <linearGradient id="wingb_1_" gradientUnits="userSpaceOnUse" x1="103.9" y1="58.3" x2="101.6" y2="41">
         <stop offset="0" stop-color="#FFED92" />
         <stop offset="1" stop-color="#7D491F" />
