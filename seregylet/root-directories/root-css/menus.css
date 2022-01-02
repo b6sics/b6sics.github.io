@@ -1,0 +1,25 @@
+#popupmenu {
+    position: fixed;
+    top: 2vmin;
+    right: 0;
+    width: 15%;
+    padding: 0.25em;
+    max-width: 12em;
+    min-width: 7em;
+    text-align: right;
+    background-color: silver;
+    border-radius: 1em 0 0 1em;
+    border: 1px solid var(--codebox-border-color);
+    overflow: hidden;
+}
+
+#popupmenu a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    line-height: 1em;
+}
+
+summary:hover {
+    cursor: pointer;
+}
