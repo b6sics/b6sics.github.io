@@ -1,0 +1,70 @@
+:root {
+    /* flex */
+    --flex-display: flex;
+    --justify-content-horizontally: center;
+    --align-items-vertically: center;
+    --flex-direction: column;
+    /* code-box */
+    --codebox-margin: 1vmin;
+    --codebox-padding: 1vmin;
+    --codebox-txt-color: palegoldenrod;
+    --codebox-bg-color: darkslateblue;
+    --codebox-border-width: 2px;
+    --codebox-border-style: inset;
+    --codebox-border-color: darkslategray;
+    /* contents */
+    --content-border-width: 2px;
+    --content-border-style: solid;
+    --content-border-color: transparent;
+    --content-txt-color: black;
+    --content-bg-color: rgba(184, 134, 11, 0.25);
+}
+
+body {
+    min-height: 100vh;
+    color: var(--content-txt-color);
+    background-color: silver;
+    padding: 1vmin;
+}
+
+header,
+footer,
+section,
+article,
+details,
+figure {
+    margin: 0.5vmin auto;
+    padding: 1vmin;
+    width: 98%;
+    background-color: var(--content-bg-color);
+}
+
+img {
+    margin: 1.5vmin auto;
+    height: 60vw;
+    max-height: 60vh;
+    width: auto;
+}
+
+.center {
+    display: var(--flex-display);
+    justify-content: var(--justify-content-horizontally);
+    align-items: var(--align-items-vertically);
+    flex-direction: var(--flex-direction);
+}
+
+a {
+    width: 100%;
+    color: var(--content-txt-color);
+    text-decoration: none;
+}
+
+a:hover {
+    border-top: 1px solid darkgoldenrod;
+    border-bottom: 1px solid darkgoldenrod;
+}
+
+.bottom {
+    position: fixed;
+    bottom: 0;
+}
