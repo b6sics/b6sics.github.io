@@ -89,12 +89,15 @@ style="background-color: rgba(0,0,0,0.25)" >
                         Our desired result
                     </figcaption>
                 </figure>
+                <!-- THE GREAT MOUTH -->
                 <h3>
                     The mouth of thing
                 </h3>
                 <style class="sample" contenteditable="true">
                     .flying-thing-mouth {
-                        stroke-width: 1;
+                        stroke: rgba(220, 64, 64, 0.95);
+                        stroke-width: 3;
+                        stroke-linejoin: round;
                         fill: rgba(204, 64, 64, 0.8);
                         d: path("M 40,40 C 45,40 52,32 60,36 L 60,43 C 60,43 50,45 42 41 z");
                     }
@@ -117,6 +120,49 @@ style="background-color: rgba(0,0,0,0.25)" >
                     </svg>
                     <figcaption>
                         The mouth
+                    </figcaption>
+                </figure>
+                <!-- THE LITTLE HORNs -->
+                <h3>
+                    The horns of thing
+                </h3>
+                <style class="sample" contenteditable="true">
+                    .flying-thing-horn {
+                        stroke: rgba(192, 220, 192, 0.95);
+                        stroke-width: 1;
+                        stroke-linejoin: round;
+                        fill: rgba(204, 240, 240, 0.8);
+                        d: path("M 23,34 C 23,34 25,32 23,18 C 21,4 21,4 30,17 C 38,29 48,19 40,34 C 31,50 19,41 23,34 Z");
+                    }
+                </style>
+                <figure>
+                    <svg xml version="1.0" encoding="UTF-8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 120 90" x="0" y="0" style="background-color: rgba(0,0,0,0.25)">
+                        <title>The flying thing - mouth and horns</title>
+                        <desc>add horns</desc>
+
+                        <g transform="translate(55 40) rotate(-15 40 40) scale(0.5 0.35) skewX(-30) skewY(10)">
+                            <path
+                                id="thing-mouth-half"
+                                class="flying-thing-mouth"
+                            />
+                            <use xlink:href="#thing-mouth-half" 
+                            transform-origin="40 40"
+                            transform="translate(40 0) scale(-1 1)"
+                            />
+                        </g>
+                        <g transform="translate(35 -10) rotate(-15 40 40) scale(0.6 0.45) skewX(-30) skewY(10)">
+                            <path
+                                id="thing-horn"
+                                class="flying-thing-horn"
+                            />
+                            <use xlink:href="#thing-horn" 
+                            transform-origin="40 40"
+                            transform="translate(80 0) scale(-0.8 0.6)"
+                            />
+                        </g>
+                    </svg>
+                    <figcaption>
+                        Adding horns and adjustment
                     </figcaption>
                 </figure>
             </article>
