@@ -1,0 +1,14 @@
+code {
+    margin: var(--codebox-margin) auto;
+    padding: var(--codebox-padding);
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--codebox-txt-color);
+    background-color: var(--codebox-bg-color);
+}
+
+pre {
+    border-width: var(--codebox-border-width);
+    border-style: var(--codebox-border-style);
+    border-color: var(--codebox-border-color);
+}
