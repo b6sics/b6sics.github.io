@@ -1,3 +1,10 @@
+img {
+    margin: 1.5vh auto;
+    height: 60vw;
+    max-height: 60vh;
+    width: auto;
+}
+
 main,
 header,
 footer,
@@ -11,11 +18,15 @@ figure {
     border-radius: 1vmin;
 }
 
-img {
-    margin: 1.5vh auto;
-    height: 60vw;
-    max-height: 60vh;
-    width: auto;
+main img,
+header img,
+footer img,
+section img,
+article img,
+details img,
+figure img {
+    width: 40%;
+    height: auto;
 }
 
 .center {
