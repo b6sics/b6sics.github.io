@@ -28,11 +28,12 @@ figure {
 #mainAnimation {
     position: fixed;
     bottom: calc(3vh + 6em);
-    right: 1vw;
+    right: 5vw;
     height: 65vh;
     max-height: 65vmin;
     width: auto;
     border-radius: 1vmin;
+    opacity: 0.66;
 }
 
 .bottom {
