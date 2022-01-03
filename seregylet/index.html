@@ -30,8 +30,8 @@
         </h1>
     </header>
 
-    <details>
-        <summary>
+    <details id="knowledges">
+        <summary onclick="knowledgesOpen()">
             <b>Házi serfőzés ismeretek</b><br />
             <i>történelem, anyagismeret, eszközök, receptek</i>
         </summary>
@@ -89,8 +89,8 @@
 
     </details>
 
-    <details>
-        <summary>
+    <details id="regulations">
+        <summary onclick="regulationsOpen()">
             <b>Az egyesület működése</b><br />
             <i>alapító okirat, tagság, szolgáltatás</i>
         </summary>
@@ -148,8 +148,8 @@
 
     </details>
 
-    <details>
-        <summary>
+    <details id="pageinfo">
+        <summary onclick="pageinfoOpen()">
             <b>A weblapunk használata</b><br />
             <i>oldaltérkép, rendelés, időbeosztás</i>
         </summary>
@@ -207,6 +207,8 @@
 
     </details>
 
+    <img src="images/gear.gif" alt="" title="" width="auto" height="60wh">
+
     <footer class="bottom center">
         <p>
             Bercsényi 6 Serfőző Egyesület
@@ -216,6 +218,24 @@
     </footer>
 
     <script>
+        let knowledges = document.getElementById('knowledges');
+        let regulations = document.getElementById('regulations');
+        let pageinfo = document.getElementById('pageinfo');
+
+        function knowledgesOpen() {
+            pageinfo.open = false;
+            regulations.open = false;
+        }
+
+        function regulationsOpen() {
+            knowledges.open = false;
+            pageinfo.open = false;
+        }
+
+        function pageinfoOpen() {
+            knowledges.open = false;
+            regulations.open = false;
+        }
     </script>
 </body>
 
