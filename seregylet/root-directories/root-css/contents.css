@@ -52,5 +52,6 @@ details[open] summary>i {
 }
 
 details[open]~#mainAnimation {
+    opacity: 0.66;
     z-index: -1;
 }
