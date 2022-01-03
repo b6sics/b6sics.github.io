@@ -24,5 +24,6 @@ body {
     min-height: 100vh;
     color: var(--content-txt-color);
     background-color: silver;
-    padding: 1vmin;
+    margin: 0;
+    padding: 1vh 1vw;
 }
