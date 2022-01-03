@@ -53,17 +53,6 @@ img {
     flex-direction: var(--flex-direction);
 }
 
-a {
-    width: 100%;
-    color: var(--content-txt-color);
-    text-decoration: none;
-}
-
-a:hover {
-    border-top: 1px solid darkgoldenrod;
-    border-bottom: 1px solid darkgoldenrod;
-}
-
 .bottom {
     position: fixed;
     bottom: 0;
