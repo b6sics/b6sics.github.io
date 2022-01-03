@@ -5,14 +5,13 @@ section,
 article,
 details,
 figure {
-    margin: 0.5vmin auto;
-    padding: 1vmin;
-    width: 98%;
+    margin: 1vh auto;
+    padding: 1vh 1vw;
     background-color: var(--content-bg-color);
 }
 
 img {
-    margin: 1.5vmin auto;
+    margin: 1.5vh auto;
     height: 60vw;
     max-height: 60vh;
     width: auto;
@@ -26,6 +25,8 @@ img {
 }
 
 .bottom {
-    position: fixed;
-    bottom: 0;
+    position: static;
+    left: 1vw;
+    right: 1vw;
+    bottom: 1vh;
 }
