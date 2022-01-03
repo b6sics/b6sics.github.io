@@ -25,6 +25,16 @@ figure {
     flex-direction: var(--flex-direction);
 }
 
+#mainAnimation {
+    position: fixed;
+    bottom: calc(3vh + 6em);
+    right: 1vw;
+    height: 65vh;
+    max-height: 65vmin;
+    width: auto;
+    border-radius: 1vmin;
+}
+
 .bottom {
     position: fixed;
     left: 1vw;
