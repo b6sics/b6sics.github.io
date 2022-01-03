@@ -20,12 +20,6 @@
     --content-bg-color: rgba(184, 134, 11, 0.25);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     min-height: 100vh;
     color: var(--content-txt-color);
