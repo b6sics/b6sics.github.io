@@ -8,6 +8,7 @@ figure {
     margin: 1vh auto;
     padding: 1vh 1vw;
     background-color: var(--content-bg-color);
+    border-radius: 1vmin;
 }
 
 img {
