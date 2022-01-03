@@ -26,35 +26,3 @@ body {
     background-color: silver;
     padding: 1vmin;
 }
-
-main,
-header,
-footer,
-section,
-article,
-details,
-figure {
-    margin: 0.5vmin auto;
-    padding: 1vmin;
-    width: 98%;
-    background-color: var(--content-bg-color);
-}
-
-img {
-    margin: 1.5vmin auto;
-    height: 60vw;
-    max-height: 60vh;
-    width: auto;
-}
-
-.center {
-    display: var(--flex-display);
-    justify-content: var(--justify-content-horizontally);
-    align-items: var(--align-items-vertically);
-    flex-direction: var(--flex-direction);
-}
-
-.bottom {
-    position: fixed;
-    bottom: 0;
-}
