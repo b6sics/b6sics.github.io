@@ -1,8 +1,23 @@
+a {
+    width: 100%;
+    color: var(--content-txt-color);
+    text-decoration: none;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--content-txt-color);
+    border-top: 1px solid darkgoldenrod;
+    border-bottom: 1px solid darkgoldenrod;
+}
+
 #popupmenu {
     position: fixed;
     top: 2vmin;
     right: 0;
     width: 15%;
+    height: 1.75em;
     padding: 0.25em;
     max-width: 12em;
     min-width: 7em;
@@ -15,11 +30,22 @@
 
 #popupmenu a {
     display: inline-block;
-    width: 100%;
+    margin: 0 2px 0 auto;
+    width: 85%;
     text-align: center;
-    line-height: 1em;
+    line-height: 1.1em;
+}
+
+#popupmenu a:hover {
+    line-height: 1.1em;
+    font-size: 1.1em;
+}
+
+summary {
+    opacity: 0.66;
 }
 
 summary:hover {
+    opacity: 1;
     cursor: pointer;
 }
