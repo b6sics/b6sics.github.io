@@ -50,3 +50,7 @@ details[open]~footer.bottom {
 details[open] summary>i {
     display: none;
 }
+
+details[open]~#mainAnimation {
+    z-index: -1;
+}
