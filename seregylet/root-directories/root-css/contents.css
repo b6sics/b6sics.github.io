@@ -33,16 +33,21 @@ figure {
     max-height: 65vmin;
     width: auto;
     opacity: 0.99;
-    animation: krug 3s ease-in-out 1;
+    animation: krug 2s ease-in-out 1;
 }
 
 @keyframes krug {
     0% {
-        height: 0;
+        height: 40vh;
+        max-height: 40vmin;
     }
-    66% {
-        height: 75vh;
-        max-height: 75vmin;
+    60% {
+        height: 80vh;
+        max-height: 80vmin;
+    }
+    85% {
+        height: 62vh;
+        max-height: 62vmin;
     }
     100% {
         height: 65vh;
