@@ -33,11 +33,11 @@ a:hover {
     margin: 0 2px 0 auto;
     width: 85%;
     text-align: center;
-    line-height: 1.1em;
+    line-height: 1.25em;
 }
 
 #popupmenu a:hover {
-    line-height: 1.1em;
+    line-height: 1.25em;
     font-size: 1.1em;
 }
 
