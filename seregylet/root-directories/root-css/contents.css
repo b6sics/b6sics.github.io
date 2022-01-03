@@ -25,8 +25,12 @@ img {
 }
 
 .bottom {
-    position: static;
+    position: fixed;
     left: 1vw;
     right: 1vw;
     bottom: 1vh;
+}
+
+details[open]~footer.bottom {
+    position: static;
 }
