@@ -33,25 +33,32 @@ figure {
     max-height: 65vmin;
     width: auto;
     opacity: 0.99;
-    animation: krug 2s ease-in-out 1;
+    animation: krug 4s ease-in-out 1;
+    z-index: -1;
 }
 
 @keyframes krug {
     0% {
         height: 40vh;
         max-height: 40vmin;
+        z-index: 1;
     }
-    60% {
+    40% {
         height: 80vh;
         max-height: 80vmin;
     }
-    85% {
+    55% {
         height: 62vh;
         max-height: 62vmin;
+    }
+    60% {
+        height: 66vh;
+        max-height: 66vmin;
     }
     100% {
         height: 65vh;
         max-height: 65vmin;
+        z-index: 1;
     }
 }
 
@@ -72,7 +79,6 @@ details[open] summary>i {
 
 details[open]~#mainAnimation {
     opacity: 0.66;
-    z-index: -1;
 }
 
 @media screen and (max-height: 720px) {
