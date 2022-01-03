@@ -18,17 +18,6 @@ figure {
     border-radius: 1vmin;
 }
 
-main img,
-header img,
-footer img,
-section img,
-article img,
-details img,
-figure img {
-    width: 40%;
-    height: auto;
-}
-
 .center {
     display: var(--flex-display);
     justify-content: var(--justify-content-horizontally);
@@ -45,4 +34,8 @@ figure img {
 
 details[open]~footer.bottom {
     position: static;
+}
+
+details[open] summary>i {
+    display: none;
 }
