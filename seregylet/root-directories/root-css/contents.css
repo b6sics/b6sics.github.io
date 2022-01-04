@@ -78,7 +78,7 @@ details[open] summary>i {
 }
 
 details[open]~#mainAnimation {
-    opacity: 0.66;
+    opacity: 0.26;
 }
 
 @media screen and (max-height: 720px) {
