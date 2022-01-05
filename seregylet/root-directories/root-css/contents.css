@@ -25,6 +25,12 @@ figure {
     flex-direction: var(--flex-direction);
 }
 
+.banner {
+    text-align: center;
+    height: 5em;
+    line-height: 5em;
+}
+
 #mainAnimation {
     position: fixed;
     bottom: calc(3vh + 6em);
