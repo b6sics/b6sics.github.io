@@ -392,12 +392,10 @@ style="background-color: rgba(0,0,0,0.25)" >
                     font-family: cabin-condensed, Arial, sans-serif;
                 }
                 
-                @supports(animation: slideDown) {
-                    [class$="title"] {
-                        animation: slideDown ease-in-out .5s forwards;
-                        animation-iteration-count: 1;
-                        transform-origin: center;
-                    }
+                [class$="title"] {
+                    animation: slideDown ease-in-out .5s forwards;
+                    animation-iteration-count: 1;
+                    transform-origin: center;
                 }
                 
                 [id$="activity"] {
@@ -405,13 +403,11 @@ style="background-color: rgba(0,0,0,0.25)" >
                     visibility: hidden;
                 }
                 
-                @supports(animation: slideUp) {
-                    a:hover [class$="title"],
-                    a:focus [class$="title"] {
-                        animation: slideUp ease-in-out .5s forwards;
-                        animation-iteration-count: 1;
-                        transform-origin: center;
-                    }
+                a:hover [class$="title"],
+                a:focus [class$="title"] {
+                    animation: slideUp ease-in-out .5s forwards;
+                    animation-iteration-count: 1;
+                    transform-origin: center;
                 }
                 
                 a:hover [id$="activity"],
@@ -443,20 +439,7 @@ style="background-color: rgba(0,0,0,0.25)" >
                    <g id="background">
                     <rect y="259.5" class="st0" width="1023.9" height="1128.5"/>
                    </g>
-                    <g id="ribbon">
-                      <polygon class="st1" points="720.4,57.5 455.3,57.5 440.7,57.5 297.5,57.5 314,88.4 297.5,119.2 440.7,119.2 455.3,119.2 
-                                                   720.4,119.2 703.9,88.4     "/>
-                      <polygon class="st1" points="696.4,88.3 698.1,85.4 709.4,64.3 447.2,64.3 439.9,64.3 308.5,64.3 319.8,85.4 321.5,88.3 
-                                                   319.8,92.2 308.5,114.4 439.9,114.4 447.2,114.4 709.4,114.4 698.1,92.2    "/>
-                      <path class="st2" d="M710.9,115.4h-404l12-23.6l1.4-3.4l-1.3-2.5l-12.1-22.5H711l-13.5,25l1.5,3.4L710.9,115.4z M310.1,113.4
-                                           h397.7l-10.6-20.8l-1.8-4.4l1.9-3.3l10.5-19.7H310.1l12.4,23l-1.8,4.3L310.1,113.4z"/>
-                    </g>
-                    <g id="timeline-title">
-                      <text transform="matrix(1 0 0 1 427.9552 43.422)" class="st3 st4 st5">A DAY</text>
-                      <text transform="matrix(1.14 0 0 1 365 105.8574)" class="st6 st7 st8 st9">IN THE LIFE</text>
-                      <text transform="matrix(1.14 0 0 1 469.0869 161.1821)" class="st3 st10 st8 st9">of a</text>
-                      <text transform="matrix(1 0 0 1 225.516 237.4282)" class="st1 st11 st12">Common House Cat</text>
-                  </g>
+
                 <g id="timeline" role="list" aria-label="the timeline, from morning to night">
                   <g id="play" role="listitem">
                       <a xlink:href="#play-group" role="img" aria-labelledby="play-time play-text play-description" tabindex="0" id="play-group">
