@@ -296,46 +296,54 @@
 
     </details>
 
-    <p>
-        <a href="https://mestertapeta.hu/" class="center">
-            <img src="https://mestertapeta.hu/image/catalog/logo-telefonszammal.jpg" alt="" style="width: 300px; height: auto;" />
-        </a>
-    </p>
+    <details id="webShops">
+        <summary onclick="webShopsOpen()">
+            <b>WebShops</b><br />
+            <i>materials, 3d, b6 links on G-Drive</i>
+        </summary>
 
-    <p>
-        <a href="https://teddvedd.hu/" class="center">
-            <img src="https://teddvedd.hu/!common_design/custom/teddvedd.unas.hu/element/layout_hu_header_logo-254x65_1_default.png?time=158" alt="" style="width: 300px; height: auto;" />
-        </a>
-    </p>
+        <article>
+            <p>
+                <a href="https://mestertapeta.hu/" class="center">
+                    <img src="https://mestertapeta.hu/image/catalog/logo-telefonszammal.jpg" alt="" style="width: 300px; height: auto;" />
+                </a>
+            </p>
 
-    <p>
-        <a href="https://www.ledvonal.hu/" class="center">
-            <img src="https://www.ledvonal.hu/image/cache/system/ledvonal-logo-neon-350x80.png" alt="" style="width: 300px; height: auto;" />
-        </a>
-    </p>
+            <p>
+                <a href="https://teddvedd.hu/" class="center">
+                    <img src="https://teddvedd.hu/!common_design/custom/teddvedd.unas.hu/element/layout_hu_header_logo-254x65_1_default.png?time=158" alt="" style="width: 300px; height: auto;" />
+                </a>
+            </p>
 
-    <p>
-        <a href="https://www.3djake.hu/" class="center">
-            <img src="https://cdn-3d.niceshops.com/images/live/logo_3djake_y1f7e415e5b280a3bd95a09c95f662a5a92b0a714d.svg" alt="" style="width: 300px; height: auto;" />
-        </a>
-    </p>
+            <p>
+                <a href="https://www.ledvonal.hu/" class="center">
+                    <img src="https://www.ledvonal.hu/image/cache/system/ledvonal-logo-neon-350x80.png" alt="" style="width: 300px; height: auto;" />
+                </a>
+            </p>
 
-    <h1 class="banner">
-        <a href="https://nyilaszarobolt.hu/index.html" class="center">
-            www.nyilaszarobolt.hu
-        </a>
-    </h1>
+            <p>
+                <a href="https://www.3djake.hu/" class="center">
+                    <img src="https://cdn-3d.niceshops.com/images/live/logo_3djake_y1f7e415e5b280a3bd95a09c95f662a5a92b0a714d.svg" alt="" style="width: 300px; height: auto;" />
+                </a>
+            </p>
 
-    <h1 class="banner">
-        <a href="https://docs.google.com/document/d/1EMi3wZu8B3mh2mk6UiWikOVj6NeBk4KAaORPbWWEA6k/edit?usp=sharing" class="center">aB6Farmer linkek</a>
-    </h1>
+            <h1 class="banner">
+                <a href="https://nyilaszarobolt.hu/index.html" class="center">www.nyilaszarobolt.hu</a>
+            </h1>
+            <h1 class="banner">
+                <a href="https://docs.google.com/document/d/1EMi3wZu8B3mh2mk6UiWikOVj6NeBk4KAaORPbWWEA6k/edit?usp=sharing" class="center">aB6Farmer linkek</a>
+            </h1>
 
-    <h1 class="banner">
-        <a href="https://docs.google.com/document/d/1ROp5NNEeF8yEk4Uou7-Uyd0yCxf4GSyfO4gk5BljEmc/edit?usp=sharing" class="center">Chess linkek</a>
-    </h1>
-    <h1 class="banner">
-        <a href="https://drive.google.com/drive/folders/15c8T9MKgTYG_Wn5JQ3Zf3Gh06on4KOG4?usp=sharing" class="center">aB6chess - G-Drive</a>
-    </h1>
+            <h1 class="banner">
+                <a href="https://docs.google.com/document/d/1ROp5NNEeF8yEk4Uou7-Uyd0yCxf4GSyfO4gk5BljEmc/edit?usp=sharing" class="center">Chess linkek</a>
+            </h1>
+            <h1 class="banner">
+                <a href="https://drive.google.com/drive/folders/15c8T9MKgTYG_Wn5JQ3Zf3Gh06on4KOG4?usp=sharing" class="center">aB6chess - G-Drive</a>
+            </h1>
+        </article>
+
+    </details>
+
 
 
     <footer class="center">
@@ -348,34 +356,68 @@
         let films = document.getElementById('films');
         let downloadsites = document.getElementById('downloadsites');
         let boox = document.getElementById('boox');
-        let webdesign = document.getElementById('webdesign')
+        let webdesign = document.getElementById('webdesign');
+        let webShops = document.getElementById('webShops')
+        let start = document.getElementById('start');
 
         function filmsOpen() {
             boox.open = false;
             downloadsites.open = false;
             webdesign.open = false;
-            films.scrollIntoView();;
+            webShops.open = false;
+            if (films.open == false) {
+                films.scrollIntoView();;
+            } else {
+                start.scrollIntoView();
+            }
         }
 
         function downloadsitesOpen() {
             films.open = false;
             boox.open = false;
             webdesign.open = false;
-            downloadsites.scrollIntoView();
+            webShops.open = false;
+            if (downloadsites.open == false) {
+                downloadsites.scrollIntoView();
+            } else {
+                start.scrollIntoView();
+            }
         }
 
         function booxOpen() {
             films.open = false;
             downloadsites.open = false;
             webdesign.open = false;
-            boox.scrollIntoView();
+            webShops.open = false;
+            if (boox.open == false) {
+                boox.scrollIntoView();
+            } else {
+                start.scrollIntoView();
+            }
         }
 
         function webdesignOpen() {
             films.open = false;
             downloadsites.open = false;
             boox.open = false;
-            webdesign.scrollIntoView();
+            webShops.open = false;
+            if (webdesign.open == false) {
+                webdesign.scrollIntoView();
+            } else {
+                start.scrollIntoView();
+            }
+        }
+
+        function webShopsOpen() {
+            films.open = false;
+            downloadsites.open = false;
+            boox.open = false;
+            webdesign.open = false;
+            if (webShops.open == false) {
+                webShops.scrollIntoView();
+            } else {
+                start.scrollIntoView();
+            }
         }
     </script>
 </body>
