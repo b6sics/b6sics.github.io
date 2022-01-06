@@ -262,10 +262,7 @@
             regulations.open = false;
             pageinfo.scrollIntoView();
             if (pageinfo.open == false) {
-                pageinfo.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                pageinfo.scrollIntoView(true);
             } else {
                 start.scrollIntoView({
                     behavior: 'smooth',
