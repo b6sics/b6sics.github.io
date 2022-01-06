@@ -96,7 +96,7 @@
         </summary>
 
         <figure>
-            <img src="images/" alt="">
+
             <figcaption>
                 figcaption
             </figcaption>
@@ -228,7 +228,20 @@
         function knowledgesOpen() {
             pageinfo.open = false;
             regulations.open = false;
-            if (knowledges.open == false) {
+        }
+
+        function regulationsOpen() {
+            knowledges.open = false;
+            pageinfo.open = false;
+        }
+
+        function pageinfoOpen() {
+            knowledges.open = false;
+            regulations.open = false;
+        }
+
+        knowledges.addEventListener('toggle', function() {
+            if (knowledges.open == true) {
                 knowledges.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -239,12 +252,9 @@
                     block: 'start'
                 });
             }
-        }
-
-        function regulationsOpen() {
-            knowledges.open = false;
-            pageinfo.open = false;
-            if (regulations.open == false) {
+        });
+        regulations.addEventListener('toggle', function() {
+            if (regulations.open == true) {
                 regulations.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -255,21 +265,20 @@
                     block: 'start'
                 });
             }
-        }
-
-        function pageinfoOpen() {
-            knowledges.open = false;
-            regulations.open = false;
-            pageinfo.scrollIntoView();
-            if (pageinfo.open == false) {
-                pageinfo.scrollIntoView(true);
+        });
+        pageinfo.addEventListener('toggle', function() {
+            if (pageinfo.open == true) {
+                pageinfo.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             } else {
                 start.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
             }
-        }
+        });
     </script>
 </body>
 
