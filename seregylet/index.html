@@ -223,20 +223,37 @@
         let knowledges = document.getElementById('knowledges');
         let regulations = document.getElementById('regulations');
         let pageinfo = document.getElementById('pageinfo');
+        let start = document.getElementById('start');
 
         function knowledgesOpen() {
             pageinfo.open = false;
             regulations.open = false;
+            if (knowledges.open == false) {
+                knowledges.scrollIntoView();
+            } else {
+                start.scrollIntoView();
+            }
         }
 
         function regulationsOpen() {
             knowledges.open = false;
             pageinfo.open = false;
+            if (regulations.open == false) {
+                regulations.scrollIntoView();
+            } else {
+                start.scrollIntoView();
+            }
         }
 
         function pageinfoOpen() {
             knowledges.open = false;
             regulations.open = false;
+            pageinfo.scrollIntoView();
+            if (pageinfo.open == false) {
+                pageinfo.scrollIntoView();
+            } else {
+                start.scrollIntoView();
+            }
         }
     </script>
 </body>
