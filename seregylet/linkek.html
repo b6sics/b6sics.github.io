@@ -365,7 +365,9 @@
             downloadsites.open = false;
             webdesign.open = false;
             webShops.open = false;
-            if (films.open == false) {
+        }
+        films.addEventListener('toggle', function() {
+            if (films.open == true) {
                 films.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -376,14 +378,16 @@
                     block: 'start'
                 });
             }
-        }
+        });
 
         function downloadsitesOpen() {
             films.open = false;
             boox.open = false;
             webdesign.open = false;
             webShops.open = false;
-            if (downloadsites.open == false) {
+        }
+        downloadsites.addEventListener('toggle', function() {
+            if (downloadsites.open == true) {
                 downloadsites.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -394,14 +398,16 @@
                     block: 'start'
                 });
             }
-        }
+        });
 
         function booxOpen() {
             films.open = false;
             downloadsites.open = false;
             webdesign.open = false;
             webShops.open = false;
-            if (boox.open == false) {
+        }
+        boox.addEventListener('toggle', function() {
+            if (boox.open == true) {
                 boox.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -412,14 +418,16 @@
                     block: 'start'
                 });
             }
-        }
+        });
 
         function webdesignOpen() {
             films.open = false;
             downloadsites.open = false;
             boox.open = false;
             webShops.open = false;
-            if (webdesign.open == false) {
+        }
+        webdesign.addEventListener('toggle', function() {
+            if (webdesign.open == true) {
                 webdesign.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -430,14 +438,16 @@
                     block: 'start'
                 });
             }
-        }
+        });
 
         function webShopsOpen() {
             films.open = false;
             downloadsites.open = false;
             boox.open = false;
             webdesign.open = false;
-            if (webShops.open == false) {
+        }
+        webShops.addEventListener('toggle', function() {
+            if (webShops.open == true) {
                 webShops.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -448,7 +458,7 @@
                     block: 'start'
                 });
             }
-        }
+        });
     </script>
 </body>
 
