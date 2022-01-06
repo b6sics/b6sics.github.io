@@ -229,9 +229,15 @@
             pageinfo.open = false;
             regulations.open = false;
             if (knowledges.open == false) {
-                knowledges.scrollIntoView();
+                knowledges.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             } else {
-                start.scrollIntoView();
+                start.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         }
 
@@ -239,9 +245,15 @@
             knowledges.open = false;
             pageinfo.open = false;
             if (regulations.open == false) {
-                regulations.scrollIntoView();
+                regulations.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             } else {
-                start.scrollIntoView();
+                start.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         }
 
@@ -250,9 +262,15 @@
             regulations.open = false;
             pageinfo.scrollIntoView();
             if (pageinfo.open == false) {
-                pageinfo.scrollIntoView();
+                pageinfo.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             } else {
-                start.scrollIntoView();
+                start.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         }
     </script>
