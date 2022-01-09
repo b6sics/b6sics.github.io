@@ -1,0 +1,52 @@
+a {
+    width: 100%;
+    color: var(--content-txt-color);
+    text-decoration: none;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    color: var(--content-txt-color);
+    border-top: 1px solid darkgoldenrod;
+    border-bottom: 1px solid darkgoldenrod;
+}
+
+#popupmenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0.25em;
+    width: 15%;
+    height: 1.75em;
+    max-width: 12em;
+    min-width: 7em;
+    text-align: right;
+    background-color: silver;
+    border-radius: 0 0 0 1em;
+    border: 1px solid var(--codebox-border-color);
+    overflow: hidden;
+}
+
+#popupmenu a {
+    display: inline-block;
+    margin: 0 2px 0 auto;
+    width: 85%;
+    text-align: center;
+    line-height: 1.25em;
+}
+
+#popupmenu a:hover {
+    line-height: 1.25em;
+    font-size: 1.1em;
+}
+
+summary {
+    opacity: 0.66;
+}
+
+summary:hover {
+    opacity: 1;
+    cursor: pointer;
+}
