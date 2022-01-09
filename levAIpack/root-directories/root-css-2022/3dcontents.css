@@ -14,7 +14,6 @@ details,
 figure {
     margin: 1vh auto;
     padding: 1vh 1vw;
-    background-color: var(--content-bg-color);
     border-radius: 1vmin;
 }
 
@@ -23,6 +22,7 @@ figure {
     justify-content: var(--justify-content-horizontally);
     align-items: var(--align-items-vertically);
     flex-direction: var(--flex-direction);
+    text-align: center;
 }
 
 .banner {
@@ -99,33 +99,6 @@ section#main {
     text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2), 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
 
-footer {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    bottom: var(--footer-bottom);
-    width: var(--footer-width);
-    height: 6em;
-    left: var(--footer-left);
-    right: var(--footer-right);
-}
-
-.half {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    flex-wrap: wrap;
-    align-items: center;
-    width: var(--footer-width);
-}
-
-.quarter {
-    text-align: center;
-}
-
 #main-contact {
     position: absolute;
     display: none;
@@ -172,15 +145,6 @@ footer {
     color: var(--info-text-color);
     font-size: 1.5em;
     line-height: 1.1em;
-}
-
-#close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 1.5em;
-    line-height: 1em;
-    color: var(--info-text-color);
 }
 
 @media (max-width: 1200px) {
