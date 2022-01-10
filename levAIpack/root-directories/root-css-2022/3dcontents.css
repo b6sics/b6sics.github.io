@@ -1,10 +1,3 @@
-img {
-    margin: 1.5vh auto;
-    height: 60vw;
-    max-height: 60vh;
-    width: auto;
-}
-
 main,
 header,
 footer,
@@ -14,7 +7,18 @@ details,
 figure {
     margin: 1vh auto;
     padding: 1vh 1vw;
-    width: 100%;
+    background-color: var(--content-bg-color);
+    border-radius: 1vmin;
+}
+
+details {
+    width: 60%;
+    margin-right: 0;
+}
+
+figure img {
+    width: var(--cube-size);
+    height: auto;
     border-radius: 1vmin;
 }
 
