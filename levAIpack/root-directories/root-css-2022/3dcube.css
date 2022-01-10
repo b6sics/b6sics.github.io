@@ -1,8 +1,7 @@
 .scene {
     position: relative;
     border: var(--scene-border);
-    margin: calc(var(--cube-size) / 4 - 1px) var(--footer-right) 0 var(--footer-left);
-    width: var(--footer-width);
+    margin: calc(var(--cube-size) / 4 - 1px) 0;
     height: calc(var(--cube-size) / 2);
     background: var(--scene-background);
 }
@@ -27,15 +26,11 @@
     width: var(--cube-size);
     height: var(--cube-size);
     position: absolute;
-    left: calc(var(--cube-size) / 4);
+    top: calc(var(--cube-size) / 4 - 1px);
+    left: calc(var(--cube-size) / 4 - 1px);
     transform-style: preserve-3d;
     transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(420deg);
     transform-origin: 50% 50%;
-}
-
-.cube-main {
-    margin-top: 0;
-    margin-left: 0;
 }
 
 .cube.is-spinning {
