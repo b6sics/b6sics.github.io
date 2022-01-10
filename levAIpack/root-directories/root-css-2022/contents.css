@@ -26,13 +26,18 @@ figure {
     border-radius: 1vmin;
 }
 
+figure img,
+figcaption {
+    width: 50%;
+}
+
 details:first-of-type {
-    margin-top: 5vmin;
+    margin-top: 15vmin;
 }
 
 details {
     margin-right: 0;
-    width: 66%;
+    width: 55%;
 }
 
 .bottom {
@@ -61,5 +66,12 @@ details[open] summary>i {
 @media (max-width: 600px) {
     details {
         width: auto;
+    }
+    figure {
+        flex-direction: column;
+    }
+    figure img,
+    figcaption {
+        width: 60%;
     }
 }
