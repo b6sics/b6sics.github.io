@@ -1,12 +1,12 @@
 :root {
-    --body-color: hsla(240, 100%, 30%, 0.9);
+    --body-color: rgba(0, 0, 160, 0.9);
     --text-color: whitesmoke;
     /* contents */
     --content-border-width: 2px;
     --content-border-style: solid;
     --content-border-color: transparent;
     --content-txt-color: black;
-    --content-bg-color: rgba(184, 134, 11, 0.25);
+    --content-bg-color: rgba(224, 208, 240, 0.85);
 }
 
 body {
