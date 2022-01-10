@@ -1,44 +1,6 @@
 :root {
     --body-color: hsla(240, 100%, 30%, 0.9);
     --text-color: whitesmoke;
-    --cube-size: 24vmin;
-    --cube-color1: hsla(0, 100%, 50%, 0.7);
-    --cube-color2: hsla(60, 100%, 50%, 0.7);
-    --cube-color3: hsla(120, 100%, 50%, 0.7);
-    --cube-color4: hsla(180, 100%, 50%, 0.7);
-    --cube-color5: hsla(240, 100%, 50%, 0.7);
-    --cube-color6: hsla(300, 100%, 50%, 0.7);
-    --cube-edge: 4px outset darkgray;
-    --cube-edge2: 4px outset gray;
-    --cube-font-color: lightgoldenrodyellow;
-    --animation-duration: 12s;
-    --cube-transform: var(--animation-duration) 1 ease-in-out;
-    --scene-border-size: 1vmin;
-    --scene-border: var(--scene-border-size) solid lightgray;
-    --scene-background: hsla(270, 50%, 90%, 0.85);
-    --info-background: lightgray;
-    --info-text-color: navy;
-    --shadow-blur: 0.25vmin;
-    --shadow-color1: whitesmoke;
-    --shadow-color2: darkslateblue;
-    --scene-text-color: goldenrod;
-    --pulse-transform: calc(var(--animation-duration) / 5) infinite ease-in-out var(--animation-duration);
-    /* footer metrix */
-    --footer-bottom: 1vmin;
-    --footer-left: 2vmin;
-    --footer-right: var(--footer-left);
-    --footer-width: calc(100% - 2 * var(--footer-left));
-    /* flex */
-    --flex-display: flex;
-    --justify-content-horizontally: center;
-    --align-items-vertically: center;
-    --flex-direction: column;
-    /* contents */
-    --content-border-width: 2px;
-    --content-border-style: solid;
-    --content-border-color: transparent;
-    --content-txt-color: black;
-    --content-bg-color: rgba(184, 134, 11, 0.25);
 }
 
 body {
