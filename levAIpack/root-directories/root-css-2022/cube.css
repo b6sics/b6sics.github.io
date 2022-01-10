@@ -1,15 +1,15 @@
 :root {
     --body-color: hsla(240, 100%, 30%, 0.9);
     --text-color: whitesmoke;
-    --cube-size: 16vmin;
+    --cube-size: 24vmin;
     --cube-color1: hsla(0, 100%, 50%, 0.7);
     --cube-color2: hsla(60, 100%, 50%, 0.7);
     --cube-color3: hsla(120, 100%, 50%, 0.7);
     --cube-color4: hsla(180, 100%, 50%, 0.7);
     --cube-color5: hsla(240, 100%, 50%, 0.7);
     --cube-color6: hsla(300, 100%, 50%, 0.7);
-    --cube-edge: 4px outset darkgray;
-    --cube-edge2: 4px outset gray;
+    --cube-edge: 1px solid darkgray;
+    --cube-edge2: 1px solid gray;
     --cube-font-color: lightgoldenrodyellow;
     --animation-duration: 12s;
     --cube-transform: var(--animation-duration) 1 ease-in-out;
@@ -26,6 +26,7 @@
 }
 
 .cube {
+    box-sizing: border-box;
     position: absolute;
     width: var(--cube-size);
     height: var(--cube-size);
