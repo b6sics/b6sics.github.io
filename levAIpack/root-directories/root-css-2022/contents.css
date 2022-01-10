@@ -57,3 +57,9 @@ details[open] summary>i {
         position: static;
     }
 }
+
+@media (max-width: 600px) {
+    details {
+        width: auto;
+    }
+}
