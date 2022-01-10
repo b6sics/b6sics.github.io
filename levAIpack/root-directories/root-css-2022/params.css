@@ -4,9 +4,9 @@
     /* contents */
     --content-border-width: 2px;
     --content-border-style: solid;
-    --content-border-color: transparent;
+    --content-border-color: rgba(61, 54, 68, 0.85);
     --content-txt-color: black;
-    --content-bg-color: rgba(224, 208, 240, 0.85);
+    --content-bg-color: rgba(61, 54, 68, 0.9);
 }
 
 body {
