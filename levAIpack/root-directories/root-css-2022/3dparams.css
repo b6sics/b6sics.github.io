@@ -1,7 +1,7 @@
 :root {
     --body-color: hsla(240, 100%, 30%, 0.9);
     --text-color: whitesmoke;
-    --cube-size: 33vmin;
+    --cube-size: 24vmin;
     --cube-color1: hsla(0, 100%, 50%, 0.7);
     --cube-color2: hsla(60, 100%, 50%, 0.7);
     --cube-color3: hsla(120, 100%, 50%, 0.7);
