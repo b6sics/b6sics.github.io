@@ -1,4 +1,6 @@
 :root {
+    --body-color: hsla(240, 100%, 30%, 0.9);
+    --text-color: whitesmoke;
     /* contents */
     --content-border-width: 2px;
     --content-border-style: solid;
@@ -9,8 +11,8 @@
 
 body {
     min-height: calc(96vh + 1px);
-    color: var(--content-txt-color);
-    background-color: silver;
+    color: var(--text-color);
+    background-color: var(--body-color);
     margin: 0;
     padding: 1vh 1vw;
     overflow: scroll;
