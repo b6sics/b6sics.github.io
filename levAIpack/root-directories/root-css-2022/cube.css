@@ -2,7 +2,7 @@
     --body-color: rgba(0, 0, 160, 0.9);
     --text-color: whitesmoke;
     --cube-size: 24vmin;
-    --cube-size-mini: 12vmin;
+    --cube-size-mini: 15vmin;
     --cube-color1: rgba(255, 0, 0, 0.7);
     --cube-color2: rgba(255, 255, 0, 0.7);
     --cube-color3: rgba(0, 255, 0, 0.7);
@@ -19,6 +19,7 @@
     --shadow-color2: darkslateblue;
     --scene-text-color: goldenrod;
     --pulse-transform: calc(var(--animation-duration) / 5) infinite ease-in-out var(--animation-duration);
+    --pulse-transform-mini: calc(var(--animation-duration) / 5) infinite ease-in-out;
 }
 
 .animation {
@@ -48,8 +49,8 @@
     position: absolute;
     width: var(--cube-size-mini);
     height: var(--cube-size-mini);
-    top: calc(var(--cube-size-mini) / 4 - 1px);
-    left: calc(var(--cube-size-mini) / 4 - 1px);
+    top: calc(var(--cube-size-mini) / 6 - 1px);
+    left: calc(var(--cube-size-mini) / 6 - 1px);
     transform-style: preserve-3d;
     transform: translateZ(calc(var(--cube-size-mini) / -2)) rotateX(325deg) rotateY(420deg);
     transform-origin: 50% 50%;
@@ -152,12 +153,24 @@
     transform: rotateX(90deg) rotateZ(90deg) translateZ(calc(var(--cube-size) / 2));
 }
 
+.cube_face-top-mini {
+    background: var(--cube-color5);
+    transform: rotateX(90deg) rotateZ(90deg) translateZ(calc(var(--cube-size-mini) / 2));
+    animation: pulsate var(--pulse-transform-mini);
+}
+
 .cube_face-bottom {
     transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
 }
 
 .cube_face-front {
     transform: translateZ(calc(var(--cube-size) / 2)) rotateY(0deg);
+}
+
+.cube_face-front-mini {
+    background: var(--cube-color1);
+    transform: translateZ(calc(var(--cube-size-mini) / 2)) rotateY(0deg);
+    animation: pulsate var(--pulse-transform-mini);
 }
 
 .cube_face-front.moving {
@@ -180,6 +193,14 @@
 
 .cube_face-left {
     transform: translateZ(calc(var(--cube-size) / -2)) rotateY(-90deg);
+}
+
+.cube_face-left-mini {
+    transform-origin: left 0;
+    -webkit-transform-origin: left 0;
+    background: var(--cube-color4);
+    transform: translateZ(calc(var(--cube-size-mini) / -2)) rotateY(-90deg);
+    animation: pulsate var(--pulse-transform-mini);
 }
 
 .cube_face-left.moving {
