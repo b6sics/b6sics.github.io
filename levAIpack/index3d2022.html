@@ -34,10 +34,10 @@
         </h1>
     </header>
 
-    <details id="knowledges">
-        <summary onclick="knowledgesOpen()">
-            <b>Házi serfőzés ismeretek</b><br />
-            <i>történelem, anyagismeret, eszközök, receptek</i>
+    <details id="management">
+        <summary onclick="managementOpen()">
+            <b>Kapcsolat</b><br />
+            <i>ügyvezető</i>
         </summary>
     </details>
 
@@ -75,29 +75,29 @@
     </footer>
 
     <script>
-        let knowledges = document.getElementById('knowledges');
+        let management = document.getElementById('management');
         let regulations = document.getElementById('regulations');
         let pageinfo = document.getElementById('pageinfo');
         let start = document.getElementById('start');
 
-        function knowledgesOpen() {
+        function managementOpen() {
             pageinfo.open = false;
             regulations.open = false;
         }
 
         function regulationsOpen() {
-            knowledges.open = false;
+            management.open = false;
             pageinfo.open = false;
         }
 
         function pageinfoOpen() {
-            knowledges.open = false;
+            management.open = false;
             regulations.open = false;
         }
 
-        knowledges.addEventListener('toggle', function() {
-            if (knowledges.open == true) {
-                knowledges.scrollIntoView({
+        management.addEventListener('toggle', function() {
+            if (management.open == true) {
+                management.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
