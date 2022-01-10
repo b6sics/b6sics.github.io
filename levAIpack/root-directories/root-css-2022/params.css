@@ -2,18 +2,19 @@
     --body-color: rgba(0, 0, 160, 0.9);
     --text-color: whitesmoke;
     /* contents */
-    --content-border-width: 2px;
+    --content-border-width: 0.5vmin;
     --content-border-style: solid;
-    --content-border-color: rgba(61, 54, 68, 0.85);
-    --content-txt-color: black;
-    --content-bg-color: rgba(61, 54, 68, 0.9);
+    --content-border-color: rgba(224, 208, 240, 0.8);
+    --content-txt-color: darkgoldenrod;
+    --content-bg-color: rgba(224, 208, 240, 0.9);
 }
 
 body {
-    min-height: calc(96vh + 1px);
-    color: var(--text-color);
-    background-color: var(--body-color);
     margin: 0;
     padding: 1vh 1vw;
+    min-height: calc(96vh + 1px);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--body-color);
     overflow: scroll;
 }
