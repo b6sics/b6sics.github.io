@@ -12,6 +12,10 @@
     text-align: right;
 }
 
+p {
+    text-align: justify;
+}
+
 main,
 header,
 footer,
