@@ -23,6 +23,7 @@ figure {
     justify-content: var(--justify-content-horizontally);
     align-items: var(--align-items-vertically);
     flex-direction: var(--flex-direction);
+    text-align: center;
 }
 
 .banner {
