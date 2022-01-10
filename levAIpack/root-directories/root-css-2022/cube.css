@@ -1,31 +1,34 @@
-.scene {
-    position: relative;
-    border: var(--scene-border);
-    margin: calc(var(--cube-size) / 4 - 1px) 0;
-    height: calc(var(--cube-size) / 2);
-    background: var(--scene-background);
+:root {
+    --body-color: hsla(240, 100%, 30%, 0.9);
+    --text-color: whitesmoke;
+    --cube-size: 16vmin;
+    --cube-color1: hsla(0, 100%, 50%, 0.7);
+    --cube-color2: hsla(60, 100%, 50%, 0.7);
+    --cube-color3: hsla(120, 100%, 50%, 0.7);
+    --cube-color4: hsla(180, 100%, 50%, 0.7);
+    --cube-color5: hsla(240, 100%, 50%, 0.7);
+    --cube-color6: hsla(300, 100%, 50%, 0.7);
+    --cube-edge: 4px outset darkgray;
+    --cube-edge2: 4px outset gray;
+    --cube-font-color: lightgoldenrodyellow;
+    --animation-duration: 12s;
+    --cube-transform: var(--animation-duration) 1 ease-in-out;
+    --shadow-blur: 0.25vmin;
+    --shadow-color1: whitesmoke;
+    --shadow-color2: darkslateblue;
+    --scene-text-color: goldenrod;
+    --pulse-transform: calc(var(--animation-duration) / 5) infinite ease-in-out var(--animation-duration);
 }
 
-.scene-main {
+.animation {
+    margin: calc(var(--cube-size) / 4 - 1px);
     perspective: calc(var(--cube-size) * 6 - 1px);
 }
 
-.scene-main p::after {
-    content: "Arcus Maximus";
-    float: right;
-    margin-right: calc(var(--scene-border-size) * 2);
-    font-style: italic;
-    font-weight: lighter;
-    font-size: calc(var(--cube-size) / 6);
-    line-height: calc(var(--cube-size) / 2 - var(--scene-border-size) * 2);
-    color: var(--scene-text-color);
-    text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2), 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
-}
-
 .cube {
+    position: absolute;
     width: var(--cube-size);
     height: var(--cube-size);
-    position: absolute;
     top: calc(var(--cube-size) / 4 - 1px);
     left: calc(var(--cube-size) / 4 - 1px);
     transform-style: preserve-3d;
