@@ -16,6 +16,12 @@ summary {
     opacity: 0.66;
 }
 
+summary b {
+    font-size: calc(var(--cube-size) / 6);
+    color: var(--scene-text-color);
+    text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2), 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
+}
+
 summary:hover {
     opacity: 1;
     cursor: pointer;
