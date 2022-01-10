@@ -1,13 +1,13 @@
 :root {
-    --body-color: hsla(240, 100%, 30%, 0.9);
+    --body-color: rgba(0, 0, 160, 0.9);
     --text-color: whitesmoke;
     --cube-size: 24vmin;
-    --cube-color1: hsla(0, 100%, 50%, 0.7);
-    --cube-color2: hsla(60, 100%, 50%, 0.7);
-    --cube-color3: hsla(120, 100%, 50%, 0.7);
-    --cube-color4: hsla(180, 100%, 50%, 0.7);
-    --cube-color5: hsla(240, 100%, 50%, 0.7);
-    --cube-color6: hsla(300, 100%, 50%, 0.7);
+    --cube-color1: rgba(255, 0, 0, 0.7);
+    --cube-color2: rgba(255, 255, 0, 0.7);
+    --cube-color3: rgba(0, 255, 0, 0.7);
+    --cube-color4: rgba(0, 255, 255, 0.7);
+    --cube-color5: rgba(0, 0, 255, 0.7);
+    --cube-color6: rgba(255, 0, 255, 0.7);
     --cube-edge: 1px solid darkgray;
     --cube-edge2: 1px solid gray;
     --cube-font-color: lightgoldenrodyellow;
