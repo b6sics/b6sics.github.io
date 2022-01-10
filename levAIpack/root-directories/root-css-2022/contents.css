@@ -26,6 +26,15 @@ figure {
     border-radius: 1vmin;
 }
 
+details:first-of-type {
+    margin-top: 5vmin;
+}
+
+details {
+    margin-right: 0;
+    width: 66%;
+}
+
 .bottom {
     position: fixed;
     left: 1vw;
@@ -41,16 +50,7 @@ details[open] summary>i {
     display: none;
 }
 
-details[open]~#mainAnimation {
-    opacity: 0.26;
-}
-
-@media screen and (max-height: 720px) {
-    #mainAnimation {
-        bottom: 3vh;
-        right: 2vw;
-    }
-}
+@media screen and (max-height: 720px) {}
 
 @media screen and (max-height: 420px) {
     footer.bottom {
