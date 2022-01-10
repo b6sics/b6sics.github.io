@@ -1,18 +1,7 @@
-body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: var(--body-color);
-    color: var(--text-color);
-}
-
-a {
-    text-decoration: none;
-    color: var(--text-color);
-}
-
 .scene {
     position: relative;
     border: var(--scene-border);
-    margin: calc(var(--cube-size) / 2 - 1px) var(--footer-right) 0 var(--footer-left);
+    margin: calc(var(--cube-size) / 4 - 1px) var(--footer-right) 0 var(--footer-left);
     width: var(--footer-width);
     height: calc(var(--cube-size) / 2);
     background: var(--scene-background);
