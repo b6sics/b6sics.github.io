@@ -26,3 +26,9 @@ summary:hover {
     opacity: 1;
     cursor: pointer;
 }
+
+@media screen and (max-height: 720px) {
+    summary b {
+        font-size: initial;
+    }
+}
