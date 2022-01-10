@@ -2,18 +2,21 @@ a {
     width: 100%;
     color: var(--content-txt-color);
     text-decoration: none;
+    line-height: 1.5em;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
+    opacity: 0.75;
 }
 
 a:hover {
-    color: var(--content-txt-color);
+    text-shadow: 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
     border-top: 1px solid darkgoldenrod;
     border-bottom: 1px solid darkgoldenrod;
+    opacity: 1;
 }
 
 summary {
-    opacity: 0.66;
+    opacity: 0.75;
 }
 
 summary b {
