@@ -1,17 +1,4 @@
 :root {
-    /* flex */
-    --flex-display: flex;
-    --justify-content-horizontally: center;
-    --align-items-vertically: center;
-    --flex-direction: column;
-    /* code-box */
-    --codebox-margin: 1vmin;
-    --codebox-padding: 1vmin;
-    --codebox-txt-color: palegoldenrod;
-    --codebox-bg-color: darkslateblue;
-    --codebox-border-width: 2px;
-    --codebox-border-style: inset;
-    --codebox-border-color: darkslategray;
     /* contents */
     --content-border-width: 2px;
     --content-border-style: solid;
