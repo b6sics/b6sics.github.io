@@ -17,6 +17,10 @@ p {
     opacity: 0.85;
 }
 
+.vertical {
+    flex-direction: column;
+}
+
 main,
 header,
 footer,
