@@ -17,7 +17,7 @@ summary {
 }
 
 summary b {
-    font-size: calc(var(--cube-size) / 6);
+    font-size: calc(var(--cube-size) / 8);
     color: var(--scene-text-color);
     text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2), 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
