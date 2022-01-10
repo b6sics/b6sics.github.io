@@ -5,7 +5,7 @@ a {
     line-height: 1.5em;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
-    opacity: 0.75;
+    opacity: 0.85;
 }
 
 a:hover {
@@ -16,7 +16,7 @@ a:hover {
 }
 
 summary {
-    opacity: 0.75;
+    opacity: 0.85;
 }
 
 summary b {
