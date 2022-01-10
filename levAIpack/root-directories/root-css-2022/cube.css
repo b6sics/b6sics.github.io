@@ -1,0 +1,209 @@
+.scene {
+    position: relative;
+    border: var(--scene-border);
+    margin: calc(var(--cube-size) / 4 - 1px) 0;
+    height: calc(var(--cube-size) / 2);
+    background: var(--scene-background);
+}
+
+.scene-main {
+    perspective: calc(var(--cube-size) * 6 - 1px);
+}
+
+.scene-main p::after {
+    content: "Arcus Maximus";
+    float: right;
+    margin-right: calc(var(--scene-border-size) * 2);
+    font-style: italic;
+    font-weight: lighter;
+    font-size: calc(var(--cube-size) / 6);
+    line-height: calc(var(--cube-size) / 2 - var(--scene-border-size) * 2);
+    color: var(--scene-text-color);
+    text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2), 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
+}
+
+.cube {
+    width: var(--cube-size);
+    height: var(--cube-size);
+    position: absolute;
+    top: calc(var(--cube-size) / 4 - 1px);
+    left: calc(var(--cube-size) / 4 - 1px);
+    transform-style: preserve-3d;
+    transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(420deg);
+    transform-origin: 50% 50%;
+}
+
+.cube.is-spinning {
+    animation: spinCube var(--cube-transform);
+}
+
+@keyframes spinCube {
+    0% {
+        transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(420deg);
+    }
+    50% {
+        transform: translateZ(calc(var(--cube-size) / -2)) rotateX(280deg) rotateY(60deg);
+    }
+    100% {
+        transform: translateZ(calc(var(--cube-size) / -2)) rotateX(325deg) rotateY(60deg);
+    }
+}
+
+.cube_face {
+    position: absolute;
+    width: var(--cube-size);
+    height: var(--cube-size);
+    border: var(--cube-edge);
+    line-height: var(--cube-size);
+    font-size: calc(var(--cube-size) / 3);
+    font-weight: bold;
+    color: var(--cube-font-color);
+    text-shadow: 0 0 calc(var(--shadow-blur) * 10) var(--shadow-color2);
+    text-align: center;
+}
+
+.cube_face-front {
+    background: var(--cube-color1);
+}
+
+.cube_face-right {
+    background: var(--cube-color2);
+}
+
+.cube_face-back {
+    background: var(--cube-color3);
+}
+
+.cube_face-left {
+    background: var(--cube-color4);
+}
+
+.cube_face-top {
+    background: var(--cube-color5);
+    animation: pulsate var(--pulse-transform);
+}
+
+.cube_face-bottom {
+    background: var(--cube-color6);
+    animation: pulsate var(--pulse-transform);
+}
+
+@keyframes pulsate {
+    from {
+        opacity: 1;
+        border: var(--cube-edge);
+        filter: none;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    50% {
+        opacity: 0.7;
+        border: var(--cube-edge2);
+        filter: blur(0.15vmin);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        border: var(--cube-edge);
+        filter: none;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+}
+
+.cube_face-top {
+    transform: rotateX(90deg) rotateZ(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube_face-bottom {
+    transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.cube_face-front {
+    transform: translateZ(calc(var(--cube-size) / 2)) rotateY(0deg);
+}
+
+.cube_face-front.moving {
+    transform-origin: left 0;
+    -webkit-transform-origin: left 0;
+    animation: moveFront var(--cube-transform), pulsate var(--pulse-transform);
+}
+
+@keyframes moveFront {
+    0% {
+        transform: translateZ(calc(var(--cube-size) / 2)) rotateY(0deg);
+    }
+    50% {
+        transform: translateZ(calc(var(--cube-size) / 2)) rotateY(-180deg) scaleX(66%);
+    }
+    100% {
+        transform: translateZ(calc(var(--cube-size) / 2)) rotateY(0deg);
+    }
+}
+
+.cube_face-left {
+    transform: translateZ(calc(var(--cube-size) / -2)) rotateY(-90deg);
+}
+
+.cube_face-left.moving {
+    transform-origin: left 0;
+    -webkit-transform-origin: left 0;
+    animation: moveLeft var(--cube-transform), pulsate var(--pulse-transform);
+}
+
+@keyframes moveLeft {
+    0% {
+        transform: translateZ(calc(var(--cube-size) / -2)) rotateY(-90deg);
+    }
+    50% {
+        transform: translateZ(calc(var(--cube-size) / -2)) rotateY(-270deg) scaleX(66%);
+    }
+    100% {
+        transform: translateZ(calc(var(--cube-size) / -2)) rotateY(-90deg);
+    }
+}
+
+.cube_face-right {
+    transform: translateZ(calc(var(--cube-size) / 2)) translateX(calc(var(--cube-size) * 1)) rotateY(90deg);
+}
+
+.cube_face-right.moving {
+    transform-origin: left 0;
+    -webkit-transform-origin: left 0;
+    animation: moveRight var(--cube-transform), pulsate var(--pulse-transform);
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateZ(calc(var(--cube-size) / 2)) translateX(calc(var(--cube-size) * 1)) rotateY(90deg);
+    }
+    50% {
+        transform: translateZ(calc(var(--cube-size) / 2)) translateX(calc(var(--cube-size) * 1)) rotateY(-90deg) scaleX(66%);
+    }
+    100% {
+        transform: translateZ(calc(var(--cube-size) / 2)) translateX(calc(var(--cube-size) * 1)) rotateY(90deg);
+    }
+}
+
+.cube_face-back {
+    transform: translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1)) rotateY(180deg);
+}
+
+.cube_face-back.moving {
+    transform-origin: left 0;
+    -webkit-transform-origin: left 0;
+    animation: moveBack var(--cube-transform), pulsate var(--pulse-transform);
+}
+
+@keyframes moveBack {
+    0% {
+        transform: translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1)) rotateY(180deg);
+    }
+    50% {
+        transform: translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1)) rotateY(0deg) scaleX(66%);
+    }
+    100% {
+        transform: translateZ(calc(var(--cube-size) / -2)) translateX(calc(var(--cube-size) * 1)) rotateY(180deg);
+    }
+}
