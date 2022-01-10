@@ -21,7 +21,7 @@
 }
 
 .animation {
-    margin: calc(var(--cube-size) / 4 - 1px);
+    margin: calc(var(--cube-size) / 6 - 1px);
     perspective: calc(var(--cube-size) * 6 - 1px);
 }
 
