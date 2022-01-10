@@ -14,6 +14,7 @@ details,
 figure {
     margin: 1vh auto;
     padding: 1vh 1vw;
+    width: 100%;
     border-radius: 1vmin;
 }
 
