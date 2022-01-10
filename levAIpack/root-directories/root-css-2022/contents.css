@@ -1,8 +1,16 @@
-img {
-    margin: 1.5vh auto;
-    height: 60vw;
-    max-height: 60vh;
-    width: auto;
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    text-align: center;
+    text-align: right;
 }
 
 main,
@@ -16,18 +24,6 @@ figure {
     padding: 1vh 1vw;
     background-color: var(--content-bg-color);
     border-radius: 1vmin;
-}
-
-.center {
-    display: var(--flex-display);
-    justify-content: var(--justify-content-horizontally);
-    align-items: var(--align-items-vertically);
-    flex-direction: var(--flex-direction);
-    text-align: center;
-}
-
-.right {
-    text-align: right;
 }
 
 .bottom {
