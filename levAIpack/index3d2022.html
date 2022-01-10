@@ -5,18 +5,278 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, 
                                    initial-scale=1, 
-                                   maximum-scale=1, 
                                    shrink-to-fit=no" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Index|Levai Pack</title>
+    <title>B6 Seregylet</title>
     <base target="_self">
 
-    <link rel="stylesheet" href="root-directories/root-css-2022/3dstyle.css?t=123" />
+    <link rel="stylesheet" href="root-directories/root-css-2022/style.css?t=123" />
+
 </head>
 
-<body>
+<body id="start">
 
+    <header>
+        <h1 class="center" style="margin-bottom: 0;">
+            SERFŐZŐ
+        </h1>
+        <hr style="width: 15em;" />
+        <h1 class="center" style="margin-top: 0;">
+            <o>EGYESÜLET</o>
+        </h1>
+    </header>
+
+    <details id="knowledges">
+        <summary onclick="knowledgesOpen()">
+            <b>Házi serfőzés ismeretek</b><br />
+            <i>történelem, anyagismeret, eszközök, receptek</i>
+        </summary>
+
+        <figure>
+
+            <figcaption>
+                figcaption
+            </figcaption>
+        </figure>
+
+        <article>
+            <header>
+                <h2>
+                    h2
+                </h2>
+            </header>
+
+            <article>
+                <header>
+                    <h3>
+                        h3
+                    </h3>
+                </header>
+
+                <p>
+                    article p
+                </p>
+
+                <article>
+                    <header>
+                        <h4>
+                            A kölsch
+                        </h4>
+                    </header>
+                    <blockquote cite="kolsch.html">
+                        A kölsch egy felső erjesztésű, halvány, erősen gyengített, komlós, világos sör.
+                    </blockquote>
+                </article>
+                <p>
+                    article article p
+                </p>
+            </article>
+
+            <footer>
+                <p>
+                    article footer p
+                </p>
+            </footer>
+        </article>
+
+        <p>
+            details p
+        </p>
+
+    </details>
+
+    <details id="regulations">
+        <summary onclick="regulationsOpen()">
+            <b>Az egyesület működése</b><br />
+            <i>alapító okirat, tagság, szolgáltatás</i>
+        </summary>
+
+        <figure>
+
+            <figcaption>
+                figcaption
+            </figcaption>
+        </figure>
+
+        <article>
+            <header>
+                <h2>
+                    h2
+                </h2>
+            </header>
+
+            <article>
+                <header>
+                    <h3>
+                        h3
+                    </h3>
+                </header>
+
+                <p>
+                    article p
+                </p>
+
+                <a href="https://drive.google.com/file/d/1H2k-MTXuDaj-NyhrW9g15kIAqR4F1hbv/view?usp=sharing">
+                    <article>
+                        <header>
+                            <h4>
+                                Az egyesület alapszabálya
+                            </h4>
+                        </header>
+                        <blockquote cite="kolsch.html">
+                            A kölsch egy felső erjesztésű, halvány, erősen gyengített, komlós, világos sör.
+                        </blockquote>
+                    </article>
+                    <p>
+                        article article p
+                    </p>
+            </article>
+            </a>
+
+            <footer>
+                <p>
+                    article footer p
+                </p>
+            </footer>
+        </article>
+
+        <p>
+            details p
+        </p>
+
+    </details>
+
+    <details id="pageinfo">
+        <summary onclick="pageinfoOpen()">
+            <b>A weblapunk használata</b><br />
+            <i>oldaltérkép, rendelés, időbeosztás</i>
+        </summary>
+
+        <figure>
+
+            <figcaption>
+                figcaption
+            </figcaption>
+        </figure>
+
+        <article>
+            <header>
+                <h2>
+                    h2
+                </h2>
+            </header>
+
+            <article>
+                <header>
+                    <h3>
+                        h3
+                    </h3>
+                </header>
+
+                <p>
+                    article p
+                </p>
+
+                <article>
+                    <header>
+                        <h4>
+                            A kölsch
+                        </h4>
+                    </header>
+                    <blockquote cite="kolsch.html">
+                        A kölsch egy felső erjesztésű, halvány, erősen gyengített, komlós, világos sör.
+                    </blockquote>
+                </article>
+                <p>
+                    article article p
+                </p>
+            </article>
+
+            <footer>
+                <p>
+                    article footer p
+                </p>
+            </footer>
+        </article>
+
+        <p>
+            details p
+        </p>
+
+    </details>
+
+    <img id="mainAnimation" src="images/bierMug.png" alt="" title="">
+
+    <footer class="bottom center">
+        <p>
+            Bercsényi 6 Serfőző Egyesület
+            <br /> 1111 Budapest, Bercsényi u. 6.
+            <br /> &#9993; b6@b6.hu | &#9743; 30-4654562
+        </p>
+    </footer>
+
+    <script>
+        let knowledges = document.getElementById('knowledges');
+        let regulations = document.getElementById('regulations');
+        let pageinfo = document.getElementById('pageinfo');
+        let start = document.getElementById('start');
+
+        function knowledgesOpen() {
+            pageinfo.open = false;
+            regulations.open = false;
+        }
+
+        function regulationsOpen() {
+            knowledges.open = false;
+            pageinfo.open = false;
+        }
+
+        function pageinfoOpen() {
+            knowledges.open = false;
+            regulations.open = false;
+        }
+
+        knowledges.addEventListener('toggle', function() {
+            if (knowledges.open == true) {
+                knowledges.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                start.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+        regulations.addEventListener('toggle', function() {
+            if (regulations.open == true) {
+                regulations.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                start.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+        pageinfo.addEventListener('toggle', function() {
+            if (pageinfo.open == true) {
+                pageinfo.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            } else {
+                start.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
