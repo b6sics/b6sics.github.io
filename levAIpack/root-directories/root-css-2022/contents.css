@@ -39,6 +39,10 @@ details:first-of-type {
     margin-top: 15vmin;
 }
 
+details:last-of-type {
+    margin-bottom: 15vmin;
+}
+
 details {
     margin-right: 0;
     width: 55%;
