@@ -21,6 +21,7 @@ details,
 figure {
     margin: 1vh auto;
     padding: 1vh 1vw;
+    color: var(--content-txt-color);
     background-color: var(--content-bg-color);
     border-radius: 1vmin;
 }
