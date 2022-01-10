@@ -21,7 +21,13 @@ p {
     flex-direction: column;
 }
 
-form,
+form {
+    margin: 1vh auto;
+    padding: 1vh 1vw;
+    border: 0.5vmin solid var(--content-border-color);
+    border-radius: 1vmin;
+}
+
 main,
 header,
 footer,
@@ -60,6 +66,10 @@ details {
     left: 1vw;
     right: 1vw;
     bottom: 1vh;
+}
+
+.static {
+    position: static;
 }
 
 details[open]~footer.bottom {
