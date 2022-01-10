@@ -27,6 +27,7 @@ figure {
     padding: 1vh 1vw;
     color: var(--content-txt-color);
     background-color: var(--content-bg-color);
+    border: 0.5vmin solid var(--content-border-color);
     border-radius: 1vmin;
 }
 
