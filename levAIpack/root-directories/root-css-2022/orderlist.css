@@ -1,6 +1,6 @@
 .orderlistDropdown {
     font-size: 16px;
-    margin: 0.25em;
+    margin: 0.25em 0;
     padding: 2px;
     width: 20em;
     text-align: right;
@@ -8,16 +8,15 @@
 
 .orderlistQuantity {
     font-size: 16px;
-    margin: 0.25em;
+    margin: 0.25em 0;
     padding: 2px;
     width: 19.5em;
     text-align: right;
 }
 
 .orderlistButton {
-    cursor: pointer;
     font-size: 16px;
-    margin: 0.25em;
+    margin: 1em 0;
     padding: 2px;
-    width: 19.5em;
+    width: 100%;
 }
