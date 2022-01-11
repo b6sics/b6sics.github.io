@@ -42,7 +42,7 @@
             <article class="right vertical">
                 <div>
                     <label for="materialnames">Anyagtípus és vastagság: </label>
-                    <select id="materialnames" class="orderlistDropdown" name="materialname" onchange="setMaterial()">
+                    <select id="materialnames" class="orderlistDropdown" name="materialname" onchange="setMaterial();">
                         <option value="--------">válassz!</option>
                         <option value="PA/PE 70">Vákumtasak PA/PE 70</option>
                         <option value="PA/PE 90">Vákumtasak PA/PE 90</option>
@@ -50,16 +50,16 @@
                 </div>
                 <div>
                     <label for="sizes">Méretek és árak: </label>
-                    <select id="sizes" class="orderlistDropdown" name="size" onchange="setSize()">
+                    <select id="sizes" class="orderlistDropdown" name="size" onchange="setSize();">
                         <option value=""> </option>
                     </select>
                 </div>
                 <div>
                     <label for="quantity">Mennyiség: </label>
-                    <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" step="1000" min="1000" onKeyDown="return false" />
+                    <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" step="1000" min="1000" onKeyDown="return false;" />
                 </div>
                 <div>
-                    <button class="orderlistButton"> Hozzáad a kosárhoz! </button>
+                    <button id="orderlistBtn" class="orderlistButton" onclick="setBasket(); return false;"> Hozzáad a kosárhoz! </button>
                 </div>
             </article>
             <article class="center vertical">
@@ -101,9 +101,13 @@
         let materialnames = document.getElementById('materialnames');
         let sizes = document.getElementById('sizes');
         let quantity = document.getElementById('quantity');
+        let orderlistBtn = document.getElementById('orderlistBtn');
 
         let material = '',
             bagSizes = '',
+            price = 0,
+            formattedPrice = '',
+            karton = 1,
             thousands = 1000;
 
         let orderLines = 0;
@@ -126,11 +130,30 @@
             quantity.value = '';
         }
 
+        function formatCurrency(number) {
+            return new Intl.NumberFormat('hu-HU', {
+                style: 'currency',
+                currency: 'HUF'
+            }).format(number);
+        }
+
         function setSize() {
             bagSizes = sizes.options[sizes.selectedIndex].value;
-            orderList.innerHTML += "\n" + bagSizes;
-            orderList.rows++;
+            price = 1000 * parseInt(bagSizes.slice(bagSizes.lastIndexOf(" ")));
+            formattedPrice = formatCurrency(price);
+            orderList.innerHTML = orderTextContent + "\n" + bagSizes + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice;
+            orderList.rows = orderLines + 3;
             quantity.value = thousands;
+        }
+
+        function setBasket() {
+            if (bagSizes == "") {
+                alert("Nincs kijelölt árucikk!");
+            } else {
+
+            }
+
+            return false;
         }
     </script>
 </body>
