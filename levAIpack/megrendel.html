@@ -36,7 +36,7 @@
             <h2>
                 <i>VÁKUMTASAK&nbsp;RENDELÉS</i>
             </h2>
-            <textarea id="orderList" name="orderList" readonly>Lista</textarea>
+            <textarea id="orderList" name="orderList" readonly>Kosár:</textarea>
         </header>
         <section id="inputList" class="center vertical">
             <article class="right vertical">
@@ -99,6 +99,11 @@
         function setMaterial() {
             material = materialnames.options[materialnames.selectedIndex].value;
             clearSizes();
+            if (material == "PA/PE 70") {
+                loadSizes70();
+            } else if (material == "PA/PE 90") {
+                loadSizes90();
+            }
         }
 
         function clearSizes() {
