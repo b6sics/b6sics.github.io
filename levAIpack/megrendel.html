@@ -85,6 +85,13 @@
         </h4>
     </footer>
 
+    <script src="size70.js">
+        orderList.innerHTML += "\n<70>" + size70[0];
+    </script>
+    <script src="size90.js">
+        orderList.innerHTML += "<90>" + size90[0];
+    </script>
+
     <script>
         let orderList = document.getElementById('orderList');
         let inputList = document.getElementById('inputList');
@@ -96,27 +103,6 @@
 
         let material = '';
 
-        readSizes70();
-        readSizes90();
-
-        function readSizes70() {
-            if (size70 = loadXMLDoc(textfile70)) {
-
-            } else {
-                size70 = ["Válassz!", "Vákuumtasak 150*200*65 18Ft/db", "Vákuumtasak 150*400*65 24Ft/db", "Vákuumtasak 150*500*65 30Ft/db", "Vákuumtasak 160*200*65 13Ft/db", "Vákuumtasak 160*400*65 25Ft/db"];
-            }
-            orderList.innerHTML += "\n<70>" + size70[0];
-        }
-
-        function readSizes90() {
-            if (size90 = loadXMLDoc(textfile90)) {
-
-            } else {
-                size90 = ["Válassz!", "Vákuumtasak 200*400*85 39Ft/db", "Vákuumtasak 250*450*85 55Ft/db", "Vákuumtasak 300*600*85 87Ft/db", "Vákuumtasak 300*600*85 79Ft/db"];
-            }
-            orderList.innerHTML += "<90>" + size90[0];
-        }
-
         function setMaterial() {
             material = materialnames.options[materialnames.selectedIndex].value;
             clearSizes();
@@ -124,23 +110,6 @@
 
         function clearSizes() {
             sizes.innerHTML = '<option value="--------">Válassz!</option>';
-        }
-
-        function loadXMLDoc(pathTOtextfile) {
-            try {
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        textfile_content = this.responseText;
-                        newlines = textfile_content.split("\n");
-                        return newlines;
-                    }
-                };
-                xhttp.open("GET", pathTOtextfile, true);
-                xhttp.send();
-            } catch {
-                return false;
-            }
         }
     </script>
 </body>
