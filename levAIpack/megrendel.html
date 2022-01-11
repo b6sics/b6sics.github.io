@@ -31,11 +31,12 @@
         </h1>
     </header>
 
-    <form action="https://levaipack.hu/order.php" method="post">
-        <header>
+    <form id="orderForm" action="https://levaipack.hu/order.php" method="post">
+        <header id="orderText">
             <h2>
                 <i>VÁKUMTASAK&nbsp;RENDELÉS</i>
             </h2>
+            <textarea id="orderList" name="orderList" readonly>Lista</textarea>
         </header>
         <section class="center vertical">
             <article class="center vertical">
@@ -47,19 +48,19 @@
                 <div class="right vertical">
                     <div>
                         <label for="mail">E-mail:</label>
-                        <input type="email" id="mail" name="mail" placeholder="szükséges" required><br />
+                        <input type="email" id="mail" name="mail" placeholder="szükséges" required /><br />
                     </div>
                     <hr />
                     <div>
                         <label for="mail">Telefon:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="szükséges" required><br />
+                        <input type="tel" id="phone" name="phone" placeholder="szükséges" required /><br />
                     </div>
                 </div>
 
                 <p>
                     A megadott e-mail címre megküldjük a megrendelés másolatát. Kérjük kattintson az e-mailben található megerősítő hivatkozásra, így véglegesítve a megrendelést. Munkatársunk a megadott telefonszámon keresni fogja a számlázással és a szállítással kapcsolatban.
                 </p>
-                <input type="submit" value=" Megrendel ">
+                <input type="submit" value=" Megrendel " />
             </article>
         </section>
     </form>
