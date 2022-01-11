@@ -22,7 +22,7 @@ body {
 h1 {
     font-style: italic;
     font-weight: lighter;
-    font-size: calc(var(--cube-size) / 4);
+    font-size: calc(var(--cube-size) / 6);
     color: var(--scene-text-color);
     text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2), 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
