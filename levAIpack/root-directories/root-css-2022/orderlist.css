@@ -5,3 +5,7 @@
     border: 1px solid var(--form-border-color);
     border-radius: 0.2em;
 }
+
+.dropdownlist {
+    width: 30em;
+}
