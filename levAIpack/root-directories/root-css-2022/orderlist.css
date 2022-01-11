@@ -7,7 +7,17 @@
 }
 
 .dropdownlist {
+    font-size: 16px;
     margin: 0.25em;
+    padding: 2px;
     width: 20em;
+    text-align: right;
+}
+
+.quantitylist {
+    font-size: 16px;
+    margin: 0.25em;
+    padding: 2px;
+    width: 19.5em;
     text-align: right;
 }
