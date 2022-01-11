@@ -96,16 +96,25 @@
 
         let material = '';
 
-        const size70 = ["Vákuumtasak 150*200*65 18Ft/db", "Vákuumtasak 150*400*65 24Ft/db", "Vákuumtasak 150*500*65 30Ft/db", "Vákuumtasak 160*200*65 13Ft/db", "Vákuumtasak 160*400*65 25Ft/db"];
-
-        const size90 = ["Vákuumtasak 200*400*85 39Ft/db", "Vákuumtasak 250*450*85 55Ft/db", "Vákuumtasak 300*600*85 87Ft/db", "Vákuumtasak 300*600*85 79Ft/db"];
+        readSizes70();
+        readSizes90();
 
         function readSizes70() {
-            size70 =
+            if (size70 = loadXMLDoc(textfile70)) {
+
+            } else {
+                size70 = ["Válassz!", "Vákuumtasak 150*200*65 18Ft/db", "Vákuumtasak 150*400*65 24Ft/db", "Vákuumtasak 150*500*65 30Ft/db", "Vákuumtasak 160*200*65 13Ft/db", "Vákuumtasak 160*400*65 25Ft/db"];
+            }
+            orderList.innerHTML += "\n<70>" + size70[0];
         }
 
         function readSizes90() {
+            if (size90 = loadXMLDoc(textfile90)) {
 
+            } else {
+                size90 = ["Válassz!", "Vákuumtasak 200*400*85 39Ft/db", "Vákuumtasak 250*450*85 55Ft/db", "Vákuumtasak 300*600*85 87Ft/db", "Vákuumtasak 300*600*85 79Ft/db"];
+            }
+            orderList.innerHTML += "<90>" + size90[0];
         }
 
         function setMaterial() {
@@ -118,16 +127,20 @@
         }
 
         function loadXMLDoc(pathTOtextfile) {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    textfile_content = this.responseText;
-                    newlines = textfile_content.split("\n");
-                    return newlines;
-                }
-            };
-            xhttp.open("GET", pathTOtextfile, true);
-            xhttp.send();
+            try {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        textfile_content = this.responseText;
+                        newlines = textfile_content.split("\n");
+                        return newlines;
+                    }
+                };
+                xhttp.open("GET", pathTOtextfile, true);
+                xhttp.send();
+            } catch {
+                return false;
+            }
         }
     </script>
 </body>
