@@ -38,20 +38,22 @@
             </h2>
             <textarea id="orderList" name="orderList" readonly>Lista</textarea>
         </header>
-        <section class="center vertical">
+        <section id="inputList" class="center vertical">
             <article class="center vertical">
-                <p class="center vertical">
-                    <span>
-                        <a class="formbutton" href="#"> - </a>
-                        <input type="text" name="city" list="cityname">
-                            <datalist id="cityname">
-                            <option value="Boston">
-                            <option value="Cambridge">
-                            </datalist>
-
-
-                    </span> paragraph
-                </p>
+                <div>
+                    <label for="materialnames">Anyagtípus és vastagság: </label>
+                    <select id="materialnames" name="materialname" onchange="setMaterial()">
+                        <option value="--------">válassz!</option>
+                        <option value="PA/PE 70">Vákumtasak PA/PE 70</option>
+                        <option value="PA/PE 90">Vákumtasak PA/PE 90</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="sizes">Méretek és árak: </label>
+                    <select id="sizes" name="size" onchange="setSize()">
+                        <option value="--------">válassz!</option>
+                    </select>
+                </div>
             </article>
             <article class="center vertical">
                 <div class="right vertical">
@@ -84,7 +86,20 @@
     </footer>
 
     <script>
-        let
+        let orderList = document.getElementById('orderList');
+        let inputList = document.getElementById('inputList');
+        let materialnames = document.getElementById('materialnames');
+        let sizes = document.getElementById('sizes');
+
+        let material = '';
+
+        const size70 = ["Vákuumtasak 150*200*65 18Ft/db", "Vákuumtasak 150*400*65 24Ft/db", "Vákuumtasak 150*500*65 30Ft/db", "Vákuumtasak 160*200*65 13Ft/db", "Vákuumtasak 160*400*65 25Ft/db"];
+
+        const size90 = ["Vákuumtasak 200*400*85 39Ft/db", "Vákuumtasak 250*450*85 55Ft/db", "Vákuumtasak 300*600*85 87Ft/db", "Vákuumtasak 300*600*85 79Ft/db"];
+
+        function setMaterial() {
+            material = materialnames.options[materialnames.selectedIndex].value;
+        }
     </script>
 </body>
 
