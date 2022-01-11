@@ -1,12 +1,4 @@
-.formbutton {
-    float: left;
-    width: 1.2em;
-    height: 1.2em;
-    border: 1px solid var(--form-border-color);
-    border-radius: 0.2em;
-}
-
-.dropdownlist {
+.orderlistDropdown {
     font-size: 16px;
     margin: 0.25em;
     padding: 2px;
@@ -14,10 +6,18 @@
     text-align: right;
 }
 
-.quantitylist {
+.orderlistQuantity {
     font-size: 16px;
     margin: 0.25em;
     padding: 2px;
     width: 19.5em;
     text-align: right;
+}
+
+.orderlistButton {
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0.25em;
+    padding: 2px;
+    width: 19.5em;
 }
