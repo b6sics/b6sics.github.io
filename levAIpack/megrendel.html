@@ -51,7 +51,7 @@
                 <div>
                     <label for="sizes">Méretek és árak: </label>
                     <select id="sizes" class="dropdownlist" name="size" onchange="setSize()">
-                        <option value="--------">--------</option>
+                        <option value=""> </option>
                     </select>
                 </div>
             </article>
@@ -85,21 +85,14 @@
         </h4>
     </footer>
 
-    <script src="size70.js">
-        orderList.innerHTML += "\n<70>" + size70[0];
-    </script>
-    <script src="size90.js">
-        orderList.innerHTML += "<90>" + size90[0];
-    </script>
+    <script src="size70.js"></script>
+    <script src="size90.js"></script>
 
     <script>
         let orderList = document.getElementById('orderList');
         let inputList = document.getElementById('inputList');
         let materialnames = document.getElementById('materialnames');
         let sizes = document.getElementById('sizes');
-
-        const textfile70 = "size70.txt";
-        const textfile90 = "size90.txt";
 
         let material = '';
 
