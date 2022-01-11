@@ -39,10 +39,10 @@
             <textarea id="orderList" name="orderList" readonly>Lista</textarea>
         </header>
         <section id="inputList" class="center vertical">
-            <article class="center vertical">
+            <article class="right vertical">
                 <div>
                     <label for="materialnames">Anyagtípus és vastagság: </label>
-                    <select id="materialnames" name="materialname" onchange="setMaterial()">
+                    <select id="materialnames" class="dropdownlist" name="materialname" onchange="setMaterial()">
                         <option value="--------">válassz!</option>
                         <option value="PA/PE 70">Vákumtasak PA/PE 70</option>
                         <option value="PA/PE 90">Vákumtasak PA/PE 90</option>
@@ -50,7 +50,7 @@
                 </div>
                 <div>
                     <label for="sizes">Méretek és árak: </label>
-                    <select id="sizes" name="size" onchange="setSize()">
+                    <select id="sizes" class="dropdownlist" name="size" onchange="setSize()">
                         <option value="--------">válassz!</option>
                     </select>
                 </div>
