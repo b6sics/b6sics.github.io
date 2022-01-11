@@ -28,6 +28,14 @@ form {
     border-radius: 1vmin;
 }
 
+#orderList {
+    margin: 1vh auto;
+    padding: 1vh 1vw;
+    width: calc(100% - 2vw);
+    border-radius: 1vmin;
+    resize: none;
+}
+
 main,
 header,
 footer,
