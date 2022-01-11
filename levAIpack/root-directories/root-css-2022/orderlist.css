@@ -1,4 +1,4 @@
 .formbutton {
-    border: 1px solid var(--content-border-color);
+    border: 1px solid var(--form-border-color);
     border-radius: 0.2em;
 }
