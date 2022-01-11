@@ -1,4 +1,7 @@
 .formbutton {
+    float: left;
+    width: 1.2em;
+    height: 1.2em;
     border: 1px solid var(--form-border-color);
     border-radius: 0.2em;
 }
