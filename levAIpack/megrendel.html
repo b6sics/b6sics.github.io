@@ -94,7 +94,11 @@
         let materialnames = document.getElementById('materialnames');
         let sizes = document.getElementById('sizes');
 
-        let material = '';
+        let material = '',
+            bagSizes = "";
+
+        let orderLines = 0;
+        let orderTextContent = "Kosár:"
 
         function setMaterial() {
             material = materialnames.options[materialnames.selectedIndex].value;
@@ -108,6 +112,14 @@
 
         function clearSizes() {
             sizes.innerHTML = '<option value="--------">Válassz!</option>';
+            orderList.textContent = orderTextContent;
+            orderList.rows = orderLines + 2;
+        }
+
+        function setSize() {
+            bagSizes = sizes.options[sizes.selectedIndex].value;
+            orderList.innerHTML += "\n" + bagSizes;
+            orderList.rows++;
         }
     </script>
 </body>
