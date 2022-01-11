@@ -49,8 +49,8 @@
     position: absolute;
     width: var(--cube-size-mini);
     height: var(--cube-size-mini);
-    top: calc(var(--cube-size-mini) / 6 - 1px);
-    left: calc(var(--cube-size-mini) / 6 - 1px);
+    top: 0;
+    left: calc(var(--cube-size-mini) / 10 - 1px);
     transform-style: preserve-3d;
     transform: translateZ(calc(var(--cube-size-mini) / -2)) rotateX(325deg) rotateY(420deg);
     transform-origin: 50% 50%;
