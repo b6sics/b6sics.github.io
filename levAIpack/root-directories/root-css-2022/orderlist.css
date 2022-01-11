@@ -7,5 +7,7 @@
 }
 
 .dropdownlist {
-    width: 30em;
+    margin: 0.25em;
+    width: 20em;
+    text-align: right;
 }
