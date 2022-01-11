@@ -51,7 +51,7 @@
                 <div>
                     <label for="sizes">Méretek és árak: </label>
                     <select id="sizes" class="dropdownlist" name="size" onchange="setSize()">
-                        <option value="--------">válassz!</option>
+                        <option value="--------">--------</option>
                     </select>
                 </div>
             </article>
@@ -91,14 +91,43 @@
         let materialnames = document.getElementById('materialnames');
         let sizes = document.getElementById('sizes');
 
+        const textfile70 = "size70.txt";
+        const textfile90 = "size90.txt";
+
         let material = '';
 
         const size70 = ["Vákuumtasak 150*200*65 18Ft/db", "Vákuumtasak 150*400*65 24Ft/db", "Vákuumtasak 150*500*65 30Ft/db", "Vákuumtasak 160*200*65 13Ft/db", "Vákuumtasak 160*400*65 25Ft/db"];
 
         const size90 = ["Vákuumtasak 200*400*85 39Ft/db", "Vákuumtasak 250*450*85 55Ft/db", "Vákuumtasak 300*600*85 87Ft/db", "Vákuumtasak 300*600*85 79Ft/db"];
 
+        function readSizes70() {
+            size70 =
+        }
+
+        function readSizes90() {
+
+        }
+
         function setMaterial() {
             material = materialnames.options[materialnames.selectedIndex].value;
+            clearSizes();
+        }
+
+        function clearSizes() {
+            sizes.innerHTML = '<option value="--------">Válassz!</option>';
+        }
+
+        function loadXMLDoc(pathTOtextfile) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    textfile_content = this.responseText;
+                    newlines = textfile_content.split("\n");
+                    return newlines;
+                }
+            };
+            xhttp.open("GET", pathTOtextfile, true);
+            xhttp.send();
         }
     </script>
 </body>
