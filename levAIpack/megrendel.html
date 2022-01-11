@@ -42,7 +42,7 @@
             <article class="right vertical">
                 <div>
                     <label for="materialnames">Anyagtípus és vastagság: </label>
-                    <select id="materialnames" class="dropdownlist" name="materialname" onchange="setMaterial()">
+                    <select id="materialnames" class="orderlistDropdown" name="materialname" onchange="setMaterial()">
                         <option value="--------">válassz!</option>
                         <option value="PA/PE 70">Vákumtasak PA/PE 70</option>
                         <option value="PA/PE 90">Vákumtasak PA/PE 90</option>
@@ -50,14 +50,15 @@
                 </div>
                 <div>
                     <label for="sizes">Méretek és árak: </label>
-                    <select id="sizes" class="dropdownlist" name="size" onchange="setSize()">
+                    <select id="sizes" class="orderlistDropdown" name="size" onchange="setSize()">
                         <option value=""> </option>
                     </select>
                 </div>
                 <div>
                     <label for="quantity">Mennyiség: </label>
-                    <input type="number" id="quantity" class="quantitylist" name="quantity" value="" step="1000" min="1000" />
+                    <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" step="1000" min="1000" onKeyDown="return false" />
                 </div>
+                <button class="orderlistButton"> Hozzáad a kosárhoz! </button>
             </article>
             <article class="center vertical">
                 <div class="right vertical">
