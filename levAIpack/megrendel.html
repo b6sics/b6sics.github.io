@@ -56,7 +56,7 @@
                 <div>
                     <label for="materialnames">Anyagtípus és vastagság: </label>
                     <select id="materialnames" class="orderlistDropdown" name="materialname" onchange="setMaterial();">
-                        <option value="--------">válassz!</option>
+                        <option value="?">válassz!</option>
                         <option value="PA/PE 70">Vákumtasak PA/PE 70</option>
                         <option value="PA/PE 90">Vákumtasak PA/PE 90</option>
                     </select>
@@ -133,22 +133,27 @@
 
 
         function setOption(item, index) {
+            if (item.stock < 1000) return false;
             if (material == item.material) {
                 sizes.innerHTML += item.option;
             }
+        }
+
+        function clearSizes() {
+            if (material == "?") {
+                sizes.innerHTML = '<option value=""> </option>';
+            } else {
+                sizes.innerHTML = '<option value="--------">Válassz!</option>';
+            }
+            orderdetails.innerHTML = orderdetailsHtml;
+            quantity.value = '';
+            selectItem = null;
         }
 
         function setMaterial() {
             material = materialnames.options[materialnames.selectedIndex].value;
             clearSizes();
             storage.forEach(setOption);
-        }
-
-        function clearSizes() {
-            sizes.innerHTML = '<option value="--------">Válassz!</option>';
-            orderdetails.innerHTML = orderdetailsHtml;
-            quantity.value = '';
-            selectItem = null;
         }
 
         function formatCurrency(number) {
@@ -159,7 +164,7 @@
         }
 
         function displayOrder() {
-            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + selectItem.id + '">' + selectItem.name + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice + '</div>';
+            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + detailLines + '">' + selectItem.name + "  " + karton + " karton(=" + thousands * karton + "db): " + formattedPrice + '</div>';
         }
 
         function setSize() {
@@ -172,18 +177,30 @@
         }
 
         function setQuantity() {
-
+            let quantityValue = quantity.value;
+            karton = quantityValue / thousands;
+            formattedPrice = formatCurrency(quantityValue * selectItem.price);
+            displayOrder();
         }
 
         function displayBasket() {
-
+            console.log(storage);
         }
 
         function setBasket() {
             if (selectItem == null) {
                 alert("Nincs kijelölt árucikk!");
             } else {
-
+                detailLines++;
+                selectItem.stock -= quantity.value;
+                const element = {
+                    storageID: selectItem.id,
+                    stock: quantity.value,
+                    name: selectItem.name,
+                    price: selectItem.price
+                }
+                basket.push(element);
+                orderdetailsHtml = orderdetails.innerHTML;
             }
             displayBasket();
             return false;
