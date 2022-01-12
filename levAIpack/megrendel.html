@@ -164,7 +164,7 @@
         }
 
         function displayOrder() {
-            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + detailLines + '">' + selectItem.name + "  " + karton + " karton(=" + thousands * karton + "db): " + formattedPrice + '</div>';
+            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + detailLines + '"><pre>' + selectItem.name + "<br />" + (" " + karton).padStart(3, " ") + " karton( =" + (quantity.value + "db): ").padStart(12, " ") + formattedPrice.padStart(15, " ") + '</pre></div>';
         }
 
         function setSize() {
