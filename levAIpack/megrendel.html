@@ -115,6 +115,7 @@
         let sizes = document.getElementById('sizes');
         let quantity = document.getElementById('quantity');
         let orderlistBtn = document.getElementById('orderlistBtn');
+        let orderdetails = document.getElementById('orderdetails');
 
         let material = '',
             bagSizes = '',
@@ -125,6 +126,7 @@
 
         let orderLines = 0;
         let orderTextContent = "Kosár:"
+        let orderdetailsHtml = "";
 
         function setMaterial() {
             material = materialnames.options[materialnames.selectedIndex].value;
@@ -140,6 +142,7 @@
             sizes.innerHTML = '<option value="--------">Válassz!</option>';
             orderList.textContent = orderTextContent;
             orderList.rows = orderLines + 2;
+            orderdetails.innerHTML = orderdetailsHtml;
             quantity.value = '';
         }
 
@@ -150,15 +153,23 @@
             }).format(number);
         }
 
+        function displayBasket() {
+            orderList.innerHTML = orderTextContent + "\n" + bagSizes + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice;
+            orderList.rows = orderLines + 3;
+        }
+
+        function displayOrder() {
+            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + orderLines + '">' + bagSizes + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice + '</div>';
+        }
+
         function setSize() {
             bagSizes = sizes.options[sizes.selectedIndex].value;
             price = 1000 * parseInt(bagSizes.slice(bagSizes.lastIndexOf(" ")));
             formattedPrice = formatCurrency(price);
-            orderList.innerHTML = orderTextContent + "\n" + bagSizes + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice;
-            orderList.rows = orderLines + 3;
             quantity.min = thousands;
             quantity.max = thousands;
             quantity.value = thousands;
+            displayOrder();
         }
 
         function setBasket() {
