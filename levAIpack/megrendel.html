@@ -69,7 +69,7 @@
                 </div>
                 <div>
                     <label for="quantity">Mennyiség (db): </label>
-                    <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" step="1000" min="0" max="0" onKeyDown="return false;" />
+                    <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" step="1000" min="0" max="0" onchange="setQuantity();" onKeyDown="return false;" />
                 </div>
                 <div>
                     <button id="orderlistBtn" class="orderlistButton" onclick="setBasket(); return false;"> Hozzáad a kosárhoz! </button>
@@ -118,7 +118,7 @@
         let orderdetails = document.getElementById('orderdetails');
 
         let material = '',
-            bagSizes = '',
+            selectItem = '',
             price = 0,
             formattedPrice = '',
             basket = [],
@@ -156,17 +156,13 @@
             }).format(number);
         }
 
-        function displayBasket() {
-
-        }
-
         function displayOrder() {
-            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + orderLines + '">' + bagSizes + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice + '</div>';
+            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + orderLines + '">' + selectItem + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice + '</div>';
         }
 
         function setSize() {
-            bagSizes = sizes.options[sizes.selectedIndex].value;
-            price = 1000 * parseInt(bagSizes.slice(bagSizes.lastIndexOf(" ")));
+            selectItem = sizes.options[sizes.selectedIndex].value;
+            price = 1000 * parseInt(selectItem.slice(selectItem.lastIndexOf(" ")));
             formattedPrice = formatCurrency(price);
             quantity.min = thousands;
             quantity.max = thousands;
@@ -174,13 +170,21 @@
             displayOrder();
         }
 
+        function setQuantity() {
+
+        }
+
+        function displayBasket() {
+
+        }
+
         function setBasket() {
-            if (bagSizes == "") {
+            if (selectItem == "") {
                 alert("Nincs kijelölt árucikk!");
             } else {
 
             }
-
+            displayBasket();
             return false;
         }
 
@@ -188,12 +192,12 @@
             let stock = parseInt(item);
             if (stock <= 0) return false;
             let itemprice = parseInt(item.slice(item.lastIndexOf(" ")));
-            basketItem = item.slice(item.indexOf(" "));
-            let option = '<option value="' + basketItem + '">' + basketItem + '</option>';
+            stockItem = item.slice(item.indexOf(" "));
+            let option = '<option value="' + stockItem + '">' + stockItem + '</option>';
             const element = {
                 material: material,
                 stock: stock,
-                name: basketItem,
+                name: stockItem,
                 price: itemprice,
                 option: option
             };
