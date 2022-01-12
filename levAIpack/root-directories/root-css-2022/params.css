@@ -1,6 +1,11 @@
 :root {
     --body-color: rgba(0, 0, 160, 0.9);
     --text-color: whitesmoke;
+    /* margin padding*/
+    --margin-w: 1vw;
+    --margin-h: 1vh;
+    --padding-w: 1vw;
+    --padding-h: 1vh;
     /* contents */
     --content-border-width: 0.5vmin;
     --content-border-style: solid;
