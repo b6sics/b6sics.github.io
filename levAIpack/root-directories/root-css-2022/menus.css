@@ -1,5 +1,5 @@
 a {
-    width: 100%;
+    width: calc(100% - 2 * var(--padding-w));
     color: var(--content-txt-color);
     text-decoration: none;
     line-height: 1.5em;
