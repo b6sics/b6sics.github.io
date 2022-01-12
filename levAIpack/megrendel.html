@@ -159,7 +159,8 @@
         }
 
         function makeOptions(item, index) {
-            sizes.innerHTML += '<option value="' + item + '">' + item + '</option>';
+            basketItem = item.slice(item.indexOf(" "));
+            sizes.innerHTML += '<option value="' + basketItem + '">' + basketItem + '</option>';
         }
 
         function loadSizes70() {
