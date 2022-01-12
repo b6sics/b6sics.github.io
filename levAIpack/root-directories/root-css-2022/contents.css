@@ -88,7 +88,7 @@ details[open] summary>i {
     display: none;
 }
 
-@media screen and (max-height: 720px) {
+@media screen and (max-height: 600px) {
     footer.bottom {
         position: static;
     }
