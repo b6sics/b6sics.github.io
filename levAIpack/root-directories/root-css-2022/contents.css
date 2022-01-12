@@ -36,10 +36,6 @@ form {
     resize: none;
 }
 
-div {
-    width: calc(100% - 2vw);
-}
-
 main,
 header,
 footer,
