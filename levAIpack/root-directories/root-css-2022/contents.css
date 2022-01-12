@@ -29,9 +29,9 @@ form {
 }
 
 #orderList {
-    margin: 1vh auto;
-    padding: 1vh 1vw;
-    width: calc(100% - 2vw);
+    margin: var(--margin-h) auto;
+    padding: var(--padding-h) var(--padding-w);
+    width: calc(100% - 2 * var(--padding-w));
     border-radius: 1vmin;
     resize: none;
 }
@@ -43,8 +43,8 @@ section,
 article,
 details,
 figure {
-    margin: 1vh auto;
-    padding: 1vh 1vw;
+    margin: var(--margin-h) auto;
+    padding: var(--padding-h) var(--padding-w);
     color: var(--content-txt-color);
     background-color: var(--content-bg-color);
     border: 0.5vmin solid var(--content-border-color);
@@ -57,11 +57,11 @@ figcaption {
 }
 
 details:first-of-type {
-    margin-top: 15vmin;
+    margin-top: 15vh;
 }
 
 details:last-of-type {
-    margin-bottom: 5vmin;
+    margin-bottom: 5vh;
 }
 
 details {
@@ -71,9 +71,9 @@ details {
 
 .bottom {
     position: fixed;
-    left: 1vw;
-    right: 1vw;
-    bottom: 1vh;
+    left: var(--padding-w);
+    right: var(--padding-w);
+    bottom: var(--padding-h);
 }
 
 .static {
@@ -88,9 +88,7 @@ details[open] summary>i {
     display: none;
 }
 
-@media screen and (max-height: 720px) {}
-
-@media screen and (max-height: 420px) {
+@media screen and (max-height: 720px) {
     footer.bottom {
         position: static;
     }
