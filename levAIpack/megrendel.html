@@ -121,6 +121,8 @@
             bagSizes = '',
             price = 0,
             formattedPrice = '',
+            basket = [],
+            storage = [],
             karton = 1,
             thousands = 1000;
 
@@ -128,20 +130,21 @@
         let orderTextContent = "Kosár:"
         let orderdetailsHtml = "";
 
+
+        function setOption(item, index) {
+            if (material == item.material) {
+                sizes.innerHTML += item.option;
+            }
+        }
+
         function setMaterial() {
             material = materialnames.options[materialnames.selectedIndex].value;
             clearSizes();
-            if (material == "PA/PE 70") {
-                loadSizes70();
-            } else if (material == "PA/PE 90") {
-                loadSizes90();
-            }
+            storage.forEach(setOption);
         }
 
         function clearSizes() {
             sizes.innerHTML = '<option value="--------">Válassz!</option>';
-            orderList.textContent = orderTextContent;
-            orderList.rows = orderLines + 2;
             orderdetails.innerHTML = orderdetailsHtml;
             quantity.value = '';
         }
@@ -154,8 +157,7 @@
         }
 
         function displayBasket() {
-            orderList.innerHTML = orderTextContent + "\n" + bagSizes + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice;
-            orderList.rows = orderLines + 3;
+
         }
 
         function displayOrder() {
@@ -183,17 +185,34 @@
         }
 
         function makeOptions(item, index) {
+            let stock = parseInt(item);
+            if (stock <= 0) return false;
+            let itemprice = parseInt(item.slice(item.lastIndexOf(" ")));
             basketItem = item.slice(item.indexOf(" "));
-            sizes.innerHTML += '<option value="' + basketItem + '">' + basketItem + '</option>';
+            let option = '<option value="' + basketItem + '">' + basketItem + '</option>';
+            const element = {
+                material: material,
+                stock: stock,
+                name: basketItem,
+                price: itemprice,
+                option: option
+            };
+            storage.push(element);
         }
 
-        function loadSizes70() {
+        function loadSizes70(name) {
+            material = name;
             size70.forEach(makeOptions);
         }
 
-        function loadSizes90() {
+        function loadSizes90(name) {
+            material = name;
             size90.forEach(makeOptions);
         }
+
+        loadSizes70("PA/PE 70");
+        loadSizes90("PA/PE 90");
+        console.log(storage);
     </script>
 </body>
 
