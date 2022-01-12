@@ -22,5 +22,10 @@
 }
 
 .fillParentsWidth {
+    margin: 0;
     width: calc(100% - 2 * var(--padding-w));
+}
+
+.txtleft {
+    text-align: initial;
 }
