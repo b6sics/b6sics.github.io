@@ -118,14 +118,15 @@
         let orderdetails = document.getElementById('orderdetails');
 
         let material = '',
-            selectItem = '',
             price = 0,
             formattedPrice = '',
+            selectItem = null,
             basket = [],
             storage = [],
             karton = 1,
             thousands = 1000;
 
+        let detailLines = 1;
         let orderLines = 0;
         let orderTextContent = "Kosár:"
         let orderdetailsHtml = "";
@@ -147,6 +148,7 @@
             sizes.innerHTML = '<option value="--------">Válassz!</option>';
             orderdetails.innerHTML = orderdetailsHtml;
             quantity.value = '';
+            selectItem = null;
         }
 
         function formatCurrency(number) {
@@ -157,15 +159,14 @@
         }
 
         function displayOrder() {
-            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + orderLines + '">' + selectItem + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice + '</div>';
+            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + orderLines + '">' + selectItem.name + "  " + karton + " karton(=" + thousands + "db): " + formattedPrice + '</div>';
         }
 
         function setSize() {
-            selectItem = sizes.options[sizes.selectedIndex].value;
-            price = 1000 * parseInt(selectItem.slice(selectItem.lastIndexOf(" ")));
-            formattedPrice = formatCurrency(price);
+            selectItem = storage[sizes.options[sizes.selectedIndex].value];
+            formattedPrice = formatCurrency(1000 * selectItem.price);
             quantity.min = thousands;
-            quantity.max = thousands;
+            quantity.max = selectItem.stock;
             quantity.value = thousands;
             displayOrder();
         }
@@ -179,7 +180,7 @@
         }
 
         function setBasket() {
-            if (selectItem == "") {
+            if (selectItem == null) {
                 alert("Nincs kijelölt árucikk!");
             } else {
 
@@ -188,13 +189,16 @@
             return false;
         }
 
+        let itemid = 0;
+
         function makeOptions(item, index) {
             let stock = parseInt(item);
             if (stock <= 0) return false;
             let itemprice = parseInt(item.slice(item.lastIndexOf(" ")));
             stockItem = item.slice(item.indexOf(" "));
-            let option = '<option value="' + stockItem + '">' + stockItem + '</option>';
+            let option = '<option value="' + itemid + '">' + stockItem + '</option>';
             const element = {
+                id: itemid,
                 material: material,
                 stock: stock,
                 name: stockItem,
@@ -202,6 +206,7 @@
                 option: option
             };
             storage.push(element);
+            itemid++;
         }
 
         function loadSizes70(name) {
