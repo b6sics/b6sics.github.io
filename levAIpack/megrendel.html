@@ -157,6 +157,14 @@
 
             return false;
         }
+
+        function makeOptions(item, index) {
+            sizes.innerHTML += '<option value="' + item + '">' + item + '</option>';
+        }
+
+        function loadSizes70() {
+            size70.forEach(makeOptions);
+        }
     </script>
 </body>
 
