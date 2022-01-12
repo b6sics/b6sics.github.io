@@ -143,7 +143,7 @@
             if (material == "?") {
                 sizes.innerHTML = '<option value=""> </option>';
             } else {
-                sizes.innerHTML = '<option value="--------">Válassz!</option>';
+                sizes.innerHTML = '<option value="?">válassz!</option>';
             }
             orderdetails.innerHTML = orderdetailsHtml;
             quantity.value = '';
@@ -203,7 +203,8 @@
                 orderdetailsHtml = orderdetails.innerHTML;
             }
             displayBasket();
-            return false;
+            materialnames.selectedIndex = 0;
+            setMaterial();
         }
 
         let itemid = 0;
