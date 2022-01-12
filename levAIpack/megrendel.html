@@ -183,26 +183,42 @@
             displayOrder();
         }
 
+        let basketSum;
+
+        function basketLine(item, index) {
+            let linetext = item.stock + " db " + item.material + " " + item.name;
+            basketSum += item.stock * selectItem.price;
+            let sum = formatCurrency(item.stock * selectItem.price);
+            orderList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
+        }
+
         function displayBasket() {
-            console.log(storage);
+            basketSum = 0;
+            orderList.rows = 2 + basket.length;
+            orderList.innerHTML = orderTextContent;
+            basket.forEach(basketLine);
+            orderList.innerHTML += "\n" + "Összesen:".padStart(41, " ") + formatCurrency(basketSum).padStart(16, " ");
         }
 
         function setBasket() {
             if (selectItem == null) {
                 alert("Nincs kijelölt árucikk!");
             } else {
-                detailLines++;
                 selectItem.stock -= quantity.value;
+                let name = selectItem.name.replace("Vákuumtasak ", "");
                 const element = {
+                    id: detailLines,
                     storageID: selectItem.id,
                     stock: quantity.value,
-                    name: selectItem.name,
+                    material: material,
+                    name: name,
                     price: selectItem.price
                 }
                 basket.push(element);
                 orderdetailsHtml = orderdetails.innerHTML;
+                displayBasket();
+                detailLines++;
             }
-            displayBasket();
             materialnames.selectedIndex = 0;
             setMaterial();
         }
@@ -239,7 +255,6 @@
 
         loadSizes70("PA/PE 70");
         loadSizes90("PA/PE 90");
-        console.log(storage);
     </script>
 </body>
 
