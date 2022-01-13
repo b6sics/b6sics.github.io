@@ -31,13 +31,16 @@
 }
 
 table {
+    margin: 1vh auto;
     width: 100%;
     color: var(--orderlist-text-color);
     background-color: var(--orderlist-table-color);
 }
 
-th:hover {
-    cursor: url('http://upload.wikimedia.org/wikipedia/commons/d/de/POL_apple.jpg');
+tr {
+    width: 2em;
+    height: 2em;
+    cursor: url('../../images/delete.png') 16 16, auto;
 }
 
 td {
