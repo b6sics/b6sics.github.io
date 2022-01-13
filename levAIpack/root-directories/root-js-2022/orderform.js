@@ -1,3 +1,4 @@
+let splitString = " ";
 let firstOption = '<option value=" ? "> válassz! </option>';
 
 /******************/
@@ -18,10 +19,10 @@ function setProductGroupsOptions() {
 }
 
 function addProductGroup(item) {
-    let datas = item.split(" ");
+    let datas = item.split(splitString);
     let name = `${datas[2]} ${datas[3]}`;
     let option = `<option value="${name}">${name}</option>`;
-    element = {
+    let element = {
         name: name,
         option: option
     }
@@ -41,3 +42,19 @@ function initProductGroupArray() {
 
 initProductGroupArray();
 setProductGroupsOptions();
+
+/******************/
+/*    products    */
+/******************/
+
+let products = document.getElementById('products');
+
+let productID = 0;
+const productStorage = [];
+
+function addProduct(item) {
+    let datas = item.split(splitString);
+    let stock = parseInt(datas[0]);
+
+
+}
