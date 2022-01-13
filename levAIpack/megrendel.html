@@ -13,6 +13,9 @@
 
     <link rel="stylesheet" href="root-directories/root-css-2022/style.css?t=123" />
 
+    <script src="https://levaipack.hu/levAIgoods/goods.js"></script>
+    <script src="root-directories/root-js-2022/orderform.js"></script>
+
 </head>
 
 <body id="start">
@@ -62,8 +65,8 @@
                     </select>
                 </div>
                 <div>
-                    <label for="sizes">Méretek és árak: </label>
-                    <select id="sizes" class="orderlistDropdown" name="size" onchange="setSize();">
+                    <label for="products">Méretek és árak: </label>
+                    <select id="products" class="orderlistDropdown" name="product" onchange="setProducts();">
                         <option value=""> </option>
                     </select>
                 </div>
@@ -105,6 +108,7 @@
         </h4>
     </footer>
 
+
     <script src="https://levaipack.hu/levAIgoods/size70.js"></script>
     <script src="https://levaipack.hu/levAIgoods/size90.js"></script>
 
@@ -112,7 +116,7 @@
         let orderList = document.getElementById('orderList');
         let inputList = document.getElementById('inputList');
         let materialnames = document.getElementById('materialnames');
-        let sizes = document.getElementById('sizes');
+        let products = document.getElementById('products');
         let quantity = document.getElementById('quantity');
         let orderlistBtn = document.getElementById('orderlistBtn');
         let orderdetails = document.getElementById('orderdetails');
@@ -136,15 +140,15 @@
         function setOption(item, index) {
             if (item.stock < 1000) return false;
             if (material == item.material) {
-                sizes.innerHTML += item.option;
+                products.innerHTML += item.option;
             }
         }
 
-        function clearSizes() {
+        function clearproducts() {
             if (material == "?") {
-                sizes.innerHTML = '<option value=""> </option>';
+                products.innerHTML = '<option value=""> </option>';
             } else {
-                sizes.innerHTML = '<option value="?">válassz!</option>';
+                products.innerHTML = '<option value="?">válassz!</option>';
             }
             orderdetails.innerHTML = orderdetailsHtml;
             quantity.value = '';
@@ -153,7 +157,7 @@
 
         function setMaterial() {
             material = materialnames.options[materialnames.selectedIndex].value;
-            clearSizes();
+            clearproducts();
             storage.forEach(setOption);
         }
 
@@ -172,8 +176,8 @@
             orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + detailLines + '"><pre>' + selectItem.name + "<br />" + (" " + karton).padStart(3, " ") + " karton( =" + (quantity.value + "db): ").padStart(12, " ") + formattedPrice.padStart(15, " ") + '</pre></div>';
         }
 
-        function setSize() {
-            selectItem = storage[sizes.options[sizes.selectedIndex].value];
+        function setProducts() {
+            selectItem = storage[products.options[products.selectedIndex].value];
             formattedPrice = formatCurrency(1000 * selectItem.price);
             quantity.min = thousands;
             quantity.max = selectItem.stock;
@@ -248,18 +252,18 @@
             itemid++;
         }
 
-        function loadSizes70(name) {
+        function loadproducts70(name) {
             material = name;
             size70.forEach(makeOptions);
         }
 
-        function loadSizes90(name) {
+        function loadproducts90(name) {
             material = name;
             size90.forEach(makeOptions);
         }
 
-        loadSizes70("PA/PE 70");
-        loadSizes90("PA/PE 90");
+        loadproducts70("PA/PE 70");
+        loadproducts90("PA/PE 90");
     </script>
 </body>
 
