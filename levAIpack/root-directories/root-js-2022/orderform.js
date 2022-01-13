@@ -231,6 +231,7 @@ function setBasket() {
             submitOrder.disabled = false;
         }
         displayBasket();
+        showProductDetailTable();
     }
     productGroups.selectedIndex = 0;
     setStorageListOptions();
