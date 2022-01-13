@@ -58,7 +58,7 @@
                 <!-- -------------- -->
                 <div>
                     <label for="productGroups">Anyagtípus és vastagság: </label>
-                    <select id="productGroups" class="orderlistDropdown" name="productGroup" onchange="setproductGroup();">
+                    <select id="productGroups" class="orderlistDropdown" name="productGroup" onchange="setStorageListOptions();">
 
                     </select>
                 </div>
@@ -67,7 +67,7 @@
                 <!-- -------------- -->
                 <div>
                     <label for="products">Méretek és árak: </label>
-                    <select id="products" class="orderlistDropdown" name="product" onchange="setProducts();">
+                    <select id="products" class="orderlistDropdown" name="product" onchange="displayProductDetails();">
                         <option value=""> </option>
                     </select>
                 </div>
@@ -126,83 +126,33 @@
         let orderlistBtn = document.getElementById('orderlistBtn');
         let orderdetails = document.getElementById('orderdetails');
 
-        let productGroup = '',
-            price = 0,
+        let price = 0,
             formattedPrice = '',
-            selectItem = null,
             basket = [],
             storage = [],
             details = [],
             karton = 1,
             thousands = 1000;
 
-        let detailLines = 1;
         let orderLines = 0;
-        let orderTextContent = "Kosár:"
-        let orderdetailsHtml = "";
-
-
-        function setOption(item, index) {
-            if (item.stock < 1000) return false;
-            if (productGroup == item.productGroup) {
-                products.innerHTML += item.option;
-            }
-        }
-
-        function clearproducts() {
-            if (productGroup == "?") {
-                products.innerHTML = '<option value=""> </option>';
-            } else {
-                products.innerHTML = '<option value="?">válassz!</option>';
-            }
-            orderdetails.innerHTML = orderdetailsHtml;
-            quantity.value = '';
-            selectItem = null;
-        }
-
-        function setproductGroup() {
-            productGroup = productGroups.options[productGroups.selectedIndex].value;
-            clearproducts();
-            storage.forEach(setOption);
-        }
-
-        function formatCurrency(number) {
-            return new Intl.NumberFormat('hu-HU', {
-                style: 'currency',
-                currency: 'HUF'
-            }).format(number);
-        }
 
         function displayDetails() {
 
         }
 
-        function displayOrder() {
-            orderdetails.innerHTML = orderdetailsHtml + '<br />' + '<div id="goods' + detailLines + '"><pre>' + selectItem.name + "<br />" + (" " + karton).padStart(3, " ") + " karton( =" + (quantity.value + "db): ").padStart(12, " ") + formattedPrice.padStart(15, " ") + '</pre></div>';
-        }
-
-        function setProducts() {
-            selectItem = storage[products.options[products.selectedIndex].value];
-            formattedPrice = formatCurrency(1000 * selectItem.price);
-            quantity.min = thousands;
-            quantity.max = selectItem.stock;
-            quantity.value = thousands;
-            displayOrder();
-        }
-
         function setQuantity() {
             let quantityValue = quantity.value;
             karton = quantityValue / thousands;
-            formattedPrice = formatCurrency(quantityValue * selectItem.price);
-            displayOrder();
+            formattedPrice = formatCurrency(quantityValue * selectedItem.price);
+            showProductDetail();
         }
 
         let basketSum;
 
         function basketLine(item, index) {
             let linetext = item.stock + " db " + item.productGroup + " " + item.name;
-            basketSum += item.stock * selectItem.price;
-            let sum = formatCurrency(item.stock * selectItem.price);
+            basketSum += item.stock * selectedItem.price;
+            let sum = formatCurrency(item.stock * selectedItem.price);
             orderList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
         }
 
@@ -215,18 +165,18 @@
         }
 
         function setBasket() {
-            if (selectItem == null) {
+            if (selectedItem == null) {
                 alert("Nincs kijelölt árucikk!");
             } else {
-                selectItem.stock -= quantity.value;
-                let name = selectItem.name.replace("Vákuumtasak ", "");
+                selectedItem.stock -= quantity.value;
+                let name = selectedItem.name.replace("Vákuumtasak ", "");
                 const element = {
                     id: detailLines,
-                    storageID: selectItem.id,
+                    storageID: selectedItem.id,
                     stock: quantity.value,
                     productGroup: productGroup,
                     name: name,
-                    price: selectItem.price
+                    price: selectedItem.price
                 }
                 basket.push(element);
                 orderdetailsHtml = orderdetails.innerHTML;
@@ -234,41 +184,7 @@
                 detailLines++;
             }
             productGroups.selectedIndex = 0;
-            setproductGroup();
         }
-
-        let itemid = 0;
-
-        function makeOptions(item, index) {
-            let stock = parseInt(item);
-            if (stock <= 0) return false;
-            let itemprice = parseInt(item.slice(item.lastIndexOf(" ")));
-            stockItem = item.slice(item.indexOf(" "));
-            let option = '<option value="' + itemid + '">' + stockItem + '</option>';
-            const element = {
-                id: itemid,
-                productGroup: productGroup,
-                stock: stock,
-                name: stockItem,
-                price: itemprice,
-                option: option
-            };
-            storage.push(element);
-            itemid++;
-        }
-
-        function loadproducts70(name) {
-            productGroup = name;
-            size70.forEach(makeOptions);
-        }
-
-        function loadproducts90(name) {
-            productGroup = name;
-            size90.forEach(makeOptions);
-        }
-
-        loadproducts70("PA/PE 70");
-        loadproducts90("PA/PE 90");
     </script>
 </body>
 
