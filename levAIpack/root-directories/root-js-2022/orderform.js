@@ -1,5 +1,9 @@
 let firstOption = '<option value=" ? "> válassz! </option>';
 
+/******************/
+/* product groups */
+/******************/
+
 let productGroups = document.getElementById('productGroups');
 
 const productGroupArray = [];
