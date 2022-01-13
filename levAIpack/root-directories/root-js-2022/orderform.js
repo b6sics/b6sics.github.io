@@ -96,13 +96,14 @@ function addProductOption(item) {
     }
 }
 
+var selectedItem = null;
+
 function clearProducts() {
     if (productGroup == "?") {
         products.innerHTML = '<option value=""> </option>';
     } else {
         products.innerHTML = '<option value="?">válassz!</option>';
     }
-    orderdetails.innerHTML = "";
     quantity.value = '';
     selectedItem = null;
 }
@@ -135,14 +136,20 @@ function addCell(toRow, cellData) {
     return newCell;
 }
 
-var selectedItem = null;
 let thousands = 1000;
 
 let orderdetails = document.getElementById('orderdetails');
+let quantity = document.getElementById('quantity');
 let orderdetailsTable = addTable(orderdetails);
 const orderdetailsArray = [];
 
 function showProductDetail(item, index) {
+    nextRow = addRow(orderdetailsTable, index);
+    addCell(nextRow, `${item.name} ${item.stock}db (${item.price}Ft/db) :`);
+    addCell(nextRow, formatCurrency(item.stock * item.price));
+}
+
+function showProductNextDetail(item, index) {
     nextRow = addRow(orderdetailsTable, index);
     addCell(nextRow, `${item.name} ${quantity.value}db (${item.price}Ft/db) :`);
     addCell(nextRow, formatCurrency(quantity.value * item.price));
@@ -152,7 +159,7 @@ function showProductDetailTable() {
     orderdetailsTable.remove();
     orderdetailsTable = addTable(orderdetails);
     orderdetailsArray.forEach(showProductDetail);
-    showProductDetail(selectedItem, Number.MAX_SAFE_INTEGER);
+    showProductNextDetail(selectedItem, Number.MAX_SAFE_INTEGER);
 }
 
 function displayProductDetails() {
@@ -162,8 +169,6 @@ function displayProductDetails() {
     quantity.value = thousands;
     showProductDetailTable();
 }
-
-let quantity = document.getElementById('quantity');
 
 function setQuantity() {
     showProductDetailTable();
@@ -175,7 +180,7 @@ let basket = [];
 let basketSum;
 
 function basketLine(item, index) {
-    let linetext = index.padStart(2, " ") + ". " + item.stock + " db " + item.productGroup + " " + item.name;
+    let linetext = index.toString().padStart(2, " ") + ". " + item.stock + " db " + item.productGroup + " " + item.name;
     basketSum += item.stock * selectedItem.price;
     let sum = formatCurrency(item.stock * item.price);
     basketList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
@@ -203,9 +208,9 @@ function setBasket() {
             price: selectedItem.price
         }
         basket.push(element);
-        orderdetailsArray.push(selectedItem);
+        orderdetailsArray.push(element);
         displayBasket();
     }
     productGroups.selectedIndex = 0;
-    clearProducts();
+    setStorageListOptions();
 }
