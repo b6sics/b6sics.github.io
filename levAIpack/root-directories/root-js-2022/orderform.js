@@ -114,6 +114,12 @@ function setStorageListOptions() {
     productStorage.forEach(addProductOption);
 }
 
+
+/******************/
+/* order  details */
+/******************/
+
+
 function addTable(toElement) {
     let newTable = document.createElement('TABLE');
     toElement.appendChild(newTable);
@@ -169,9 +175,17 @@ function displayProductDetails() {
     showProductDetailTable();
 }
 
+/******************/
+/*    quantity    */
+/******************/
+
 function setQuantity() {
     showProductDetailTable();
 }
+
+/******************/
+/* basket details */
+/******************/
 
 let basketList = document.getElementById('basketList');
 
