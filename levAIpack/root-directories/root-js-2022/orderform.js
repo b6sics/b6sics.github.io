@@ -75,4 +75,18 @@ function initProductStorage() {
     goods.forEach(addProduct);
 }
 
+let groupname = '';
+
 initProductStorage();
+
+function addProductOption(item) {
+    if (item.group == groupname) {
+        products.innerHTML += item.option;
+    }
+}
+
+function setStorageListOptions(group) {
+    groupname = group;
+    products.innerHTML = firstOption;
+    productStorage.forEach(addProductOption);
+}
