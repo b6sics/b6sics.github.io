@@ -37,14 +37,8 @@ table {
     background-color: var(--orderlist-table-color);
 }
 
-tr {
-    width: 2em;
-    height: 2em;
+tr.fixed {
     cursor: url('../../images/delete.png') 16 16, auto;
-}
-
-tr:last-of-type {
-    cursor: default;
 }
 
 td {
