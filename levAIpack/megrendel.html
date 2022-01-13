@@ -13,9 +13,6 @@
 
     <link rel="stylesheet" href="root-directories/root-css-2022/style.css?t=123" />
 
-    <script src="https://levaipack.hu/levAIgoods/goods.js"></script>
-    <script src="root-directories/root-js-2022/orderform.js"></script>
-
 </head>
 
 <body id="start">
@@ -57,8 +54,8 @@
             </div>
             <article class="right vertical">
                 <div>
-                    <label for="materialnames">Anyagtípus és vastagság: </label>
-                    <select id="materialnames" class="orderlistDropdown" name="materialname" onchange="setMaterial();">
+                    <label for="productGroups">Anyagtípus és vastagság: </label>
+                    <select id="productGroups" class="orderlistDropdown" name="productGroup" onchange="setproductGroup();">
                         <option value="?">válassz!</option>
                         <option value="PA/PE 70">Vákumtasak PA/PE 70</option>
                         <option value="PA/PE 90">Vákumtasak PA/PE 90</option>
@@ -112,16 +109,19 @@
     <script src="https://levaipack.hu/levAIgoods/size70.js"></script>
     <script src="https://levaipack.hu/levAIgoods/size90.js"></script>
 
+    <script src="https://levaipack.hu/levAIgoods/goods.js"></script>
+    <script src="root-directories/root-js-2022/orderform.js"></script>
+
     <script>
         let orderList = document.getElementById('orderList');
         let inputList = document.getElementById('inputList');
-        let materialnames = document.getElementById('materialnames');
+        let productGroups = document.getElementById('productGroups');
         let products = document.getElementById('products');
         let quantity = document.getElementById('quantity');
         let orderlistBtn = document.getElementById('orderlistBtn');
         let orderdetails = document.getElementById('orderdetails');
 
-        let material = '',
+        let productGroup = '',
             price = 0,
             formattedPrice = '',
             selectItem = null,
@@ -139,13 +139,13 @@
 
         function setOption(item, index) {
             if (item.stock < 1000) return false;
-            if (material == item.material) {
+            if (productGroup == item.productGroup) {
                 products.innerHTML += item.option;
             }
         }
 
         function clearproducts() {
-            if (material == "?") {
+            if (productGroup == "?") {
                 products.innerHTML = '<option value=""> </option>';
             } else {
                 products.innerHTML = '<option value="?">válassz!</option>';
@@ -155,8 +155,8 @@
             selectItem = null;
         }
 
-        function setMaterial() {
-            material = materialnames.options[materialnames.selectedIndex].value;
+        function setproductGroup() {
+            productGroup = productGroups.options[productGroups.selectedIndex].value;
             clearproducts();
             storage.forEach(setOption);
         }
@@ -195,7 +195,7 @@
         let basketSum;
 
         function basketLine(item, index) {
-            let linetext = item.stock + " db " + item.material + " " + item.name;
+            let linetext = item.stock + " db " + item.productGroup + " " + item.name;
             basketSum += item.stock * selectItem.price;
             let sum = formatCurrency(item.stock * selectItem.price);
             orderList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
@@ -219,7 +219,7 @@
                     id: detailLines,
                     storageID: selectItem.id,
                     stock: quantity.value,
-                    material: material,
+                    productGroup: productGroup,
                     name: name,
                     price: selectItem.price
                 }
@@ -228,8 +228,8 @@
                 displayBasket();
                 detailLines++;
             }
-            materialnames.selectedIndex = 0;
-            setMaterial();
+            productGroups.selectedIndex = 0;
+            setproductGroup();
         }
 
         let itemid = 0;
@@ -242,7 +242,7 @@
             let option = '<option value="' + itemid + '">' + stockItem + '</option>';
             const element = {
                 id: itemid,
-                material: material,
+                productGroup: productGroup,
                 stock: stock,
                 name: stockItem,
                 price: itemprice,
@@ -253,12 +253,12 @@
         }
 
         function loadproducts70(name) {
-            material = name;
+            productGroup = name;
             size70.forEach(makeOptions);
         }
 
         function loadproducts90(name) {
-            material = name;
+            productGroup = name;
             size90.forEach(makeOptions);
         }
 
