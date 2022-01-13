@@ -1,0 +1,1 @@
+let productGroups = document.getElementById('productGroups');
