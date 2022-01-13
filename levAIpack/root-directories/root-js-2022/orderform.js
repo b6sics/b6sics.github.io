@@ -126,10 +126,10 @@ function addTable(toElement) {
     return newTable;
 }
 
-function addRow(toTable, id) {
+function addRow(toTable, id, title) {
     let newRow = document.createElement('TR');
     newRow.id = id;
-    newRow.title = helpDeleteRow;
+    newRow.title = title;
     toTable.appendChild(newRow);
     return newRow;
 }
@@ -149,22 +149,21 @@ let orderdetailsTable = addTable(orderdetails);
 const orderdetailsArray = [];
 
 function showProductDetail(item, index) {
-    nextRow = addRow(orderdetailsTable, index);
+    nextRow = addRow(orderdetailsTable, index, helpDeleteRow);
     addCell(nextRow, `${item.name} ${item.stock}db (${item.price}Ft/db) :`);
     addCell(nextRow, formatCurrency(item.stock * item.price));
-}
-
-function showProductNextDetail(item, index) {
-    nextRow = addRow(orderdetailsTable, index);
-    addCell(nextRow, `${item.name} ${quantity.value}db (${item.price}Ft/db) :`);
-    addCell(nextRow, formatCurrency(quantity.value * item.price));
 }
 
 function showProductDetailTable() {
     orderdetailsTable.remove();
     orderdetailsTable = addTable(orderdetails);
     orderdetailsArray.forEach(showProductDetail);
-    showProductNextDetail(selectedItem, Number.MAX_SAFE_INTEGER);
+}
+
+function showProductNextDetail(item, index) {
+    nextRow = addRow(orderdetailsTable, index, "");
+    addCell(nextRow, `${item.name} ${quantity.value}db (${item.price}Ft/db) :`);
+    addCell(nextRow, formatCurrency(quantity.value * item.price));
 }
 
 function displayProductDetails() {
@@ -173,6 +172,7 @@ function displayProductDetails() {
     quantity.max = selectedItem.stock;
     quantity.value = thousands;
     showProductDetailTable();
+    showProductNextDetail(selectedItem, Number.MAX_SAFE_INTEGER);
 }
 
 /******************/
