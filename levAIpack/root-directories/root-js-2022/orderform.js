@@ -2,6 +2,7 @@ let splitString = ",";
 let firstOption = '<option value=" ? "> válassz! </option>';
 
 let orderTextContent = "Kosár:"
+let helpDeleteRow = "Kattints a törléshez!"
 
 function formatCurrency(number) {
     return new Intl.NumberFormat('hu-HU', {
@@ -101,7 +102,7 @@ function clearproducts() {
     } else {
         products.innerHTML = '<option value="?">válassz!</option>';
     }
-    orderdetails.innerHTML = orderdetailsHtml;
+    orderdetails.innerHTML = "";
     quantity.value = '';
     selectedItem = null;
 }
@@ -113,22 +114,44 @@ function setStorageListOptions() {
     productStorage.forEach(addProductOption);
 }
 
-let selectedItem = null;
-let detailLines = 1;
-let orderdetailsHtml = "";
+function addTable(toElement) {
+    let newTable = document.createElement('TABLE');
+    toElement.appendChild(newTable);
+    return newTable;
+}
 
-function showProductDetail() {
-    orderdetails.innerHTML = orderdetailsHtml;
-    orderdetails.innerHTML += '<br />' + '<div id="goods' + detailLines + '"><pre>' + selectedItem.name + "<br />";
-    orderdetails.innerHTML += (" " + karton).padStart(3, " ") + " karton( =" + (quantity.value + "db): ").padStart(12, " ");
-    orderdetails.innerHTML += formattedPrice.padStart(15, " ") + '</pre></div>';
+function addRow(toTable, id) {
+    let newRow = document.createElement('TR');
+    newRow.id = id;
+    newRow.title = helpDeleteRow;
+    toTable.appendChild(newRow);
+    return newRow;
+}
+
+function addCell(toRow, cellData) {
+    let newCell = document.createElement('TD');
+    newCell.innerHTML = cellData;
+    toRow.appendChild(newCell);
+    return newCell;
+}
+
+let orderdetails = document.getElementById('orderdetails');
+let orderdetailsTable = addTable(orderdetails);
+const orderdetailsArray = [];
+
+function showProductDetail(item, index) {
+    nextRow = addRow(orderdetailsTable, index);
+    addCell(nextRow, `${item.name} ${quantity.value}db (${item.price}Ft/db) :`);
+    addCell(nextRow, formatCurrency(quantity.value * item.price));
 }
 
 function displayProductDetails() {
-    selectedItem = productStorage[products.options[products.selectedIndex].value];
-    formattedPrice = formatCurrency(1000 * selectedItem.price);
+    let selectedItem = productStorage[products.options[products.selectedIndex].value];
     quantity.min = thousands;
     quantity.max = selectedItem.stock;
     quantity.value = thousands;
-    showProductDetail();
+    orderdetailsTable.remove();
+    orderdetailsTable = addTable(orderdetails);
+    orderdetailsArray.forEach(showProductDetail);
+    showProductDetail(selectedItem, Number.MAX_SAFE_INTEGER);
 }
