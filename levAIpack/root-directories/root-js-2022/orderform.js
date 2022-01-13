@@ -96,7 +96,7 @@ function addProductOption(item) {
     }
 }
 
-function clearproducts() {
+function clearProducts() {
     if (productGroup == "?") {
         products.innerHTML = '<option value=""> </option>';
     } else {
@@ -109,7 +109,7 @@ function clearproducts() {
 
 function setStorageListOptions() {
     productGroup = productGroups.options[productGroups.selectedIndex].value;
-    clearproducts();
+    clearProducts();
     products.innerHTML = firstOption;
     productStorage.forEach(addProductOption);
 }
@@ -135,6 +135,9 @@ function addCell(toRow, cellData) {
     return newCell;
 }
 
+var selectedItem = null;
+let thousands = 1000;
+
 let orderdetails = document.getElementById('orderdetails');
 let orderdetailsTable = addTable(orderdetails);
 const orderdetailsArray = [];
@@ -145,13 +148,64 @@ function showProductDetail(item, index) {
     addCell(nextRow, formatCurrency(quantity.value * item.price));
 }
 
-function displayProductDetails() {
-    let selectedItem = productStorage[products.options[products.selectedIndex].value];
-    quantity.min = thousands;
-    quantity.max = selectedItem.stock;
-    quantity.value = thousands;
+function showProductDetailTable() {
     orderdetailsTable.remove();
     orderdetailsTable = addTable(orderdetails);
     orderdetailsArray.forEach(showProductDetail);
     showProductDetail(selectedItem, Number.MAX_SAFE_INTEGER);
+}
+
+function displayProductDetails() {
+    selectedItem = productStorage[products.options[products.selectedIndex].value];
+    quantity.min = thousands;
+    quantity.max = selectedItem.stock;
+    quantity.value = thousands;
+    showProductDetailTable();
+}
+
+let quantity = document.getElementById('quantity');
+
+function setQuantity() {
+    showProductDetailTable();
+}
+
+let basketList = document.getElementById('basketList');
+
+let basket = [];
+let basketSum;
+
+function basketLine(item, index) {
+    let linetext = index.padStart(2, " ") + ". " + item.stock + " db " + item.productGroup + " " + item.name;
+    basketSum += item.stock * selectedItem.price;
+    let sum = formatCurrency(item.stock * item.price);
+    basketList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
+}
+
+function displayBasket() {
+    basketSum = 0;
+    basketList.rows = 2 + basket.length;
+    basketList.innerHTML = orderTextContent;
+    basket.forEach(basketLine);
+    basketList.innerHTML += "\n" + "Összesen :".padStart(41, " ") + formatCurrency(basketSum).padStart(16, " ");
+}
+
+function setBasket() {
+    if (selectedItem == null) {
+        alert("Nincs kijelölt árucikk!");
+    } else {
+        selectedItem.stock -= quantity.value;
+        let name = selectedItem.name.replace("Vákuumtasak ", "");
+        const element = {
+            storageID: selectedItem.id,
+            stock: quantity.value,
+            productGroup: productGroup,
+            name: name,
+            price: selectedItem.price
+        }
+        basket.push(element);
+        orderdetailsArray.push(selectedItem);
+        displayBasket();
+    }
+    productGroups.selectedIndex = 0;
+    clearProducts();
 }
