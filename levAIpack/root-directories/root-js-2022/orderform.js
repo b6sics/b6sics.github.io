@@ -70,3 +70,9 @@ function addProduct(item) {
     productStorage.push(element);
     productID++;
 }
+
+function initProductStorage() {
+    goods.forEach(addProduct);
+}
+
+initProductStorage();
