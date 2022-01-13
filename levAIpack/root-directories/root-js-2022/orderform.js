@@ -181,7 +181,7 @@ let basketSum;
 
 function basketLine(item, index) {
     let linetext = index.toString().padStart(2, " ") + ". " + item.stock + " db " + item.productGroup + " " + item.name;
-    basketSum += item.stock * selectedItem.price;
+    basketSum += item.stock * item.price;
     let sum = formatCurrency(item.stock * item.price);
     basketList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
 }
@@ -199,7 +199,7 @@ function setBasket() {
         alert("Nincs kijelölt árucikk!");
     } else {
         selectedItem.stock -= quantity.value;
-        let name = selectedItem.name.replace("Vákuumtasak ", "");
+        let name = selectedItem.name;
         const element = {
             storageID: selectedItem.id,
             stock: quantity.value,
