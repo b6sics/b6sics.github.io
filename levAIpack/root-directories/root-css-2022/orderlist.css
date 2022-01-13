@@ -43,6 +43,10 @@ tr {
     cursor: url('../../images/delete.png') 16 16, auto;
 }
 
+tr:last-of-type {
+    cursor: default;
+}
+
 td {
     padding: var(--padding-w);
     background-color: var(--content-bg-color);
