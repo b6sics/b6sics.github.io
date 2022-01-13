@@ -206,7 +206,7 @@
             orderList.rows = 2 + basket.length;
             orderList.innerHTML = orderTextContent;
             basket.forEach(basketLine);
-            orderList.innerHTML += "\n" + "Összesen:".padStart(41, " ") + formatCurrency(basketSum).padStart(16, " ");
+            orderList.innerHTML += "\n" + "Összesen :".padStart(41, " ") + formatCurrency(basketSum).padStart(16, " ");
         }
 
         function setBasket() {
