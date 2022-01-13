@@ -1,6 +1,15 @@
 let splitString = ",";
 let firstOption = '<option value=" ? "> válassz! </option>';
 
+let orderTextContent = "Kosár:"
+
+function formatCurrency(number) {
+    return new Intl.NumberFormat('hu-HU', {
+        style: 'currency',
+        currency: 'HUF'
+    }).format(number);
+}
+
 /******************/
 /* product groups */
 /******************/
@@ -58,7 +67,7 @@ function addProduct(item) {
     let stock = parseInt(datas[1]);
     let name = datas[2];
     let price = parseInt(datas[3]);
-    let option = `<option value="${name}">${name + " " + datas[3]}</option>`;
+    let option = `<option value="${productID}">${name + " " + datas[3]}</option>`;
     let element = {
         id: productID,
         group: group,
@@ -75,18 +84,51 @@ function initProductStorage() {
     goods.forEach(addProduct);
 }
 
-let groupname = '';
+let productGroup = '';
 
 initProductStorage();
 
 function addProductOption(item) {
-    if (item.group == groupname) {
+    if (item.stock < 1000) return false;
+    if (item.group == productGroup) {
         products.innerHTML += item.option;
     }
 }
 
-function setStorageListOptions(group) {
-    groupname = group;
+function clearproducts() {
+    if (productGroup == "?") {
+        products.innerHTML = '<option value=""> </option>';
+    } else {
+        products.innerHTML = '<option value="?">válassz!</option>';
+    }
+    orderdetails.innerHTML = orderdetailsHtml;
+    quantity.value = '';
+    selectedItem = null;
+}
+
+function setStorageListOptions() {
+    productGroup = productGroups.options[productGroups.selectedIndex].value;
+    clearproducts();
     products.innerHTML = firstOption;
     productStorage.forEach(addProductOption);
+}
+
+let selectedItem = null;
+let detailLines = 1;
+let orderdetailsHtml = "";
+
+function showProductDetail() {
+    orderdetails.innerHTML = orderdetailsHtml;
+    orderdetails.innerHTML += '<br />' + '<div id="goods' + detailLines + '"><pre>' + selectedItem.name + "<br />";
+    orderdetails.innerHTML += (" " + karton).padStart(3, " ") + " karton( =" + (quantity.value + "db): ").padStart(12, " ");
+    orderdetails.innerHTML += formattedPrice.padStart(15, " ") + '</pre></div>';
+}
+
+function displayProductDetails() {
+    selectedItem = productStorage[products.options[products.selectedIndex].value];
+    formattedPrice = formatCurrency(1000 * selectedItem.price);
+    quantity.min = thousands;
+    quantity.max = selectedItem.stock;
+    quantity.value = thousands;
+    showProductDetail();
 }
