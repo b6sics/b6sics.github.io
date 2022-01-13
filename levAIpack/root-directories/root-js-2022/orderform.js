@@ -4,6 +4,8 @@ let firstOption = '<option value="?"> válassz! </option>';
 let orderTextContent = "Kosár:"
 let helpDeleteRow = "Kattints a törléshez!"
 
+let productInBasketClass = "fixed";
+
 function formatCurrency(number) {
     return new Intl.NumberFormat('hu-HU', {
         style: 'currency',
@@ -130,6 +132,7 @@ function addRow(toTable, id, title) {
     let newRow = document.createElement('TR');
     newRow.id = id;
     newRow.title = title;
+    newRow.classList.add(productInBasketClass);
     toTable.appendChild(newRow);
     return newRow;
 }
