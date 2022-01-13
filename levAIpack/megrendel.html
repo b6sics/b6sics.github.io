@@ -40,10 +40,13 @@
         </header>
         <section id="inputList" class="center vertical">
             <div class="center vertical fillParentsWidth">
-                <header class="fillParentsWidth txtleft">
+                <header class="fillParentsWidth txtinitial">
                     <h3 style="margin:0;">
                         Részletek:
                     </h3>
+                    <!-- -------------- -->
+                    <!-- order  details -->
+                    <!-- -------------- -->
                     <div id="orderdetails">
 
                     </div>
@@ -68,7 +71,7 @@
                 <div>
                     <label for="products">Méretek és árak: </label>
                     <select id="products" class="orderlistDropdown" name="product" onchange="displayProductDetails();">
-                        <option value=""> </option>
+                        
                     </select>
                 </div>
                 <!-- -------------- -->
@@ -124,7 +127,6 @@
         let inputList = document.getElementById('inputList');
         let quantity = document.getElementById('quantity');
         let orderlistBtn = document.getElementById('orderlistBtn');
-        let orderdetails = document.getElementById('orderdetails');
 
         let price = 0,
             formattedPrice = '',
@@ -135,10 +137,6 @@
             thousands = 1000;
 
         let orderLines = 0;
-
-        function displayDetails() {
-
-        }
 
         function setQuantity() {
             let quantityValue = quantity.value;
