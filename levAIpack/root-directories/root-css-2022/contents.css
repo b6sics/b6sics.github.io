@@ -28,7 +28,7 @@ form {
     border-radius: 1vmin;
 }
 
-#orderList {
+#basketList {
     margin: var(--margin-h) auto;
     padding: var(--padding-h) var(--padding-w);
     width: calc(100% - 2 * var(--padding-w));
