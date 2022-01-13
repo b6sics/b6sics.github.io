@@ -50,11 +50,17 @@ td {
     background-color: var(--content-bg-color);
 }
 
-td :first-child {
+td:first-of-type {
     width: 70%;
 }
 
-td:last-child {
+tr.fixed>td:first-of-type {
+    background-image: url('../../images/delete.png');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 8px);
+}
+
+td:last-of-type {
     width: 30%;
     text-align: right;
 }
