@@ -1,4 +1,4 @@
-let splitString = " ";
+let splitString = ",";
 let firstOption = '<option value=" ? "> válassz! </option>';
 
 /******************/
@@ -20,7 +20,7 @@ function setProductGroupsOptions() {
 
 function addProductGroup(item) {
     let datas = item.split(splitString);
-    let name = `${datas[2]} ${datas[3]}`;
+    let name = datas[0];
     let option = `<option value="${name}">${name}</option>`;
     let element = {
         name: name,
@@ -54,7 +54,19 @@ const productStorage = [];
 
 function addProduct(item) {
     let datas = item.split(splitString);
-    let stock = parseInt(datas[0]);
-
-
+    let group = datas[0];
+    let stock = parseInt(datas[1]);
+    let name = datas[2];
+    let price = parseInt(datas[3]);
+    let option = `<option value="${name}">${name + " " + datas[3]}</option>`;
+    let element = {
+        id: productID,
+        group: group,
+        stock: stock,
+        price: price,
+        name: name,
+        option: option
+    }
+    productStorage.push(element);
+    productID++;
 }
