@@ -5,6 +5,7 @@ let orderTextContent = "Kosár:"
 let helpDeleteRow = "Kattints a törléshez!"
 
 let productInBasketClass = "fixed";
+let productInitialClass = "initial";
 
 function formatCurrency(number) {
     return new Intl.NumberFormat('hu-HU', {
@@ -128,11 +129,11 @@ function addTable(toElement) {
     return newTable;
 }
 
-function addRow(toTable, id, title) {
+function addRow(toTable, id, title, rowClass) {
     let newRow = document.createElement('TR');
     newRow.id = id;
     newRow.title = title;
-    newRow.classList.add(productInBasketClass);
+    newRow.classList.add(rowClass);
     toTable.appendChild(newRow);
     return newRow;
 }
@@ -152,7 +153,7 @@ let orderdetailsTable = addTable(orderdetails);
 const orderdetailsArray = [];
 
 function showProductDetail(item, index) {
-    nextRow = addRow(orderdetailsTable, index, helpDeleteRow);
+    nextRow = addRow(orderdetailsTable, index, helpDeleteRow, productInBasketClass);
     addCell(nextRow, `${item.name} ${item.stock}db (${item.price}Ft/db) :`);
     addCell(nextRow, formatCurrency(item.stock * item.price));
 }
@@ -164,7 +165,7 @@ function showProductDetailTable() {
 }
 
 function showProductNextDetail(item, index) {
-    nextRow = addRow(orderdetailsTable, index, "");
+    nextRow = addRow(orderdetailsTable, index, "", productInitialClass);
     addCell(nextRow, `${item.name} ${quantity.value}db (${item.price}Ft/db) :`);
     addCell(nextRow, formatCurrency(quantity.value * item.price));
 }
@@ -184,6 +185,7 @@ function displayProductDetails() {
 
 function setQuantity() {
     showProductDetailTable();
+    showProductNextDetail(selectedItem, Number.MAX_SAFE_INTEGER);
 }
 
 /******************/
