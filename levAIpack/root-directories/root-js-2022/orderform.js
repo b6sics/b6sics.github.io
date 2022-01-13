@@ -1,5 +1,5 @@
 let splitString = ",";
-let firstOption = '<option value=" ? "> válassz! </option>';
+let firstOption = '<option value="?"> válassz! </option>';
 
 let orderTextContent = "Kosár:"
 let helpDeleteRow = "Kattints a törléshez!"
