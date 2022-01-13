@@ -36,7 +36,7 @@
             <h2>
                 <i>VÁKUMTASAK&nbsp;RENDELÉS</i>
             </h2>
-            <textarea id="orderList" name="orderList" readonly>Kosár:</textarea>
+            <textarea id="basketList" name="basketList" readonly>Kosár:</textarea>
         </header>
         <section id="inputList" class="center vertical">
             <div class="center vertical fillParentsWidth">
@@ -123,66 +123,6 @@
     <script src="root-directories/root-js-2022/orderform.js"></script>
 
     <script>
-        let orderList = document.getElementById('orderList');
-        let inputList = document.getElementById('inputList');
-        let quantity = document.getElementById('quantity');
-        let orderlistBtn = document.getElementById('orderlistBtn');
-
-        let price = 0,
-            formattedPrice = '',
-            basket = [],
-            storage = [],
-            details = [],
-            karton = 1,
-            thousands = 1000;
-
-        let orderLines = 0;
-
-        function setQuantity() {
-            let quantityValue = quantity.value;
-            karton = quantityValue / thousands;
-            formattedPrice = formatCurrency(quantityValue * selectedItem.price);
-            showProductDetail();
-        }
-
-        let basketSum;
-
-        function basketLine(item, index) {
-            let linetext = item.stock + " db " + item.productGroup + " " + item.name;
-            basketSum += item.stock * selectedItem.price;
-            let sum = formatCurrency(item.stock * selectedItem.price);
-            orderList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
-        }
-
-        function displayBasket() {
-            basketSum = 0;
-            orderList.rows = 2 + basket.length;
-            orderList.innerHTML = orderTextContent;
-            basket.forEach(basketLine);
-            orderList.innerHTML += "\n" + "Összesen :".padStart(41, " ") + formatCurrency(basketSum).padStart(16, " ");
-        }
-
-        function setBasket() {
-            if (selectedItem == null) {
-                alert("Nincs kijelölt árucikk!");
-            } else {
-                selectedItem.stock -= quantity.value;
-                let name = selectedItem.name.replace("Vákuumtasak ", "");
-                const element = {
-                    id: detailLines,
-                    storageID: selectedItem.id,
-                    stock: quantity.value,
-                    productGroup: productGroup,
-                    name: name,
-                    price: selectedItem.price
-                }
-                basket.push(element);
-                orderdetailsHtml = orderdetails.innerHTML;
-                displayBasket();
-                detailLines++;
-            }
-            productGroups.selectedIndex = 0;
-        }
     </script>
 </body>
 
