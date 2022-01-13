@@ -13,18 +13,17 @@ function setProductGroupsOptions() {
     productGroupArray.forEach(addProductGroupOption);
 }
 
-let productGroupId = 0;
-
 function addProductGroup(item) {
     let datas = item.split(" ");
     let name = `${datas[2]} ${datas[3]}`;
     let option = `<option value="${name}">${name}</option>`;
     element = {
-        id: productGroupId,
         name: name,
         option: option
     }
-    productGroupId++;
+    if (!productGroupArray.includes(element)) {
+        productGroupArray.push(element);
+    }
 }
 
 function initProductGroupArray() {
