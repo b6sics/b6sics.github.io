@@ -37,6 +37,10 @@ table {
     background-color: var(--orderlist-table-color);
 }
 
+tr.initial {
+    cursor: default;
+}
+
 tr.fixed {
     cursor: url('../../images/delete.png') 16 16, auto;
 }
