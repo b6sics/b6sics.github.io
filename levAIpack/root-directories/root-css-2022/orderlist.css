@@ -26,6 +26,30 @@
     width: calc(100% - 2 * var(--padding-w));
 }
 
-.txtleft {
+.txtinitial {
     text-align: initial;
+}
+
+table {
+    width: 100%;
+    color: var(--orderlist-text-color);
+    background-color: var(--orderlist-table-color);
+}
+
+th:hover {
+    cursor: url('http://upload.wikimedia.org/wikipedia/commons/d/de/POL_apple.jpg');
+}
+
+td {
+    padding: var(--padding-w);
+    background-color: var(--content-bg-color);
+}
+
+td :first-child {
+    width: 70%;
+}
+
+td:last-child {
+    width: 30%;
+    text-align: right;
 }
