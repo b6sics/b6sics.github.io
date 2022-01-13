@@ -207,6 +207,9 @@ function displayBasket() {
     basketList.innerHTML += "\n" + "Összesen :".padStart(41, " ") + formatCurrency(basketSum).padStart(16, " ");
 }
 
+let submitOrder = document.getElementById('submitOrder');
+submitOrder.disabled = true;
+
 function setBasket() {
     if (selectedItem == null) {
         alert("Nincs kijelölt árucikk!");
@@ -222,6 +225,11 @@ function setBasket() {
         }
         basket.push(element);
         orderdetailsArray.push(element);
+        if (basket.length == 0) {
+            submitOrder.disabled = true;
+        } else {
+            submitOrder.disabled = false;
+        }
         displayBasket();
     }
     productGroups.selectedIndex = 0;
