@@ -61,6 +61,8 @@ setProductGroupsOptions();
 /******************/
 
 let products = document.getElementById('products');
+let orderdetails = document.getElementById('orderdetails');
+let quantity = document.getElementById('quantity');
 
 let productID = 0;
 const productStorage = [];
@@ -107,6 +109,7 @@ function clearProducts() {
     } else {
         products.innerHTML = firstOption;
     }
+    showProductDetailTable();
     quantity.value = '';
     selectedItem = null;
 }
@@ -147,8 +150,6 @@ function addCell(toRow, cellData) {
 
 let thousands = 1000;
 
-let orderdetails = document.getElementById('orderdetails');
-let quantity = document.getElementById('quantity');
 let orderdetailsTable = addTable(orderdetails);
 const orderdetailsArray = [];
 
