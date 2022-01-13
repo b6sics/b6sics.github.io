@@ -102,7 +102,7 @@ function clearProducts() {
     if (productGroup == "?") {
         products.innerHTML = '<option value=""> </option>';
     } else {
-        products.innerHTML = '<option value="?">válassz!</option>';
+        products.innerHTML = firstOption;
     }
     quantity.value = '';
     selectedItem = null;
@@ -111,7 +111,6 @@ function clearProducts() {
 function setStorageListOptions() {
     productGroup = productGroups.options[productGroups.selectedIndex].value;
     clearProducts();
-    products.innerHTML = firstOption;
     productStorage.forEach(addProductOption);
 }
 
@@ -180,7 +179,7 @@ let basket = [];
 let basketSum;
 
 function basketLine(item, index) {
-    let linetext = index.toString().padStart(2, " ") + ". " + item.stock + " db " + item.productGroup + " " + item.name;
+    let linetext = (index + 1).toString().padStart(2, " ") + ". " + item.stock + " db " + item.productGroup + " " + item.name;
     basketSum += item.stock * item.price;
     let sum = formatCurrency(item.stock * item.price);
     basketList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
