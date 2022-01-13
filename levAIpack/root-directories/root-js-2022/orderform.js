@@ -4,7 +4,7 @@ let productGroups = document.getElementById('productGroups');
 
 const productGroupArray = [];
 
-function addProductGroupOption(item, index) {
+function addProductGroupOption(item) {
     productGroupArray.innerHTML += item.option;
 }
 
@@ -17,9 +17,12 @@ let productGroupId = 0;
 
 function addProductGroup(item) {
     let datas = item.split(" ");
+    let name = `${datas[2]} ${datas[3]}`;
+    let option = `<option value="${name}">${name}</option>`;
     element = {
         id: productGroupId,
-        name: `${datas[2]} ${datas[3]}`,
+        name: name,
+        option: option
     }
     productGroupId++;
 }
