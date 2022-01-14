@@ -158,7 +158,7 @@ const orderdetailsArray = [];
 function showProductDetail(item, index) {
     nextRow = addRow(orderdetailsTable, index, helpDeleteRow, productInBasketClass);
     addCell(nextRow, `${item.name} ${item.stock}db (${item.price}Ft/db) :`);
-    addCell(nextRow, formatCurrency(item.stock * item.price));
+    addCell(nextRow, formatCurrency(parseInt(item.stock) * parseInt(item.price)));
 }
 
 function showProductDetailTable() {
@@ -170,7 +170,7 @@ function showProductDetailTable() {
 function showProductNextDetail(item, index) {
     nextRow = addRow(orderdetailsTable, index, "", productInitialClass);
     addCell(nextRow, `${item.name} ${quantity.value}db (${item.price}Ft/db) :`);
-    addCell(nextRow, formatCurrency(quantity.value * item.price));
+    addCell(nextRow, formatCurrency(parseInt(quantity.value) * parseInt(item.price)));
 }
 
 function displayProductDetails() {
