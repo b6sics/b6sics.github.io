@@ -269,4 +269,5 @@ function callMe() {
         submitOrder.disabled = false;
     }
     displayBasket();
+    showProductDetailTable();
 }
