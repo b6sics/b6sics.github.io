@@ -3,7 +3,7 @@
 
 <?php
 
-if($_POST['submit'] != '' || isset($_POST['submit'])) {
+if($_POST['submitOrder'] != '' || isset($_POST['submitOrder'])) {
 
 foreach($_POST as $key => $val) {
 
