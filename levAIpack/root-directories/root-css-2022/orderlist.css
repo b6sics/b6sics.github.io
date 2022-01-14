@@ -21,6 +21,17 @@
     width: 100%;
 }
 
+.notFoundBtn {
+    font-size: 16px;
+    margin: var(--margin-h) 0;
+    padding: 2px;
+    width: 20em;
+}
+
+.notFoundBtn:hover {
+    cursor: pointer;
+}
+
 .fillParentsWidth {
     margin: 0;
     width: calc(100% - 2 * var(--padding-w));
