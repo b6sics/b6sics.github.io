@@ -3,6 +3,8 @@ let firstOption = '<option value="?"> válassz! </option>';
 
 let orderTextContent = "Kosár:"
 let helpDeleteRow = "Kattints a törléshez!"
+let callMeText = "visszahívást kérek";
+let notFoundText = "Meditáció -"
 
 let productInBasketClass = "fixed";
 let productInitialClass = "initial";
@@ -244,4 +246,27 @@ function setBasket() {
     }
     productGroups.selectedIndex = 0;
     setStorageListOptions();
+}
+
+/******************/
+/*    call  me    */
+/******************/
+
+function callMe() {
+    selectedItem = callMeText;
+    const element = {
+        storageID: Number.MAX_SAFE_INTEGER,
+        stock: 1,
+        productGroup: notFoundText,
+        name: callMeText,
+        price: 0
+    }
+    basket.push(element);
+    orderdetailsArray.push(element);
+    if (basket.length == 0) {
+        submitOrder.disabled = true;
+    } else {
+        submitOrder.disabled = false;
+    }
+    displayBasket();
 }
