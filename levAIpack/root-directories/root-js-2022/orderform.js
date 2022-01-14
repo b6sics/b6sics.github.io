@@ -195,6 +195,7 @@ function setQuantity() {
     if (quantityValue > inStock) {
         quantity.value = inStock;
     }
+    alert(quantity.value);
     showProductDetailTable();
     showProductNextDetail(selectedItem, Number.MAX_SAFE_INTEGER);
 }
