@@ -252,6 +252,8 @@ function setBasket() {
 /*    call  me    */
 /******************/
 
+let notFound = document.getElementById('notFound');
+
 function callMe() {
     selectedItem = callMeText;
     const element = {
@@ -270,4 +272,5 @@ function callMe() {
     }
     displayBasket();
     showProductDetailTable();
+    notFound.disabled = true;
 }
