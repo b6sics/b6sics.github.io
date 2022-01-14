@@ -185,6 +185,9 @@ function displayProductDetails() {
 /******************/
 
 function setQuantity() {
+    quantity.value = Math.floor(quantity.value / 1000) * 1000;
+    if (quantity.value < 1000) quantity.value = 1000;
+    if (quantity.value > selectedItem.stock) quantity.value = selectedItem.stock;
     showProductDetailTable();
     showProductNextDetail(selectedItem, Number.MAX_SAFE_INTEGER);
 }
