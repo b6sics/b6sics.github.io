@@ -176,6 +176,7 @@ function showProductNextDetail(item, index) {
 function displayProductDetails() {
     selectedItem = productStorage[products.options[products.selectedIndex].value];
     quantity.min = thousands;
+    quantity.step = thousands;
     quantity.max = selectedItem.stock;
     quantity.value = thousands;
     showProductDetailTable();
