@@ -72,9 +72,9 @@ const productStorage = [];
 function addProduct(item) {
     let datas = item.split(splitString);
     let group = datas[0];
-    let stock = parseInt(datas[1]);
+    let stock = datas[1];
     let name = datas[2];
-    let price = parseInt(datas[3]);
+    let price = datas[3];
     let option = `<option value="${productID}">${name + " " + datas[3]}</option>`;
     let element = {
         id: productID,
@@ -211,9 +211,9 @@ function basketLine(item, index) {
         linetext += (item.stock + "db ").padStart(8, " ") + item.productGroup + " " + item.name;
     }
 
-    basketSum += item.stock * item.price;
-    let sum = formatCurrency(item.stock * item.price);
-    basketList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
+    let sum = parseInt(item.stock) * parseInt(item.price);
+    basketSum += sum;
+    basketList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + formatCurrency(sum).padStart(16, " ");
 }
 
 function displayBasket() {
@@ -240,22 +240,24 @@ function setBasket() {
     if (selectedItem == null) {
         alert("Nincs kijelölt árucikk!");
     } else {
-        selectedItem.stock -= quantity.value;
+        let storageStock = parseInt(selectedItem.stock);
+        storageStock -= parseInt(quantity.value);
+        selectedItem.stock = storageStock.toString();
         let inBasket = isInBasket();
         if (!inBasket) {
             const element = {
                 storageID: selectedItem.id,
-                stock: quantity.value,
+                stock: quantity.value.toString(),
                 productGroup: productGroup,
                 name: selectedItem.name,
-                price: selectedItem.price
+                price: selectedItem.price.toString()
             }
             basket.push(element);
             orderdetailsArray.push(element);
         } else {
             let stockValue = parseInt(basket[inBasket - 1].stock);
             stockValue += parseInt(quantity.value);
-            basket[inBasket - 1].stock = stockValue;
+            basket[inBasket - 1].stock = stockValue.toString();
         }
         if (basket.length == 0) {
             submitOrder.disabled = true;
