@@ -187,9 +187,14 @@ function displayProductDetails() {
 /******************/
 
 function setQuantity() {
-    quantity.value = Math.floor(quantity.value / 1000) * 1000;
-    if (quantity.value < 1000) quantity.value = 1000;
-    if (quantity.value > selectedItem.stock) quantity.value = selectedItem.stock;
+    let quantityValue = (1 + Math.floor((parseInt(quantity.value) - 1) / 1000)) * 1000;
+    if (quantityValue < 1000) {
+        quantity.value = 1000;
+    }
+    let inStock = parseInt(selectedItem.stock);
+    if (quantityValue > inStock) {
+        quantity.value = inStock;
+    }
     showProductDetailTable();
     showProductNextDetail(selectedItem, Number.MAX_SAFE_INTEGER);
 }
@@ -221,7 +226,9 @@ function displayBasket() {
     basketList.rows = 2 + basket.length;
     basketList.innerHTML = orderTextContent;
     basket.forEach(basketLine);
-    basketList.innerHTML += "\n" + "Összesen :".padStart(41, " ") + formatCurrency(basketSum).padStart(16, " ");
+    if (basket.length) {
+        basketList.innerHTML += "\n" + "Összesen :".padStart(41, " ") + formatCurrency(basketSum).padStart(16, " ");
+    }
 }
 
 let submitOrder = document.getElementById('submitOrder');
@@ -297,3 +304,25 @@ function callMe() {
     showProductDetailTable();
     notFound.disabled = true;
 }
+
+/******************/
+/* pop basketitem */
+/******************/
+
+orderdetails.addEventListener("click", function(e) {
+    let target = parseInt(e.target.parentNode.id);
+    if (basket[target].storageID == Number.MAX_SAFE_INTEGER) {
+        notFound.disabled = false;
+    } else {
+        let productStock = parseInt(productStorage[basket[target].storageID].stock);
+        productStock += parseInt(basket[target].stock);
+        productStorage[basket[target].storageID].stock = productStock.toString();
+    }
+    basket.splice(target, 1);
+    if (basket.length == 0) {
+        submitOrder.disabled = true;
+    }
+    orderdetailsArray.splice(target, 1);
+    displayBasket();
+    showProductDetailTable();
+})
