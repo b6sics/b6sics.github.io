@@ -189,16 +189,13 @@ function displayProductDetails() {
 
 function setQuantity() {
     let quantityValue = (1 + Math.floor((parseInt(quantity.value.toString()) - 1) / 1000)) * 1000;
-    alert(quantityValue);
-    if (quantityValue < 1000) {
+    quantity.value = quantityValue;
+    if (quantity.value < 1000) {
         quantity.value = 1000;
-        alert(quantity.value);
     }
     let inStock = parseInt(selectedItem.stock.toString());
-    alert(inStock);
     if (quantityValue > inStock) {
         quantity.value = inStock;
-        alert(quantity.value);
     }
     showProductDetailTable();
     showProductNextDetail(selectedItem, Number.MAX_SAFE_INTEGER);
