@@ -59,6 +59,7 @@ tr.fixed {
 td {
     padding: var(--padding-w);
     background-color: var(--content-bg-color);
+    z-index: -1;
 }
 
 td:first-of-type {
