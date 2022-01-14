@@ -4,7 +4,7 @@ let firstOption = '<option value="?"> válassz! </option>';
 let orderTextContent = "Kosár:"
 let helpDeleteRow = "Kattints a törléshez!"
 let callMeText = "visszahívást kérek";
-let notFoundText = "Meditáció -"
+let notFoundText = "Guru meditáció -"
 
 let productInBasketClass = "fixed";
 let productInitialClass = "initial";
@@ -204,7 +204,13 @@ let basket = [];
 let basketSum;
 
 function basketLine(item, index) {
-    let linetext = (index + 1).toString().padStart(2, " ") + ". " + item.stock + " db " + item.productGroup + " " + item.name;
+    let linetext = (index + 1).toString().padStart(2, " ") + ". ";
+    if (item.stock == 1) {
+        linetext += item.productGroup + " " + item.name;
+    } else {
+        linetext += (item.stock + "db ").padStart(8, " ") + item.productGroup + " " + item.name;
+    }
+
     basketSum += item.stock * item.price;
     let sum = formatCurrency(item.stock * item.price);
     basketList.innerHTML += "\n" + linetext.padEnd(40, " ") + ":" + sum.padStart(16, " ");
@@ -221,21 +227,36 @@ function displayBasket() {
 let submitOrder = document.getElementById('submitOrder');
 submitOrder.disabled = true;
 
+function isInBasket() {
+    for (let ii = 0; ii < basket.length; ii++) {
+        if (selectedItem.id == basket[ii].storageID) {
+            return ii + 1;
+        }
+    }
+    return false;
+}
+
 function setBasket() {
     if (selectedItem == null) {
         alert("Nincs kijelölt árucikk!");
     } else {
         selectedItem.stock -= quantity.value;
-        let name = selectedItem.name;
-        const element = {
-            storageID: selectedItem.id,
-            stock: quantity.value,
-            productGroup: productGroup,
-            name: name,
-            price: selectedItem.price
+        let inBasket = isInBasket();
+        if (!inBasket) {
+            const element = {
+                storageID: selectedItem.id,
+                stock: quantity.value,
+                productGroup: productGroup,
+                name: selectedItem.name,
+                price: selectedItem.price
+            }
+            basket.push(element);
+            orderdetailsArray.push(element);
+        } else {
+            let stockValue = parseInt(basket[inBasket - 1].stock);
+            stockValue += parseInt(quantity.value);
+            basket[inBasket - 1].stock = stockValue;
         }
-        basket.push(element);
-        orderdetailsArray.push(element);
         if (basket.length == 0) {
             submitOrder.disabled = true;
         } else {
