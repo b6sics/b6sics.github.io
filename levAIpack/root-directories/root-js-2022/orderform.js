@@ -188,13 +188,13 @@ function displayProductDetails() {
 /******************/
 
 function setQuantity() {
-    let quantityValue = (1 + Math.floor((parseInt(quantity.value) - 1) / 1000)) * 1000;
+    let quantityValue = (1 + Math.floor((parseInt(quantity.value.toString()) - 1) / 1000)) * 1000;
     alert(quantityValue);
     if (quantityValue < 1000) {
         quantity.value = 1000;
         alert(quantity.value);
     }
-    let inStock = parseInt(selectedItem.stock);
+    let inStock = parseInt(selectedItem.stock.toString());
     alert(inStock);
     if (quantityValue > inStock) {
         quantity.value = inStock;
