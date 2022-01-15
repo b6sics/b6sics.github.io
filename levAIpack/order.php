@@ -40,7 +40,8 @@
         <!-- -------------- -->
         <!-- basket details -->
         <!-- -------------- -->
-        <textarea id="basketList" name="basketList" readonly><?php
+        <textarea id="basketList" name="basketList" 
+        rows="<?php echo(substr_count($_POST['basketList'], ':')) ?>" readonly><?php
             echo $_POST['basketList'];
         ?></textarea>
 
@@ -53,7 +54,6 @@
             </p>
         </article>
     </main>
-
 
 <?php
 $crlf = "\r\n";
@@ -72,7 +72,6 @@ $subject = 'Rendelés ';
 
 ?>
 
-
     <footer class="bottom center static">
         <h4>
             HU-1113 Budapest Ábel Jenő utca 7.<br />
@@ -80,14 +79,14 @@ $subject = 'Rendelés ';
         </h4>
     </footer>
 
-<?php
+<!--?php
     if($_POST['submitOrder'] != '' || isset($_POST['submitOrder'])) {
         foreach($_POST as $key => $val) {
             echo 'Field name : '.$key .', Value : '.$val.'<br>';
             $data[$key] = $val;
         }
     }
-?>
+?-->
 
     <script>
     </script>
