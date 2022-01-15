@@ -56,7 +56,6 @@
 
 
 <?php
-
 $crlf = "\r\n";
 
 function email_is_valid ($email_address){
@@ -70,7 +69,6 @@ function email_is_valid ($email_address){
 }
 
 $subject = 'Rendelés ';
-
 
 ?>
 
