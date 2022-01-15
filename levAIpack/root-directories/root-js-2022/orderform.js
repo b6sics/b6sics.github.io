@@ -228,7 +228,7 @@ function basketLine(item, index) {
 function displayBasket() {
     basketSum = 0;
     basketList.rows = 2 + basket.length;
-    basketRow = basketList.rows;
+    basketRow.value = basketList.rows;
     basketList.innerHTML = orderTextContent;
     basket.forEach(basketLine);
     if (basket.length) {
