@@ -57,6 +57,9 @@
 
 <?php
 $crlf = "\r\n";
+$basket = $_POST['basketList'];
+$mail = $_POST['mail'];
+$phone = $_POST['phone'];
 
 function email_is_valid ($email_address){
 	$email_address = filter_var($email_address, FILTER_SANITIZE_EMAIL);
@@ -68,27 +71,25 @@ function email_is_valid ($email_address){
 	}
 }
 
-$subject = 'Rendelés ';
+$subject = 'Rendelés ' . date("Y-m-d H:m:s");
 $subject = filter_var($subject, FILTER_SANITIZE_STRING);
 //$subject = substr($subject, strlen('HTML mail'));
-echo ('<p>' . $subject . '</p>');
+//echo ('<p>' . $subject . '</p>');
 
 $preferences = ["input-charset" => "UTF-8", "output-charset" => "UTF-8"];
 $subject = iconv_mime_encode('Subject', $subject, $preferences);
 $subject = substr($subject, strlen('Subject: '));
+$message = '<html><body style="text-align: justify; text-indent: 2rem;">';
 
-$message = '<html><head><title>HTML mail</title></head><body style="text-align: justify; text-indent: 2rem;">';
-
-$message .= '<textarea rows=' . substr_count($_POST['basketList'], ':') . '" readonly>';
-$message .= $_POST['basketList'];
-$message .= '</textarea>';
+$basket = '<pre>' . $basket . '</pre>'; 
+$message .= $basket;
 
 $message .= '<br /></body></html>';
 
-$message = filter_var($message, FILTER_SANITIZE_STRING);
+//$message = filter_var($message, FILTER_SANITIZE_STRING);
 $message = substr($message, strlen('HTML mail'));
 //$message
-echo ('<p>' . $message . '</p>');
+//echo ('<p>' . $message . '</p>');
 
 $message = base64_encode(wordwrap($message, 70, $crlf));
 
@@ -97,8 +98,7 @@ if (isset($_POST['mail'])) {
 } else {
 	$to = "security@levaipack.hu";	
 }
-echo ($to . '<br />');
-
+//echo ($to . '<br />');
 
 $deliveredTo = 'Delivered-to: ' . $to;
 
@@ -106,17 +106,17 @@ mb_internal_encoding('UTF-8');
 
 $sender_name = mb_encode_mimeheader('levaipack.hu', 'UTF-8', 'Q');
 $from = 'From: ' . $sender_name . '<levaipack@levaipack.hu>';
-echo ($from . '<br />');
+//echo ($from . '<br />');
 
 $replayTo = 'Reply-To: levaipack@levaipack.hu';
-echo ($replayTo . "<br />");
+//echo ($replayTo . "<br />");
 
 $xSender = 'X-Sender: '. $sender_name . '<levaipack@levaipack.hu>';
 $returnPath = 'Return-Path: '. $sender_name . '<levaipack@levaipack.hu>';
 $envelopeFrom = 'Envelope-from: '. $sender_name . '<levaipack@levaipack.hu>';
 
 $xMailer = 'X-Mailer: PHP/' . phpversion();
-echo ($xMailer . "<br />");
+//echo ($xMailer . "<br />");
 
 $xPriority = 'X-Priority: 3';
 $xMsMailPriority = 'X-MSMail-Priority: High';
