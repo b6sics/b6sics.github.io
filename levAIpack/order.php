@@ -8,7 +8,7 @@
                                    shrink-to-fit=no" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Success|Levai Pack</title>
+    <title>Elküldve|Levai Pack</title>
     <base target="_self">
 
     <link rel="stylesheet" href="https://b6sics.github.io/levAIpack/root-directories/root-css-2022/style.css?t=123" />
@@ -69,6 +69,81 @@ function email_is_valid ($email_address){
 }
 
 $subject = 'Rendelés ';
+$subject = filter_var($subject, FILTER_SANITIZE_STRING);
+//$subject = substr($subject, strlen('HTML mail'));
+echo ('<p>' . $subject . '</p>');
+
+$preferences = ["input-charset" => "UTF-8", "output-charset" => "UTF-8"];
+$subject = iconv_mime_encode('Subject', $subject, $preferences);
+$subject = substr($subject, strlen('Subject: '));
+
+$message = '<html><head><title>HTML mail</title></head><body style="text-align: justify; text-indent: 2rem;">';
+
+$message .= '<textarea rows=' . substr_count($_POST['basketList'], ':') . '" readonly>';
+$message .= $_POST['basketList'];
+$message .= '</textarea>';
+
+$message .= '<br /></body></html>';
+
+$message = filter_var($message, FILTER_SANITIZE_STRING);
+$message = substr($message, strlen('HTML mail'));
+//$message
+echo ('<p>' . $message . '</p>');
+
+$message = base64_encode(wordwrap($message, 70, $crlf));
+
+if (isset($_POST['mail'])) {
+	$to = email_is_valid($_POST['mail']);
+} else {
+	$to = "security@levaipack.hu";	
+}
+echo ($to . '<br />');
+
+
+$deliveredTo = 'Delivered-to: ' . $to;
+
+mb_internal_encoding('UTF-8');
+
+$sender_name = mb_encode_mimeheader('levaipack.hu', 'UTF-8', 'Q');
+$from = 'From: ' . $sender_name . '<levaipack@levaipack.hu>';
+echo ($from . '<br />');
+
+$replayTo = 'Reply-To: levaipack@levaipack.hu';
+echo ($replayTo . "<br />");
+
+$xSender = 'X-Sender: '. $sender_name . '<levaipack@levaipack.hu>';
+$returnPath = 'Return-Path: '. $sender_name . '<levaipack@levaipack.hu>';
+$envelopeFrom = 'Envelope-from: '. $sender_name . '<levaipack@levaipack.hu>';
+
+$xMailer = 'X-Mailer: PHP/' . phpversion();
+echo ($xMailer . "<br />");
+
+$xPriority = 'X-Priority: 3';
+$xMsMailPriority = 'X-MSMail-Priority: High';
+$importance = 'Importance: 3';
+
+$xDate = 'Date:' . date("YmdHms");
+
+//$cC[] = 'Cc: security@levaipack.hu';
+//$bCC[] = 'Bcc: security@levaipack.hu';
+
+$headers = 'MIME-Version: 1.0' . $crlf;
+$headers .= 'Content-Type: text/html; charset=utf-8' . $crlf;
+$headers .= 'Content-Transfer-Encoding: base64' . $crlf;
+
+$headers .= $deliveredTo . $crlf .
+			$from . $crlf .
+			$replayTo . $crlf .
+			$xSender . $crlf .
+			$returnPath . $crlf .
+			$envelopeFrom . $crlf .
+			$xMailer. $crlf .
+			$xPriority. $crlf .
+			$xMsMailPriority. $crlf .
+			$importance. $crlf .
+			$xDate;
+
+mail($to, $subject, $message, $headers);
 
 ?>
 
