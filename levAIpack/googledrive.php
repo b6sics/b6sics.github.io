@@ -19,8 +19,7 @@
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.write(this.responseText);
-
+                writeTable(this.responseText);
             }
         };
         xhttp.open("GET", pathTOtextfile , true);
@@ -53,8 +52,28 @@
                 <i>Vákum&nbsp;tasakok</i>
             </h2>
         </header>
-        <script> link001="https://docs.google.com/spreadsheets/d/13OhmO6r2dIBfOfEd7i78oVigMQVF_gJYyPCjODtprQU/edit#gid=0&range=A6";
+        <p id='googleTable'>
+
+        </p>
+
+        <script> 
+        let googleTable = document.getElementById('googleTable');
+        link001="https://docs.google.com/spreadsheets/d/13OhmO6r2dIBfOfEd7i78oVigMQVF_gJYyPCjODtprQU/edit#gid=0&range=A6";
         loadXMLDoc(link001);
+        function writeTable(table){
+            googleTable.innerHTML = "";
+            googleTable.innerHTML += "Table: " + table.length + "<br/>";
+            /* googleTable.innerHTML += table; */
+            for (let ii = table.indexOf("<table"); ii < 1000 + table.indexOf("<table"); ii++) {
+                if (table[ii] == '<'){ 
+                    googleTable.innerHTML += "<br />";
+                }
+                googleTable.innerHTML += table[ii];
+                if (table[ii] == '>') {
+                    googleTable.innerHTML += "<br />";
+                }
+            }             
+        }
         </script>
     </main>
 
