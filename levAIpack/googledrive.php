@@ -13,6 +13,22 @@
 
     <link rel="stylesheet" href="https://b6sics.github.io/levAIpack/root-directories/root-css-2022/style.css?t=123" />
 
+    <script>
+        
+        function loadXMLDoc( pathTOtextfile ) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.write(this.responseText);
+
+            }
+        };
+        xhttp.open("GET", pathTOtextfile , true);
+        xhttp.send();
+        }
+
+    </script>
+
 </head>
 
 <body id="start">
@@ -37,7 +53,9 @@
                 <i>Vákum&nbsp;tasakok</i>
             </h2>
         </header>
-        <script src="https://docs.google.com/spreadsheets/d/13OhmO6r2dIBfOfEd7i78oVigMQVF_gJYyPCjODtprQU/edit#gid=0&range=A6"></script>
+        <script> link001="https://docs.google.com/spreadsheets/d/13OhmO6r2dIBfOfEd7i78oVigMQVF_gJYyPCjODtprQU/edit#gid=0&range=A6";
+        loadXMLDoc(link001);
+        </script>
     </main>
 
     <footer class="bottom center static">
@@ -56,8 +74,6 @@
     }
 ?-->
 
-    <script>
-    </script>
 </body>
 
 </html>
