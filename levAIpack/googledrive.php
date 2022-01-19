@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://b6sics.github.io/levAIpack/root-directories/root-css-2022/style.css?t=123" />
 
     <script>
+        let tableArray = [];
+        let pape70 = [];
+        let pape90 = [];
         
         function loadXMLDoc( pathTOtextfile ) {
         var xhttp = new XMLHttpRequest();
@@ -60,11 +63,12 @@
         let googleTable = document.getElementById('googleTable');
         link001="https://docs.google.com/spreadsheets/d/1Lhvw5Pi8FAl0GDmlQoTMyKPZURQQBdDqr_hny7VirAU/edit?usp=sharing";
         loadXMLDoc(link001);
+
         function writeTable(table){
             googleTable.innerHTML = "";
             table = table.slice(table.indexOf("<table"), 8 + table.indexOf("</table>"));
             googleTable.innerHTML += table;
-           
+            
         }
         </script>
     </main>
