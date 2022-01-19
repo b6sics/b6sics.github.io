@@ -52,27 +52,19 @@
                 <i>Vákum&nbsp;tasakok</i>
             </h2>
         </header>
-        <p id='googleTable'>
+        <div id='googleTable'>
 
-        </p>
+        </div>
 
         <script> 
         let googleTable = document.getElementById('googleTable');
-        link001="https://docs.google.com/spreadsheets/d/13OhmO6r2dIBfOfEd7i78oVigMQVF_gJYyPCjODtprQU/edit#gid=0&range=A6";
+        link001="https://docs.google.com/spreadsheets/d/1Lhvw5Pi8FAl0GDmlQoTMyKPZURQQBdDqr_hny7VirAU/edit?usp=sharing";
         loadXMLDoc(link001);
         function writeTable(table){
             googleTable.innerHTML = "";
-            googleTable.innerHTML += "Table: " + table.length + "<br/>";
-            /* googleTable.innerHTML += table; */
-            for (let ii = table.indexOf("<table"); ii < 1000 + table.indexOf("<table"); ii++) {
-                if (table[ii] == '<'){ 
-                    googleTable.innerHTML += "<br />";
-                }
-                googleTable.innerHTML += table[ii];
-                if (table[ii] == '>') {
-                    googleTable.innerHTML += "<br />";
-                }
-            }             
+            table = table.slice(table.indexOf("<table"), 8 + table.indexOf("</table>"));
+            googleTable.innerHTML += table;
+           
         }
         </script>
     </main>
