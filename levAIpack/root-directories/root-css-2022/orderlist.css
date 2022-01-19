@@ -77,10 +77,13 @@ td:last-of-type {
     text-align: right;
 }
 
+#googleTable>table {
+    border: 1px solid var(--content-border-color);
+}
+
 #googleTable>table td {
     width: auto;
     text-align: center;
-    border: 1px solid var(--content-border-color);
 }
 
 #googleTable>table tbody tr th {
