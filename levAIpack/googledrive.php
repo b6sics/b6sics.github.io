@@ -71,10 +71,10 @@
             for (var x = 8; x < goTBL.rows.length; x++) {
                 for (var y = 1; y < 4; y++) {
                     if (goTBL.rows[x].cells[y] != null){
-                        if (goTBL.rows[x].cells[y].innerHTML != ""){
+                        /*if (goTBL.rows[x].cells[y].innerHTML != ""){*/
                             googleTable.innerHTML += "|" + (goTBL.rows[x].cells[y].innerHTML).padStart(30,".");
                             googleTable.innerHTML += "|";
-                        }
+                        /*}*/
                     }
                 }
                 if (goTBL.rows[x].cells[1].innerHTML != ""){
@@ -85,10 +85,10 @@
             for (var x = 8; x < goTBL.rows.length; x++) {
                 for (var y = 5; y < 8; y++) {
                     if (goTBL.rows[x].cells[y] != null){
-                        if (goTBL.rows[x].cells[y].innerHTML != ""){
+                        /*if (goTBL.rows[x].cells[y].innerHTML != ""){*/
                             googleTable.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.padStart(30,".");
                             googleTable.innerHTML += "|";
-                        }
+                        /*}*/
                     }
                 }
                 if (goTBL.rows[x].cells[1].innerHTML != ""){
