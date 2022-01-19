@@ -97,7 +97,7 @@
                         }
                     }
                 }
-                if (goTBL.rows[x].cells[1].innerHTML != ""){
+                if (goTBL.rows[x].cells[5].innerHTML != ""){
                     googleTable.innerHTML += "<br />";
                 }
             }
