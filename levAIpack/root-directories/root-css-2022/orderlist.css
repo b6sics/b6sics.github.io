@@ -77,6 +77,10 @@ td:last-of-type {
     text-align: right;
 }
 
+#googleTable {
+    font-family: monospace;
+}
+
 #googleTable>table {
     border: 1px solid var(--content-border-color);
 }
@@ -84,7 +88,6 @@ td:last-of-type {
 #googleTable>table td {
     width: auto;
     text-align: center;
-    font-family: monospace;
 }
 
 #googleTable>table tbody tr th {
