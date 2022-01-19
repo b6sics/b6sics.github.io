@@ -17,12 +17,12 @@
         let tableArray = [];
         let pape70 = [];
         let pape90 = [];
-        
+
         function loadXMLDoc( pathTOtextfile ) {
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                writeTable(this.responseText);
+                showTable(this.responseText);
             }
         };
         xhttp.open("GET", pathTOtextfile , true);
@@ -60,11 +60,23 @@
         </div>
 
         <script> 
+        function showTableContent() {
+            var goTBL = document.getElementById('myTable');
+
+            for (var x = 0; x < goTBL.rows.length; x++) {
+                for (var y = 0; y < goTBL.rows[x].cells.length; y++) {
+                    googleTable.innerHTML += "." + (goTBL.rows[x].cells[y].firstChild.data)padStart(15,".");
+                    googleTable.innerHTML += ".";
+                }
+                googleTable.innerHTML += "<br />";
+            }
+        }
+
         let googleTable = document.getElementById('googleTable');
         link001="https://docs.google.com/spreadsheets/d/1Lhvw5Pi8FAl0GDmlQoTMyKPZURQQBdDqr_hny7VirAU/edit?usp=sharing";
         loadXMLDoc(link001);
 
-        function writeTable(table){
+        function showTable(table){
             googleTable.innerHTML = "";
             table = table.slice(table.indexOf("<table"), 8 + table.indexOf("</table>"));
             googleTable.innerHTML += table;
