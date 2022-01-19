@@ -79,4 +79,10 @@ td:last-of-type {
 
 #googleTable>table td {
     width: auto;
+    text-align: center;
+    border: 1px solid var(--content-border-color);
+}
+
+#googleTable>table td:first-of-type {
+    width: 30px;
 }
