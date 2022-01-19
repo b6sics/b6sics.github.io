@@ -67,12 +67,15 @@
             googleTable.innerHTML += " ; columns: ";
             googleTable.innerHTML += goTBL.rows[10].cells.length;
             googleTable.innerHTML += "<br />";
+            googleTable.innerHTML += "<br />";
+            googleTable.innerHTML += goTBL.rows[7].cells[1].innerHTML;
+            googleTable.innerHTML += "<br />";
 
             for (var x = 8; x < goTBL.rows.length; x++) {
                 for (var y = 1; y < 4; y++) {
                     if (goTBL.rows[x].cells[y] != null){
                         if (goTBL.rows[x].cells[y].innerHTML != ""){
-                            googleTable.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(30,".");
+                            googleTable.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15,".");
                             googleTable.innerHTML += "|";
                         }
                     }
@@ -82,11 +85,14 @@
                 }
             }
             googleTable.innerHTML += "<br />";
+            googleTable.innerHTML += "<br />";
+            googleTable.innerHTML += goTBL.rows[7].cells[3].innerHTML;
+            googleTable.innerHTML += "<br />";
             for (var x = 8; x < goTBL.rows.length; x++) {
                 for (var y = 5; y < 8; y++) {
                     if (goTBL.rows[x].cells[y] != null){
                         if (goTBL.rows[x].cells[y].innerHTML != ""){
-                            googleTable.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(30,".");
+                            googleTable.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15,".");
                             googleTable.innerHTML += "|";
                         }
                     }
