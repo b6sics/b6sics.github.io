@@ -61,7 +61,7 @@
 
         <script> 
         function showTableContent() {
-            var goTBL = document.getElementById('myTable');
+            var goTBL = document.getElementsByName('TABLE')[0];
 
             for (var x = 0; x < goTBL.rows.length; x++) {
                 for (var y = 0; y < goTBL.rows[x].cells.length; y++) {
@@ -80,7 +80,7 @@
             googleTable.innerHTML = "";
             table = table.slice(table.indexOf("<table"), 8 + table.indexOf("</table>"));
             googleTable.innerHTML += table;
-            
+            showTableContent();
         }
         </script>
     </main>
