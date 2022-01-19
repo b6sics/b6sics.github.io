@@ -61,7 +61,7 @@
 
         <script> 
         function showTableContent() {
-            var goTBL = document.getElementsByName('TABLE')[0];
+            var goTBL = document.getElementsByTagName('TABLE')[0];
 
             for (var x = 0; x < goTBL.rows.length; x++) {
                 for (var y = 0; y < goTBL.rows[x].cells.length; y++) {
