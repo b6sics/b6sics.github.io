@@ -84,6 +84,7 @@ td:last-of-type {
 #googleTable>table td {
     width: auto;
     text-align: center;
+    font-family: monospace;
 }
 
 #googleTable>table tbody tr th {
