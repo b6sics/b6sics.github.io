@@ -83,6 +83,6 @@ td:last-of-type {
     border: 1px solid var(--content-border-color);
 }
 
-#googleTable>table td:first-of-type {
+#googleTable>table tbody tr th {
     width: 30px;
 }
