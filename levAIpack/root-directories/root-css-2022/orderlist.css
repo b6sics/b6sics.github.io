@@ -76,3 +76,7 @@ td:last-of-type {
     width: 30%;
     text-align: right;
 }
+
+#googleTable>table td {
+    width: auto;
+}
