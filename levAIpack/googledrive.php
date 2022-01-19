@@ -65,7 +65,7 @@
 
             for (var x = 0; x < goTBL.rows.length; x++) {
                 for (var y = 0; y < goTBL.rows[x].cells.length; y++) {
-                    googleTable.innerHTML += "." + (goTBL.rows[x].cells[y].firstChild.data)padStart(15,".");
+                    googleTable.innerHTML += "." + (goTBL.rows[x].cells[y].firstChild.data).padStart(15,".");
                     googleTable.innerHTML += ".";
                 }
                 googleTable.innerHTML += "<br />";
