@@ -72,7 +72,7 @@
                 for (var y = 1; y < 4; y++) {
                     if (goTBL.rows[x].cells[y] != null){
                         if (goTBL.rows[x].cells[y].innerHTML != ""){
-                            googleTable.innerHTML += "." + (goTBL.rows[x].cells[y].innerHTML).padStart(25,".");
+                            googleTable.innerHTML += "." + (goTBL.rows[x].cells[y].innerHTML).padStart(30,".");
                             googleTable.innerHTML += ".";
                         }
                     }
