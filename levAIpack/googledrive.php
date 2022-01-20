@@ -55,55 +55,51 @@
                 <i>Vákum&nbsp;tasakok</i>
             </h2>
         </header>
+        <div id='tableData'>
+
+        </div>
         <div id='googleTable'>
 
         </div>
 
         <script> 
         function showTableContent() {
-            var goTBL = document.getElementsByTagName('TABLE')[0];
-            googleTable.innerHTML += "rows: ";
-            googleTable.innerHTML += goTBL.rows.length;
-            googleTable.innerHTML += " ; columns: ";
-            googleTable.innerHTML += goTBL.rows[10].cells.length;
-            googleTable.innerHTML += "<br />";
-            googleTable.innerHTML += "<br />";
-            googleTable.innerHTML += goTBL.rows[7].cells[1].innerHTML;
-            googleTable.innerHTML += "<br />";
 
-            for (var x = 8; x < goTBL.rows.length; x++) {
+            for (var x = 7; x < goTBL.rows.length; x++) {
                 for (var y = 1; y < 4; y++) {
                     if (goTBL.rows[x].cells[y] != null){
                         if (goTBL.rows[x].cells[y].innerHTML != ""){
-                            googleTable.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15,".");
-                            googleTable.innerHTML += "|";
+                            tableData.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15,".");
+                            tableData.innerHTML += "|";
                         }
                     }
                 }
                 if (goTBL.rows[x].cells[1].innerHTML != ""){
-                    googleTable.innerHTML += "<br />";
+                    tableData.innerHTML += "<br />";
                 }
             }
-            googleTable.innerHTML += "<br />";
-            googleTable.innerHTML += "<br />";
-            googleTable.innerHTML += goTBL.rows[7].cells[3].innerHTML;
-            googleTable.innerHTML += "<br />";
-            for (var x = 8; x < goTBL.rows.length; x++) {
+
+            tableData.innerHTML += "<br />";
+            tableData.innerHTML += "<br />";
+
+            for (var x = 7; x < goTBL.rows.length; x++) {
                 for (var y = 5; y < 8; y++) {
                     if (goTBL.rows[x].cells[y] != null){
                         if (goTBL.rows[x].cells[y].innerHTML != ""){
-                            googleTable.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15,".");
-                            googleTable.innerHTML += "|";
+                            tableData.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15,".");
+                            tableData.innerHTML += "|";
                         }
                     }
                 }
                 if (goTBL.rows[x].cells[5].innerHTML != ""){
-                    googleTable.innerHTML += "<br />";
+                    tableData.innerHTML += "<br />";
                 }
             }
         }
 
         let googleTable = document.getElementById('googleTable');
+        let tableData = document.getElementById('tableData');
+        var goTBL;
         link001="https://docs.google.com/spreadsheets/d/1Lhvw5Pi8FAl0GDmlQoTMyKPZURQQBdDqr_hny7VirAU/edit?usp=sharing";
         loadXMLDoc(link001);
 
@@ -111,6 +107,13 @@
             googleTable.innerHTML = "";
             table = table.slice(table.indexOf("<table"), 8 + table.indexOf("</table>"));
             googleTable.innerHTML += table;
+            goTBL = document.getElementsByTagName('TABLE')[0];
+            googleTable.innerHTML += "rows: ";
+            googleTable.innerHTML += goTBL.rows.length;
+            googleTable.innerHTML += " ; columns: ";
+            googleTable.innerHTML += goTBL.rows[10].cells.length;
+            googleTable.innerHTML += "<br />";
+            googleTable.innerHTML += "<br />";
             showTableContent();
         }
         </script>
