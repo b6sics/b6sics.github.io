@@ -8,7 +8,7 @@
                                    shrink-to-fit=no" />
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Google Drive|Levai Pack</title>
+    <title>MNB G-Drive|Levai Pack</title>
     <base target="_self">
 
     <link rel="stylesheet" href="https://b6sics.github.io/levAIpack/root-directories/root-css-2022/style.css?t=123" />
