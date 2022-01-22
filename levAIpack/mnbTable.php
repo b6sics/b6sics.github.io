@@ -18,17 +18,16 @@
         let pape70 = [];
         let pape90 = [];
 
-        function loadXMLDoc( pathTOtextfile ) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                showTable(this.responseText);
-            }
-        };
-        xhttp.open("GET", pathTOtextfile , true);
-        xhttp.send();
+        function loadXMLDoc(pathTOtextfile) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    showTable(this.responseText);
+                }
+            };
+            xhttp.open("GET", pathTOtextfile, true);
+            xhttp.send();
         }
-
     </script>
 
 </head>
@@ -62,60 +61,43 @@
 
         </div>
 
-        <script> 
-        function showTableContent() {
-
-            for (var x = 0; x < goTBL.rows.length; x++) {
-                for (var y = 0; y < goTBL.rows[x].cells[y].length; y++) {
-                    if (goTBL.rows[x].cells[y] != null){
-                        if (goTBL.rows[x].cells[y].innerHTML != ""){
-                            tableData.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15,".");
-                            tableData.innerHTML += "|";
+        <script>
+            function showTableContent() {
+                tableData.innerHTML = "Table DATA: <br />";
+                for (var x = 2; x < goTBL.rows.length; x++) {
+                    for (var y = 1; y < goTBL.rows[x].cells.length; y++) {
+                        cellInnerHTML = goTBL.rows[x].cells[y].innerHTML.replace(/(<([^>]+)>)/ig, '');
+                        cellInnerHTML.trim();
+                        if (cellInnerHTML.length > 15) {
+                            cellInnerHTML = cellInnerHTML.slice(0, cellInnerHTML.indexOf(" "));
+                            cellInnerHTML = cellInnerHTML.replace(/\s/ig, '');
                         }
+                        tableData.innerHTML += "|" + cellInnerHTML.padStart(15, ".");
+                        tableData.innerHTML += "|";
                     }
-                }
-                if (goTBL.rows[x].cells[1].innerHTML != ""){
                     tableData.innerHTML += "<br />";
                 }
             }
 
-            tableData.innerHTML += "<br />";
-            tableData.innerHTML += "<br />";
+            let googleTable = document.getElementById('googleTable');
+            let tableData = document.getElementById('tableData');
+            var goTBL;
+            link001 = "https://docs.google.com/spreadsheets/d/1Km0Doyw4wpPrsKoBuPVBtsObi71SsntItN6PztJV_dE/edit?usp=sharing";
+            loadXMLDoc(link001);
 
-            for (var x = 0; x < goTBL.rows.length; x++) {
-                for (var y = 0; y < goTBL.rows[x].cells[y].length; y++) {
-                    if (goTBL.rows[x].cells[y] != null){
-                        if (goTBL.rows[x].cells[y].innerHTML != ""){
-                            tableData.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15,".");
-                            tableData.innerHTML += "|";
-                        }
-                    }
-                }
-                if (goTBL.rows[x].cells[5].innerHTML != ""){
-                    tableData.innerHTML += "<br />";
-                }
+            function showTable(table) {
+                googleTable.innerHTML = "";
+                table = table.slice(table.indexOf("<table"), 8 + table.indexOf("</table>"));
+                googleTable.innerHTML += table;
+                goTBL = document.getElementsByTagName('TABLE')[0];
+                googleTable.innerHTML += "rows: ";
+                googleTable.innerHTML += goTBL.rows.length;
+                googleTable.innerHTML += " ; columns: ";
+                googleTable.innerHTML += goTBL.rows[0].cells.length;
+                googleTable.innerHTML += "<br />";
+                googleTable.innerHTML += "<br />";
+                showTableContent();
             }
-        }
-
-        let googleTable = document.getElementById('googleTable');
-        let tableData = document.getElementById('tableData');
-        var goTBL;
-        link001="https://docs.google.com/spreadsheets/d/1Km0Doyw4wpPrsKoBuPVBtsObi71SsntItN6PztJV_dE/edit?usp=sharing";
-        loadXMLDoc(link001);
-
-        function showTable(table){
-            googleTable.innerHTML = "";
-            table = table.slice(table.indexOf("<table"), 8 + table.indexOf("</table>"));
-            googleTable.innerHTML += table;
-            goTBL = document.getElementsByTagName('TABLE')[0];
-            googleTable.innerHTML += "rows: ";
-            googleTable.innerHTML += goTBL.rows.length;
-            googleTable.innerHTML += " ; columns: ";
-            googleTable.innerHTML += goTBL.rows[10].cells.length;
-            googleTable.innerHTML += "<br />";
-            googleTable.innerHTML += "<br />";
-            showTableContent();
-        }
         </script>
     </main>
 
@@ -126,7 +108,7 @@
         </h4>
     </footer>
 
-<!--?php
+    <!--?php
     if($_POST['submitOrder'] != '' || isset($_POST['submitOrder'])) {
         foreach($_POST as $key => $val) {
             echo 'Field name : '.$key .', Value : '.$val.'<br>';
@@ -135,35 +117,37 @@
     }
 ?-->
 
-<?php
-    function download_remote($url , $save_path) {
-        $f = fopen( $save_path , 'w');
-        $handle = fopen($url , "rb");
-         
+    <?php
+    function download_remote($url, $save_path)
+    {
+        $f = fopen($save_path, 'w');
+        $handle = fopen($url, "rb");
+
         while (!feof($handle)) {
             $contents = fread($handle, 8192);
-            fwrite($f , $contents);
+            fwrite($f, $contents);
         }
-         
+
         fclose($handle);
         fclose($f);
     }
-    
-    function popup2browser ( $saved_path ) {
-        $file_saved = fopen( $saved_path , "r") or exit("Unable to open target file!");
 
-        while(!feof($file_saved)) {
-                echo fgets($file_saved);
+    function popup2browser($saved_path)
+    {
+        $file_saved = fopen($saved_path, "r") or exit("Unable to open target file!");
+
+        while (!feof($file_saved)) {
+            echo fgets($file_saved);
         }
 
         fclose($file_saved);
     }
 
-    $link001="https://docs.google.com/spreadsheets/d/1Lhvw5Pi8FAl0GDmlQoTMyKPZURQQBdDqr_hny7VirAU/edit?usp=sharing";
+    $link001 = "https://docs.google.com/spreadsheets/d/1Lhvw5Pi8FAl0GDmlQoTMyKPZURQQBdDqr_hny7VirAU/edit?usp=sharing";
     //download_remote($link001, "login.btxt");
     //popup2browser("login.btxt");
 
-?>
+    ?>
 </body>
 
 </html>
