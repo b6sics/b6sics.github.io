@@ -52,7 +52,7 @@
     <main>
         <header id="orderText">
             <h2>
-                <i>Vákum&nbsp;tasakok</i>
+                <i>MNB&nbsp;árfolyamok</i>
             </h2>
         </header>
         <div id='tableData'>
