@@ -100,7 +100,7 @@
         let googleTable = document.getElementById('googleTable');
         let tableData = document.getElementById('tableData');
         var goTBL;
-        link001="https://docs.google.com/spreadsheets/d/1Lhvw5Pi8FAl0GDmlQoTMyKPZURQQBdDqr_hny7VirAU/edit?usp=sharing";
+        link001="https://docs.google.com/spreadsheets/d/13OhmO6r2dIBfOfEd7i78oVigMQVF_gJYyPCjODtprQU/edit?usp=sharing";
         loadXMLDoc(link001);
 
         function showTable(table){
