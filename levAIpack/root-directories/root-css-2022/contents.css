@@ -12,6 +12,17 @@
     text-align: right;
 }
 
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+}
+
+.fillParentsWidth {
+    margin: 0;
+    width: calc(100% - 1vmin - 2 * var(--padding-w));
+}
+
 p {
     text-align: justify;
     opacity: 0.85;
@@ -31,7 +42,7 @@ form {
 #basketList {
     margin: var(--margin-h) auto;
     padding: var(--padding-h) var(--padding-w);
-    width: calc(100% - 2 * var(--padding-w));
+    width: calc(100% - 1vmin - 2 * var(--padding-w));
     border-radius: 1vmin;
     resize: none;
 }
@@ -45,6 +56,7 @@ details,
 figure {
     margin: var(--margin-h) auto;
     padding: var(--padding-h) var(--padding-w);
+    width: calc(100% - 1vmin - 2 * var(--padding-w));
     color: var(--content-txt-color);
     background-color: var(--content-bg-color);
     border: 0.5vmin solid var(--content-border-color);
@@ -54,6 +66,12 @@ figure {
 figure img,
 figcaption {
     width: 50%;
+}
+
+figure img {
+    max-height: 300px;
+    width: auto;
+    max-width: 300px;
 }
 
 details:first-of-type {
@@ -85,7 +103,7 @@ details[open]~footer.bottom {
 }
 
 details[open] summary>i {
-    display: none;
+    visibility: hidden;
 }
 
 @media screen and (max-height: 600px) {
