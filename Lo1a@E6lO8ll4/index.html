@@ -14,6 +14,12 @@
     <!--meta http-equiv="refresh" content="6;URL='mnbTable.php'"-->
 
     <link rel="stylesheet" href="root-directories/root-css/style.css?t=123" />
+
+    <style>
+        iframe {
+            display: none;
+        }
+    </style>
 </head>
 
 <body id="start">
@@ -25,24 +31,62 @@
     </header>
 
     <main>
-        <figure class="center vertical">
-            <figcaption>
-                <h2>
-                    <i>Alapítóokirat</i>
-                </h2>
-            </figcaption>
-            <iframe src="https://docs.google.com/document/d/1GOUduHLL7zb3ff7TuS_Cvtqib5E0dljyWFMSgKS2Ef0/edit?usp=sharing" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="550px" scrolling="auto"> 
-            </iframe>
-        </figure>
-        <figure class="center vertical">
-            <figcaption>
-                <h2>
-                    <i>Alapanyagok</i>
-                </h2>
-            </figcaption>
-            <iframe src="https://docs.google.com/spreadsheets/d/1K32vVg0wsvZFwDU9XX4P2dEIjr5RKeNgo_hvO0JXoM8/edit?usp=sharing" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="550px" scrolling="auto"> 
-        </iframe>
-        </figure>
+
+        <details>
+            <summary>
+                <b>Dokumentumok</b><br />
+                <i>Alapítóokirat</i>
+            </summary>
+            <div class="left vertical">
+                <a href="#">
+                    <b onclick="alapitoOkiratToggle()">- Alapítóokirat google drive</b>
+                </a>
+                <iframe id="alapitoOkirat" src="" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="550px" scrolling="auto"> 
+                </iframe>
+                <script>
+                    let alapitoOkiratFrame = document.getElementById('alapitoOkirat');
+                    alapitoOkiratFrame.style.display = 'none';
+
+                    function alapitoOkiratToggle() {
+                        if (alapitoOkiratFrame.style.display == 'none') {
+                            alapitoOkiratFrame.style.display = 'initial';
+                            alapitoOkiratFrame.src = "https://docs.google.com/document/d/1GOUduHLL7zb3ff7TuS_Cvtqib5E0dljyWFMSgKS2Ef0/edit?usp=sharing";
+                        } else {
+                            alapitoOkiratFrame.style.display = 'none';
+                            alapitoOkiratFrame.src = "";
+                        }
+                    }
+                </script>
+            </div>
+        </details>
+
+        <details>
+            <summary>
+                <b>Anyagbeszerzés</b><br />
+                <i>Alapanyagok</i>
+            </summary>
+            <div class="left vertical">
+                <a href="#">
+                    <b onclick="alapAnyagToggle()">- Alapanyagok google drive</b>
+                </a>
+                <iframe id="alapAnyag" src="" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="550px" scrolling="auto"> 
+                </iframe>
+                <script>
+                    let alapAnyagFrame = document.getElementById('alapAnyag');
+                    alapAnyagFrame.style.display = 'none';
+
+                    function alapAnyagToggle() {
+                        if (alapAnyagFrame.style.display == 'none') {
+                            alapAnyagFrame.style.display = 'initial';
+                            alapAnyagFrame.src = "https://docs.google.com/spreadsheets/d/1K32vVg0wsvZFwDU9XX4P2dEIjr5RKeNgo_hvO0JXoM8/edit?usp=sharing";
+                        } else {
+                            alapAnyagFrame.style.display = 'none';
+                            alapAnyagFrame.src = "";
+                        }
+                    }
+                </script>
+            </div>
+        </details>
 
     </main>
 
