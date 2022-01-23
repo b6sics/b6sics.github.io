@@ -1,0 +1,125 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+    text-align: right;
+}
+
+.left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+}
+
+.fillParentsWidth {
+    margin: 0;
+    width: calc(100% - 1vmin - 2 * var(--padding-w));
+}
+
+p {
+    text-align: justify;
+    opacity: 0.85;
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+form {
+    margin: 1vh auto;
+    padding: 1vh 1vw;
+    border: 0.5vmin solid var(--content-border-color);
+    border-radius: 1vmin;
+}
+
+textarea {
+    margin: var(--margin-h) auto;
+    padding: var(--padding-h) var(--padding-w);
+    width: calc(100% - 2 * var(--padding-w));
+    border-radius: 1vmin;
+    resize: none;
+}
+
+main,
+header,
+footer,
+section,
+article,
+details,
+figure {
+    margin: var(--margin-h) auto;
+    padding: var(--padding-h) var(--padding-w);
+    width: calc(100% - 1vmin - 2 * var(--padding-w));
+    color: var(--content-txt-color);
+    background-color: var(--content-bg-color);
+    border: 0.5vmin solid var(--content-border-color);
+    border-radius: 1vmin;
+}
+
+figure img,
+figcaption {
+    width: 50%;
+}
+
+figure img {
+    max-height: 300px;
+    width: auto;
+    max-width: 300px;
+}
+
+details:first-of-type {
+    margin-top: 0.1vh;
+}
+
+details:last-of-type {
+    margin-bottom: 0.1vh;
+}
+
+details {
+    text-align: justify;
+}
+
+.bottom {
+    position: fixed;
+    left: var(--padding-w);
+    right: var(--padding-w);
+    bottom: var(--padding-h);
+}
+
+.static {
+    position: static;
+}
+
+details[open]~footer.bottom {
+    position: static;
+}
+
+details[open] summary>i {
+    visibility: hidden;
+}
+
+@media screen and (max-height: 600px) {
+    footer.bottom {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    details {
+        width: auto;
+    }
+    figure {
+        flex-direction: column;
+    }
+    figure img,
+    figcaption {
+        width: 60%;
+    }
+}
