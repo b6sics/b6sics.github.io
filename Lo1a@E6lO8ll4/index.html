@@ -91,7 +91,7 @@
         <details>
             <summary>
                 <b>Hobbi</b><br />
-                <i>Informatika, Elektronika</i>
+                <i>Informatika, Elektronika, Education</i>
             </summary>
             <div class="left vertical">
                 <a href="#">
@@ -131,6 +131,27 @@
                         } else {
                             ElektronikaFrame.style.display = 'none';
                             ElektronikaFrame.src = "";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="left vertical">
+                <a href="#">
+                    <b onclick="EducationToggle()">&bull; Education google drive</b>
+                </a>
+                <iframe id="Education" src="" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="700px" scrolling="auto"> 
+                </iframe>
+                <script>
+                    let EducationFrame = document.getElementById('Education');
+                    EducationFrame.style.display = 'none';
+
+                    function EducationToggle() {
+                        if (EducationFrame.style.display == 'none') {
+                            EducationFrame.style.display = 'initial';
+                            EducationFrame.src = "https://docs.google.com/spreadsheets/d/14cuGqlkDNCM-axoC6If8xW13-HplBwBadIMBfnon0J0/edit?usp=sharing";
+                        } else {
+                            EducationFrame.style.display = 'none';
+                            EducationFrame.src = "";
                         }
                     }
                 </script>
