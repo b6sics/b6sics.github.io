@@ -2,9 +2,10 @@
 session_start();
 
 $_SESSION["pageName"] = "b6dataCenter";
+echo 'php: session_start();<br />';
 
 foreach ($_SESSION as $key => $val) {
-    echo 'Field name : ' . $key . ', Value : ' . $val . '<br>';
+    echo 'php: $_SESSION["' . $key . '"] = ' . $val . '<br />';
     $sessionData[$key] = $val;
 }
 
@@ -49,7 +50,7 @@ foreach ($_SESSION as $key => $val) {
 </head>
 
 <body id="start">
-    <iframe src="https://kissjgabi.github.io/b8ks" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto">
+    <iframe src="https://b6sics.github.io/Lo1a@E6lO08ll4/" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto">
     </iframe>
 </body>
 
