@@ -88,6 +88,55 @@
             </div>
         </details>
 
+        <details>
+            <summary>
+                <b>Hobbi</b><br />
+                <i>Informatika, Elektronika</i>
+            </summary>
+            <div class="left vertical">
+                <a href="#">
+                    <b onclick="InformatikaToggle()">&bull; Informatika google drive</b>
+                </a>
+                <iframe id="Informatika" src="" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="550px" scrolling="auto"> 
+                </iframe>
+                <script>
+                    let InformatikaFrame = document.getElementById('Informatika');
+                    InformatikaFrame.style.display = 'none';
+
+                    function InformatikaToggle() {
+                        if (InformatikaFrame.style.display == 'none') {
+                            InformatikaFrame.style.display = 'initial';
+                            InformatikaFrame.src = "https://docs.google.com/spreadsheets/d/1RSp3T57l78uQk7HSjhaVv0gc3vbuj4NaZ2hNFSg-x-g/edit?usp=sharing";
+                        } else {
+                            InformatikaFrame.style.display = 'none';
+                            InformatikaFrame.src = "";
+                        }
+                    }
+                </script>
+            </div>
+            <div class="left vertical">
+                <a href="#">
+                    <b onclick="ElektronikaToggle()">&bull; Elektronika google drive</b>
+                </a>
+                <iframe id="Elektronika" src="" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="550px" scrolling="auto"> 
+                </iframe>
+                <script>
+                    let ElektronikaFrame = document.getElementById('Elektronika');
+                    ElektronikaFrame.style.display = 'none';
+
+                    function ElektronikaToggle() {
+                        if (ElektronikaFrame.style.display == 'none') {
+                            ElektronikaFrame.style.display = 'initial';
+                            ElektronikaFrame.src = "https://docs.google.com/spreadsheets/d/1LINlhmBQiXo8_wBkSMp72E-KAdE29wlKclrxFPlCyK0/edit?usp=sharing";
+                        } else {
+                            ElektronikaFrame.style.display = 'none';
+                            ElektronikaFrame.src = "";
+                        }
+                    }
+                </script>
+            </div>
+        </details>
+
         <section>
             <p>
                 Filmek, könyvek, letöltési oldalak, webáruházak <a href="linkek.html">linkjei</a>.
