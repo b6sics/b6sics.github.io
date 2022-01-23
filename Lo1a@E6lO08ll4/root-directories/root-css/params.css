@@ -1,0 +1,36 @@
+:root {
+    --body-color: rgba(192, 192, 192, 0.75);
+    --text-color: whitesmoke;
+    /* margin padding*/
+    --margin-w: 1vw;
+    --margin-h: 1vh;
+    --padding-w: 1vw;
+    --padding-h: 1vh;
+    /* contents */
+    --content-border-width: 0.5vmin;
+    --content-border-style: solid;
+    --content-border-color: rgba(224, 208, 240, 0.8);
+    --content-txt-color: darkgoldenrod;
+    --content-bg-color: rgba(184, 134, 11, 0.25);
+    /* forms */
+    --form-border-color: rgba(32, 32, 32, 0.8);
+    --orderlist-table-color: whitesmoke;
+    --orderlist-text-color: darkslategray;
+}
+
+body {
+    margin: 0;
+    padding: var(--padding-h) var(--padding-w);
+    min-height: calc(96vh + 1px);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--body-color);
+    overflow: scroll;
+}
+
+h1 {
+    font-style: italic;
+    font-weight: lighter;
+    color: var(--scene-text-color);
+    text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2), 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
+}
