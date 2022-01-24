@@ -105,36 +105,19 @@
 
     <script>
         function showTableContent() {
-
-            for (var x = 7; x < goTBL.rows.length; x++) {
-                for (var y = 1; y < 4; y++) {
-                    if (goTBL.rows[x].cells[y] != null) {
-                        if (goTBL.rows[x].cells[y].innerHTML != "") {
-                            tableData.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15, ".");
-                            tableData.innerHTML += "|";
-                        }
+            tableData.innerHTML = "Table DATA: <br />";
+            for (var x = 1; x < goTBL.rows.length; x++) {
+                for (var y = 1; y < goTBL.rows[x].cells.length; y++) {
+                    cellInnerHTML = goTBL.rows[x].cells[y].innerHTML.replace(/(<([^>]+)>)/ig, '');
+                    cellInnerHTML.trim();
+                    if (cellInnerHTML.length > 15) {
+                        cellInnerHTML = cellInnerHTML.slice(0, cellInnerHTML.indexOf(" "));
+                        cellInnerHTML = cellInnerHTML.replace(/\s/ig, '');
                     }
+                    tableData.innerHTML += "|" + cellInnerHTML.padStart(15, ".");
+                    tableData.innerHTML += "|";
                 }
-                if (goTBL.rows[x].cells[1].innerHTML != "") {
-                    tableData.innerHTML += "<br />";
-                }
-            }
-
-            tableData.innerHTML += "<br />";
-            tableData.innerHTML += "<br />";
-
-            for (var x = 7; x < goTBL.rows.length; x++) {
-                for (var y = 5; y < 8; y++) {
-                    if (goTBL.rows[x].cells[y] != null) {
-                        if (goTBL.rows[x].cells[y].innerHTML != "") {
-                            tableData.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15, ".");
-                            tableData.innerHTML += "|";
-                        }
-                    }
-                }
-                if (goTBL.rows[x].cells[5].innerHTML != "") {
-                    tableData.innerHTML += "<br />";
-                }
+                tableData.innerHTML += "<br />";
             }
         }
 
