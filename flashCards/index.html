@@ -59,6 +59,24 @@
             transform: rotateY(180deg);
         }
     </style>
+
+    <script>
+        let tableArray = [];
+        let pape70 = [];
+        let pape90 = [];
+
+        function loadXMLDoc(pathTOtextfile) {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    showTable(this.responseText);
+                }
+            };
+            xhttp.open("GET", pathTOtextfile, true);
+            xhttp.send();
+        }
+    </script>
+
 </head>
 
 <body id="start">
@@ -77,6 +95,70 @@
             card.classList.toggle('is-flipped');
         });
     </script>
+
+    <div id='tableData'>
+
+    </div>
+    <div id='googleTable'>
+
+    </div>
+
+    <script>
+        function showTableContent() {
+
+            for (var x = 7; x < goTBL.rows.length; x++) {
+                for (var y = 1; y < 4; y++) {
+                    if (goTBL.rows[x].cells[y] != null) {
+                        if (goTBL.rows[x].cells[y].innerHTML != "") {
+                            tableData.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15, ".");
+                            tableData.innerHTML += "|";
+                        }
+                    }
+                }
+                if (goTBL.rows[x].cells[1].innerHTML != "") {
+                    tableData.innerHTML += "<br />";
+                }
+            }
+
+            tableData.innerHTML += "<br />";
+            tableData.innerHTML += "<br />";
+
+            for (var x = 7; x < goTBL.rows.length; x++) {
+                for (var y = 5; y < 8; y++) {
+                    if (goTBL.rows[x].cells[y] != null) {
+                        if (goTBL.rows[x].cells[y].innerHTML != "") {
+                            tableData.innerHTML += "|" + goTBL.rows[x].cells[y].innerHTML.replace("&nbsp;", " ").padStart(15, ".");
+                            tableData.innerHTML += "|";
+                        }
+                    }
+                }
+                if (goTBL.rows[x].cells[5].innerHTML != "") {
+                    tableData.innerHTML += "<br />";
+                }
+            }
+        }
+
+        let googleTable = document.getElementById('googleTable');
+        let tableData = document.getElementById('tableData');
+        var goTBL;
+        link001 = "https://docs.google.com/spreadsheets/d/1sGOuc5igdmCcuVuSuRneZkUY6JZnOYKHtoPF_CewP3M/edit?usp=sharing";
+        loadXMLDoc(link001);
+
+        function showTable(table) {
+            googleTable.innerHTML = "";
+            table = table.slice(table.indexOf("<table"), 8 + table.indexOf("</table>"));
+            googleTable.innerHTML += table;
+            goTBL = document.getElementsByTagName('TABLE')[0];
+            googleTable.innerHTML += "rows: ";
+            googleTable.innerHTML += goTBL.rows.length;
+            googleTable.innerHTML += " ; columns: ";
+            googleTable.innerHTML += goTBL.rows[10].cells.length;
+            googleTable.innerHTML += "<br />";
+            googleTable.innerHTML += "<br />";
+            showTableContent();
+        }
+    </script>
+
 </body>
 
 </html>
