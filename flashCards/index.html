@@ -77,6 +77,13 @@
         }
     </script>
 
+    <style>
+        iframe {
+            display: none;
+        }
+    </style>
+
+
 </head>
 
 <body id="start">
@@ -141,6 +148,34 @@
             showTableContent();
         }
     </script>
+
+    <details>
+        <summary>
+            <b>Flash Cards</b><br />
+            <i>spaceExplorer</i>
+        </summary>
+        <div class="left vertical">
+            <a href="#">
+                <b onclick="spaceExplorerToggle()">&bull; spaceExplorer google drive</b>
+            </a>
+            <iframe id="spaceExplorer" src="" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="700px" scrolling="auto"> 
+        </iframe>
+            <script>
+                let spaceExplorerFrame = document.getElementById('spaceExplorer');
+                spaceExplorerFrame.style.display = 'none';
+
+                function spaceExplorerToggle() {
+                    if (spaceExplorerFrame.style.display == 'none') {
+                        spaceExplorerFrame.style.display = 'initial';
+                        spaceExplorerFrame.src = "https://docs.google.com/spreadsheets/d/1sGOuc5igdmCcuVuSuRneZkUY6JZnOYKHtoPF_CewP3M/edit?usp=sharing";
+                    } else {
+                        spaceExplorerFrame.style.display = 'none';
+                        spaceExplorerFrame.src = "";
+                    }
+                }
+            </script>
+        </div>
+    </details>
 
 </body>
 
