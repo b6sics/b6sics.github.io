@@ -43,7 +43,7 @@
             let msg = document.getElementById("text-to-speech").value;
 
             let speech = new SpeechSynthesisUtterance();
-            speech.lang = "en-US";
+            speech.lang = "hu-HU";
 
             speech.text = msg;
             speech.volume = 1;
@@ -52,6 +52,28 @@
 
             window.speechSynthesis.speak(speech);
         }
+
+        const getVoices = () => {
+            return new Promise(resolve => {
+                let voices = speechSynthesis.getVoices()
+                if (voices.length) {
+                    resolve(voices)
+                    return
+                }
+                speechSynthesis.onvoiceschanged = () => {
+                    voices = speechSynthesis.getVoices()
+                    resolve(voices)
+                }
+            })
+        }
+
+        const printVoicesList = async() => {;
+            (await getVoices()).forEach(voice => {
+                console.log(voice.name, voice.lang)
+            })
+        }
+
+        printVoicesList()
     </script>
 </body>
 
