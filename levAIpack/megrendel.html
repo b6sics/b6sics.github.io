@@ -54,37 +54,36 @@
 
                     </div>
                 </header>
-                <div>
-
-                </div>
             </div>
-            <article class="right vertical">
-                <!-- -------------- -->
-                <!-- product groups -->
-                <!-- -------------- -->
-                <div>
-                    <label for="productGroups">Anyagtípus és vastagság: </label>
-                    <select id="productGroups" class="orderlistDropdown" name="productGroup" onchange="setStorageListOptions();">
+            <article class="center vertical">
+                <div class="right vertical">
+                    <!-- -------------- -->
+                    <!-- product groups -->
+                    <!-- -------------- -->
+                    <div>
+                        <label for="productGroups">Anyagtípus és vastagság: </label>
+                        <select id="productGroups" class="orderlistDropdown" name="productGroup" onchange="setStorageListOptions();">
 
                     </select>
-                </div>
-                <!-- -------------- -->
-                <!--    products    -->
-                <!-- -------------- -->
-                <div>
-                    <label for="products">Méretek és árak: </label>
-                    <select id="products" class="orderlistDropdown" name="product" onchange="displayProductDetails();">
+                    </div>
+                    <!-- -------------- -->
+                    <!--    products    -->
+                    <!-- -------------- -->
+                    <div>
+                        <label for="products">Méretek és árak: </label>
+                        <select id="products" class="orderlistDropdown" name="product" onchange="displayProductDetails();">
                         
                     </select>
+                    </div>
+                    <!-- -------------- -->
+                    <!--    quantity    -->
+                    <!-- -------------- -->
+                    <div>
+                        <label for="quantity">Mennyiség (db): </label>
+                        <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" onchange="setQuantity();" onKeyDown="return false;" />
+                    </div>
                 </div>
-                <!-- -------------- -->
-                <!--    quantity    -->
-                <!-- -------------- -->
-                <div>
-                    <label for="quantity">Mennyiség (db): </label>
-                    <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" onchange="setQuantity();" onKeyDown="return false;" />
-                </div>
-                <div>
+                <div class="center vertical fillParentsWidth">
                     <button id="orderlistBtn" class="orderlistButton" onclick="setBasket(); return false;"> Hozzáad a kosárhoz! </button>
                 </div>
                 <div>
