@@ -89,9 +89,10 @@ details {
 
 .bottom {
     position: fixed;
+    bottom: var(--padding-h);
     left: var(--padding-w);
     right: var(--padding-w);
-    bottom: var(--padding-h);
+    width: auto;
 }
 
 .static {
