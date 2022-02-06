@@ -37,12 +37,16 @@
     width: calc(100% - 2 * var(--padding-w));
 }
 
+.autoWidth {
+    width: auto;
+}
+
 .txtinitial {
     text-align: initial;
 }
 
 table {
-    margin: 1vh auto;
+    margin: var(--margin-h) auto;
     width: 100%;
     color: var(--orderlist-text-color);
     background-color: var(--orderlist-table-color);
