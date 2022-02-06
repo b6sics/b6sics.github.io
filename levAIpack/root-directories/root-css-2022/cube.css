@@ -132,7 +132,7 @@
         -webkit-backface-visibility: hidden;
     }
     50% {
-        opacity: 0.85;
+        opacity: 0.95;
         border: var(--cube-edge2);
         filter: blur(0.15vmin);
         backface-visibility: hidden;
