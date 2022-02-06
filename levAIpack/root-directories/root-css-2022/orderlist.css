@@ -21,6 +21,10 @@
     width: 100%;
 }
 
+.orderlistButton:hover {
+    cursor: pointer;
+}
+
 .notFoundBtn {
     font-size: 16px;
     margin: var(--margin-h) 0;
