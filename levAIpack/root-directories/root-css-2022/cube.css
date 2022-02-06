@@ -15,7 +15,6 @@
     --shadow-blur: 0.25vmin;
     --shadow-color1: whitesmoke;
     --shadow-color2: darkslateblue;
-    --scene-text-color: goldenrod;
     --pulse-transform: calc(var(--animation-duration) / 5) infinite ease-in-out var(--animation-duration);
     --pulse-transform-mini: calc(var(--animation-duration) / 5) infinite ease-in-out;
 }
