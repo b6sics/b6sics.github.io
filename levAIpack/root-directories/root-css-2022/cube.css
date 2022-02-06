@@ -12,9 +12,6 @@
     --cube-font-color: lightgoldenrodyellow;
     --animation-duration: 12s;
     --cube-transform: var(--animation-duration) 1 ease-in-out;
-    --shadow-blur: 0.25vmin;
-    --shadow-color1: whitesmoke;
-    --shadow-color2: darkslateblue;
     --pulse-transform: calc(var(--animation-duration) / 5) infinite ease-in-out var(--animation-duration);
     --pulse-transform-mini: calc(var(--animation-duration) / 5) infinite ease-in-out;
 }
