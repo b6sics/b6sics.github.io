@@ -19,7 +19,7 @@
 }
 
 .fillParentsWidth {
-    margin: 0;
+    margin: 0 auto;
     width: calc(100% - 1vmin - 2 * var(--padding-w));
 }
 
