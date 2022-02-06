@@ -1,6 +1,6 @@
 :root {
     --body-color: rgba(224, 224, 224, 0.9);
-    --text-color: whitesmoke;
+    --text-color: darkslategray;
     /* margin padding*/
     --margin-w: 1vw;
     --margin-h: 1vh;
@@ -9,13 +9,15 @@
     /* contents */
     --content-border-width: 0.5vmin;
     --content-border-style: solid;
-    --content-border-color: rgba(192, 192, 192, 0.75);
-    --content-txt-color: whitesmoke;
-    --content-bg-color: rgba(224, 192, 240, 0.1);
+    --content-border-color: rgba(192, 192, 192, 0.35);
+    --content-txt-color: var(--text-color);
+    --content-bg-color: rgba(224, 240, 240, 0.5);
     /* forms */
-    --form-border-color: rgba(192, 192, 192, 0.75);
-    --orderlist-table-color: whitesmoke;
+    --form-border-color: rgba(192, 192, 192, 0.35);
+    --orderlist-table-color: var(--text-color);
     --orderlist-text-color: darkslategray;
+    /* scene */
+    --scene-text-color: var(--text-color);
 }
 
 body {
