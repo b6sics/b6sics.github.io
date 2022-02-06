@@ -1,5 +1,5 @@
 :root {
-    --body-color: rgba(0, 0, 160, 0.9);
+    --body-color: rgba(224, 224, 224, 0.9);
     --text-color: whitesmoke;
     /* margin padding*/
     --margin-w: 1vw;
@@ -9,11 +9,11 @@
     /* contents */
     --content-border-width: 0.5vmin;
     --content-border-style: solid;
-    --content-border-color: rgba(224, 208, 240, 0.8);
-    --content-txt-color: darkgoldenrod;
-    --content-bg-color: rgba(224, 208, 240, 0.9);
+    --content-border-color: rgba(192, 192, 192, 0.75);
+    --content-txt-color: whitesmoke;
+    --content-bg-color: rgba(224, 192, 240, 0.1);
     /* forms */
-    --form-border-color: rgba(32, 32, 32, 0.8);
+    --form-border-color: rgba(192, 192, 192, 0.75);
     --orderlist-table-color: whitesmoke;
     --orderlist-text-color: darkslategray;
 }
@@ -32,6 +32,6 @@ h1 {
     font-style: italic;
     font-weight: lighter;
     font-size: calc(var(--cube-size) / 6);
-    color: var(--scene-text-color);
+    color: var(--text-color);
     text-shadow: var(--shadow-blur) var(--shadow-blur) var(--shadow-blur) var(--shadow-color2), 0 0 calc(var(--shadow-blur) * 2) var(--shadow-color1);
 }
