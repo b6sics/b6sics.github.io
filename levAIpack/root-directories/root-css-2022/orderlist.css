@@ -17,7 +17,7 @@
 .orderlistButton {
     font-size: 16px;
     margin: 1em 0;
-    padding: 2px;
+    padding: 2px var(--padding-w);
     width: 100%;
 }
 
