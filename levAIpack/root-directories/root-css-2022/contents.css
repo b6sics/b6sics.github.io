@@ -56,11 +56,11 @@ details,
 figure {
     margin: var(--margin-h) auto;
     padding: var(--padding-h) var(--padding-w);
-    width: calc(100% - 1vmin - 2 * var(--padding-w));
+    width: calc(100% - 2 * var(--border-width) - 2 * var(--padding-w));
     color: var(--content-txt-color);
     background-color: var(--content-bg-color);
-    border: 0.5vmin solid var(--content-border-color);
-    border-radius: 1vmin;
+    border: var(--border-width) solid var(--content-border-color);
+    border-radius: var(--border-radius);
 }
 
 figure img,
@@ -72,7 +72,7 @@ figure img {
     max-height: 300px;
     width: auto;
     max-width: 300px;
-    border-radius: 1vmin;
+    border-radius: var(--border-radius);
 }
 
 details:first-of-type {
