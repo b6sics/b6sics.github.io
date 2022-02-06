@@ -37,10 +37,6 @@
     width: calc(100% - 2 * var(--padding-w));
 }
 
-.autoWidth {
-    width: auto;
-}
-
 .txtinitial {
     text-align: initial;
 }
@@ -57,6 +53,10 @@ tr.initial {
 }
 
 tr.fixed {
+    cursor: pointer;
+}
+
+tr.fixed:active {
     cursor: url('../../images/delete.png') 16 16, auto;
 }
 
