@@ -6,6 +6,7 @@
     --margin-h: 1vh;
     --padding-w: 1vw;
     --padding-h: 1.5vh;
+    --border-width: 1vmin;
     /* contents */
     --content-border-width: 0.5vmin;
     --content-border-style: solid;
