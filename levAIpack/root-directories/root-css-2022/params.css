@@ -6,7 +6,8 @@
     --margin-h: 1vh;
     --padding-w: 1vw;
     --padding-h: 1.5vh;
-    --border-width: 1vmin;
+    --border-width: 0.25vmin;
+    --border-radius: calc(6 * var(--border-width));
     /* contents */
     --content-border-width: 0.5vmin;
     --content-border-style: solid;
