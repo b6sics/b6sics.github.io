@@ -75,11 +75,11 @@ figure img {
 }
 
 details:first-of-type {
-    margin-top: 15vh;
+    margin-top: calc(var(--margin-h) * 10);
 }
 
 details:last-of-type {
-    margin-bottom: 5vh;
+    margin-bottom: calc(var(--margin-h) * 5);
 }
 
 details {
