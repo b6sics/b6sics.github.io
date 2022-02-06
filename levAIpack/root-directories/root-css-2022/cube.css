@@ -1,12 +1,12 @@
 :root {
     --cube-size: 24vmin;
     --cube-size-mini: 14vmin;
-    --cube-color1: rgba(255, 0, 0, 0.7);
-    --cube-color2: rgba(255, 255, 0, 0.7);
-    --cube-color3: rgba(0, 255, 0, 0.7);
-    --cube-color4: rgba(0, 255, 255, 0.7);
-    --cube-color5: rgba(0, 0, 255, 0.7);
-    --cube-color6: rgba(255, 0, 255, 0.7);
+    --cube-color1: rgba(192, 64, 64, 0.85);
+    --cube-color2: rgba(192, 192, 64, 0.85);
+    --cube-color3: rgba(64, 192, 64, 0.85);
+    --cube-color4: rgba(64, 192, 192, 0.85);
+    --cube-color5: rgba(64, 64, 192, 0.85);
+    --cube-color6: rgba(192, 64, 192, 0.85);
     --cube-edge: 1px solid darkgray;
     --cube-edge2: 1px solid gray;
     --cube-font-color: lightgoldenrodyellow;
@@ -132,7 +132,7 @@
         -webkit-backface-visibility: hidden;
     }
     50% {
-        opacity: 0.7;
+        opacity: 0.85;
         border: var(--cube-edge2);
         filter: blur(0.15vmin);
         backface-visibility: hidden;
