@@ -65,7 +65,7 @@ figure {
 
 figure img,
 figcaption {
-    width: 40%;
+    width: 31vw;
     height: auto;
 }
 
@@ -77,7 +77,7 @@ figure img {
 }
 
 details:first-of-type {
-    margin-top: calc(var(--margin-h) * 10);
+    margin-top: calc(var(--margin-h) * 15);
 }
 
 details:last-of-type {
@@ -86,7 +86,7 @@ details:last-of-type {
 
 details {
     margin-right: 0;
-    width: 60vw;
+    width: 65vw;
 }
 
 .bottom {
@@ -109,13 +109,13 @@ details[open] summary>i {
     visibility: hidden;
 }
 
-@media screen and (max-height: 599px) {
+@media screen and (max-height: 450px) {
     footer.bottom {
         position: static;
     }
 }
 
-@media (max-width: 599px) {
+@media (max-width: 660px) {
     details {
         width: auto;
     }
@@ -126,5 +126,7 @@ details[open] summary>i {
     figcaption {
         width: 60%;
         height: auto;
+        max-height: initial;
+        max-width: initial;
     }
 }
