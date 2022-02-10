@@ -65,7 +65,7 @@ figure {
 
 figure img,
 figcaption {
-    width: 50%;
+    width: 45%;
 }
 
 figure img {
@@ -85,7 +85,7 @@ details:last-of-type {
 
 details {
     margin-right: 0;
-    width: 65vw;
+    width: 60vw;
 }
 
 .bottom {
@@ -123,6 +123,6 @@ details[open] summary>i {
     }
     figure img,
     figcaption {
-        width: 49%;
+        width: 60%;
     }
 }
