@@ -85,7 +85,7 @@ details:last-of-type {
 
 details {
     margin-right: 0;
-    width: 55%;
+    width: 65vw;
 }
 
 .bottom {
@@ -108,13 +108,13 @@ details[open] summary>i {
     visibility: hidden;
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 599px) {
     footer.bottom {
         position: static;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 599px) {
     details {
         width: auto;
     }
@@ -123,6 +123,6 @@ details[open] summary>i {
     }
     figure img,
     figcaption {
-        width: 60%;
+        width: 49%;
     }
 }
