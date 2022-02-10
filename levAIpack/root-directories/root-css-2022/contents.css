@@ -65,7 +65,8 @@ figure {
 
 figure img,
 figcaption {
-    width: 45%;
+    width: 40%;
+    height: auto;
 }
 
 figure img {
@@ -124,5 +125,6 @@ details[open] summary>i {
     figure img,
     figcaption {
         width: 60%;
+        height: auto;
     }
 }
