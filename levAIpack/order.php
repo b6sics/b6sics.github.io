@@ -78,7 +78,7 @@ function email_is_valid ($email_address){
 }
 
 $subject = 'Rendelés ' . date("Y-m-d H:m:s");
-$subject = filter_var($subject, FILTER_SANITIZE_STRING);
+$subject = filter_var($subject, FILTER_UNSAFE_RAW);
 
 
 $preferences = ["input-charset" => "UTF-8", "output-charset" => "UTF-8"];
