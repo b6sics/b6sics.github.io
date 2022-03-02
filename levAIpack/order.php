@@ -11,30 +11,36 @@
         $basket = $_POST['basketList'];
     } else {
         $basket = " no basketList ";
+        header('Location: https://levaipack.hu/megrendel.html');
     }
 
     if ( isset($_POST['mail']) ) {
         $mail = $_POST['mail'];
     } else {
         $mail = "security@levaipack.hu";
+        header('Location: https://levaipack.hu/megrendel.html');
     }
 
     if ( isset($_POST['phone']) ) {
         $phone = $_POST['phone'];
     } else {
         $phone = " [no phone number] ";
+        header('Location: https://levaipack.hu/megrendel.html');
     }
 
     if ( empty($basket) ){
         $basket = "<pre> no basketList </pre><br />";
+        header('Location: https://levaipack.hu/megrendel.html');
     }
 
     if ( empty($mail) ){
         $mail = "security@levaipack.hu";
+        header('Location: https://levaipack.hu/megrendel.html');
     }
 
     if ( empty($phone) ){
         $phone = " [no phone number] ";
+        header('Location: https://levaipack.hu/megrendel.html');
     }
 
     $confirmationlink = "https://levaipack.hu/confirm.php";
