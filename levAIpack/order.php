@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="hu">
 
+<?php
+    $message = "";
+    $subject = "";
+
+    $crlf = "\r\n";
+
+    $basket = "<pre>" . $_POST['basketList'] . "</pre><br />";
+    $mail = $_POST['mail'];
+    $phone = $_POST['phone'];
+
+    $confirmationlink = "https://levaipack.hu/confirm.php";
+
+?>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, 
@@ -56,16 +70,6 @@
     </main>
 
 <?php
-$message = "";
-$subject = "";
-
-$crlf = "\r\n";
-
-$basket = "<pre>" . $_POST['basketList'] . "</pre><br />";
-$mail = $_POST['mail'];
-$phone = $_POST['phone'];
-
-$confirmationlink = "https://levaipack.hu/confirm.php";
 
 function email_is_valid ($email_address){
 	$email_address = filter_var($email_address, FILTER_SANITIZE_EMAIL);
