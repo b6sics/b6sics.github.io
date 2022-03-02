@@ -13,13 +13,13 @@
         $basket = " no basketList ";
     }
 
-    if ( isset($_POST['basketlist']) ) {
+    if ( isset($_POST['mail']) ) {
         $mail = $_POST['mail'];
     } else {
         $mail = "security@levaipack.hu";
     }
 
-    if ( isset($_POST['mail']) ) {
+    if ( isset($_POST['phone']) ) {
         $phone = $_POST['phone'];
     } else {
         $phone = " [no phone number] ";
