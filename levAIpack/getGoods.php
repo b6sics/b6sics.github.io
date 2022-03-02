@@ -46,7 +46,7 @@ $goods = 'https://docs.google.com/spreadsheets/d/13OhmO6r2dIBfOfEd7i78oVigMQVF_g
 	function get_goods($url, $local_file){
 		global $price65u, $price85u;
 		if (file_put_contents($local_file, file_get_contents($url))){
-				echo $local_file, ": File downloaded successfully", '<br>';
+			echo $local_file, ": File downloaded successfully", '<br>';
 			$dom = new DOMDocument;
 			$html = file_get_contents($local_file);
 			@$dom->loadHTML($html);
