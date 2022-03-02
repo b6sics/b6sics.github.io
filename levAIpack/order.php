@@ -7,9 +7,35 @@
 
     $crlf = "\r\n";
 
-    $basket = "<pre>" . $_POST['basketList'] . "</pre><br />";
-    $mail = $_POST['mail'];
-    $phone = $_POST['phone'];
+    if ( isset($_POST['basketlist']) ) {
+        $basket = "<pre>" . $_POST['basketList'] . "</pre><br />";
+    } else {
+        $basket = "<pre> no basketList </pre><br />";
+    }
+
+    if ( isset($_POST['basketlist']) ) {
+        $mail = $_POST['mail'];
+    } else {
+        $mail = "security@levaipack.hu";
+    }
+
+    if ( isset($_POST['mail']) ) {
+        $phone = $_POST['phone'];
+    } else {
+        $phone = " [no phone number] ";
+    }
+
+    if ( empty($basket) ){
+        $basket = "<pre> no basketList </pre><br />";
+    }
+
+    if ( empty($mail) ){
+        $mail = "security@levaipack.hu";
+    }
+
+    if ( empty($phone) ){
+        $phone = " [no phone number] ";
+    }
 
     $confirmationlink = "https://levaipack.hu/confirm.php";
 
