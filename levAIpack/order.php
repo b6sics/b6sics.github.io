@@ -7,10 +7,10 @@
 
     $crlf = "\r\n";
 
-    if ( isset($_POST['basketlist']) ) {
-        $basket = "<pre>" . $_POST['basketList'] . "</pre><br />";
+    if ( isset($_POST['basketList']) ) {
+        $basket = $_POST['basketList'];
     } else {
-        $basket = "<pre> no basketList </pre><br />";
+        $basket = " no basketList ";
     }
 
     if ( isset($_POST['basketlist']) ) {
@@ -81,14 +81,14 @@
         <!-- basket details -->
         <!-- -------------- -->
         <textarea id="basketList" name="basketList" 
-        rows="<?php echo(substr_count($_POST['basketList'], ':')) ?>" readonly><?php
-            echo $_POST['basketList'];
+        rows="<?php echo(substr_count($basket, ':')) ?>" readonly><?php
+            echo $basket;
         ?></textarea>
 
         <article class="center vertical">
             <p>
-                A(z) <?php echo $_POST['mail'] ?> e-mail címre megküldtük a megrendelés másolatát. Kérjük nyissa meg a levelet, majd kattintson az e-mailben található megerősítő hivatkozásra, hogy véglegesítse a megrendelést.<br />
-                Munkatársunk a <?php echo $_POST['phone'] ?> telefonszámon keresni fogja a számlázással és a szállítással kapcsolatban.<br />
+                A(z) <?php echo $mail ?> e-mail címre megküldtük a megrendelés másolatát. Kérjük nyissa meg a levelet, majd kattintson az e-mailben található megerősítő hivatkozásra, hogy véglegesítse a megrendelést.<br />
+                Munkatársunk a <?php echo $phone ?> telefonszámon keresni fogja a számlázással és a szállítással kapcsolatban.<br />
                 Amennyiben nem erősíti meg rendelését - mert elállt vásárlási szándékától - nincs további teendője. A rendszer naponta 00:00:00-kor automatikusan törli a meg nem erősített rendeléseket.<br />
                 Minden más esetben ( pl.: megrendelés törlése és módosítása, ajánlatkérés ) telefonon és/vagy e-mailben léphet kapcsolatba velünk. 
             </p>
@@ -118,7 +118,7 @@ $subject = substr($subject, strlen('Subject: '));
 $message .= "<html><body style='text-align: justify'>";
 $message .= "<h1> Vákumtasak rendelés: </h1>";
 
-$message .= $basket;
+$message .= "<pre>" . $basket . "</pre><br />";
 
 $message .= "<h3>Megrendelő elérhetőségei:</h3>";
 $message .= "<p>telefon: $phone,<br />e-mail: $mail.</p>";
