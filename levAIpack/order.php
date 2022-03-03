@@ -50,7 +50,7 @@
     $phone64 = base64_encode($phone);
     $orderdate64 = base64_encode($orderdate);
 
-    $orderfile = "levAIorder/ordered/" . $phone64 . $orderdate64 . ".php";
+    $orderfile = "levAIorders/ordered/" . $phone64 . $orderdate64 . ".php";
     fopen($orderfile, "w") or die("Unable to open file!");
     fwrite($orderfile, $orderdate64);
     fwrite($orderfile, PHP_EOL);
