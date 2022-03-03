@@ -3,7 +3,7 @@
     fwrite($levAIhuCronLog, "Log created: " . date("Y-m-d h:i:s"));
     fclose($levAIhuCronLog);
 
-    $order_path = "levAIorder/ordered/";
+    $order_path = "levAIorders/ordered/";
     $files = glob($order_path . '*'); 
     foreach($files as $file) {
         if(is_file($file)) 
