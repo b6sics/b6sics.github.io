@@ -52,16 +52,16 @@
 
     $orderfile = "levAIorders/ordered/" . $phone64 . $orderdate64 . ".php";
     fopen($orderfile, "w") or die("Unable to open file!");
-    fwrite($orderfile, $orderdate64);
+    fwrite($orderfile, $orderdate);
     fwrite($orderfile, PHP_EOL);
-    fwrite($orderfile, $phone64);
+    fwrite($orderfile, $phone);
     fwrite($orderfile, PHP_EOL);
-    fwrite($orderfile, $mail64);
+    fwrite($orderfile, $mail);
     fwrite($orderfile, PHP_EOL);
-    fwrite($orderfile, $basket64);
+    fwrite($orderfile, $basket);
     fwrite($orderfile, PHP_EOL);
     fclose($orderfile);
-    chmod($orderfile, 0644);
+    chmod($orderfile, 0600);
 
     $method = "aes256";
     $iv_length = openssl_cipher_iv_length($method);
