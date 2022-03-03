@@ -52,7 +52,7 @@
     $iv = openssl_random_pseudo_bytes($iv_length);
     $salttext = "áRVíZTűRő TüKöRFúRóGéP";
     $saltpass = "ÁrvÍztŰrŐ tÜkÖrfÚrÓgÉp";
-    $saltphrase = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
+    $saltstring = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
 
     $confirmationlink = "https://levaipack.hu/confirm.php";
 
