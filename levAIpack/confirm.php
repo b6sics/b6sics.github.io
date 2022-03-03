@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="hu">
 
+<?php
+$message_to_encrypt = "KissGabi";
+$secret_key = "my-secret-key";
+$method = "aes256";
+$iv_length = openssl_cipher_iv_length($method);
+$iv = openssl_random_pseudo_bytes($iv_length);
+$encrypted_message = openssl_encrypt($message_to_encrypt, $method, $secret_key, 0, $iv);
+echo $encrypted_message;
+
+$decrypted_message = openssl_decrypt($encrypted_message, $method, $secret_key, 0, $iv);
+echo $decrypted_message;
+?>
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, 
