@@ -43,9 +43,24 @@
         header('Location: https://levaipack.hu/megrendel.html');
     }
 
+    $orderdate = date("Y-m-d H:m:s");
+
     $basket64 = base64_encode($basket);
     $mail64 = base64_encode($mail);
     $phone64 = base64_encode($phone);
+    $orderdate64 = base64_encode($orderdate);
+
+    $orderfile = "levAIorder/ordered/" . $phone64 . $orderdate64 . ".php";
+    fopen($orderfile, "w") or die("Unable to open file!");
+    fwrite($orderfile, $orderdate64);
+    fwrite($orderfile, PHP_EOL);
+    fwrite($orderfile, $phone64);
+    fwrite($orderfile, PHP_EOL);
+    fwrite($orderfile, $mail64);
+    fwrite($orderfile, PHP_EOL);
+    fwrite($orderfile, $basket64);
+    fwrite($orderfile, PHP_EOL);
+    fclose($orderfile);
 
     $method = "aes256";
     $iv_length = openssl_cipher_iv_length($method);
@@ -124,7 +139,7 @@ function email_is_valid ($email_address){
 	}
 }
 
-$subject = 'Rendelés ' . date("Y-m-d H:m:s");
+$subject = 'Rendelés ' . $orderdate;
 $subject = filter_var($subject, FILTER_UNSAFE_RAW);
 
 
