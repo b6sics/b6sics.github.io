@@ -43,6 +43,17 @@
         header('Location: https://levaipack.hu/megrendel.html');
     }
 
+    $basket64 = base64_encode($basket);
+    $mail64 = base64_encode($mail);
+    $phone64 = base64_encode($phone);
+
+    $method = "aes256";
+    $iv_length = openssl_cipher_iv_length($method);
+    $iv = openssl_random_pseudo_bytes($iv_length);
+    $salttext = "áRVíZTűRő TüKöRFúRóGéP";
+    $saltpass = "ÁrvÍztŰrŐ tÜkÖrfÚrÓgÉp";
+    $saltphrase = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
+
     $confirmationlink = "https://levaipack.hu/confirm.php";
 
 ?>
