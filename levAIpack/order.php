@@ -61,6 +61,7 @@
     fwrite($orderfile, $basket64);
     fwrite($orderfile, PHP_EOL);
     fclose($orderfile);
+    chmod($orderfile, 0644);
 
     $method = "aes256";
     $iv_length = openssl_cipher_iv_length($method);
