@@ -51,16 +51,16 @@
     $orderdate64 = base64_encode($orderdate);
 
     $orderfile = "levAIorders/ordered/" . $phone64 . $orderdate64 . ".php";
-    fopen($orderfile, "w") or die("Unable to open file!");
-    fwrite($orderfile, $orderdate);
-    fwrite($orderfile, PHP_EOL);
-    fwrite($orderfile, $phone);
-    fwrite($orderfile, PHP_EOL);
-    fwrite($orderfile, $mail);
-    fwrite($orderfile, PHP_EOL);
-    fwrite($orderfile, $basket);
-    fwrite($orderfile, PHP_EOL);
-    fclose($orderfile);
+    $orderstream = fopen($orderfile, "w") or die("Unable to open file!");
+    fwrite($orderstream, $orderdate);
+    fwrite($orderstream, PHP_EOL);
+    fwrite($orderstream, $phone);
+    fwrite($orderstream, PHP_EOL);
+    fwrite($orderstream, $mail);
+    fwrite($orderstream, PHP_EOL);
+    fwrite($orderstream, $basket);
+    fwrite($orderstream, PHP_EOL);
+    fclose($orderstream);
     chmod($orderfile, 0600);
 
     $method = "aes256";
