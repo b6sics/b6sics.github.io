@@ -2,16 +2,12 @@
 <html lang="hu">
 
 <?php
-$message_to_encrypt = "KissGabi";
-$secret_key = "my-secret-key";
-$method = "aes256";
-$iv_length = openssl_cipher_iv_length($method);
-$iv = openssl_random_pseudo_bytes($iv_length);
-$encrypted_message = openssl_encrypt($message_to_encrypt, $method, $secret_key, 0, $iv);
-echo $encrypted_message, "<br />";
-
-$decrypted_message = openssl_decrypt($encrypted_message, $method, $secret_key, 0, $iv);
-echo $decrypted_message, "<br />";
+    if($_GET['m'] != '' || isset($_GET['m'])) {
+        foreach($_GET as $key => $val) {
+            echo 'Field name : '.$key .', Value : '. base64_decode($val) .'<br>';
+            $data[$key] = base64_decode($val);
+        }
+    }
 ?>
 
 <head>
