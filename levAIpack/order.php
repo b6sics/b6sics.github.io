@@ -73,8 +73,6 @@
     fclose($orderstream);
     chmod($orderfile, 0600);
 
-    $linkattribut = implode(array_map("chr", $convertedarray));
-
     $confirmationlink = "https://levaipack.hu/confirm.php?m=$mail64&d=$orderdate64";
 
 ?>
