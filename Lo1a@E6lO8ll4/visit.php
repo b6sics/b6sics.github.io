@@ -12,13 +12,17 @@ foreach($_SERVER as $key => $val) {
 
 $ipaddress = $_SERVER['REMOTE_ADDR'];
 $page = "http://" . $_SERVER['HTTP_HOST'] . "" . $_SERVER['PHP_SELF'];
-$referrer = $_SERVER['HTTP_REFERER'];
+if (isset($_SERVER['HTTP_REFERER'])){
+    $referer = $_SERVER['HTTP_REFERER'];
+} else {
+    $referer = "Referer not found";
+}
 $datetime = date("F j, Y, g:i a");
 $useragent = $_SERVER['HTTP_USER_AGENT'];
 
 echo "<p>IP Address : " . $ipaddress . "</p>";
 echo "<p>Current Page : " . $page . "</p>";
-echo "<p>Referrer : " . $referrer . "</p>";
+echo "<p>Referer : " . $referer . "</p>";
 echo "<p>Current Time : " . $datetime . "</p>";
 echo "<p>Browser : " . $useragent . "</p>";
 
