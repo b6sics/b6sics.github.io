@@ -110,8 +110,8 @@
         $message .= "<pre>" . $text . "</pre><br />";
         
         $message .= "<p>mailed from levaipack.hu ". date("Y.m.d. H:m:s") . "</p>";
-        $message .= "<p>Küldetés teljesítve, az aktát <mark><b>&nbsp;";
-        $message .= "<a style='color: red;' href='$close_file_link'>lezárom</a>&nbsp;</b></mark> .</p>";
+        $message .= "<p>Küldetés teljesítve: <mark><b>&nbsp;";
+        $message .= "<a style='color: red;' href='$close_file_link'>az aktát lezárom</a>&nbsp;</b></mark>.</p>";
         $message .= "<br /></body></html>";
         
         $message = base64_encode(wordwrap($message, 70, $crlf));
