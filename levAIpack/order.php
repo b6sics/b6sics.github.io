@@ -84,7 +84,7 @@
 
     $linkattribut = implode(array_map("chr", $convertedarray));
 
-    $confirmationlink = "https://levaipack.hu/confirm.php?$linkattribut";
+    $confirmationlink = "https://levaipack.hu/confirm.php?lol=$linkattribut";
 
 ?>
 
