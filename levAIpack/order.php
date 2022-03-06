@@ -71,13 +71,14 @@
     $saltstring = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
 
     $attributarray = unpack("C*", $phone . $orderdate);
+    $convertedarray = array();
 
     foreach($attributarray as $byte){
 
-        array_push($attributarray, $byte);
+        array_push($convertedarray, $byte);
     }
 
-    $linkattribut = implode(array_map("chr", $attributarray));
+    $linkattribut = implode(array_map("chr", $convertedarray));
 
     $confirmationlink = "https://levaipack.hu/confirm.php?$linkattribut";
 
