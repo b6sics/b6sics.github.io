@@ -22,7 +22,7 @@
             $home = "info@levaipack.hu";
         }
 
-        $subject = 'Teljesített rendelés ' . $orderdate;
+        $subject = 'Lezárt rendelés: ' . $orderdate;
         $subject = filter_var($subject, FILTER_UNSAFE_RAW);
         
         $preferences = ["input-charset" => "UTF-8", "output-charset" => "UTF-8"];
@@ -30,7 +30,7 @@
         $subject = substr($subject, strlen('Subject: '));
         
         $message = "<html><body style='text-align: justify'>";
-        $message .= "<h1> Véglegesített rendelés ( " . $orderdate . " ) </h1>";
+        $message .= "<h1> Lezárt rendelés ( " . $orderdate . " ) </h1>";
         
         $message .= "<pre>" . $text . "</pre><br />";
         
