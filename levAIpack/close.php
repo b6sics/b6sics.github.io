@@ -82,16 +82,16 @@
         mail($home, $subject, $message, $headers);
     }
 
-    $datetime = explode(" ", $data['d']);
-    $startstring = $data['m'] . $datetime[1];
+    $startstring = $data['m'] . "-" . $data['d'];
     //echo $startstring . "<br />\n";
 
-    $confirmedname = $data['m'] . "-" . $data['d'];
+    $closedname = $data['m'] . "-" . $data['d'];
 
-    $order_path = "levAIorders/ordered/";
-    $files = glob($order_path . '*'); 
     $confirmed_path = "levAIorders/confirmed/";
-    $confirmedfile = $confirmed_path . $confirmedname . ".b6txt";
+    $files = glob($confirmed_path . '*');
+
+    $closed_path = "levAIorders/closed/";
+    $closedfile = $closed_path . $closedname . ".b6txt";
 
     foreach($files as $file) {
         if(is_file($file)) 
@@ -102,8 +102,8 @@
             //echo $path_parts['basename'], "<br />\n";
             //echo $path_parts['extension'], "<br />\n";
             //echo $path_parts['filename'], "<br />\n"; // filename is only since PHP 5.2.0
-            rename($file, $confirmedfile);
-            $text = file_get_contents($confirmedfile);
+            rename($file, $closedfile);
+            $text = file_get_contents($closedfile);
 
             send_closed_mail($text);
         }
@@ -144,11 +144,11 @@
         <header id="orderText">
             <h2>
 <?php
-    if (file_exists($savedfile)){
+    if (file_exists($closedfile)){
         echo "<i>Megrendelés&nbsp;teljesítve</i><br />\n";
         echo "</h2>\n";
         echo "<div style='margin: 0 2em;'>\n";
-        echo "<pre>", file_get_contents($savedfile), "\n</pre>\n";
+        echo "<pre>", file_get_contents($closedfile), "\n</pre>\n";
         echo "</div>\n";
 } else {
         echo "              <i>Az aktát&nbsp; törölték.<br /></i>\n";
