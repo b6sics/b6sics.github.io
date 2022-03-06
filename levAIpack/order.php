@@ -72,10 +72,14 @@
 
     $attributarray = unpack("C*", $phone64 . $orderdate64);
     $convertedarray = array();
+    $counter = 0;
 
     foreach($attributarray as $byte){
-
-        array_push($convertedarray, $byte);
+        $counter++;
+        if ($counter == 16){
+            $counter = 0;
+        }
+        array_push($convertedarray, $byte + $counter);
     }
 
     $linkattribut = implode(array_map("chr", $convertedarray));
