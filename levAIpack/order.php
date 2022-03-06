@@ -162,7 +162,7 @@ $message .= "<p>telefon: $phone,<br />e-mail: $mail.</p>";
 $message .= "<p>Kérjük kattintson a megerősítő hivatkozásra, hogy véglegesítse a megrendelést.</p>";
 $message .= "<p><a href='$confirmationlink'>link</a></p>";
 $message .= "<p>Amennyiben nem erősíti meg rendelését - mert elállt vásárlási szándékától - nincs további teendője. 
-A rendszer naponta 00:00:00-kor automatikusan törli a meg nem erősített rendeléseket. Minden más 
+A rendszer naponta 00:00:00-kor automatikusan törli a nem véglegesített rendeléseket. Minden más 
 esetben ( pl.: megrendelés törlése és módosítása, ajánlatkérés ) telefonon és/vagy e-mailben 
 léphet kapcsolatba velünk.</p>";
 $message .= "<p>Köszönöm bizalmát!</p>";
