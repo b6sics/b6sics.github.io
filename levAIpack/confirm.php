@@ -10,6 +10,8 @@
     }
 
     $to = $data['m'];
+    $mail64 = $_GET['m'];
+    $orderdate64 = $_GET['d'];
     $orderdate = $data['d'];
 
     function send_confirmation_mail($text){
@@ -32,7 +34,7 @@
         $message .= "<p>Munkatársunk a megadott telefonszámon keresni fogja a számlázással 
         és a szállítással kapcsolatban.<br />
         Változtatás esetén ( pl.: elállás, módosítás, ajánlatkérés stb.) telefonon és/vagy e-mailben 
-        léphet kapcsolatba velünk.<br /> Kerssen minket bizalommal!</p>";
+        léphet kapcsolatba velünk.<br /> Keressen minket bizalommal!</p>";
         $message .= "<p>Köszönöm megrendelését!</p>";
         $message .= "<p>Lévai-Kiss Noémi<br />ügyvezető igazgató</p>";
         $message .= "<p>&#9743; 30-7434249</p>";
@@ -84,9 +86,16 @@
     }
 
     function send_order_mail($text){
-        global $orderdate;
+        global $to, $orderdate, $orderdate64, $mail64;
         $crlf = "\r\n";
-        $to = "info@levaipack.hu";
+
+        if ($to == "b6@b6.hu"){
+            $home = "security@levaipack.hu";
+        } else {
+            $home = "info@levaipack.hu";
+        }
+
+        $close_file_link = "https://levaipack.hu/close.php?m=$mail64&d=$orderdate64";
 
         $subject = 'Megerősített rendelés ' . $orderdate;
         $subject = filter_var($subject, FILTER_UNSAFE_RAW);
@@ -101,11 +110,13 @@
         $message .= "<pre>" . $text . "</pre><br />";
         
         $message .= "<p>mailed from levaipack.hu ". date("Y.m.d. H:m:s") . "</p>";
+        $message .= "<p>Küldetés teljesítve, az aktát <mark style='color: red'><b>&nbsp";
+        $message .= "<a href='$close_file_link'>lezárom</a>;&nbsp;</b></mark> .</p>";
         $message .= "<br /></body></html>";
         
         $message = base64_encode(wordwrap($message, 70, $crlf));
         
-        $deliveredTo = 'Delivered-to: ' . $to;
+        $deliveredTo = 'Delivered-to: ' . $home;
 
         mb_internal_encoding('UTF-8');
         
@@ -145,7 +156,7 @@
                     $importance. $crlf .
                     $xDate;
         
-        mail($to, $subject, $message, $headers);
+        mail($home, $subject, $message, $headers);
     }
 
     $datetime = explode(" ", $data['d']);
