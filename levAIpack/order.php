@@ -50,7 +50,17 @@
     $phone64 = base64_encode($phone);
     $orderdate64 = base64_encode($orderdate);
 
-    $orderfile = "levAIorders/ordered/" . $phone64 . $orderdate64 . ".php";
+    $method = "aes256";
+    $iv_length = openssl_cipher_iv_length($method);
+    $iv = openssl_random_pseudo_bytes($iv_length);
+    $salttext = "áRVíZTűRő TüKöRFúRóGéP";
+    $saltpass = "ÁrvÍztŰrŐ tÜkÖrfÚrÓgÉp";
+    $saltstring = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
+    $salt = base64_encode(substr($saltstring, 0, 10));
+
+    $datafilename = $mail . $orderdate . $salt;
+
+    $orderfile = "levAIorders/ordered/" . $datafilename . ".php";
     $orderstream = fopen($orderfile, "w") or die("Unable to open file!");
     fwrite($orderstream, $orderdate);
     fwrite($orderstream, PHP_EOL);
@@ -62,13 +72,6 @@
     fwrite($orderstream, PHP_EOL);
     fclose($orderstream);
     chmod($orderfile, 0600);
-
-    $method = "aes256";
-    $iv_length = openssl_cipher_iv_length($method);
-    $iv = openssl_random_pseudo_bytes($iv_length);
-    $salttext = "áRVíZTűRő TüKöRFúRóGéP";
-    $saltpass = "ÁrvÍztŰrŐ tÜkÖrfÚrÓgÉp";
-    $saltstring = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
 
     $linkattribut = implode(array_map("chr", $convertedarray));
 
