@@ -161,13 +161,11 @@ $message .= "<h3>Megrendelő elérhetőségei:</h3>";
 $message .= "<p>telefon: $phone,<br />e-mail: $mail.</p>";
 $message .= "<p>Kérjük kattintson a megerősítő hivatkozásra, hogy véglegesítse a megrendelést.</p>";
 $message .= "<p><a href='$confirmationlink'>link</a></p>";
-$message .= "<p>Munkatársunk a megadott telefonszámon keresni fogja a számlázással 
-és a szállítással kapcsolatban.<br />
-Amennyiben nem erősíti meg rendelését - mert elállt vásárlási szándékától - nincs további teendője. 
+$message .= "<p>Amennyiben nem erősíti meg rendelését - mert elállt vásárlási szándékától - nincs további teendője. 
 A rendszer naponta 00:00:00-kor automatikusan törli a meg nem erősített rendeléseket. Minden más 
 esetben ( pl.: megrendelés törlése és módosítása, ajánlatkérés ) telefonon és/vagy e-mailben 
 léphet kapcsolatba velünk.</p>";
-$message .= "<p>Köszönöm megrendelését!</p>";
+$message .= "<p>Köszönöm bizalmát!</p>";
 $message .= "<p>Lévai-Kiss Noémi<br />ügyvezető igazgató</p>";
 $message .= "<p>&#9743; 30-7434249</p>";
 $message .= "<br /></body></html>";
