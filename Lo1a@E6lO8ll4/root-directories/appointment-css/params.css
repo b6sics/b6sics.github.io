@@ -1,0 +1,57 @@
+:root {
+  --label-bgcolor: rgba(255, 255, 255, 0.9);
+  /* */
+  --body-bgcolor: #ffff66;
+  --banner-color: #c24cf6;
+  --bubble-bgcolor: #fc6e22;
+  --stroke-color: #ff1493;
+  /* */
+  --body-bgcolor: #037a90;
+  --banner-color: #ce96fb;
+  --bubble-bgcolor: #00c2ba;
+  --stroke-color: #ff8fcf;
+  /* */
+  --body-bgcolor: #f85125;
+  --banner-color: #fc0e34;
+  --bubble-bgcolor: #ff8b8b;
+  --stroke-color: #fea0fe;
+  /* */
+  --body-bgcolor: #ffcf09;
+  --banner-color: #fffc00;
+  --bubble-bgcolor: #ff073a;
+  --stroke-color: #be03fd;
+  /* main colors */
+  --body-bgcolor: #33135c;
+  --banner-color: #79ffff;
+  --bubble-bgcolor: #ffd300;
+  --stroke-color: #652ec7;
+  /* */
+  --gradient1-color1: #ffcf09;
+  --gradient1-color2: #fffc00;
+  --gradient1-shadow: #be03fd;
+  --gradient2-color1: #be03fd;
+  --gradient2-color2: #652ec7;
+  /* transition */
+  --basic-transition: 00.25s;
+  /* footer metrix */
+  --footer-bottom: 1vmin;
+  --footer-left: 10vmin;
+  --footer-right: var(var(--footer-left));
+  --footer-width: calc( 100% - 2 * var(--footer-left));
+  /* menu metrix */
+  --menu-icon-size: 10vmin;
+  /* */
+  --link-color: red;
+  --link-visited-color: green;
+  --link-hover-color: blue;
+  --link-active-color: navy;
+  --link-bg-color: transparent;
+  --link-visited-bg-color: transparent;
+  --link-hover-bg-color: yellow;
+  --link-active-bg-color: orange;
+  /* */
+  --code-color: white;
+  --code-bg-color: black;
+  --code-js-head-bg: blue;
+  --code-css-head-bg: orange;
+}

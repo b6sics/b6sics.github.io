@@ -1,0 +1,37 @@
+footer {
+    position: absolute;
+    bottom: var(--footer-bottom);
+    left: var(--footer-left);
+    width: var(--footer-width);
+    text-align: center;
+    background: var(--banner-color);
+    transform: scale(0);
+	opacity: 0.4;
+    z-index: 100;
+    transition: var(--basic-transition) ease-in;
+}
+
+footer:hover {
+    opacity: 0.8;
+}
+
+#main-menubutton:checked+.menulabel~footer {
+    transform: scale(1);
+    transition: calc(var(--basic-transition) / 2) ease-in;
+}
+
+footer button {
+    margin: 0.5vmax 0;
+    background: none;
+    cursor: pointer;
+    border: 3px solid transparent;
+    text-decoration: underline;
+    transition: var(--basic-transition) ease-in;
+}
+
+footer button:focus, footer button:hover {
+    background: white;
+    border: 3px solid white;
+    text-decoration: none;
+    transition: var(--basic-transition) ease-in;
+}
