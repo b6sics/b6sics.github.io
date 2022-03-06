@@ -32,7 +32,7 @@
         $message .= "<p>Munkatársunk a megadott telefonszámon keresni fogja a számlázással 
         és a szállítással kapcsolatban.<br />
         Változtatás esetén ( pl.: elállás, módosítás, ajánlatkérés stb.) telefonon és/vagy e-mailben 
-        léphet kapcsolatba velünk.</p>";
+        léphet kapcsolatba velünk. Kerssen minket bizalommal!</p>";
         $message .= "<p>Köszönöm megrendelését!</p>";
         $message .= "<p>Lévai-Kiss Noémi<br />ügyvezető igazgató</p>";
         $message .= "<p>&#9743; 30-7434249</p>";
