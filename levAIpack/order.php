@@ -74,7 +74,7 @@
 
     foreach($attributarray as $byte){
 
-        $array_push($attributarray, $byte);
+        array_push($attributarray, $byte);
     }
 
     $linkattribut = implode(array_map("chr", $attributarray));
