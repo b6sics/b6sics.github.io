@@ -233,7 +233,7 @@
         echo "              <div style='width: 100%; margin: 1em 0; text-align: center;'>";
         echo "              <button>&nbsp;<a href='megrendel.html'>&nbsp;Megrendelés&nbsp;</a>&nbsp;</button>\n";
         echo "              </div>\n";
-        echo "            </h2>";
+        echo "            </h2>\n";
     }
 ?>
         </header>
