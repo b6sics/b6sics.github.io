@@ -44,6 +44,7 @@
     }
 
     $orderdate = date("Y-m-d H:m:s");
+    $ordertime = date("H:m:s");
 
     $basket64 = base64_encode($basket);
     $mail64 = base64_encode($mail);
@@ -58,7 +59,7 @@
     $saltstring = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
     $salt = base64_encode(substr($saltstring, 0, 10));
 
-    $datafilename = $mail . $orderdate . $salt;
+    $datafilename = $mail . $ordertime . $salt;
 
     $orderfile = "levAIorders/ordered/" . $datafilename . ".php";
     $orderstream = fopen($orderfile, "w") or die("Unable to open file!");
