@@ -70,7 +70,16 @@
     $saltpass = "ÁrvÍztŰrŐ tÜkÖrfÚrÓgÉp";
     $saltstring = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
 
-    $confirmationlink = "https://levaipack.hu/confirm.php";
+    $attributarray = str_split($phone64 . $orderdate64);
+    $bytes = []; 
+
+    foreach($attributarray as $byte){
+        $byte = $byte + 3;
+    }
+
+    $linkattribut = implode(array_map("chr", $bytes));
+
+    $confirmationlink = "https://levaipack.hu/confirm.php?$linkattribut";
 
 ?>
 
