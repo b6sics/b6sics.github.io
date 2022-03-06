@@ -1,20 +1,17 @@
 <html>
 <head>    
-<link href="calendar.css" type="text/css" rel="stylesheet" />
+<link href="h8kCalendar.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 <?php
-include 'calendar.php';
-$calendar = new Calendar();
+    include 'h8kCalendar.php';
+    $calendar = new Calendar();
 
-//un comment below to use plugin
-/*
-include 'highlight_today.php';
-$highlightToday = new HighlightToday();
-$calendar->attachObserver('showCell',$highlightToday);
-*/
+    include 'highlight_today.php';
+    $highlightToday = new HighlightToday();
+    $calendar->attachObserver('showCell',$highlightToday);
 
-echo $calendar->show();
+    echo $calendar->show();
 ?>
 </body>
 </html>
