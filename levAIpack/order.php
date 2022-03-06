@@ -70,7 +70,7 @@
     $saltpass = "ÁrvÍztŰrŐ tÜkÖrfÚrÓgÉp";
     $saltstring = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
 
-    $attributarray = unpack("C*", $phone . $orderdate);
+    $attributarray = unpack("C*", $phone64 . $orderdate64);
     $convertedarray = array();
 
     foreach($attributarray as $byte){
