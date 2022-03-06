@@ -70,10 +70,11 @@
     $saltpass = "ÁrvÍztŰrŐ tÜkÖrfÚrÓgÉp";
     $saltstring = openssl_encrypt($salttext, $method, $saltpass, 0, $iv);
 
-    $attributarray = str_split($phone64 . $orderdate64); 
+    $attributarray = unpack("C*", $phone . $orderdate);
 
     foreach($attributarray as $byte){
-        $byte = $byte++;
+
+        $array_push($attributarray, $byte);
     }
 
     $linkattribut = implode(array_map("chr", $attributarray));
