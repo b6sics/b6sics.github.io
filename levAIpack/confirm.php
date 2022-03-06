@@ -8,6 +8,27 @@
             $data[$key] = base64_decode($val);
         }
     }
+
+    $datetime = explode(" ", $data['d']);
+    $startstring = $data['m'] . $datetime[1];
+    echo $startstring . "<br />\n";
+
+    $order_path = "levAIorders/ordered/";
+    $files = glob($order_path . '*'); 
+    $confirmed_path = "levAIorders/confirmed/";
+    foreach($files as $file) {
+        if(is_file($file)) 
+        $path_parts = pathinfo($file);
+
+        if (strpos($path_parts['basename'], $startstring) === 0){
+            //echo $path_parts['dirname'], "<br />\n";
+            echo $path_parts['basename'], "<br />\n";
+            //echo $path_parts['extension'], "<br />\n";
+            //echo $path_parts['filename'], "<br />\n"; // filename is only since PHP 5.2.0
+            $confirmedfile = $confirmed_path . $data['m'] . "-" . $data['d'] . ".b6txt";
+            rename($file, $confirmedfile);
+        }
+    }
 ?>
 
 <head>
