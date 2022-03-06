@@ -20,15 +20,18 @@
             <p>
                 <a href="linkek.html">Filmek, könyvek, letöltési oldalak, webáruházak linkjei</a>.
             </p>
+            <h3>
+                PHP
+            </h3>
             <p>
                 <a href="https://startutorial.com/view/php-file-upload-tutorial-part-1">PHP File Upload 1.</a>.
             </p>
             <p>
                 <a href="https://startutorial.com/view/php-file-upload-tutorial-part-2">PHP File Upload 2.</a>.
             </p>
-            <h3>
+            <h4>
                 Understanding Design Patterns in PHP
-            </h3>
+            </h4>
             <p>
                 <a href="https://startutorial.com/view/understanding-design-patterns-abstract-factory">Abstract Factory</a>.
             </p>
