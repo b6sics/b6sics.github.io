@@ -33,6 +33,9 @@ form {
 button>* {
     height: calc(var(--body-module-size) / 2);
     font-size: calc(var(--body-module-size) / 3);
+}
+
+button {
     box-shadow: 0 0 0.75vmin var(--shadow-color1);
 }
 
