@@ -30,24 +30,3 @@ body {
     background-color: var(--body-color);
     overflow: scroll;
 }
-
-div,
-header,
-main,
-section,
-footer,
-article,
-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: var(--margin-h) var(--margin-w);
-    padding: var(--padding-h) var(--padding-w);
-    background-color: var(--content-bg-color);
-    border-radius: var(--content-border-radius);
-}
-
-form {
-    margin: auto 0;
-    width: 100%;
-}
