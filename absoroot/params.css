@@ -21,9 +21,10 @@
 
 body {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    flex-flow: ;
     min-height: calc(95vh - 2 * var(--content-border-width));
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--text-color);
