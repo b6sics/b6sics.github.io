@@ -23,6 +23,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: calc(95vh - 2 * var(--content-border-width));
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--text-color);
@@ -41,7 +42,12 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: var(--margin-h) var(--margin-w);
     padding: var(--padding-h) var(--padding-w);
     background-color: var(--content-bg-color);
     border-radius: var(--content-border-radius);
+}
+
+form {
+    flex-direction: column;
 }
