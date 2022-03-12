@@ -37,8 +37,7 @@ main,
 section,
 footer,
 article,
-details,
-form {
+details {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,5 +48,6 @@ form {
 }
 
 form {
-    flex-direction: column;
+    margin: auto 0;
+    width: 100%;
 }
