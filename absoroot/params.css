@@ -29,3 +29,19 @@ body {
     background-color: var(--body-color);
     overflow: scroll;
 }
+
+div,
+header,
+main,
+section,
+footer,
+article,
+details,
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-h) var(--padding-w);
+    background-color: var(--content-bg-color);
+    border-radius: var(--content-border-radius);
+}
