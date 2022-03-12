@@ -6,20 +6,44 @@ footer,
 article,
 details,
 form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     margin: var(--margin-h) var(--margin-w);
     padding: var(--padding-h) var(--padding-w);
     background-color: var(--content-bg-color);
     border-radius: var(--content-border-radius);
 }
 
+main {
+    width: 40%;
+    min-width: 400px;
+    text-align: center;
+}
+
 .left {
-    margin-left: 0;
+    float: left;
 }
 
 .right {
-    margin-right: 0;
+    float: right;
+}
+
+button {
+    line-height: 1.1em;
+    box-shadow: 0 0 0.75vmin var(--shadow-color1);
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 2px 2px 1vmin var(--shadow-color1);
+}
+
+input[type="submit"] {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    border-color: initial;
+    background-color: initial;
+    box-shadow: 1px 1px 0.5vmin var(--shadow-color1);
 }
