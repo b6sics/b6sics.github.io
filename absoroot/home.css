@@ -26,6 +26,10 @@ form {
     padding: var(--padding-h) var(--padding-w);
 }
 
+.left {
+    float: left;
+}
+
 button>* {
     height: calc(var(--body-module-size) / 2);
     font-size: calc(var(--body-module-size) / 3);
