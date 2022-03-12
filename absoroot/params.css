@@ -1,0 +1,31 @@
+:root {
+    --body-color: rgba(224, 224, 224, 0.9);
+    --text-color: darkslategray;
+    /* margin padding */
+    --margin-w: 1vw;
+    --margin-h: 1vh;
+    --padding-w: 1vw;
+    --padding-h: 1.5vh;
+    --border-width: 0.25vmin;
+    --border-radius: calc(6 * var(--border-width));
+    /* contents */
+    --content-border-width: 0.5vmin;
+    --content-border-style: solid;
+    --content-border-color: rgba(192, 192, 192, 0.35);
+    --content-txt-color: var(--text-color);
+    --content-bg-color: rgba(248, 248, 248, 0.7);
+    /* shadow stroke */
+    --shadow-blur: 0.1vmin;
+    --shadow-color1: lightslategray;
+    --shadow-color2: lightgray;
+}
+
+body {
+    margin: 0;
+    padding: var(--padding-h) var(--padding-w);
+    min-height: calc(96vh + 1px);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--body-color);
+    overflow: scroll;
+}
