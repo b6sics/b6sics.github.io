@@ -15,6 +15,11 @@ footer {
     width: 96%;
 }
 
+div {
+    width: calc(2 * var(--body-module-size));
+    overflow-x: visible;
+}
+
 main {
     width: 40%;
     min-width: 420px;
@@ -31,7 +36,6 @@ form {
 
 .align_right {
     text-align: right;
-    box-shadow: 0 0 0.75vmin var(--shadow-color1);
 }
 
 .indented {
