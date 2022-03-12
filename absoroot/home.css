@@ -11,9 +11,14 @@ details {
     border-radius: var(--content-border-radius);
 }
 
+header,
+footer {
+    width: 96%;
+}
+
 main {
     width: 40%;
-    min-width: 300px;
+    min-width: 420px;
     text-align: center;
 }
 
@@ -21,8 +26,9 @@ form {
     padding: var(--padding-h) var(--padding-w);
 }
 
-button {
-    line-height: 1.1em;
+button>* {
+    height: calc(var(--body-module-size) / 2);
+    font-size: calc(var(--body-module-size) / 3);
     box-shadow: 0 0 0.75vmin var(--shadow-color1);
 }
 
@@ -34,11 +40,15 @@ button:hover {
 input[type="submit"] {
     border-color: transparent;
     background-color: transparent;
+    font-size: calc(var(--body-module-size) / 4);
+    font-weight: normal;
+    line-height: calc(var(--body-module-size) / 4);
 }
 
 input[type="submit"]:hover {
     cursor: pointer;
     border-color: initial;
     background-color: initial;
+    text-shadow: 1px 1px 0 var(--shadow-color1);
     box-shadow: 1px 1px 0.5vmin var(--shadow-color1);
 }
