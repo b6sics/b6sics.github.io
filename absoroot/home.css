@@ -4,8 +4,7 @@ main,
 section,
 footer,
 article,
-details,
-form {
+details {
     margin: var(--margin-h) var(--margin-w);
     padding: var(--padding-h) var(--padding-w);
     background-color: var(--content-bg-color);
@@ -14,16 +13,13 @@ form {
 
 main {
     width: 40%;
-    min-width: 400px;
+    min-width: 300px;
     text-align: center;
 }
 
-.left {
-    float: left;
-}
-
-.right {
-    float: right;
+form {
+    margin: var(--margin-h) var(--margin-w);
+    padding: var(--padding-h) var(--padding-w);
 }
 
 button {
