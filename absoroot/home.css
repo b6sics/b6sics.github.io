@@ -26,8 +26,8 @@ form {
     padding: var(--padding-h) var(--padding-w);
 }
 
-.left {
-    float: left;
+.float_right {
+    float: right;
 }
 
 button>* {
