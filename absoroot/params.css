@@ -23,7 +23,7 @@
 body {
     margin: 0;
     padding: var(--padding-h) var(--padding-w);
-    min-height: calc(96vh + 1px);
+    min-height: calc(95vh + 1px);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--body-color);
