@@ -16,6 +16,14 @@
     --form-border-color: rgba(32, 32, 32, 0.8);
     --orderlist-table-color: whitesmoke;
     --orderlist-text-color: darkslategray;
+    /* main menu */
+    --label-bgcolor: rgba(255, 255, 255, 0.9);
+    --menu-icon-size: 10vmin;
+    --basic-transition: 00.25s;
+    --code-color: white;
+    --code-bg-color: black;
+    --body-bgcolor: #33135c;
+    --bubble-bgcolor: #ffd300;
 }
 
 body {
