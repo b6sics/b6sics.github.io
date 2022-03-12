@@ -6,10 +6,9 @@
     --margin-h: 1vh;
     --padding-w: 1vw;
     --padding-h: 1.5vh;
-    --border-width: 0.25vmin;
     --border-radius: calc(6 * var(--border-width));
     /* contents */
-    --content-border-width: 0.5vmin;
+    --content-border-width: 0.25vmin;
     --content-border-style: solid;
     --content-border-color: rgba(192, 192, 192, 0.35);
     --content-txt-color: var(--text-color);
@@ -23,9 +22,11 @@
 body {
     margin: 0;
     padding: var(--padding-h) var(--padding-w);
-    min-height: calc(95vh + 1px);
+    min-height: 100%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--body-color);
     overflow: scroll;
+    border: var(--border-width) var(--content-border-style) var(--content-border-color);
+    border-radius: var(--border-radius);
 }
