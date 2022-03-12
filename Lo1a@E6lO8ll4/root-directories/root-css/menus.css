@@ -217,5 +217,26 @@ summary:hover {
 
 .menu .content p b.f_right {
     float: right;
-    min-width: 8%;
+    min-width: 6%;
+}
+
+#fregister {
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    width: 90%;
+    height: calc(var(--menu-icon-size) / 2);
+    font-size: calc(var(--menu-icon-size) / 2.5);
+    transform: translate(0, -50%);
+}
+
+button.login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-clip-path: polygon(0% 100%, 0% 0%, 87% 0%, 87% 10%, 14% 10%, 14% 90%, 87% 90%, 87% 0%, 100% 0%, 100% 100%);
 }
