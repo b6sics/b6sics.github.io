@@ -26,7 +26,7 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--body-color);
-    overflow: scroll;
     border: var(--border-width) var(--content-border-style) var(--content-border-color);
     border-radius: var(--border-radius);
+    overflow: scroll;
 }
