@@ -18,7 +18,6 @@ main {
 }
 
 form {
-    margin: var(--margin-h) var(--margin-w);
     padding: var(--padding-h) var(--padding-w);
 }
 
