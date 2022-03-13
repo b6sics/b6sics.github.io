@@ -101,9 +101,9 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
 
     $message .= "<h3>Azonosító:</h3>";
     $message .= "e-mail: $mail.</p>";
-    $message .= "<p>Kérjük kattintson a megerősítő hivatkozásra a belépéshez:</p>";
+    $message .= "<p>Kérem kattintson a megerősítő hivatkozásra a belépéshez:</p>";
     $message .= "<p><a href='$confirmedlink'>link</a></p>";
-    $message .= "<p>Örülünk, hogy újra látjuk!</p>";
+    $message .= "<p>Örülök, hogy újra látom!</p>";
     $message .= "<br /></body></html>";
 
     $message = base64_encode(wordwrap($message, 70, $crlf));
