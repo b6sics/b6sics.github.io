@@ -7,8 +7,8 @@ $subject = "";
 
 $crlf = "\r\n";
 
-if (isset($_POST['mail'])) {
-    $mail = $_POST['mail'];
+if (isset($_POST['b6usermail'])) {
+    $mail = $_POST['b6usermail'];
 } else {
     $mail = "security@levaipack.hu";
     header('Location: https://b6.hu');
