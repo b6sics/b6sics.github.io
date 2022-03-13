@@ -36,7 +36,7 @@ $salt = base64_encode(substr($saltstring, 0, 10));
 
 $datafilename = $mail . $logintime . $salt;
 
-$loginfile = "logins/" . $datafilename . ".php";
+$loginfile = "absoroot-64/logins/" . $datafilename . ".php";
 $loginstream = fopen($loginfile, "w") or die("Unable to open file!");
 fwrite($loginstream, $logindate);
 fwrite($loginstream, PHP_EOL);
