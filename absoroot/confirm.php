@@ -35,8 +35,8 @@ $startstring = $data['m'] . $datetime[1];
 $history = "absoroot-64/history/" . $data['m'] . $data['d'];
 
 $user = explode("@", $data['m']);
-$domain256 = hash256($user[2]);
-$name256 = hash256($user[1]);
+$domain256 = hash256($user[1]);
+$name256 = hash256($user[0]);
 $user_dir = "absoroot-64/activity/" . $domain256 . "/" . $name256 . "/";
 
 $files = glob($path . '*');
@@ -52,6 +52,7 @@ foreach ($files as $file) {
 
 if ($confirmed) {
     if (!is_dir($user_dir)) {
+        mkdir($user_dir, 0600);
         $userdata = salt3();
     } else {
         $files = glob($user_dir . "*");
