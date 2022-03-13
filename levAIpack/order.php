@@ -71,10 +71,10 @@ $datafilename = $mail . $ordertime . $salt;
 
 $orderfile = "levAIorders/ordered/" . $datafilename . ".php";
 $orderstream = fopen($orderfile, "w") or die("Unable to open file!");
-fwrite($loginstream, "Client: " . $datetime);
-fwrite($loginstream, PHP_EOL);
-fwrite($loginstream, "Server: " . $orderdate);
-fwrite($loginstream, PHP_EOL);
+fwrite($orderstream, "Client: " . $datetime);
+fwrite($orderstream, PHP_EOL);
+fwrite($orderstream, "Server: " . $orderdate);
+fwrite($orderstream, PHP_EOL);
 fwrite($orderstream, $phone);
 fwrite($orderstream, PHP_EOL);
 fwrite($orderstream, $mail);
