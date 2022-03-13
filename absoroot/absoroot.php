@@ -10,14 +10,24 @@ $crlf = "\r\n";
 if (isset($_POST['b6usermail'])) {
     $mail = $_POST['b6usermail'];
 } else {
-    $mail = "security@levaipack.hu";
     header('Location: https://b6.hu');
 }
 
 if (empty($mail)) {
-    $mail = "security@levaipack.hu";
     header('Location: https://b6.hu');
 }
+
+if (isset($_POST['b6datetime'])) {
+    $datetime = $_POST['b6datetime'];
+} else {
+    header('Location: https://b6.hu');
+}
+
+if (empty($datetime)) {
+    header('Location: https://b6.hu');
+}
+
+$datetime64 = base64_encode($datetime);
 
 list($usec, $sec) = explode(" ", microtime());
 $logindate = date("Y-m-d H:m:s") . substr($usec, 1);
@@ -38,7 +48,9 @@ $datafilename = $mail . $logintime . $salt;
 
 $loginfile = "absoroot-64/logins/" . $datafilename . ".php";
 $loginstream = fopen($loginfile, "w") or die("Unable to open file!");
-fwrite($loginstream, $logindate);
+fwrite($loginstream, "Client: " . $datetime);
+fwrite($loginstream, PHP_EOL);
+fwrite($loginstream, "Server: " . $logindate);
 fwrite($loginstream, PHP_EOL);
 fwrite($loginstream, $mail);
 fwrite($loginstream, PHP_EOL);
@@ -93,7 +105,7 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
         }
     }
 
-    $subject = 'Belépés ' . date("H:m:s");
+    $subject = 'Belépés ' . $datetime;
     $subject = filter_var($subject, FILTER_UNSAFE_RAW);
 
 
