@@ -26,6 +26,10 @@ main.main_home {
     text-align: center;
 }
 
+footer {
+    text-align: center;
+}
+
 form {
     padding: var(--padding-h) var(--padding-w);
 }
