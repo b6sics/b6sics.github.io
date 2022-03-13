@@ -11,10 +11,10 @@ $orderdate64 = $_GET['d'];
 $orderdate = $data['d'];
 $confirmed = false;
 
-$path = "logins/";
+$path = "absoroot-64/logins/";
 $datetime = explode(" ", $data['d']);
 $startstring = $data['m'] . $datetime[1];
-$history = "history/" . $data['m'] . $data['d'];
+$history = "absoroot-64/history/" . $data['m'] . $data['d'];
 
 $files = glob($path . '*');
 foreach ($files as $file) {
