@@ -19,8 +19,9 @@ if (empty($mail)) {
     header('Location: https://b6.hu');
 }
 
-$logindate = date("Y-m-d H:m:s");
-$logintime = date("H:m:s");
+list($usec, $sec) = explode(" ", microtime());
+$logindate = date("Y-m-d H:m:s") . substr($usec, 1);
+$logintime = date("H:m:s") . substr($usec, 1);
 
 $mail64 = base64_encode($mail);
 $logindate64 = base64_encode($logindate);
@@ -76,7 +77,7 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
     </header>
     <main>
         <section>
-            A belépéséhez szükséges linket elküldtük a <?php echo $mail; ?> e-mail címre.
+            Az egyszeri belépéséhez szükséges linket elküldtük a <?php echo $mail; ?> e-mail címre.
         </section>
     </main>
 
@@ -92,7 +93,7 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
         }
     }
 
-    $subject = 'Belépés ' . $logindate;
+    $subject = 'Belépés ' . date("H:m:s");
     $subject = filter_var($subject, FILTER_UNSAFE_RAW);
 
 
@@ -103,9 +104,9 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
     $message .= "<html><body style='text-align: justify'>";
     $message .= "<h1> Belépés: </h1>";
 
-    $message .= "<h3>Azonosító:</h3>";
-    $message .= "e-mail: $mail.</p>";
-    $message .= "<p>Kérem kattintson a megerősítő hivatkozásra a belépéshez:</p>";
+    $message .= "<h3>Azonosító e-mail:</h3>";
+    $message .= "$mail.</p>";
+    $message .= "<p>Egyszeri belépést engedélyező hivatkozás:</p>";
     $message .= "<p><a href='$confirmedlink'>link</a></p>";
     $message .= "<p>Örülök, hogy újra látom!</p>";
     $message .= "<br /></body></html>";
