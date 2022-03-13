@@ -20,7 +20,7 @@ header div {
     overflow-x: visible;
 }
 
-main {
+main.main_home {
     width: 40%;
     min-width: 420px;
     text-align: center;
