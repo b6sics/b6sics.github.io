@@ -13,6 +13,16 @@
 
     <link rel="stylesheet" href="https://b6sics.github.io/levAIpack/root-directories/root-css-2022/style.css?t=123" />
 
+    <script>
+        function set_datetime() {
+            var today = new Date();
+            var current_date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+            var current_time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var current_datetime = current_date + " " + current_time;
+            document.getElementById("b6datetime").setAttribute('value', current_datetime);
+        }
+    </script>
+
 </head>
 
 <body id="start">
@@ -80,11 +90,11 @@
                     <!-- -------------- -->
                     <div>
                         <label for="quantity">Mennyiség (db): </label>
-                        <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" onchange="setQuantity();" onKeyDown="return false;" />
+                        <input type="number" id="quantity" class="orderlistQuantity" name="quantity" value="" onchange="setQuantity();" onkeydown="this.preventDefault();" />
                     </div>
                 </div>
                 <div class="center vertical fillParentsWidth">
-                    <button id="orderlistBtn" class="orderlistButton" onclick="setBasket(); return false;"> Hozzáad a kosárhoz! </button>
+                    <button id="orderlistBtn" class="orderlistButton" onclick="setBasket(); this.preventDefault();"> Hozzáad a kosárhoz! </button>
                 </div>
                 <div>
                     <label for="notFound">Nem találok megfelelőt: </label>
@@ -107,7 +117,8 @@
                 <p>
                     A megadott e-mail címre megküldjük a megrendelés másolatát. Kérjük kattintson az e-mailben található megerősítő hivatkozásra, így véglegesítve a megrendelést. Munkatársunk a megadott telefonszámon keresni fogja a számlázással és a szállítással kapcsolatban.
                 </p>
-                <input type="submit" id="submitOrder" name="submitOrder" value=" Megrendel " />
+                <input id="b6datetime" type="hidden" name="b6datetime" value="Y-M-D h:m:s">
+                <input onclick="set_datetime();" type="submit" id="submitOrder" name="submitOrder" value=" Megrendel " />
             </article>
         </section>
     </form>
