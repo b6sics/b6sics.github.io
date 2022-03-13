@@ -44,7 +44,7 @@ fwrite($loginstream, PHP_EOL);
 fclose($loginstream);
 chmod($loginfile, 0600);
 
-$confirmationlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
+$confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
 
 ?>
 
@@ -102,7 +102,7 @@ $confirmationlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
     $message .= "<h3>Megrendelő elérhetőségei:</h3>";
     $message .= "<p>telefon: $phone,<br />e-mail: $mail.</p>";
     $message .= "<p>Kérjük kattintson a megerősítő hivatkozásra a belépéshez:</p>";
-    $message .= "<p><a href='$confirmationlink'>link</a></p>";
+    $message .= "<p><a href='$confirmedlink'>link</a></p>";
     $message .= "<p>Örülünk, hogy újra látjuk!</p>";
     $message .= "<br /></body></html>";
 
