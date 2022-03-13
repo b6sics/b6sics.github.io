@@ -99,8 +99,8 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
     $message .= "<html><body style='text-align: justify'>";
     $message .= "<h1> Belépés: </h1>";
 
-    $message .= "<h3>Megrendelő elérhetőségei:</h3>";
-    $message .= "<p>telefon: $phone,<br />e-mail: $mail.</p>";
+    $message .= "<h3>Azonosító:</h3>";
+    $message .= "e-mail: $mail.</p>";
     $message .= "<p>Kérjük kattintson a megerősítő hivatkozásra a belépéshez:</p>";
     $message .= "<p><a href='$confirmedlink'>link</a></p>";
     $message .= "<p>Örülünk, hogy újra látjuk!</p>";
