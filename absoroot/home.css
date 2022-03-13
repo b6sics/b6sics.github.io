@@ -15,7 +15,7 @@ footer {
     width: 96%;
 }
 
-div {
+header div {
     width: calc(2 * var(--body-module-size));
     overflow-x: visible;
 }
