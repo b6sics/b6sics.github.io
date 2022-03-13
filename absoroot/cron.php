@@ -1,10 +1,10 @@
 <?php
-$b6huCronLog = fopen("b6huCron.log", "w") or die("Unable to open file!");
+$b6huCronLog = fopen("absoroot-64/b6huCron.log", "w") or die("Unable to open file!");
 fwrite($b6huCronLog, "Log created: " . date("Y-m-d h:i:s") . PHP_EOL);
 
 $today = date("Y-m-d");
 
-$path = "logins/";
+$path = "absoroot-64/logins/";
 $files = glob($path . '*');
 foreach ($files as $file) {
     if (is_file($file))
