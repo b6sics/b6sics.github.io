@@ -4,6 +4,7 @@
 <?php
 $message = "";
 $subject = "";
+$datetime = "";
 
 $crlf = "\r\n";
 
