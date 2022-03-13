@@ -6,7 +6,6 @@ if ($_GET['m'] != '' || isset($_GET['m'])) {
     }
 }
 
-$to = $data['m'];
 $mail64 = $_GET['m'];
 $orderdate64 = $_GET['d'];
 $orderdate = $data['d'];
@@ -15,13 +14,14 @@ $confirmed = false;
 $path = "logins/";
 $datetime = explode(" ", $data['d']);
 $startstring = $data['m'] . $datetime[1];
+$history = "history/" . $data['m'] . $data['d'];
 
 $files = glob($path . '*');
 foreach ($files as $file) {
     if (is_file($file)) {
         $path_parts = pathinfo($file);
         if (strpos($path_parts['basename'], $startstring) === 0) {
-            unlink($file);
+            rename($file, $history);
             $confirmed = true;
         }
     }
