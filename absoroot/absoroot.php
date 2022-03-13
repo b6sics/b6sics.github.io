@@ -71,9 +71,9 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
         </div>
     </header>
     <main>
-        <div>
+        <section>
             A belépéséhez szükséges linket elküldtük a <?php echo $mail; ?> e-mail címre.
-        </div>
+        </section>
     </main>
 
     <?php
