@@ -108,24 +108,20 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
 
     $message = base64_encode(wordwrap($message, 70, $crlf));
 
-    if (isset($_POST['mail'])) {
-        $to = email_is_valid($_POST['mail']);
-    } else {
-        $to = "security@levaipack.hu";
-    }
+    $to = email_is_valid($mail);
 
     $deliveredTo = 'Delivered-to: ' . $to;
 
     mb_internal_encoding('UTF-8');
 
-    $sender_name = mb_encode_mimeheader('levaipack.hu', 'UTF-8', 'Q');
-    $from = 'From: ' . $sender_name . '<levaipack@levaipack.hu>';
+    $sender_name = mb_encode_mimeheader('b6.hu', 'UTF-8', 'Q');
+    $from = 'From: ' . $sender_name . '<b6@b6.hu>';
 
-    $replayTo = 'Reply-To: levaipack@levaipack.hu';
+    $replayTo = 'Reply-To: b6@b6.hu';
 
-    $xSender = 'X-Sender: ' . $sender_name . '<levaipack@levaipack.hu>';
-    $returnPath = 'Return-Path: ' . $sender_name . '<levaipack@levaipack.hu>';
-    $envelopeFrom = 'Envelope-from: ' . $sender_name . '<levaipack@levaipack.hu>';
+    $xSender = 'X-Sender: ' . $sender_name . '<b6@b6.hu>';
+    $returnPath = 'Return-Path: ' . $sender_name . '<b6@b6.hu>';
+    $envelopeFrom = 'Envelope-from: ' . $sender_name . '<b6@b6.hu>';
 
     $xMailer = 'X-Mailer: PHP/' . phpversion();
 
