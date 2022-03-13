@@ -56,6 +56,10 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Login|Abso-root</title>
+
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
     <base target="_self">
 
     <link rel="stylesheet" href="style.css?t=123" />
