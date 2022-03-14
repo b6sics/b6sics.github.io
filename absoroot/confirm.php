@@ -17,9 +17,9 @@ function salt3()
     return base64_encode(substr($saltstring, 0, 10));
 }
 
-function hash256($origin)
+function hash128($origin)
 {
-    $algo = "sha256";
+    $algo = "md5";
     $binary = "true";
     return hash($algo, $origin, $binary);
 }
@@ -29,15 +29,15 @@ $orderdate64 = $_GET['d'];
 $orderdate = $data['d'];
 $confirmed = false;
 
-$path = "absoroot-64/logins/";
+$path = "absoroot-64" . PATH_SEPARATOR . "logins" . PATH_SEPARATOR;
 $datetime = explode(" ", $data['d']);
 $startstring = $data['m'] . $datetime[1];
 $history = "absoroot-64/history/" . $data['m'] . $data['d'];
 
 $user = explode("@", $data['m']);
-$domain256 = hash256($user[1]);
-$name256 = hash256($user[0]);
-$user_dir = "absoroot-64/activity/" . $domain256 . "/" . $name256 . "/";
+$domain128 = base64_encode(hash128($user[1]));
+$name128 = base64_encode(hash128($user[0]));
+$user_dir = "absoroot-64" . PATH_SEPARATOR . "activity" . PATH_SEPARATOR . $domain128 . PATH_SEPARATOR . $name128;
 
 $files = glob($path . '*');
 foreach ($files as $file) {
@@ -52,13 +52,13 @@ foreach ($files as $file) {
 
 if ($confirmed) {
     if (!is_dir($user_dir)) {
-        mkdir($user_dir, 0600);
+        mkdir("." . PATH_SEPARATOR . $user_dire, 0755, true);
         $userdata = salt3();
     } else {
         $files = glob($user_dir . "*");
         $userdata = $files[0];
     }
-    $filestream = fopen($user_dir . $userdata, "w") or die("$userdata not exists");
+    $filestream = fopen($user_dir . PATH_SEPARATOR . $userdata . "b6se", "w") or die("$userdata not exists");
     fwrite($filestream, $user_dir . "\n");
     fwrite($filestream, $userdata . "\n");
     fclose($filestream);
