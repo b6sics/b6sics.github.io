@@ -60,10 +60,10 @@ if ($confirmed) {
         $userdata = salt3();
     } else {
         $files = glob($user_dir . DIRECTORY_SEPARATOR . "*");
-        echo $user_dir, DIRECTORY_SEPARATOR, "* <br />";
-        $userdata = $files[0];
+        $path_parts = pathinfo($files[0]);
+        $userdata = $path_parts['basename'];
     }
-    $filestream = fopen($userdata, "w") or die("$userdata not exists");
+    $filestream = fopen($user_dir . $userdata, "w") or die("$userdata not exists");
     fwrite($filestream, $user_dir . "\n");
     fwrite($filestream, $userdata . "\n");
     fclose($filestream);
