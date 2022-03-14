@@ -50,15 +50,20 @@ foreach ($files as $file) {
     }
 }
 
+$userdata = "no-user-data";
+
 if ($confirmed) {
     if (!is_dir($user_dir)) {
-        mkdir("." . DIRECTORY_SEPARATOR . $user_dir, 0755, true);
+        echo "mkdir(): ";
+        echo mkdir("." . DIRECTORY_SEPARATOR . $user_dir, 0700, true);
+        echo "<br />";
         $userdata = salt3();
     } else {
-        $files = glob($user_dir . "*");
+        $files = glob($user_dir . DIRECTORY_SEPARATOR . "*");
+        echo $user_dir, DIRECTORY_SEPARATOR, "* <br />";
         $userdata = $files[0];
     }
-    $filestream = fopen($user_dir . DIRECTORY_SEPARATOR . $userdata . ".db6", "w") or die("$userdata not exists");
+    $filestream = fopen($userdata, "w") or die("$userdata not exists");
     fwrite($filestream, $user_dir . "\n");
     fwrite($filestream, $userdata . "\n");
     fclose($filestream);
