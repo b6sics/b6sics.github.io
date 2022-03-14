@@ -51,8 +51,8 @@ if (empty($datetime)) {
 $datetime64 = base64_encode($datetime);
 
 list($usec, $sec) = explode(" ", microtime());
-$orderdate = date("Y-m-d H:m:s") . substr($usec, 1);
-$ordertime = date("H:m:s") . substr($usec, 1);
+$orderdate = date("Y-m-d H:i:s") . substr($usec, 1);
+$ordertime = date("H:i:s") . substr($usec, 1);
 
 $basket64 = base64_encode($basket);
 $mail64 = base64_encode($mail);
@@ -206,7 +206,7 @@ léphet kapcsolatba velünk.</p>";
     $xMsMailPriority = 'X-MSMail-Priority: High';
     $importance = 'Importance: 3';
 
-    $xDate = 'Date:' . date("YmdHms");
+    $xDate = 'Date:' . date("YmdHis");
 
     //$cC[] = 'Cc: security@levaipack.hu';
     //$bCC[] = 'Bcc: security@levaipack.hu';
