@@ -63,7 +63,7 @@ if ($confirmed) {
         $path_parts = pathinfo($files[0]);
         $userdata = $path_parts['basename'];
     }
-    $filestream = fopen($user_dir . $userdata, "w") or die("$userdata not exists");
+    $filestream = fopen($user_dir . DIRECTORY_SEPARATOR . $userdata, "w") or die("$userdata not exists");
     fwrite($filestream, $user_dir . "\n");
     fwrite($filestream, $userdata . "\n");
     fclose($filestream);
