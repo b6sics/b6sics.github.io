@@ -31,8 +31,8 @@ if (empty($datetime)) {
 $datetime64 = base64_encode($datetime);
 
 list($usec, $sec) = explode(" ", microtime());
-$logindate = date("Y-m-d H:m:s") . substr($usec, 1);
-$logintime = date("H:m:s") . substr($usec, 1);
+$logindate = date("Y-m-d H:i:s") . substr($usec, 1);
+$logintime = date("H:i:s") . substr($usec, 1);
 
 $mail64 = base64_encode($mail);
 $logindate64 = base64_encode($logindate);
@@ -147,7 +147,7 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
     $xMsMailPriority = 'X-MSMail-Priority: High';
     $importance = 'Importance: 3';
 
-    $xDate = 'Date:' . date("YmdHms");
+    $xDate = 'Date:' . date("YmdHis");
 
     //$cC[] = 'Cc: security@levaipack.hu';
     //$bCC[] = 'Bcc: security@levaipack.hu';
