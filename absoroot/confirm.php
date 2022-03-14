@@ -29,7 +29,7 @@ $orderdate64 = $_GET['d'];
 $orderdate = $data['d'];
 $confirmed = false;
 
-$path = "absoroot-64" . PATH_SEPARATOR . "logins" . PATH_SEPARATOR;
+$path = "absoroot-64" . DIRECTORY_SEPARATOR . "logins" . DIRECTORY_SEPARATOR;
 $datetime = explode(" ", $data['d']);
 $startstring = $data['m'] . $datetime[1];
 $history = "absoroot-64/history/" . $data['m'] . $data['d'];
@@ -37,7 +37,7 @@ $history = "absoroot-64/history/" . $data['m'] . $data['d'];
 $user = explode("@", $data['m']);
 $domain128 = base64_encode(hash128($user[1]));
 $name128 = base64_encode(hash128($user[0]));
-$user_dir = "absoroot-64" . PATH_SEPARATOR . "activity" . PATH_SEPARATOR . $domain128 . PATH_SEPARATOR . $name128;
+$user_dir = "absoroot-64" . DIRECTORY_SEPARATOR . "activity" . DIRECTORY_SEPARATOR . $domain128 . DIRECTORY_SEPARATOR . $name128;
 
 $files = glob($path . '*');
 foreach ($files as $file) {
@@ -52,13 +52,13 @@ foreach ($files as $file) {
 
 if ($confirmed) {
     if (!is_dir($user_dir)) {
-        mkdir("." . PATH_SEPARATOR . $user_dire, 0755, true);
+        mkdir("." . DIRECTORY_SEPARATOR . $user_dir, 0755, true);
         $userdata = salt3();
     } else {
         $files = glob($user_dir . "*");
         $userdata = $files[0];
     }
-    $filestream = fopen($user_dir . PATH_SEPARATOR . $userdata . "b6se", "w") or die("$userdata not exists");
+    $filestream = fopen($user_dir . DIRECTORY_SEPARATOR . $userdata . ".db6", "w") or die("$userdata not exists");
     fwrite($filestream, $user_dir . "\n");
     fwrite($filestream, $userdata . "\n");
     fclose($filestream);
