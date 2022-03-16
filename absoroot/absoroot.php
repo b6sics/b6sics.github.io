@@ -2,6 +2,18 @@
 <html lang="hu">
 
 <?php
+
+if (! empty($_SERVER['HTTP_CLIENT_IP'])) {
+    // ip from share internet
+    $client_ip = $_SERVER['HTTP_CLIENT_IP'];
+} elseif (! empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+    // ip pass from proxy
+    $client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+} else {
+    $client_ip = $_SERVER['REMOTE_ADDR'];
+}
+$client_datas = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $client_ip));
+
 $message = "";
 $subject = "";
 $datetime = "";
@@ -54,6 +66,16 @@ fwrite($loginstream, PHP_EOL);
 fwrite($loginstream, "Server: " . $logindate);
 fwrite($loginstream, PHP_EOL);
 fwrite($loginstream, $mail);
+fwrite($loginstream, PHP_EOL);
+fwrite($loginstream, "Client ip:        " . $client_ip);
+fwrite($loginstream, PHP_EOL);
+fwrite($loginstream, "Client city:      " . $client_datas['geoplugin_city']);
+fwrite($loginstream, PHP_EOL);
+fwrite($loginstream, "Client region:    " . $client_datas['geoplugin_regionName']);
+fwrite($loginstream, PHP_EOL);
+fwrite($loginstream, "Client country:   " . $client_datas['geoplugin_countryName']);
+fwrite($loginstream, PHP_EOL);
+fwrite($loginstream, "Client continent: " . $client_datas['geoplugin_continentName']);
 fwrite($loginstream, PHP_EOL);
 fclose($loginstream);
 chmod($loginfile, 0600);
