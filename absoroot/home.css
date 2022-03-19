@@ -52,6 +52,7 @@ button>* {
 }
 
 button {
+    height: calc(var(--body-module-size) / 1.5);
     box-shadow: 0 0 0.75vmin var(--shadow-color1);
 }
 
