@@ -44,19 +44,29 @@ $clientdate = explode(" ", $datetime);
 if (count($clientdate) == 2) {
     $clienttime = explode(":", $clientdate[1]);
     if (count($clienttime) == 3) {
-        $clienthour = $clienttime[0] + 0;
-        $clientmin = $clienttime[1] + 0;
-        $clientsec = $clienttime[2] + 0;
-        if ($clienthour < 0 || $clienthour > 24){
+        if (preg_match('/^\d+$/', $clienttime[0]) &&
+            preg_match('/^\d+$/', $clienttime[1]) &&
+            preg_match('/^\d+$/', $clienttime[2]) ) {
+                $clienthour = (int) $clienttime[0];
+                $clientmin = (int) $clienttime[1];
+                $clientsec = (int) $clienttime[2];
+                if ($clienthour < 0 || $clienthour > 24) {
+                    header('Location: https://b6.hu');
+                }
+                if ($clientmin < 0 || $clienthour > 59) {
+                    header('Location: https://b6.hu');
+                }
+                if ($clientsec < 0 || $clienthour > 59) {
+                    header('Location: https://b6.hu');
+                }
+        } else {
             header('Location: https://b6.hu');
         }
-        if ($clientmin < 0 || $clienthour > 59){
-            header('Location: https://b6.hu');
-        }
-        if ($clientsec < 0 || $clienthour > 59){
-            header('Location: https://b6.hu');
-        }
+    } else {
+        header('Location: https://b6.hu');
     }
+} else {
+    header('Location: https://b6.hu');
 }
 
 
