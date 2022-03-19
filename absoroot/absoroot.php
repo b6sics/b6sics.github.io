@@ -3,10 +3,10 @@
 
 <?php
 
-if (! empty($_SERVER['HTTP_CLIENT_IP'])) {
+if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     // ip from share internet
     $client_ip = $_SERVER['HTTP_CLIENT_IP'];
-} elseif (! empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
     // ip pass from proxy
     $client_ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 } else {
@@ -39,6 +39,26 @@ if (isset($_POST['b6datetime'])) {
 if (empty($datetime)) {
     header('Location: https://b6.hu');
 }
+
+$clientdate = explode(" ", $datetime);
+if (count($clientdate) == 2) {
+    $clienttime = explode(":", $clientdate[1]);
+    if (count($clienttime) == 3) {
+        $clienthour = $clienttime[0] + 0;
+        $clientmin = $clienttime[1] + 0;
+        $clientsec = $clienttime[2] + 0;
+        if ($clienthour < 0 || $clienthour > 24){
+            header('Location: https://b6.hu');
+        }
+        if ($clientmin < 0 || $clienthour > 59){
+            header('Location: https://b6.hu');
+        }
+        if ($clientsec < 0 || $clienthour > 59){
+            header('Location: https://b6.hu');
+        }
+    }
+}
+
 
 $datetime64 = base64_encode($datetime);
 
