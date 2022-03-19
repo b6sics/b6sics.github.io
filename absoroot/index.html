@@ -30,7 +30,7 @@
             var hh = today.getHours().toString().padStart(2, "0");
             var mi = today.getMinutes().toString().padStart(2, "0");
             var ss = today.getSeconds().toString().padStart(2, "0");
-            var current_date = yy + ":" + mm + ":" + dd;
+            var current_date = yy + "-" + mm + "-" + dd;
             var current_time = hh + ":" + mi + ":" + ss;
             var current_datetime = current_date + " " + current_time;
             document.getElementById("b6datetime").setAttribute('value', current_datetime);
