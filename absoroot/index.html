@@ -44,8 +44,8 @@
     <main class="main_home">
         <form id="loginform" action="https://b6.hu/absoroot.php" method="POST">
             <input id="b6datetime" type="hidden" name="b6datetime" value="Y-M-D h:i:s">
-            <button onclick="set_datetime();" type="submit" form="loginform">
-                <input type="email" name="b6usermail" placeholder="&#9993; Start with your mail" required />
+            <button onmousedown="set_datetime();" type="submit" form="loginform">
+                <input onchange="set_datetime();" type="email" name="b6usermail" placeholder="&#9993; Start with your mail" required />
                 <b>&#9654;</b>
             </button>
         </form>
@@ -57,5 +57,8 @@
     </footer>
 
 </body>
+<script>
+    set_datetime();
+</script>
 
 </html>
