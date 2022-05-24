@@ -27,37 +27,39 @@
             READY = 1,
             ERROR = 2;
 
+        let D = document;
+        let main = D.getElementById('main_home');
         let state = {};
         let setLoading = () => state.view = LOADING;
         let setReady = () => state.view = READY;
         let isLoading = () => state.view === LOADING;
         let isReady = () => state.view === READY;
-
-        let $refs = {}
-        document.querySelectorAll('[id]').forEach($el => {
-            let key = $el.id.replace(/-(.)/g, (_, s) => s.toUpperCase())
-            $refs[key] = $el
-        })
     </script>
 
 </head>
 
 <body>
-    <header>
+    <header class="header" id="header">
         <img class="float_right" src="O.png" alt="O" />
         <div class="align_right">
             <h1>Vanilla</h1>
             <h5><i>is great</i></h5>
         </div>
     </header>
-    <main class="main_home">
+    <main class="main_home" id="main_home">
 
     </main>
-    <footer>
+    <footer class="footer" id="footer">
 
     </footer>
 
     <script>
+        let $refs = {};
+        D.querySelectorAll('[id]').forEach($el => {
+            let key = $el.id.replace(/-(.)/g, (_, s) => s.toUpperCase());
+            $refs[key] = $el;
+            main.innerHTML += "<p>[" + key + "]</p>";
+        })
     </script>
 </body>
 
