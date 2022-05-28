@@ -3,6 +3,9 @@
 
 <?php
 
+include_once("validation_ab6date.php");
+include_once("validation_email.php");
+
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     // ip from share internet
     $client_ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -23,79 +26,26 @@ $crlf = "\r\n";
 if (isset($_POST['b6usermail'])) {
     $mail = $_POST['b6usermail'];
 } else {
-    header('Location: https://b6.hu');
+    header($home_url);
 }
 
 if (empty($mail)) {
-    header('Location: https://b6.hu');
+    header($home_url);
 }
 
 if (isset($_POST['b6datetime'])) {
     $datetime = $_POST['b6datetime'];
 } else {
-    header('Location: https://b6.hu');
+    header($home_url);
 }
 
 if (empty($datetime)) {
-    header('Location: https://b6.hu');
+    header($home_url);
 }
 
-$clientdatetime = explode(" ", $datetime);
-if (count($clientdatetime) == 2) {
-    $clientdate = explode("-", $clientdatetime[0]);
-    if (count($clientdate) == 3) {
-        if (
-            preg_match('/^\d+$/', $clientdate[0]) &&
-            preg_match('/^\d+$/', $clientdate[1]) &&
-            preg_match('/^\d+$/', $clientdate[2])
-        ) {
-            $clientyear = (int) $clientdate[0];
-            $clientmonth = (int) $clientdate[1];
-            $clientday = (int) $clientdate[2];
-            if ($clientyear < 0) {
-                header('Location: https://b6.hu');
-            }
-            if ($clientmonth < 0 || $clientmonth > 12) {
-                header('Location: https://b6.hu');
-            }
-            if ($clientday < 0) {
-                header('Location: https://b6.hu');
-            }
-        } else {
-            header('Location: https://b6.hu');
-        }
-    } else {
-        header('Location: https://b6.hu');
-    }
-    $clienttime = explode(":", $clientdatetime[1]);
-    if (count($clienttime) == 3) {
-        if (
-            preg_match('/^\d+$/', $clienttime[0]) &&
-            preg_match('/^\d+$/', $clienttime[1]) &&
-            preg_match('/^\d+$/', $clienttime[2])
-        ) {
-            $clienthour = (int) $clienttime[0];
-            $clientmin = (int) $clienttime[1];
-            $clientsec = (int) $clienttime[2];
-            if ($clienthour < 0 || $clienthour > 24) {
-                header('Location: https://b6.hu');
-            }
-            if ($clientmin < 0 || $clientmin > 59) {
-                header('Location: https://b6.hu');
-            }
-            if ($clientsec < 0 || $clientsec > 59) {
-                header('Location: https://b6.hu');
-            }
-        } else {
-            header('Location: https://b6.hu');
-        }
-    } else {
-        header('Location: https://b6.hu');
-    }
-} else {
-    header('Location: https://b6.hu');
+if (!ab6date_is_valid($datetime)) {
+    header($home_url);
 }
-
 
 $datetime64 = base64_encode($datetime);
 
@@ -174,16 +124,6 @@ $confirmedlink = "https://b6.hu/confirm.php?m=$mail64&d=$logindate64";
     </main>
 
     <?php
-
-    function email_is_valid($email_address)
-    {
-        $email_address = filter_var($email_address, FILTER_SANITIZE_EMAIL);
-        if (filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
-            return $email_address;
-        } else {
-            return "security@levaipack.hu"; /* 3miLE6lOo1a8ll4 */
-        }
-    }
 
     $subject = 'Belépés ' . $datetime;
     $subject = filter_var($subject, FILTER_UNSAFE_RAW);
