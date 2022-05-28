@@ -2,6 +2,7 @@
 <html lang="hu">
 
 <head>
+    <meta http-equiv="refresh" content="5;URL=ab6visitor.html">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
@@ -55,20 +56,9 @@
     </footer>
 
     <script>
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                successCallback,
-                errorCallback, {
-                    enableHighAccuracy: true,
-                    timeout: 2000,
-                    maximumAge: 10000
-                }
-            );
-        } else {
-            alert('geolocation is not supported');
-        }
         let main = document.getElementById('body-main');
         let REFS = {};
+        console.log("started: " + Date.now());
     </script>
 </body>
 
