@@ -4,6 +4,13 @@ if ($_GET['m'] != '' || isset($_GET['m'])) {
         //echo 'Field name : '.$key .', Value : '. base64_decode($val) .'<br>';
         $data[$key] = base64_decode($val);
     }
+} else {
+    header('Location: https://b6.hu');
+}
+
+if ($_GET['d'] != '' || isset($_GET['d'])) {
+} else {
+    header('Location: https://b6.hu');
 }
 
 function salt3()
