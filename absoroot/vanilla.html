@@ -22,44 +22,53 @@
     <link rel="stylesheet" href="style.css" />
 
     <script>
-        const TODAY = Date.now();
-        const LOADING = 0,
-            READY = 1,
-            ERROR = 2;
-
-        let D = document;
-        let main = D.getElementById('main_home');
-        let state = {};
-        let setLoading = () => state.view = LOADING;
-        let setReady = () => state.view = READY;
-        let isLoading = () => state.view === LOADING;
-        let isReady = () => state.view === READY;
+        function list() {
+            var txt = "<hr />";
+            document.querySelectorAll('[id]').forEach($el => {
+                let key = $el.id.replace(/(-|_)(.)/g, (a, b, c) => c.toUpperCase());
+                REFS[key] = $el;
+                txt += "<p>REFS[" + key + "] = " + $el.nodeName + ":</p>";
+                txt += $el.innerHTML.replace(/(<)/gi, " &lt;");
+                txt += "<hr />";
+            })
+            main.innerHTML = "<p><i>" + txt + "</i></p>";
+        }
     </script>
 
 </head>
 
-<body>
-    <header class="header" id="header">
+<body onload="list()">
+    <header class="body-header" id="body-header">
         <img class="float_right" src="O.png" alt="O" />
         <div class="align_right">
             <h1>Vanilla</h1>
-            <h5><i>is great</i></h5>
+            <h5><i>script is great</i></h5>
         </div>
     </header>
-    <main class="main_home" id="main_home">
+    <main class="body-main" id="body-main">
 
     </main>
-    <footer class="footer" id="footer">
-
+    <footer class="body-footer" id="body_footer">
+        <p>
+            @footer
+        </p>
     </footer>
 
     <script>
-        let $refs = {};
-        D.querySelectorAll('[id]').forEach($el => {
-            let key = $el.id.replace(/-(.)/g, (_, s) => s.toUpperCase());
-            $refs[key] = $el;
-            main.innerHTML += "<p>[" + key + "]</p>";
-        })
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                successCallback,
+                errorCallback, {
+                    enableHighAccuracy: true,
+                    timeout: 2000,
+                    maximumAge: 10000
+                }
+            );
+        } else {
+            alert('geolocation is not supported');
+        }
+        let main = document.getElementById('body-main');
+        let REFS = {};
     </script>
 </body>
 
