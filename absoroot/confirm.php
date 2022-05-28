@@ -4,14 +4,19 @@ if ($_GET['m'] != '' || isset($_GET['m'])) {
         //echo 'Field name : '.$key .', Value : '. base64_decode($val) .'<br>';
         $data[$key] = base64_decode($val);
     }
+    $mail64 = $_GET['m'];
 } else {
     header('Location: https://b6.hu');
 }
 
 if ($_GET['d'] != '' || isset($_GET['d'])) {
+    $orderdate64 = $_GET['d'];
+    $orderdate = $data['d'];
 } else {
     header('Location: https://b6.hu');
 }
+
+// TODO: validation mail/datetime 
 
 function salt3()
 {
@@ -31,9 +36,6 @@ function hash128($origin)
     return hash($algo, $origin, $binary);
 }
 
-$mail64 = $_GET['m'];
-$orderdate64 = $_GET['d'];
-$orderdate = $data['d'];
 $confirmed = false;
 
 $path = "absoroot-64" . DIRECTORY_SEPARATOR . "logins" . DIRECTORY_SEPARATOR;
