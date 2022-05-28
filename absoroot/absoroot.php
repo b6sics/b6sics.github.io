@@ -53,10 +53,10 @@ if (count($clientdate) == 2) {
                 if ($clienthour < 0 || $clienthour > 24) {
                     header('Location: https://b6.hu');
                 }
-                if ($clientmin < 0 || $clienthour > 59) {
+                if ($clientmin < 0 || $clientmin > 59) {
                     header('Location: https://b6.hu');
                 }
-                if ($clientsec < 0 || $clienthour > 59) {
+                if ($clientsec < 0 || $clientsec > 59) {
                     header('Location: https://b6.hu');
                 }
         } else {
