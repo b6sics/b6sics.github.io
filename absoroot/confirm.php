@@ -1,5 +1,5 @@
 <?php
-if ($_GET['m'] != '' || isset($_GET['m'])) {
+if (isset($_GET['m'])) {
     foreach ($_GET as $key => $val) {
         //echo 'Field name : '.$key .', Value : '. base64_decode($val) .'<br>';
         $data[$key] = base64_decode($val);
@@ -9,7 +9,7 @@ if ($_GET['m'] != '' || isset($_GET['m'])) {
     header('Location: https://b6.hu');
 }
 
-if ($_GET['d'] != '' || isset($_GET['d'])) {
+if (isset($_GET['d'])) {
     $orderdate64 = $_GET['d'];
     $orderdate = $data['d'];
 } else {
