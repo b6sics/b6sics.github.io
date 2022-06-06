@@ -53,6 +53,10 @@ list($usec, $sec) = explode(" ", microtime());
 $logindate = date("Y-m-d H:i:s") . substr($usec, 1);
 $logintime = date("H:i:s") . substr($usec, 1);
 
+if (!isset($mail)) {
+    header($home_url);
+}
+
 $mail64 = base64_encode($mail);
 $logindate64 = base64_encode($logindate);
 
