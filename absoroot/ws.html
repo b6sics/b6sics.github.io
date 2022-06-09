@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=u tf-8>
+    <title>web sockets</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        var host = 'ws://0.0.0.0:12345/websockets.php';
+        var socket = new WebSocket(host);
+        socket.onmessage = function(e) {
+            document.getElementById('root').innerHTML = e.data;
+        };
+    </script>
+</body>
+
+<script>
+    if (navigator.onLine) {
+
+    } else {
+        alert("You are Offline");
+    }
+</script>
+
+</html>
