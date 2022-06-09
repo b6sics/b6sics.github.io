@@ -16,6 +16,14 @@ if (isset($_GET['d'])) {
     header('Location: https://b6.hu');
 }
 
+if (!isset($data)) {
+    header($home_url);
+}
+
+if (!isset($mail64)) {
+    header($home_url);
+}
+
 // TODO: validation mail/datetime 
 
 function salt3()
