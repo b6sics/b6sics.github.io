@@ -9,7 +9,7 @@
 <body>
     <div id="root"></div>
     <script>
-        var host = 'ws://0.0.0.0:12345/wss.php';
+        var host = 'ws://127.0.0.1:12345/wss.php';
         var socket = new WebSocket(host);
         socket.onmessage = function(e) {
             document.getElementById('root').innerHTML = e.data;
