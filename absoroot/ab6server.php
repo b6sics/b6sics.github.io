@@ -1,7 +1,7 @@
 <?php
 
 
-echo PHP_VERSION;
+echo PHP_VERSION."\n";
 
 // set some variables
 $host = "127.0.0.1";
