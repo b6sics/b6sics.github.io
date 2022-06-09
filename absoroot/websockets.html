@@ -33,7 +33,7 @@
                 <div id="webServerStatus"></div>
 
                 <script>
-                    var wsUri = "ws://echo.websocket.events/";
+                    var wsUri = "ws:///b6.hu/ab6server.php";
                     var socket;
                     var webServerStatus;
                     webServerStatus = document.getElementById('webServerStatus');
@@ -65,7 +65,7 @@
 
                     function onOpen(evt) {
                         webServerStatus.innerHTML += " CONNECTED<br />";
-                        doSend("WebSocket rocks");
+                        doSend("My name is g");
                     }
 
                     function onClose(evt) {
@@ -97,7 +97,6 @@
 </head>
 <script>
     if (navigator.onLine) {
-        alert("You are Online");
         window.addEventListener("load", init, false);
     } else {
         alert("You are Offline");
