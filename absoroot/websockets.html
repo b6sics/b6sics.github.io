@@ -7,19 +7,97 @@
 </head>
 
 <body>
-    <div id="root"></div>
-    <script>
-        var host = 'ws://0.0.0.0:12345/websockets.php';
-        var socket = new WebSocket(host);
-        socket.onmessage = function(e) {
-            document.getElementById('root').innerHTML = e.data;
-        };
-    </script>
+
+    <section id="wrapper">
+
+        <header>
+            <h1>web sockets</h1>
+        </header>
+
+        <article>
+
+            <p id="ajaxStatus">XHTTP presents: </p>
+
+            <script>
+                var xhttp;
+                const ajaxStatus = document.getElementById('ajaxStatus');
+
+                if (window.XMLHttpRequest) {
+                    xhttp = new XMLHttpRequest();
+                    ajaxStatus.innerHTML += ' OK';
+                } else {
+                    ajaxStatus.innerHTML += ' NULL';
+                }
+            </script>
+
+            <h2>WebSocket Test</h2>
+            <div id="webServerStatus"></div>
+
+            <script>
+                var wsUri = "ws:///b6.hu/ab6server.php";
+                var socket;
+                var webServerStatus;
+                webServerStatus = document.getElementById('webServerStatus');
+
+                function init() {
+                    testWebSocket();
+                }
+
+                function testWebSocket() {
+                    socket = new WebSocket(wsUri);
+
+                    socket.onopen = function(evt) {
+                        onOpen(evt)
+                    };
+
+                    socket.onclose = function(evt) {
+                        onClose(evt)
+                    };
+
+                    socket.onerror = function(evt) {
+                        onError(evt)
+                    };
+
+                    socket.onmessage = function(evt) {
+                        onMessage(evt)
+                    };
+
+                }
+
+                function onOpen(evt) {
+                    webServerStatus.innerHTML += " CONNECTED<br />";
+                    doSend("My name is g");
+                }
+
+                function onClose(evt) {
+                    webServerStatus.innerHTML += " DISCONNECTED<br />";
+                }
+
+                function onError(evt) {
+                    webServerStatus.innerHTML += 'ERROR: ' + evt.data + '<br />';
+                }
+
+                function onMessage(evt) {
+                    webServerStatus.innerHTML += 'RESPONSE: ' + evt.data + '<br />';
+                    socket.close();
+                }
+
+
+                function doSend(message) {
+                    webServerStatus.innerHTML += "SENT: " + message + '<br />';
+                    socket.send(message);
+                }
+            </script>
+
+        </article>
+
+    </section>
+
 </body>
 
 <script>
     if (navigator.onLine) {
-
+        window.addEventListener("load", init, false);
     } else {
         alert("You are Offline");
     }
