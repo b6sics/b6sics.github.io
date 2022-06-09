@@ -1,6 +1,6 @@
 <?php
 
-$address = '0.0.0.0';
+$address = '127.0.0.1';
 $port = 12345;
 
 // Create WebSocket.
