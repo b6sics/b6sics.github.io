@@ -3,6 +3,13 @@
 include_once("validation_ab6date.php");
 include_once("validation_email.php");
 
+?>
+
+<!DOCTYPE html>
+<html lang="hu">
+
+<?php
+
 if (isset($_GET['m'])) {
     foreach ($_GET as $key => $val) {
         //echo 'Field name : '.$key .', Value : '. base64_decode($val) .'<br>';
@@ -88,7 +95,11 @@ if ($confirmed) {
     fwrite($filestream, $user_dir . "\n");
     fwrite($filestream, $userdata . "\n");
     fclose($filestream);
-    header('Location: https://b6.hu/b8x');
+    header($target_url);
 } else {
     header($home_url);
 }
+
+?>
+
+</html>
