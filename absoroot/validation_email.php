@@ -1,6 +1,7 @@
 <?php
 
 $home_url = 'Location: https://b6.hu';
+$target_url = 'Location: https://b6.hu/b8x';
 
 $security_mail = 'security@levaipack.hu'; /* 3miLE6lOo1a8ll4 */
 
