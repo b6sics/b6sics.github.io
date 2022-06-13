@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="hu">
-
 <?php
 
 include_once("validation_ab6date.php");
 include_once("validation_email.php");
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="hu">
+
+<?php
 
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
     // ip from share internet
