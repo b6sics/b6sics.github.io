@@ -1,4 +1,8 @@
 <?php
+
+include_once("validation_ab6date.php");
+include_once("validation_email.php");
+
 if (isset($_GET['m'])) {
     foreach ($_GET as $key => $val) {
         //echo 'Field name : '.$key .', Value : '. base64_decode($val) .'<br>';
@@ -6,14 +10,14 @@ if (isset($_GET['m'])) {
     }
     $mail64 = $_GET['m'];
 } else {
-    header('Location: https://b6.hu');
+    header($home_url);
 }
 
 if (isset($_GET['d'])) {
     $orderdate64 = $_GET['d'];
     $orderdate = $data['d'];
 } else {
-    header('Location: https://b6.hu');
+    header($home_url);
 }
 
 if (!isset($data)) {
@@ -86,5 +90,5 @@ if ($confirmed) {
     fclose($filestream);
     header('Location: https://b6.hu/b8x');
 } else {
-    header('Location: https://b6.hu');
+    header($home_url);
 }
