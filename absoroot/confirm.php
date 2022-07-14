@@ -63,6 +63,11 @@ $startstring = $data['m'] . $datetime[1];
 $history = "absoroot-64/history/" . $data['m'] . $data['d'];
 
 $user = explode("@", $data['m']);
+
+if(count($user) != 2){
+    header($home_url);
+}
+
 $domain128 = base64_encode(hash128($user[1]));
 $name128 = base64_encode(hash128($user[0]));
 $user_dir = "absoroot-64" . DIRECTORY_SEPARATOR . "activity" . DIRECTORY_SEPARATOR . $domain128 . DIRECTORY_SEPARATOR . $name128;
