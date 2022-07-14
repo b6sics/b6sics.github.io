@@ -25,20 +25,13 @@ $client_datas = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?i
 $message = "";
 $subject = "";
 $datetime = "";
+$mail = "";
 
 $crlf = "\r\n";
 
 if (isset($_POST['b6usermail'])) {
     $mail = $_POST['b6usermail'];
 } else {
-    header($home_url);
-}
-
-if (!isset($mail)) {
-    header($home_url);
-}
-
-if (empty($mail)) {
     header($home_url);
 }
 
