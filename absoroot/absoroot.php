@@ -38,6 +38,10 @@ if (empty($mail)) {
     header($home_url);
 }
 
+if (!email_is_valid($mail)) {
+    header($home_url);
+}
+
 if (isset($_POST['b6datetime'])) {
     $datetime = $_POST['b6datetime'];
 } else {
