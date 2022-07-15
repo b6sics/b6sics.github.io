@@ -31,7 +31,8 @@ if (!isset($data)) {
     header($home_url);
 }
 
-if (!isset($mail64)) {
+
+if (!email_is_valid($mail64)) {
     header($home_url);
 }
 
