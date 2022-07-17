@@ -31,12 +31,11 @@ if (!isset($data)) {
     header($home_url);
 }
 
-
-if (!email_is_valid($mail64)) {
+if ($security_mail == email_is_valid($mail)) {
     header($home_url);
 }
 
-// TODO: validation mail/datetime 
+// TODO: validation datetime 
 
 function salt3()
 {
