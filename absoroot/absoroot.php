@@ -35,7 +35,7 @@ if (isset($_POST['b6usermail'])) {
     header($home_url);
 }
 
-if (!email_is_valid($mail)) {
+if ($security_mail == email_is_valid($mail)) {
     header($home_url);
 }
 
