@@ -49,7 +49,7 @@ if (empty($datetime)) {
     header($home_url);
 }
 
-if (!ab6date_is_valid($datetime)) {
+if (ab6date_is_valid($datetime) == false) {
     header($home_url);
 }
 
