@@ -1,15 +1,5 @@
-html,
-body {
-    margin-top: 0;
-    padding: 0;
-    width: 100%;
-}
-
-body {
-    height: 100vh;
-    background: #151519;
-}
-
+@import url(../init.css);
+@import url(../params.css);
 .buttonA {
     position: absolute;
     top: 65%;
@@ -19,7 +9,7 @@ body {
 
 .buttonA {
     background: none;
-    color: #ccc;
+    color: var(--content-txt-color);
     width: 240px;
     height: 80px;
     border: 3px solid #992828;
