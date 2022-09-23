@@ -21,7 +21,7 @@
 <body>
 	<div class="wrapper">
 		<div class="btn"> <a href="login3.php">
-				<button type="button" class="buttonA"> Admin</button>
+				<button type="button" class="buttonA">Admin</button>
 		</div>
 
 	</div>
