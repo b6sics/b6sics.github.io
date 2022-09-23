@@ -1,40 +1,21 @@
 @import url(../init.css);
 @import url(../params.css);
+.wrapper {
+    margin: var(--margin-h) var(--margin-w);
+    background-color: var( --shadow-color2);
+}
+
 button {
-    position: absolute;
     background: none;
+    margin: var(--margin-h) var(--margin-w);
     color: var(--content-txt-color);
-    text-shadow: 0 0 var(--shadow-blur) var(--shadow-color1);
-    width: 240px;
-    height: 80px;
-    left: 50%;
-    transform: translate(-50%);
-    font-size: 25px;
+    text-shadow: 0 0 var(--shadow-blur) var(--shadow-color2);
+    width: calc(var(--body-module-size) * 3);
+    height: var(--body-module-size);
+    font-size: calc(var(--body-module-size) / 3);
+    line-height: var(--body-module-size);
     border-radius: var(--content-border-radius);
     transition: .6s;
-    overflow: hidden;
-}
-
-button:before {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 60px;
-    height: 100%;
-    opacity: .5;
-    filter: blur(30px);
-    transform: translateX(-130px) skewX(-15deg);
-}
-
-button:after {
-    position: absolute;
-    content: '';
-    display: block;
-    width: 30px;
-    height: 100%;
-    opacity: 0;
-    filter: blur(30px);
-    transform: translateX(-100px) scaleX(-15deg);
 }
 
 button:focus {
@@ -45,24 +26,10 @@ button:hover {
     cursor: pointer;
 }
 
-button:hover:before {
-    transform: translateX(300px) skewX(-15deg);
-    opacity: .6;
-    transition: .7s;
-}
-
-button:hover:after {
-    transform: translateX(300px) skewX(-15deg);
-    opacity: 1;
-    transition: .7s;
-}
-
 .buttonA {
     border: var(--content-border-width) var(--content-border-style) var(--content-bg-color-A);
 }
 
-.buttonA:before,
-.buttonA:after,
 .buttonA:hover {
     background: var(--content-bg-color-A);
 }
@@ -71,8 +38,6 @@ button:hover:after {
     border: var(--content-border-width) var(--content-border-style) var(--content-bg-color-P);
 }
 
-.buttonP:before,
-.buttonP:after,
 .buttonP:hover {
     background: var(--content-bg-color-P);
 }
@@ -81,8 +46,6 @@ button:hover:after {
     border: var(--content-border-width) var(--content-border-style) var(--content-bg-color-D);
 }
 
-.buttonD:before,
-.buttonD:after,
 .buttonD:hover {
     background: var(--content-bg-color-D);
 }
