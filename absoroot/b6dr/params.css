@@ -17,14 +17,14 @@
     --content-bg-color-P: rgba(57, 202, 116, 0.75);
     --content-bg-color-D: rgba(154, 138, 225, 0.75);
     /* shadow stroke */
-    --shadow-blur: 0.1vmin;
+    --shadow-blur: 0.5vmin;
     --shadow-color1: lightslategray;
     --shadow-color2: lightgray;
 }
 
 body {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: calc(100vh - 2rem - 2px);
