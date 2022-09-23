@@ -13,7 +13,9 @@
     --content-border-color: rgba(192, 192, 192, 0.35);
     --content-border-radius: calc(6 * var(--content-border-width));
     --content-txt-color: var(--text-color);
-    --content-bg-color: rgba(248, 248, 248, 0.7);
+    --content-bg-color-A: rgba(221, 96, 106, 0.75);
+    --content-bg-color-P: rgba(57, 202, 116, 0.75);
+    --content-bg-color-D: rgba(154, 138, 225, 0.75);
     /* shadow stroke */
     --shadow-blur: 0.1vmin;
     --shadow-color1: lightslategray;
@@ -22,7 +24,7 @@
 
 body {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     min-height: calc(100vh - 2rem - 2px);
