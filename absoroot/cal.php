@@ -1,3 +1,15 @@
+<?php
+
+$date_today = strtotime('now');
+$date_lastMonthLastMonday = strtotime('last Monday of previous month');
+
+
+$thisMonthLength = cal_days_in_month(CAL_GREGORIAN, date('m', $date_today), date('Y', $date_today));
+
+$lastMonthLength = cal_days_in_month(CAL_GREGORIAN, date('m', $date_lastMonthLastMonday), date('Y', $date_lastMonthLastMonday));
+
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 
@@ -33,15 +45,35 @@
     </header>
     <main class="main_home">
         <div>
-            <div>
-                <?php echo date("Y"); ?>
-            </div>
-            <div>
-                <?php echo date("m"); ?>
-            </div>
-            <div>
-                <?php echo date("d"); ?>
-            </div>
+            <table style="margin: 0 auto;">
+                <?php
+                $day = date('d', $date_lastMonthLastMonday);
+                echo "<tr>";
+                for ($xx = 0; $xx <= 6; $xx++) {
+                    echo "<td>";
+                    echo $day;
+                    $day++;
+                    if ($day > $lastMonthLength) {
+                        $day = 1;
+                    }
+                    echo "</td>";
+                }
+                echo "</tr>";
+                for ($yy = 1; $yy <= 5; $yy++) {
+                    echo "<tr>";
+                    for ($xx = 0; $xx <= 6; $xx++) {
+                        echo "<td>";
+                        echo $day;
+                        $day++;
+                        if ($day > $thisMonthLength) {
+                            $day = 1;
+                        }
+                        echo "</td>";
+                    }
+                    echo "</tr>";
+                }
+                ?>
+            </table>
         </div>
     </main>
     <footer>
