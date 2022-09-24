@@ -32,10 +32,12 @@
         </div>
     </header>
     <main class="main_home">
-
+        <?php
+        echo "Today is " . date("Y-m-d") . "<br>";
+        ?>
     </main>
     <footer>
-        &copy; 2020-<?php echo date("Y");?>
+        &copy; 2020-<?php echo date("Y"); ?>
     </footer>
 
 </body>
