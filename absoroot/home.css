@@ -77,3 +77,9 @@ input[type="submit"]:hover {
     text-shadow: 1px 1px 0 var(--shadow-color1);
     box-shadow: 1px 1px 0.5vmin var(--shadow-color1);
 }
+
+td:hover {
+    cursor: pointer;
+    background-color: var(--shadow-color2);
+    border-radius: 50%;
+}
