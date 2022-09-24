@@ -20,27 +20,11 @@
 
 <body>
 	<div class="wrapper">
-		<div class="btn"> <a href="login3.php">
-				<button type="button" class="buttonA">Admin</button>
+		<div class="calendar-wrapper">
+			<button id="btnPrev" type="button">Prev</button>
+			<button id="btnNext" type="button">Next</button>
+			<div id="divCal"></div>
 		</div>
-
-	</div>
-
-
-	<div class="wrapper" style="text-decoration: none;">
-		<div class="btn"> <a href="login.php">
-				<button type="button" class="buttonP">Patient</button>
-		</div>
-
-	</div>
-
-
-	<div class="wrapper" style="text-decoration: none;">
-		<div class="btn"> <a href="login2.php">
-				<button type="button" class="buttonD">Doctor</button>
-			</a>
-		</div>
-
 	</div>
 
 </body>
