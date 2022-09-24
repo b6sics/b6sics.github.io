@@ -20,7 +20,7 @@
 
 <body>
 
-		<div class="calendar-wrapper">
+		<div class="wrapper">
 			<button id="btnPrev" type="button">Prev</button>
 			<button id="btnNext" type="button">Next</button>
 			<div id="divCal"></div>
