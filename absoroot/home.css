@@ -78,7 +78,7 @@ input[type="submit"]:hover {
     box-shadow: 1px 1px 0.5vmin var(--shadow-color1);
 }
 
-td:hover {
+table tr td:hover {
     cursor: pointer;
     background-color: var(--shadow-color2);
     border-radius: 50%;
