@@ -1,10 +1,6 @@
 <?php
 
-$date_today = strtotime('now');
-$date_lastMonthLastMonday = strtotime('last Monday of previous month');
-
-$thisMonthLength = cal_days_in_month(CAL_GREGORIAN, date('m', $date_today), date('Y', $date_today));
-$lastMonthLength = cal_days_in_month(CAL_GREGORIAN, date('m', $date_lastMonthLastMonday), date('Y', $date_lastMonthLastMonday));
+include_once("b6_calender.php");
 
 ?>
 
